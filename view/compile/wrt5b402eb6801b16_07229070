@@ -1,0 +1,63 @@
+<?php
+/* Smarty version 3.1.32, created on 2018-07-07 05:08:38
+  from 'C:\xampp\htdocs\credit2eat\view\cadastrar_produto.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5b402eb67ff091_88398290',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '929cb0cd5cbb7d14ae5cd4190396802270fbc99a' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_produto.tpl',
+      1 => 1530932917,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5b402eb67ff091_88398290 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value;?>
+</title>
+</head>
+<body>
+	<h2>Cadastrar Novo Produto</h2>
+	<br>
+	<form name="form_produto" action="./cadastrar_produto" method="post">
+
+	 	<div class="form-group" style="width:300px">
+		    <label><font size=4>Nome do Produto</font></label>
+		    <input type="text" class="form-control" name="prod_nome" id="prod_nome">
+	  	</div>
+	  	<div class="form-group" style="width:200px">
+		    <label><font size=4>Valor do Produto</font></label>
+		    <input type="text" class="form-control" id="prod_valor" name="prod_valor" >
+	  	</div>
+	  	<div class="form-group" style="width:200px">
+		    <label><font size=4>Quantidade Mínima</font></label>
+		    <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min">
+	  	</div>
+	  	<div class="form-group" style="width:200px">
+		    <label><font size=4>Quantidade Atual</font></label>
+		    <input type="text" class="form-control" id="prod_qnt" name="prod_qnt">
+	  	</div>
+	  	<!--<div class="form-check">
+		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+	  	</div> -->
+	
+		<div class="col-md-3">
+	  		<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+		</div>
+	</form>
+</body>
+</html><?php }
+}
