@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-07-07 04:54:13
+/* Smarty version 3.1.32, created on 2018-08-15 20:52:32
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b402b559c9011_70345101',
+  'unifunc' => 'content_5b7476701de879_92804302',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1530932052,
+      1 => 1534359150,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -60,6 +60,7 @@ function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl)
 /http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
 
 </head>
 <body>
@@ -86,7 +87,7 @@ function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
                         <i class="pe-7s-id"></i>
-                        <p>Clientes ⇓</p>
+                        <p>Clientes</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents1">
                         <li>
@@ -107,7 +108,7 @@ function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
                         <i class="pe-7s-graph"></i>
-                        <p>Produtos ⇓</p>
+                        <p>Produtos</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents2">
                         <li>
@@ -134,11 +135,11 @@ function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
                         <i class="pe-7s-cash"></i>
-                        <p>Vendas ⇓</p>
+                        <p>Vendas</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents3">
                         <li>
-                            <a href="">
+                            <a href="realizar_vendas">
                                 <i class="pe-7s-plus"></i>
                                 <p href="">Realizar Venda</p>
                             </a>
@@ -326,6 +327,26 @@ function content_5b402b559c9011_70345101 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/demo.js"><?php echo '</script'; ?>
+>
+        
+  <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/selectize.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript">      
+        $(document).ready(function () {
+            var oldCliente = $('#cliente-select').attr("value");
+            $('#cliente-select').selectize({
+            placeholder: 'Digite o nome do Cliente...',
+            onInitialize: function () {
+            this.setValue(oldCliente, true);
+            //$('.selectize-control').addClass('form-group');
+            $('.selectize-input').addClass('form-control');
+           }
+    });
+});
+<?php echo '</script'; ?>
 >
 
 

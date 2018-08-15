@@ -29,6 +29,7 @@
     <link href="{$GET_TEMA}/http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
 
 </head>
 <body>
@@ -263,6 +264,21 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{$GET_TEMA}/tema/js/demo.js"></script>
+        
+  <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
+    <script type="text/javascript">      
+        $(document).ready(function () {
+            var oldCliente = $('#cliente-select').attr("value");
+            $('#cliente-select').selectize({
+            placeholder: 'Digite o nome do Cliente...',
+            onInitialize: function () {
+            this.setValue(oldCliente, true);
+            //$('.selectize-control').addClass('form-group');
+            $('.selectize-input').addClass('form-control');
+           }
+    });
+});
+</script>
 
 
 </html>
