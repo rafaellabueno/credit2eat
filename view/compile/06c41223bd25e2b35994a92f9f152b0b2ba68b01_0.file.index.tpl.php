@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-12 20:25:24
+/* Smarty version 3.1.32, created on 2018-08-15 01:32:02
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b707b945acc84_92626811',
+  'unifunc' => 'content_5b736672077d91_92321839',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1530932052,
+      1 => 1534289520,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b707b945acc84_92626811 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b736672077d91_92321839 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -86,7 +86,7 @@ function content_5b707b945acc84_92626811 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
                         <i class="pe-7s-id"></i>
-                        <p>Clientes ⇓</p>
+                        <p>Clientes</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents1">
                         <li>
@@ -107,7 +107,7 @@ function content_5b707b945acc84_92626811 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
                         <i class="pe-7s-graph"></i>
-                        <p>Produtos ⇓</p>
+                        <p>Produtos</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents2">
                         <li>
@@ -134,7 +134,7 @@ function content_5b707b945acc84_92626811 (Smarty_Internal_Template $_smarty_tpl)
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
                         <i class="pe-7s-cash"></i>
-                        <p>Vendas ⇓</p>
+                        <p>Vendas</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents3">
                         <li>

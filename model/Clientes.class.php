@@ -10,7 +10,7 @@
 			//busca os produtos
 			$query = "SELECT * FROM cliente";
 	
-			$query .= " ORDER BY cli_id "; //COLOCAR POR ORDEM DECRESCENTE // ARRUMAR INSERÇÃO NO BANCO CLI_ID = AUTO INCREMENT. 
+			$query .= " ORDER BY cli_nome "; //COLOCAR POR ORDEM DECRESCENTE // ARRUMAR INSERÇÃO NO BANCO CLI_ID = AUTO INCREMENT. 
 		
 			$this->ExecuteSQL($query);
 

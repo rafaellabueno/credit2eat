@@ -15,7 +15,7 @@
 			//busca os produtos
 			$query = "SELECT * FROM produtos";
 	
-			$query .= " ORDER BY prod_id DESC"; 
+			$query .= " ORDER BY prod_nome"; //prod_id DESC
 		
 			$this->ExecuteSQL($query);
 

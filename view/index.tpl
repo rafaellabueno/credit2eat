@@ -55,7 +55,7 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
                         <i class="pe-7s-id"></i>
-                        <p>Clientes ⇓</p>
+                        <p>Clientes</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents1">
                         <li>
@@ -75,7 +75,7 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
                         <i class="pe-7s-graph"></i>
-                        <p>Produtos ⇓</p>
+                        <p>Produtos</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents2">
                         <li>
@@ -101,7 +101,7 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
                         <i class="pe-7s-cash"></i>
-                        <p>Vendas ⇓</p>
+                        <p>Vendas</p>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents3">
                         <li>
