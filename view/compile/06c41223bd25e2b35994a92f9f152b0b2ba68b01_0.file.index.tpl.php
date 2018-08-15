@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-15 01:32:02
+/* Smarty version 3.1.32, created on 2018-08-15 16:22:04
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b736672077d91_92321839',
+  'unifunc' => 'content_5b74370c720ce8_09054710',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1534289520,
+      1 => 1534342922,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b736672077d91_92321839 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b74370c720ce8_09054710 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -138,7 +138,7 @@ function content_5b736672077d91_92321839 (Smarty_Internal_Template $_smarty_tpl)
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents3">
                         <li>
-                            <a href="">
+                            <a href="realizar_vendas">
                                 <i class="pe-7s-plus"></i>
                                 <p href="">Realizar Venda</p>
                             </a>

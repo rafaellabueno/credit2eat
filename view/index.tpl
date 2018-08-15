@@ -105,7 +105,7 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents3">
                         <li>
-                            <a href="">
+                            <a href="realizar_vendas">
                                 <i class="pe-7s-plus"></i>
                                 <p href="">Realizar Venda</p>
                             </a>
