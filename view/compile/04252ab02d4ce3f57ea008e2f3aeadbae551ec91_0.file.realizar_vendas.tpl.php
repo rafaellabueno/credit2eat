@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 20:09:42
+/* Smarty version 3.1.32, created on 2018-08-22 21:42:04
   from 'D:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7da6e6be37d6_05176885',
+  'unifunc' => 'content_5b7dbc8c3923d4_98706885',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04252ab02d4ce3f57ea008e2f3aeadbae551ec91' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1534961381,
+      1 => 1534961741,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7da6e6be37d6_05176885 (Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-<center>
+function content_5b7dbc8c3923d4_98706885 (Smarty_Internal_Template $_smarty_tpl) {
+?><center>
 	<h3>Realizar Venda</h3> 
 </center>
 <hr>
 <br>
-	<form name="form_venda" action="./" method="post">
+	<form name="form_venda" action="./realizar_vendas" method="post">
 
 	 	<div class="form-group" style="width:400px">
 		    <label><font size=4>Informe a Matrícula</font></label>
@@ -70,14 +68,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
 	  	</div>
-	  	<!--<div class="form-group" style="width:200px">
-		    <label><font size=4>Quantidade Mínima</font></label>
-		    <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min" required>
-	  	</div>
-	  	<div class="form-group" style="width:200px">
-		    <label><font size=4>Quantidade Atual</font></label>
-		    <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" required>
-	  	</div>-->
 	  	<div class="form-check">
 		    <input type="checkbox" class="form-check-input" id="a_prazo">
 		    <label class="form-check-label" value="1" for="a_prazo">A Prazo</label>
