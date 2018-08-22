@@ -1,0 +1,9 @@
+Arrumar senha; 
+
+Arrumar Realizar Venda(pegar valor a partir do produto e salvar no banco, cliente tambem); 
+
+Pegar nome de quem loga; 
+
+Pegar clientes e produtos só de quem logou;
+
+Salvar venda nas 2 tabelas. Puxar das 2 tabelas
