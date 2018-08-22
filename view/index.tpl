@@ -35,7 +35,7 @@
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="blue" >  
+            <div class="sidebar" data-color="a">  <!--data-color="a" -->
 
     <!--
 
@@ -206,7 +206,7 @@
                         </li> -->
                         <li>
                             <a href="{$PAG_MINHACONTA}">
-                                <p>admin</p>
+                                <p>admin</p> <!-- PEGAR NOME DE QUEM LOGA --> 
                             </a>
                         </li>
                         <li>
@@ -265,20 +265,35 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="{$GET_TEMA}/tema/js/demo.js"></script>
         
-  <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
-    <script type="text/javascript">      
-        $(document).ready(function () {
-            var oldCliente = $('#cliente-select').attr("value");
-            $('#cliente-select').selectize({
-            placeholder: 'Digite o nome do Cliente...',
-            onInitialize: function () {
-            this.setValue(oldCliente, true);
-            //$('.selectize-control').addClass('form-group');
-            $('.selectize-input').addClass('form-control');
-           }
-    });
-});
-</script>
+        <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
+        
+        <script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+            $(document).ready(function () {
+                var oldCliente = $('#cliente-select').attr("value");
+                $('#cliente-select').selectize({
+                    placeholder: 'Digite a matrícula do Cliente...',
+                    onInitialize: function () {
+                        this.setValue(oldCliente, true);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });
+        </script>
+        
+        <script type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
+            $(document).ready(function () {
+                var oldProdutos = $('#produtos-select').attr("value");
+                $('#produtos-select').selectize({
+                    placeholder: 'Digite o nome do Produto...',
+                    onInitialize: function () {
+                        this.setValue(oldProdutos, true);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });
+        </script>
 
 
 </html>

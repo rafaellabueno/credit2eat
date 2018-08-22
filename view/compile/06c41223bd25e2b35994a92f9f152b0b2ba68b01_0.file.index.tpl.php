@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-15 16:22:04
+/* Smarty version 3.1.32, created on 2018-08-22 19:26:17
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b74370c720ce8_09054710',
+  'unifunc' => 'content_5b7d9cb93ece69_80732109',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1534342922,
+      1 => 1534958614,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b74370c720ce8_09054710 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7d9cb93ece69_80732109 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -60,12 +60,13 @@ function content_5b74370c720ce8_09054710 (Smarty_Internal_Template $_smarty_tpl)
 /http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
 
 </head>
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="blue" >  
+            <div class="sidebar" data-color="a">  <!--data-color="a" -->
 
     <!--
 
@@ -246,7 +247,7 @@ function content_5b74370c720ce8_09054710 (Smarty_Internal_Template $_smarty_tpl)
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 ">
-                                <p>admin</p>
+                                <p>admin</p> <!-- PEGAR NOME DE QUEM LOGA --> 
                             </a>
                         </li>
                         <li>
@@ -327,8 +328,44 @@ function content_5b74370c720ce8_09054710 (Smarty_Internal_Template $_smarty_tpl)
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/demo.js"><?php echo '</script'; ?>
 >
+        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/selectize.min.js"><?php echo '</script'; ?>
+>
+        
+        <?php echo '<script'; ?>
+ type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+            $(document).ready(function () {
+                var oldCliente = $('#cliente-select').attr("value");
+                $('#cliente-select').selectize({
+                    placeholder: 'Digite a matrícula do Cliente...',
+                    onInitialize: function () {
+                        this.setValue(oldCliente, true);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });
+        <?php echo '</script'; ?>
+>
+        
+        <?php echo '<script'; ?>
+ type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
+            $(document).ready(function () {
+                var oldProdutos = $('#produtos-select').attr("value");
+                $('#produtos-select').selectize({
+                    placeholder: 'Digite o nome do Produto...',
+                    onInitialize: function () {
+                        this.setValue(oldProdutos, true);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });
+        <?php echo '</script'; ?>
+>
 
 
-</html>
-<?php }
+</html><?php }
 }

@@ -16,7 +16,7 @@ class Config {
     const BD_SENHA = "";
     const BD_BANCO = "credit2eat";
     const BD_PREFIX = "";
-    
+
     
     /**
      * INFORMACOES DO SITE =========================
@@ -41,3 +41,13 @@ class Config {
     const EMAIL_COPIA = "credit2eat@gmail.com";
     
 }
+
+    /**
+     * BANCO DE DADOS ========================
+     
+    const BD_HOST = "db4free.net";
+    const BD_USER = "teixeira123";
+    const BD_SENHA = "995213689";
+    const BD_BANCO = "credit2eat";
+    const BD_PREFIX = "";
+    */

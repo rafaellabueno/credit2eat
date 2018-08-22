@@ -43,12 +43,12 @@
 				'prod_qnt_min' => $lista['prod_qnt_min'],
 				'prod_qnt' => $lista['prod_qnt'],
 				'prod_qnt_ven' => $lista['prod_qnt_ven'],
-				'prod_slug' => $lista['prod_slug']
+				'prod_slug' => $lista['prod_slug'],
+				'usuario_id' => $lista['usuario_id']
 			);
 			$i++;
 			}
 		}
-
 
 		public function setProduto($nome, $valor, $qnt_min, $qnt_atual){
 			

@@ -2,16 +2,12 @@
 
 $smarty = new Template();
 
-$produtos = new Produtos();
-$produtos->GetProdutos();
+if(isset($_POST['cli_matricula'])){
 
-$smarty->assign('PRO',$produtos->GetItens());
-//$smarty->assign('PRO_INFO',Rotas::pag_ProdutosInfo());
+	$venda = new Vendas();
+	$resp = $venda->setVendas($_POST[''])
 
-$produtos = new Clientes();
-$produtos->GetClientes();
-
-$smarty->assign('CLI',$produtos->GetItens());
+}
 
 $smarty->display('realizar_vendas.tpl');
 

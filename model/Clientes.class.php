@@ -6,11 +6,13 @@
 			parent::__construct();
 		}
 
+
+
 		function GetClientes(){
 			//busca os produtos
 			$query = "SELECT * FROM cliente";
 	
-			$query .= " ORDER BY cli_nome "; //COLOCAR POR ORDEM DECRESCENTE // ARRUMAR INSERÇÃO NO BANCO CLI_ID = AUTO INCREMENT. 
+			$query .= " ORDER BY cli_nome "; //COLOCAR POR ORDEM DECRESCENTE 
 		
 			$this->ExecuteSQL($query);
 
@@ -19,7 +21,7 @@
 
 		public function setCliente($nome, $matricula, $telefone, $email, $senha){
 			
-			$query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha) VALUES ('$nome', '$matricula', '$telefone','$email', '$senha');";	
+			$query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'));";	
 			$var = $this->ExecuteSQL($query);
 
 					//header("location:./menu");
@@ -47,6 +49,7 @@
 				'cli_email' => $lista['cli_email'],
 				'cli_senha' => $lista['cli_senha'],
 				'cli_divida' => $lista['cli_divida']
+				//'id_usuario' => $lista['id_usuario']
 			);
 			$i++;
 			}

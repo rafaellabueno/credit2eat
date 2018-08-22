@@ -40,7 +40,7 @@
 							<th scope="row">{$C.cli_nome}</th>
 							<td>{$C.cli_matricula}</td>
 							<td>{$C.cli_email}</td>
-							<td>0</td>
+							<td>{$C.cli_divida}</td>
 					
 					</tr>
 				</tbody>

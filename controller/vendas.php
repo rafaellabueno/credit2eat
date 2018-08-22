@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>vendas</title>
-</head>
-<body>
-	<h1>vendas</h1>
-</body>
-</html>
+<?php
+
+$smarty = new Template();
+
+$vendas = new Vendas();
+//$vendas->GetVendas();
+
+//$smarty->assign('VEN',$vendas->GetItens());
+//$smarty->assign('PRO_INFO',Rotas::pag_ProdutosInfo());
+
+
+$smarty->display('vendas.tpl');
+
+
+?>
