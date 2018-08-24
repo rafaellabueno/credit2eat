@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 21:42:04
+/* Smarty version 3.1.32, created on 2018-08-24 15:58:43
   from 'D:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7dbc8c3923d4_98706885',
+  'unifunc' => 'content_5b800f13a47ce0_90583427',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04252ab02d4ce3f57ea008e2f3aeadbae551ec91' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1534961741,
+      1 => 1535119104,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7dbc8c3923d4_98706885 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b800f13a47ce0_90583427 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 	<h3>Realizar Venda</h3> 
 </center>

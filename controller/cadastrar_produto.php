@@ -18,7 +18,7 @@ if(isset($_POST['prod_nome'])){
 
 $smarty->display('cadastrar_produto.tpl');
 ?>
-<!--<?php
+<!-- <?php
 
 //$smarty = new Template();
 //$prod = new Produtos();

@@ -12,7 +12,7 @@
 		public $produtos = '';
 
 		function GetVendas(){ //busca as vendas
-			$query = "SELECT * FROM venda inner join venda_produto where venda.id_venda = venda_produto.venda_id";
+			$query = "SELECT * FROM venda inner join venda_produto where venda.id_venda = venda_produto.venda_id and cliente.cli_id = venda.id_cliente";
 
 			$query = "ORDER BY venda.id_venda";
 
@@ -57,16 +57,18 @@
 			}
 		}
 
-		private function setVenda($cliente, $valor, $data, $produto, $aprazo){
-			$query = "INSERT INTO venda ('$id_cliente','$valor_venda','$a_prazo') VALUES ('$cliente','$valor','$aprazo')";
-			$var = $this->ExecuteSQL($query);
-		}
+		private function setVendas($cliente, $valor, $data, $produto, $aprazo){
 
-		private function setVenda($cliente, $valor, $data, $produto, $aprazo){
-			$query = "INSERT INTO venda ('$id_cliente','$valor_venda','$a_prazo') VALUES ('$cliente','$valor','$aprazo')";
-			$var = $this->ExecuteSQL($query);
+			$query = "INSERT INTO venda (id_cliente, valor_venda, a_prazo, data_venda) VALUES ('$cliente','$valor','$aprazo','$data')";
+			$id = mysqli_insert_id();
+			$query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $id_produto);";
+			$var = $this->ExecuteSQL($query, $query2);
 		}
 
 	}
 
 ?>
+		<!-- private function setVenda($id_cliente, $valor, $data, $id_produto, $aprazo){
+			$query = "INSERT INTO venda ('$id_cliente','$valor_venda','$a_prazo') VALUES ('$cliente','$valor','$aprazo')";
+			$var = $this->ExecuteSQL($query);
+		}-->
