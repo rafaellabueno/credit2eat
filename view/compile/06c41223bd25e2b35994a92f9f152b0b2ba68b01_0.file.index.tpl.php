@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 19:26:17
+/* Smarty version 3.1.32, created on 2018-08-25 20:55:38
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7d9cb93ece69_80732109',
+  'unifunc' => 'content_5b81a62aaef458_20910965',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1534958614,
+      1 => 1535223336,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7d9cb93ece69_80732109 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -358,7 +358,7 @@ function content_5b7d9cb93ece69_80732109 (Smarty_Internal_Template $_smarty_tpl)
                     placeholder: 'Digite o nome do Produto...',
                     onInitialize: function () {
                         this.setValue(oldProdutos, true);
-                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-control').addClass('form-group');
                         $('.selectize-input').addClass('form-control');
                     }
                 });

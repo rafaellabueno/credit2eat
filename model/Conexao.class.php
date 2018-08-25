@@ -43,6 +43,11 @@ class Conexao extends Config {
       $this->obj = $this->Conectar()->prepare($query);
       return $this->obj->execute();
     }
+
+    function ExecuteSQL2($query, $query2, array $params = NULL){
+      $this->obj = $this->Conectar()->prepare($query, $query2);
+      return $this->obj->execute();
+    }
     
     function ListarDados(){
       return $this->obj->fetch(PDO::FETCH_ASSOC);

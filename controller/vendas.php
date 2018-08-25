@@ -3,11 +3,10 @@
 $smarty = new Template();
 
 $vendas = new Vendas();
-//$vendas->GetVendas();
+$vendas->GetVendas();
 
-//$smarty->assign('VEN',$vendas->GetItens());
-//$smarty->assign('PRO_INFO',Rotas::pag_ProdutosInfo());
-
+$smarty->assign('VEN',$vendas->GetItens());
+//$smarty->assign('VENP',$vendas->GetItensP());
 
 $smarty->display('vendas.tpl');
 

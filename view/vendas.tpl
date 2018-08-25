@@ -20,39 +20,25 @@
 			</thead>
 			
 
-	<!-- começa a lista de produtos -->
+	<!-- começa a lista de vendas -->
 	<section id="vendas" class="row">
 
 		<ul style="list-style: none">
 			
 			<div class="row" id="pularlinha">
 
-				<!--{foreach from=$VEN item=V}
+				{foreach from=$VEN item=V}
 
-				<!--<li class="col-md-4">
-				
-				<div class="thumbnail"> -->
-
-					<!--<a href="{$PRO_INFO}/{$P.prod_id}"> -->
-
-				<tbody>
-					<tr>			
-							<!--<th scope="row">{$P.prod_nome}</th>
-							<td>R$ {$P.prod_valor}</td>
-							<td>{$P.prod_qnt}</td>
-							<td>{$P.prod_qnt_min}</td>
-							<td>{$P.prod_qnt_ven}</td>	-->				
-					</tr>
-				</tbody>
+					<tbody>
+						<tr>			
+								<th scope="row">{$V.id_cliente}</th>
+								<td>R$ {$V.valor_venda}</td>
+								<td>{$V.data_venda}</td>
+								<!--<td>{$V.id_produto}</td>-->				
+						</tr>
+					</tbody>
 					
-
-				<!--</a>
-
-				</div> 
-
-				</li> 
-
-				{/foreach} -->
+				{/foreach} 
 					
 				
 
