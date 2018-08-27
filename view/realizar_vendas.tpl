@@ -8,18 +8,16 @@
 	 	<div class="form-group" style="width:400px">
 		    <label><font size=4>Informe a Matrícula</font></label>
 		    <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
-                            <option></option>
                             {foreach from=$CLI item=C}
-                                <option value="{$C.cli_id}" selected>{$C.cli_nome} < {$C.cli_matricula} ></option>
+                                <option value="{$C.cli_id}" >{$C.cli_nome} < {$C.cli_matricula} ></option>
                             {/foreach}
                     </select>
 	  	</div>
 	  	<div class="form-group" style="width:400px">
 		    <label><font size=4>Escolha o Produto</font></label>
 		    <select id="produtos-select" name="produto" value="{$P.prod_nome}" required>
-                            <option></option>
                             {foreach from=$PRO item=P}
-                                <option value="{$P.prod_id}" selected>{$P.prod_nome} < R$ {$P.prod_valor} ></option>
+                                <option value="{$P.prod_id}" >{$P.prod_nome} < R$ {$P.prod_valor} ></option>
                             {/foreach}
                     </select>
 	  	</div>
