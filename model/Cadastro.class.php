@@ -1,5 +1,5 @@
-
 <?php
+
 class Cadastro extends Config {  
 	public function __construct()
 	{
@@ -7,4 +7,3 @@ class Cadastro extends Config {
 	    $user->logar('usuario','senha');
 	}     
 }
-?>
