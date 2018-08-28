@@ -17,7 +17,7 @@ class Usuario extends Conexao  {
 	function logar($id, $passwd){
 
 
-		$query = "SELECT * FROM usuario where nome='$id' and senha = '$passwd'";
+		$query = "SELECT * FROM usuario where email='$id'";
  
 	
 		$var = $this->ExecuteSQL($query);
@@ -28,12 +28,13 @@ class Usuario extends Conexao  {
 		if(!session_id()){
 			session_start();
 		}
-		if(isset($user['nome']) && isset($user['id'])){
+                
+		if($user && password_verify($passwd, $user['senha'])){
 			$_SESSION['nome'] = $this->nome = $user['nome'];
 			$_SESSION['id'] = $this->id = $user['id'];
 			header("location:./menu");
 		}else{
-			$_SESSION['erro'] = 'Nome ou Senha incorretos';
+                        $_SESSION['erro'] = 'Nome ou Senha incorretos';
 			header("location:./");
 		}
 
@@ -54,9 +55,10 @@ class Usuario extends Conexao  {
 			$user2 = $this->ListarDados();	
 			if(!$user2){
 				unset($_SESSION['erro']);
-				$query = "INSERT INTO usuario (nome, email, senha) VALUES ('$name', '$mail', '$password');";	
+                                $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+				$query = "INSERT INTO usuario (nome, email, senha) VALUES ('$name', '$mail', '$passwordhash');";	
 				$var = $this->ExecuteSQL($query);
-				$this->logar($name, $password);
+				$this->logar($mail, $password);
 				header("location:./menu");
 			}
 

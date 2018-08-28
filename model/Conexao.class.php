@@ -9,7 +9,7 @@ class Conexao extends Config {
     
   private $host, $user, $senha, $banco;
     
-  protected $obj, $itens=array(), $prefix;
+  protected $obj, $itens=array(), $prefix, $conn;
 
     function __construct() {
        $this->host = self::BD_HOST;
@@ -19,10 +19,7 @@ class Conexao extends Config {
        $this->prefix = self::BD_PREFIX;
     
        try {
-           
-           if($this->Conectar() == null){
-            $this->Conectar();
-           }
+           $this->conn = $this->Conectar();
        } catch (Exception $ex) {
            exit($ex->getMessage().'<h2> Erro na conexão! </h2>');
        }
@@ -40,13 +37,12 @@ class Conexao extends Config {
     }
     
     function ExecuteSQL($query, array $params = NULL){
-      $this->obj = $this->Conectar()->prepare($query);
+      $this->obj = $this->conn->prepare($query);
       return $this->obj->execute();
     }
 
-    function ExecuteSQL2($query, $query2, array $params = NULL){
-      $this->obj = $this->Conectar()->prepare($query, $query2);
-      return $this->obj->execute();
+    public function LastInsertID() {
+      return $this->conn->lastInsertId();
     }
     
     function ListarDados(){

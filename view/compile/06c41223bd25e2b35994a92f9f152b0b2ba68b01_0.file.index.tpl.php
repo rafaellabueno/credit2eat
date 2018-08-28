@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-25 20:55:38
+/* Smarty version 3.1.32, created on 2018-08-28 02:05:41
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b81a62aaef458_20910965',
+  'unifunc' => 'content_5b8491d562ff45_67254051',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1535223336,
+      1 => 1535401010,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8491d562ff45_67254051 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -61,6 +61,10 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
     <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/jquery.3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
 
 </head>
 <body>
@@ -247,7 +251,11 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 ">
-                                <p>admin</p> <!-- PEGAR NOME DE QUEM LOGA --> 
+                                <p>
+                                    <?php 
+                                        echo $_SESSION['nome'];
+                                    ?>
+                                </p> <!-- PEGAR NOME DE QUEM LOGA --> 
                             </a>
                         </li>
                         <li>
@@ -261,13 +269,10 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </nav>
 
-
         <div class="content"> <!--// CONTEUDO DA PAGINA -->
             <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
-
                 <?php 
                     Rotas::get_Pagina();
-                    
                 ?>
             </div>
         </div>               
@@ -291,10 +296,6 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
 </body>
 
     <!--   Core JS Files   -->
-    <?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
-/tema/js/jquery.3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
->
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
@@ -310,11 +311,6 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap-notify.js"><?php echo '</script'; ?>
->
-
-    <!--  Google Maps Plugin    -->
-    <?php echo '<script'; ?>
- type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"><?php echo '</script'; ?>
 >
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
@@ -352,17 +348,17 @@ function content_5b81a62aaef458_20910965 (Smarty_Internal_Template $_smarty_tpl)
         
         <?php echo '<script'; ?>
  type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
-            $(document).ready(function () {
-                var oldProdutos = $('#produtos-select').attr("value");
-                $('#produtos-select').selectize({
+            /*$(document).ready(function () {
+                $('.produtos-select').selectize({
                     placeholder: 'Digite o nome do Produto...',
                     onInitialize: function () {
-                        this.setValue(oldProdutos, true);
-                        $('.selectize-control').addClass('form-group');
+                        this.setValue(null);
+                        //$('.selectize-control').addClass('form-group');
                         $('.selectize-input').addClass('form-control');
                     }
                 });
-            });
+            });*/
+
         <?php echo '</script'; ?>
 >
 

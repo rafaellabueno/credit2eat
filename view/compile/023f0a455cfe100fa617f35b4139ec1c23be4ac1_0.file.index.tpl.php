@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-15 20:52:32
+/* Smarty version 3.1.32, created on 2018-08-27 22:16:51
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7476701de879_92804302',
+  'unifunc' => 'content_5b845c33985a75_02482058',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1534359150,
+      1 => 1535401009,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b845c33985a75_02482058 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -61,12 +61,16 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
     <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/jquery.3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
 
 </head>
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="blue" >  
+            <div class="sidebar" data-color="a">  <!--data-color="a" -->
 
     <!--
 
@@ -247,7 +251,11 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
                         <li>
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 ">
-                                <p>admin</p>
+                                <p>
+                                    <?php 
+                                        echo $_SESSION['nome'];
+                                    ?>
+                                </p> <!-- PEGAR NOME DE QUEM LOGA --> 
                             </a>
                         </li>
                         <li>
@@ -261,13 +269,10 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
             </div>
         </nav>
 
-
         <div class="content"> <!--// CONTEUDO DA PAGINA -->
             <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
-
                 <?php 
                     Rotas::get_Pagina();
-                    
                 ?>
             </div>
         </div>               
@@ -291,10 +296,6 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
 </body>
 
     <!--   Core JS Files   -->
-    <?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
-/tema/js/jquery.3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
->
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
@@ -312,11 +313,6 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
 /tema/js/bootstrap-notify.js"><?php echo '</script'; ?>
 >
 
-    <!--  Google Maps Plugin    -->
-    <?php echo '<script'; ?>
- type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"><?php echo '</script'; ?>
->
-
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
@@ -329,27 +325,43 @@ function content_5b7476701de879_92804302 (Smarty_Internal_Template $_smarty_tpl)
 /tema/js/demo.js"><?php echo '</script'; ?>
 >
         
-  <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/selectize.min.js"><?php echo '</script'; ?>
 >
-    <?php echo '<script'; ?>
- type="text/javascript">      
-        $(document).ready(function () {
-            var oldCliente = $('#cliente-select').attr("value");
-            $('#cliente-select').selectize({
-            placeholder: 'Digite o nome do Cliente...',
-            onInitialize: function () {
-            this.setValue(oldCliente, true);
-            //$('.selectize-control').addClass('form-group');
-            $('.selectize-input').addClass('form-control');
-           }
-    });
-});
-<?php echo '</script'; ?>
+        
+        <?php echo '<script'; ?>
+ type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+            $(document).ready(function () {
+                var oldCliente = $('#cliente-select').attr("value");
+                $('#cliente-select').selectize({
+                    placeholder: 'Digite a matrícula do Cliente...',
+                    onInitialize: function () {
+                        this.setValue(oldCliente, true);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });
+        <?php echo '</script'; ?>
+>
+        
+        <?php echo '<script'; ?>
+ type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
+            /*$(document).ready(function () {
+                $('.produtos-select').selectize({
+                    placeholder: 'Digite o nome do Produto...',
+                    onInitialize: function () {
+                        this.setValue(null);
+                        //$('.selectize-control').addClass('form-group');
+                        $('.selectize-input').addClass('form-control');
+                    }
+                });
+            });*/
+
+        <?php echo '</script'; ?>
 >
 
 
-</html>
-<?php }
+</html><?php }
 }

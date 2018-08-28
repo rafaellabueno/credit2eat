@@ -21,38 +21,41 @@
 			$this->GetLista();
 		}
 
-		/*function GetVendasProdutos(){
-			$query = "SELECT * FROM venda_produto";
-
-			$query = "ORDER BY data_venda";
-
-			$this->ExecuteSQL($query);
-
-			$this->GetLista();
-		} */
-
 		private function GetLista(){
 			$i = 1;
 			while($lista = $this->ListarDados()){
+
+				$cli = new Clientes();
+				$nome_cli = $cli->GetClienteID($lista['id_cliente'])['cli_nome'];
+
+				$prod = new Produtos();
+				$nome_prod = $prod->GetProdutosID($lista['produto_id'])['prod_nome'];
+                                $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
+                                
+                                
 			$this->itens[$i] = array(
 				'id_venda' => $lista['id_venda'],
-				'valor_venda' => $lista['valor_venda'],
 				'a_prazo' => $lista['a_prazo'],
 				'id_cliente' => $lista['id_cliente'],
 				'produto_id' => $lista['produto_id'], 
-				'data_venda' => $lista['data_venda']
+				'data_venda' => $lista['data_venda'],
+				'nome_cli' => $nome_cli,
+				'nome_prod' => $nome_prod,
+                                'valor_prod' => $valor_prod
 			);
 			$i++;
 			}
 		}
 
-		function setVendas($cliente, $produto){
-			$valorp = "SELECT prod_valor FROM produtos p WHERE p.prod_id = $produto";
-			$query = "INSERT INTO venda (cliente) VALUES ('$cliente','$valorp')";
+		function setVendas($cliente, $produtos){
+			$query = "INSERT INTO venda (id_cliente) VALUES ('$cliente')";
 			$var = $this->ExecuteSQL($query);
-			$id = mysqli_insert_id();
-			$query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $id_produto);";
-			$var2 = $this->ExecuteSQL($query2);
+			$id = $this->LastInsertID();
+			foreach ($produtos as $produto) {
+				$query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $produto);";
+				$var2 = $this->ExecuteSQL($query2);
+			}
+			
 		}
 
 	}

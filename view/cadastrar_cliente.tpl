@@ -35,9 +35,12 @@
 		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
 	  	</div> -->
 	
-		<div class="col-md-2">
+		<div class="col-md-4">
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
 		</div>
+		<div class="col-md-4">
+	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+        </div>
 	</form>
 </body>
 </html>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-15 19:37:05
+/* Smarty version 3.1.32, created on 2018-08-27 16:22:41
   from 'C:\xampp\htdocs\credit2eat\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7464c160f041_20548830',
+  'unifunc' => 'content_5b840931b99d14_38195798',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '90c8feb86e88a795d6f20ecd17d8d59e123e46ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
-      1 => 1534353634,
+      1 => 1535379467,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7464c160f041_20548830 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b840931b99d14_38195798 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 

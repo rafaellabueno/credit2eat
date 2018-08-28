@@ -30,6 +30,7 @@
     <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
+    <script src="{$GET_TEMA}/tema/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -206,7 +207,11 @@
                         </li> -->
                         <li>
                             <a href="{$PAG_MINHACONTA}">
-                                <p>admin</p> <!-- PEGAR NOME DE QUEM LOGA --> 
+                                <p>
+                                    {php}
+                                        echo $_SESSION['nome'];
+                                    {/php}
+                                </p> <!-- PEGAR NOME DE QUEM LOGA --> 
                             </a>
                         </li>
                         <li>
@@ -220,13 +225,10 @@
             </div>
         </nav>
 
-
         <div class="content"> <!--// CONTEUDO DA PAGINA -->
             <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
-
                 {php}
                     Rotas::get_Pagina();
-                    
                 {/php}
             </div>
         </div>               
@@ -247,7 +249,6 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="{$GET_TEMA}/tema/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Charts Plugin -->
@@ -255,9 +256,6 @@
 
     <!--  Notifications Plugin    -->
     <script src="{$GET_TEMA}/tema/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 	<script src="{$GET_TEMA}/tema/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
@@ -282,17 +280,17 @@
         </script>
         
         <script type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
-            $(document).ready(function () {
-                var oldProdutos = $('#produtos-select').attr("value");
-                $('#produtos-select').selectize({
+            /*$(document).ready(function () {
+                $('.produtos-select').selectize({
                     placeholder: 'Digite o nome do Produto...',
                     onInitialize: function () {
-                        this.setValue(oldProdutos, true);
+                        this.setValue(null);
                         //$('.selectize-control').addClass('form-group');
                         $('.selectize-input').addClass('form-control');
                     }
                 });
-            });
+            });*/
+
         </script>
 
 

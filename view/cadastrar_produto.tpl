@@ -21,9 +21,12 @@
 		    <label><font size=4>Quantidade Atual</font></label>
 		    <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" required>
 	  	</div>
-		<div class="col-md-2">
+		<div class="col-md-4">
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
 		</div>
+		<div class="col-md-4">
+	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+        </div>
 	</form>
 
 

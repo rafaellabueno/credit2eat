@@ -24,13 +24,11 @@
 
 		function GetProdutosID($id){
 			//busca os produtos
-			$query = "SELECT * FROM produtos";
-	
-			//$query .= " AND prod_id = {$id}";  se eu tiro isso ele mostra todos os existentes, se eu deixo ele não mostra nenhum
+			$query = "SELECT * FROM produtos WHERE prod_id = {$id}";
 		
 			$this->ExecuteSQL($query);
 
-			$this->GetLista();
+			return $this->ListarDados();
 		}
 
 		private function GetLista(){
@@ -61,6 +59,3 @@
 	}
 
 ?>
-
-<!--$query = "SELECT * FROM {this->prefix} produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id" 
-query para buscar os produtos de uma categoria específica-->

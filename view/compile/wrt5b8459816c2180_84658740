@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-27 22:29:39
+/* Smarty version 3.1.32, created on 2018-08-27 22:05:21
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b845f33cadfd8_08070768',
+  'unifunc' => 'content_5b8459816bd506_80932152',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1535401778,
+      1 => 1535400320,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b845f33cadfd8_08070768 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8459816bd506_80932152 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 	<h3>Realizar Venda</h3> 
 </center>
 <?php echo '<script'; ?>
 >
 	var total = 0;
-
-	function deletaProduto(id) {
-		console.log($('#' + id));
-		$('#' + id).remove();
-	}
-
 	function addProduto() {
 		var newSelect = $("#displayOriginal");
 		newSelect = newSelect.clone();
 		id =  'select-' + total++;
-		newSelect.find('div').attr("id", id);
+		newSelect.id = id;
 		newSelect.find('div').css('display', 'block');
 
-		button = '<a class="btn btn-danger" role="button" onclick="deletaProduto(\'' + id + '\')" style="color: red;">Apagar Produto</a>'; //BOTAO PARA APAGAR PRODUTO // >APAGAR PRODUTO</A> TEXTO PARA BOTAO
-
+		button = '<a onclick="deletaProduto(' + id + ')">X</a>';
 		console.log(button);
 		newSelect.find('div').append(button);
 
@@ -67,7 +60,7 @@ function content_5b845f33cadfd8_08070768 (Smarty_Internal_Template $_smarty_tpl)
 <br>
 	<form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
 
-	 	<div class="form-group" style="width:400px;">
+	 	<div class="form-group" style="width:400px">
 		    <label><font size=4>Informe a Matrícula</font></label>
 		    <select id="cliente-select" name="cliente" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
 " required>
@@ -88,7 +81,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	  	</div>
 	  	<div id="selects">
 		  	<div id="displayOriginal">
-			  	<div class="form-group" style="width:900px; display: none;">
+			  	<div class="form-group" style="width:400px; display: border-left: ;">
 		    <label><font size=4>Escolha o Produto</font></label>
 		    <select class="produtos-select" name="produto[]" required>
                             <?php
@@ -108,26 +101,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		  	</div>
 		  </div>
 		</div>
-		<a onclick="addProduto()" class="btn btn-primary" role="button">Adicionar Produto</a>
 	  	<div class="form-check">
 		    <input type="checkbox" class="form-check-input" name="a_prazo" id="a_prazo">
 		    <label class="form-check-label" id="a_prazo" value="a_prazo" name="a_prazo" for="a_prazo">A Prazo</label>
 	  	</div> 
 	
-		<div class="col-md-4">
+		<div class="col-md-2">
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Vender</button>
 		</div>
-        <div class="col-md-4">
+                <div class="col-md-2">
 	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
-        </div>
+                </div>
 	</form>
-	
-	<?php echo '<script'; ?>
->
-		$(document).ready(function() {
-			addProduto();
-		})
-	<?php echo '</script'; ?>
->
+	<a onclick="addProduto()">aaaaaaa</a>
 <?php }
 }

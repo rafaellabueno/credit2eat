@@ -12,10 +12,11 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th scope="col">ID</th>
 					<th scope="col">Cliente</th>
 					<th scope="col">Valor</th>
+					<th scope="col">Produto</th>
 					<th scope="col">Data</th>
-					<th scope="col">Produtos</th>
 				</tr>
 			</thead>
 			
@@ -28,13 +29,13 @@
 			<div class="row" id="pularlinha">
 
 				{foreach from=$VEN item=V}
-
 					<tbody>
-						<tr>			
-								<th scope="row">{$V.id_cliente}</th>
-								<td>R$ {$V.valor_venda}</td>
-								<td>{$V.data_venda}</td>
-								<!--<td>{$V.id_produto}</td>-->				
+						<tr>	
+							<th scope="row">{$V.id_venda}</th>	
+							<th scope="row">{$V.nome_cli}</th>
+							<td>R${$V.valor_prod}</td> <!-- VALOR TEM QUE SER SOMA DO VALOR DOS PRODUTOS DE DENTRO DA TABELA -->
+							<td>{$V.nome_prod}</td>
+                                                        <td>{$V.data_venda}</td>		
 						</tr>
 					</tbody>
 					

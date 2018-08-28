@@ -27,16 +27,14 @@
 					//header("location:./menu");
 		}
 
-		/*function GetProdutosID($id){
-			//busca os produtos
-			$query = "SELECT * FROM produtos";
-	
-			//$query .= " AND prod_id = {$id}";  se eu tiro isso ele mostra todos os existentes, se eu deixo ele não mostra nenhum
-		
+		function GetClienteID($id){
+
+			$query = "SELECT * FROM cliente WHERE cli_id = {$id}";  
+
 			$this->ExecuteSQL($query);
 
-			$this->GetLista();
-		}*/
+			return $this->ListarDados();
+		}
 
 		private function GetLista(){
 			$i = 1;
