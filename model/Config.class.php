@@ -14,7 +14,7 @@ class Config {
     const BD_HOST = "localhost";
     const BD_USER = "root";
     const BD_SENHA = "";
-    const BD_BANCO = "gui";
+    const BD_BANCO = "credit2eat";
     const BD_PREFIX = "";
 
     

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-28 02:05:41
+/* Smarty version 3.1.32, created on 2018-08-28 03:13:36
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8491d562ff45_67254051',
+  'unifunc' => 'content_5b84a1c02f4866_78624452',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1535401010,
+      1 => 1535418809,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8491d562ff45_67254051 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b84a1c02f4866_78624452 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -220,7 +220,7 @@ function content_5b8491d562ff45_67254051 (Smarty_Internal_Template $_smarty_tpl)
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
-								<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+				<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
                             </a>
                         </li>
                     </ul>-->

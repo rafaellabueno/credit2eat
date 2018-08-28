@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png"> <!-- ICONE DO SITE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>HDVSDFVSDJGVJ</title>
+	<title>{$TITULO_SITE}</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -36,7 +36,7 @@
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="red">  <!--data-color="a" -->
+            <div class="sidebar" data-color="a">  <!--data-color="a" -->
 
     <!--
 
@@ -177,7 +177,7 @@
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
-								<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+				<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
                             </a>
                         </li>
                     </ul>-->
