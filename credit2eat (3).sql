@@ -34,7 +34,7 @@ CREATE TABLE `cliente` (
   `cli_matricula` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `cli_email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `cli_telefone` int(11) NOT NULL,
-  `cli_senha` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `cli_senha` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `cli_divida` float DEFAULT '0',
   `id_usuario` int(11) DEFAULT NULL,
   `id_divida` int(11) DEFAULT NULL
@@ -100,17 +100,12 @@ CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `senha` varchar(50) NOT NULL
+  `senha` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
-
-INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(16, 'admin', 'admin@admin', 'admin'),
-(19, 'Guilherme Bragagnollo Teixeira', 'guilherme.b.tei@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
-(20, 'maiconbras', 'maiconbras@gmail.com', '123');
 
 -- --------------------------------------------------------
 
