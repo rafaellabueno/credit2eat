@@ -30,8 +30,10 @@
 
 				$prod = new Produtos();
 				$nome_prod = $prod->GetProdutosID($lista['produto_id'])['prod_nome'];
-                                $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
-                                
+                $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
+
+                /*$data = strtotime($data_venda);
+                $data_venda = date('H:i:s D-m-y',$data);*/ //DATA            
                                 
 			$this->itens[$i] = array(
 				'id_venda' => $lista['id_venda'],
@@ -41,7 +43,7 @@
 				'data_venda' => $lista['data_venda'],
 				'nome_cli' => $nome_cli,
 				'nome_prod' => $nome_prod,
-                                'valor_prod' => $valor_prod
+                'valor_prod' => $valor_prod
 			);
 			$i++;
 			}

@@ -34,13 +34,25 @@
 		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
 		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
 	  	</div> -->
-	
 		<div class="col-md-4">
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
 		</div>
 		<div class="col-md-4">
-	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+	  		<button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
         </div>
 	</form>
 </body>
+
+<script>
+function limpa() {
+if(document.getElementById('cli_nome').value!="") {
+document.getElementById('cli_nome').value="";
+document.getElementById('cli_matricula').value="";
+document.getElementById('cli_telefone').value="";
+document.getElementById('cli_email').value="";
+document.getElementById('cli_senha').value="";
+}
+}
+</script>
+
 </html>

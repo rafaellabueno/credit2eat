@@ -1,6 +1,7 @@
-<h2>páginha minha conta</h2>
-
 <?php
 
+$smarty = new Template();
 
+$smarty->display('minhaconta.tpl');
 
+?>

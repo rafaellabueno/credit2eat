@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-27 22:16:51
+/* Smarty version 3.1.32, created on 2018-08-29 22:10:36
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b845c33985a75_02482058',
+  'unifunc' => 'content_5b86fdbceb81c2_43443533',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1535401009,
+      1 => 1535573433,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b845c33985a75_02482058 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b86fdbceb81c2_43443533 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -70,7 +70,7 @@ function content_5b845c33985a75_02482058 (Smarty_Internal_Template $_smarty_tpl)
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="a">  <!--data-color="a" -->
+            <div class="sidebar" data-color="blue">  <!--data-color="a" -->
 
     <!--
 
@@ -220,7 +220,7 @@ function content_5b845c33985a75_02482058 (Smarty_Internal_Template $_smarty_tpl)
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
-								<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+				<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
                             </a>
                         </li>
                     </ul>-->
@@ -342,12 +342,14 @@ function content_5b845c33985a75_02482058 (Smarty_Internal_Template $_smarty_tpl)
                         $('.selectize-input').addClass('form-control');
                     }
                 });
+
+
             });
         <?php echo '</script'; ?>
 >
         
         <?php echo '<script'; ?>
- type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
+ type="text/javascript">   
             /*$(document).ready(function () {
                 $('.produtos-select').selectize({
                     placeholder: 'Digite o nome do Produto...',

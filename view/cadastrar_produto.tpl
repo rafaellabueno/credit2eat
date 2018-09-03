@@ -25,10 +25,20 @@
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
 		</div>
 		<div class="col-md-4">
-	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+	  		<button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
         </div>
 	</form>
 
+<script>
+function limpa() {
+if(document.getElementById('prod_nome').value!="") {
+document.getElementById('prod_nome').value="";
+document.getElementById('prod_valor').value="";
+document.getElementById('prod_qnt_min').value="";
+document.getElementById('prod_qnt').value="";
+}
+}
+</script>
 
 
 		<!--<div class="form-check">

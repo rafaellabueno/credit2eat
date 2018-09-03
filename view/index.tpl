@@ -27,6 +27,9 @@
 
     <!--     Fonts and icons     -->
     <link href="{$GET_TEMA}/http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- TEM QUE INSTALAR A FONTE DIREITO --> 
+    
     <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
@@ -36,7 +39,7 @@
 <body>
 
 <div class="wrapper">
-            <div class="sidebar" data-color="a">  <!--data-color="a" -->
+            <div class="sidebar" data-color="blue">  <!--data-color="a" -->
 
     <!--
 
@@ -120,36 +123,6 @@
                         </li> 
                     </ul>
                 </li>
-                <!--<li>
-                    <a href="{$GET_VENDAS}">
-                        <i class="pe-7s-cash"></i>
-                        <p>Vendas</p>
-                    </a>
-                </li> -->
-                 <!--<li>
-                    <a href="{$PAG_PRODUTOS}">
-                        <i class="pe-7s-graph"></i>
-                        <p>Produtos</p>
-                    </a>
-                </li> -->
-                <!--<li> 
-                    <a href="{$PAG_CLIENTES}">
-                        <i class="pe-7s-user"></i>
-                        <p>Clientes</p>
-                    </a>
-                </li>-->
-                <!--<li>
-                    <a href="">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Minha Conta</p>
-                    </a>
-                </li> -->
-                <!--<li>
-                    <a href="{$PAG_CONTATO}">
-                        <i class="pe-7s-science"></i>
-                        <p>Contato</p>
-                    </a>
-                </li> -->
 				<li class="active-pro">
                     <a href="{$PAG_MINHACONTA}">
                         <i class="pe-7s-smile"></i>
@@ -173,15 +146,6 @@
                     <a class="navbar-brand" href="#">Credit2Eat<!--{$PAG_NOME}--></a> <!-- PEGAR NOME DA PAGINA -->
                 </div>
                 <div class="collapse navbar-collapse">
-                    <!--<ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-				<p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
-                            </a>
-                        </li>
-                    </ul>-->
-
                     <ul class="nav navbar-nav navbar-right">
                         <!--<li>
                            <a href="">
@@ -276,10 +240,12 @@
                         $('.selectize-input').addClass('form-control');
                     }
                 });
+
+
             });
         </script>
         
-        <script type="text/javascript">   //PEGAR TODOS PRODUTOS DIGITANDO NOME  
+        <script type="text/javascript">   
             /*$(document).ready(function () {
                 $('.produtos-select').selectize({
                     placeholder: 'Digite o nome do Produto...',
@@ -295,3 +261,46 @@
 
 
 </html>
+
+
+<!--<li>
+                    <a href="{$GET_VENDAS}">
+                        <i class="pe-7s-cash"></i>
+                        <p>Vendas</p>
+                    </a>
+                </li> -->
+                 <!--<li>
+                    <a href="{$PAG_PRODUTOS}">
+                        <i class="pe-7s-graph"></i>
+                        <p>Produtos</p>
+                    </a>
+                </li> -->
+                <!--<li> 
+                    <a href="{$PAG_CLIENTES}">
+                        <i class="pe-7s-user"></i>
+                        <p>Clientes</p>
+                    </a>
+                </li>-->
+                <!--<li>
+                    <a href="">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Minha Conta</p>
+                    </a>
+                </li> -->
+                <!--<li>
+                    <a href="{$PAG_CONTATO}">
+                        <i class="pe-7s-science"></i>
+                        <p>Contato</p>
+                    </a>
+                </li> -->
+
+
+
+                <!--<ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-dashboard"></i>
+                            <p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+                        </a>
+                    </li>
+                </ul>-->

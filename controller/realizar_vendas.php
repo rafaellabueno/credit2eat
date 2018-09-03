@@ -17,6 +17,7 @@ if(isset($_POST['produto'])){
 	$realizarVenda = new Vendas();
 	$resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto']);
 
+	header("location:./vendas");
 }
 
 $smarty->display('realizar_vendas.tpl');

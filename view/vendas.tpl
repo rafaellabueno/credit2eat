@@ -35,7 +35,7 @@
 							<th scope="row">{$V.nome_cli}</th>
 							<td>R${$V.valor_prod}</td> <!-- VALOR TEM QUE SER SOMA DO VALOR DOS PRODUTOS DE DENTRO DA TABELA -->
 							<td>{$V.nome_prod}</td>
-                                                        <td>{$V.data_venda}</td>		
+                            <td>{$V.data_venda}</td>		
 						</tr>
 					</tbody>
 					

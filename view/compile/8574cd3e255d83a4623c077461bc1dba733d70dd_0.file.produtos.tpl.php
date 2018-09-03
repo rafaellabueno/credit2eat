@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-27 22:30:38
+/* Smarty version 3.1.32, created on 2018-08-29 20:36:37
   from 'C:\xampp\htdocs\credit2eat\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b845f6e660213_62241029',
+  'unifunc' => 'content_5b86e7b53755a0_26126837',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8574cd3e255d83a4623c077461bc1dba733d70dd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\produtos.tpl',
-      1 => 1535379478,
+      1 => 1535566253,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b845f6e660213_62241029 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b86e7b53755a0_26126837 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 	<h3>Lista de Produtos</h3>
 </center>

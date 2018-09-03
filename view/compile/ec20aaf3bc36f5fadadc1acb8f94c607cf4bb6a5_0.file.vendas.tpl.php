@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-28 02:14:12
+/* Smarty version 3.1.32, created on 2018-09-03 14:55:50
   from 'D:\xampp\htdocs\credit2eat\view\vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8493d40965c6_92230087',
+  'unifunc' => 'content_5b8d2f565c4479_08745936',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec20aaf3bc36f5fadadc1acb8f94c607cf4bb6a5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\vendas.tpl',
-      1 => 1535415250,
+      1 => 1535979347,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8493d40965c6_92230087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8d2f565c4479_08745936 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 	<h3>Lista de Vendas</h3>
 </center>
@@ -66,7 +66,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['V']->value) {
 </td> <!-- VALOR TEM QUE SER SOMA DO VALOR DOS PRODUTOS DE DENTRO DA TABELA -->
 							<td><?php echo $_smarty_tpl->tpl_vars['V']->value['nome_prod'];?>
 </td>
-                                                        <td><?php echo $_smarty_tpl->tpl_vars['V']->value['data_venda'];?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['V']->value['data_venda'];?>
 </td>		
 						</tr>
 					</tbody>

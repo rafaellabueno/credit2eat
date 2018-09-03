@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-28 02:05:50
+/* Smarty version 3.1.32, created on 2018-09-03 14:51:37
   from 'D:\xampp\htdocs\credit2eat\view\cadastrar_produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8491de42f362_93190811',
+  'unifunc' => 'content_5b8d2e59e52033_82078032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e7f6c1a1b2d7525a339272ca3a64e850bd34c216' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_produto.tpl',
-      1 => 1535401936,
+      1 => 1535979093,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8491de42f362_93190811 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8d2e59e52033_82078032 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 <h3>Cadastrar Novo Produto</h3>
 </center>
@@ -48,10 +48,22 @@ function content_5b8491de42f362_93190811 (Smarty_Internal_Template $_smarty_tpl)
 	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
 		</div>
 		<div class="col-md-4">
-	  		<button type="reset" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+	  		<button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
         </div>
 	</form>
 
+<?php echo '<script'; ?>
+>
+function limpa() {
+if(document.getElementById('prod_nome').value!="") {
+document.getElementById('prod_nome').value="";
+document.getElementById('prod_valor').value="";
+document.getElementById('prod_qnt_min').value="";
+document.getElementById('prod_qnt').value="";
+}
+}
+<?php echo '</script'; ?>
+>
 
 
 		<!--<div class="form-check">
