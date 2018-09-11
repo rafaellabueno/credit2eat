@@ -10,7 +10,7 @@
 
 		function GetClientes(){
 			//busca os produtos
-			$query = "SELECT * FROM cliente";
+			$query = "SELECT * FROM cliente WHERE id_usuario = $_SESSION[id]";
 	
 			$query .= " ORDER BY cli_nome "; //COLOCAR POR ORDEM DECRESCENTE 
 		
@@ -21,7 +21,7 @@
 
 		public function setCliente($nome, $matricula, $telefone, $email, $senha){
 			
-			$query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'));";	
+			$query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]');";	
 			$var = $this->ExecuteSQL($query);
 
 					//header("location:./menu");

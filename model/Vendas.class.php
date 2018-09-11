@@ -12,7 +12,7 @@
 		public $produtos = '';
 
 		function GetVendas(){ //busca as vendas
-			$query = "SELECT * FROM venda inner join venda_produto where venda.id_venda = venda_produto.venda_id "; //and cliente.cli_id = venda.id_cliente
+			$query = "SELECT * FROM venda inner join venda_produto where venda.id_venda = venda_produto.venda_id and id_usuario = $_SESSION[id]"; 
 
 			//$query2 = "SELECT cli_nome FROM cliente c where c.cli_nome = $this(id_cliente)"
 
@@ -50,7 +50,7 @@
 		}
 
 		function setVendas($cliente, $produtos){
-			$query = "INSERT INTO venda (id_cliente) VALUES ('$cliente')";
+			$query = "INSERT INTO venda (id_cliente, id_usuario) VALUES ('$cliente','$_SESSION[id]')";
 			$var = $this->ExecuteSQL($query);
 			$id = $this->LastInsertID();
 			foreach ($produtos as $produto) {

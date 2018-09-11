@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 19:29:48
+/* Smarty version 3.1.32, created on 2018-09-04 16:12:02
   from 'D:\xampp\htdocs\credit2eat\view\clientes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7d9d8c2e76e1_26975833',
+  'unifunc' => 'content_5b8e92b20e49e9_07521709',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af003634c900808f99ca376901d5b4d1b5e23fc9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\clientes.tpl',
-      1 => 1534958986,
+      1 => 1536070320,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7d9d8c2e76e1_26975833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8e92b20e49e9_07521709 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
 	<h3>Lista de Clientes</h3> 
 </center>
@@ -38,7 +38,7 @@ function content_5b7d9d8c2e76e1_26975833 (Smarty_Internal_Template $_smarty_tpl)
 					<th scope="col">Nome</th>
 					<th scope="col">Matricula</th>
 					<th scope="col">Email</th>
-					<th>Dívida</th>
+					<th scope="col">Pendências</th>
 				</tr>
 			</thead>
 
