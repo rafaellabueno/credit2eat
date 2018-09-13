@@ -29,11 +29,11 @@
 
                 {foreach from=$CLI item=C}
 
-                   <!-- <li class="col-md-4">
-                    
-                    <div class="thumbnail"> 
-
-                            <a href="{$CLI_INFO}/{$C.cli_id}/{$C.c_nome}"> -->
+                    <!-- <li class="col-md-4">
+                     
+                     <div class="thumbnail"> 
+ 
+                             <a href="{$CLI_INFO}/{$C.cli_id}/{$C.c_nome}"> -->
 
                     <tbody>
                         <tr>			
@@ -68,12 +68,3 @@
                 PAGINAS
         </center>
 </section> -->
-
-<!--<div class="caption">
-                                        
-                                        <h5 class="text-center">NOME: {$C.cli_nome}</h5>
-                                        <h5 class="text-center">MATRICULA: {$C.cli_matricula}</h5>
-                                        <h5 class="text-center">EMAIL: {$C.cli_email} </h5>
-                                        
-                                </div>
--->

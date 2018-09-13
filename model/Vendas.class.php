@@ -31,6 +31,7 @@ class Vendas extends Conexao {
             $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
             $qntd_prod = $prod->GetProdutosID($lista['produto_id'])['prod_qnt'];
 
+
             /* $data = strtotime($data_venda);
               $data_venda = date('H:i:s D-m-y',$data); */ //DATA            
 

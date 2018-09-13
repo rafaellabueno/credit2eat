@@ -63,13 +63,14 @@ class Usuario extends Conexao {
     }
 
     function cadastrar($name, $mail, $password) {
-
-        $query = "SELECT * FROM usuario where nome='$name'";
+        $nome = filter_var($name, FILTER_SANITIZE_STRING);
+        $email = filter_var($mail, FILTER_VALIDATE_EMAIL);
+        $query = "SELECT * FROM usuario where nome='$nome'";
         $var = $this->ExecuteSQL($query);
         $user = $this->ListarDados();
         $_SESSION['erro'] = 'Nome já existe';
         if (!$user) {
-            $query = "SELECT * FROM usuario where email='$mail'";
+            $query = "SELECT * FROM usuario where email='$email'";
             $var = $this->ExecuteSQL($query);
             $_SESSION['erro'] = 'Email já existe';
 
@@ -77,9 +78,9 @@ class Usuario extends Conexao {
             if (!$user2) {
                 unset($_SESSION['erro']);
                 $passwordhash = password_hash($password, PASSWORD_DEFAULT);
-                $query = "INSERT INTO usuario (nome, email, senha) VALUES ('$name', '$mail', '$passwordhash');";
+                $query = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$passwordhash');";
                 $var = $this->ExecuteSQL($query);
-                $this->logar($mail, $password);
+                $this->logar($email, $password);
                 header("location:./menu");
             }
         }

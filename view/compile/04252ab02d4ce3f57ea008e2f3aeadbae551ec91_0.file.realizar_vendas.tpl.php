@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 01:45:42
+/* Smarty version 3.1.32, created on 2018-09-13 15:23:07
   from 'D:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b99a526294bb1_02966308',
+  'unifunc' => 'content_5b9a64bb57fbf0_78639363',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04252ab02d4ce3f57ea008e2f3aeadbae551ec91' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1536675615,
+      1 => 1536844986,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b99a526294bb1_02966308 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a64bb57fbf0_78639363 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -123,7 +123,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             Adicionar Produto
         </a>
     </div>
-    <div class="col-md-12" class="col-xs-6">
+    <div class="col-md-12" class="col-xs-8">
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">VENDA À VISTA</button>
         </div>

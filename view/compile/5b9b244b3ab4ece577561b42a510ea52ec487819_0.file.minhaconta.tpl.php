@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 16:36:24
+/* Smarty version 3.1.32, created on 2018-09-13 15:44:56
   from 'D:\xampp\htdocs\credit2eat\view\minhaconta.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9924686d0977_82673786',
+  'unifunc' => 'content_5b9a69d897bd19_84051366',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b9b244b3ab4ece577561b42a510ea52ec487819' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\minhaconta.tpl',
-      1 => 1536762982,
+      1 => 1536797836,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9924686d0977_82673786 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a69d897bd19_84051366 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,35 +37,35 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['U']->value) {
 ?>
-    <form name="form_cliente" action="./atualizar_usuario" method="post">
-    <div class="section">
-        <div class="form-group" style="width:300px">
-            <label><font size=4>Nome</font></label>
-            <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['U']->value['nome'];?>
+        <form name="form_cliente" action="./atualizar_usuario" method="post">
+            <div class="section">
+                <div class="form-group" style="width:300px">
+                    <label><font size=4>Nome</font></label>
+                    <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['U']->value['nome'];?>
 " class="form-control" name="usuario_nome" id="usuario_nome">
-        </div>
-        <div class="form-group" style="width:300px">
-            <label><font size=4>Email</font></label>
-            <input type="email" value="<?php echo $_smarty_tpl->tpl_vars['U']->value['email'];?>
+                </div>
+                <div class="form-group" style="width:300px">
+                    <label><font size=4>Email</font></label>
+                    <input type="email" value="<?php echo $_smarty_tpl->tpl_vars['U']->value['email'];?>
 " class="form-control"  id="usuario_email" name="usuario_email">
-        </div>
-    </div>
-        <h4><b>Atualizar Senha</b></h4>
-        <div class="form-group" style="width:300px">
-            <label><font size=4>Senha Atual</font></label>
-            <input type="password" value="" class="form-control" id="usuario_senha" name="usuario_senha">
-        </div>
-        <div class="form-group" style="width: 300px">
-            <label><font size=4>Nova Senha</font></label>
-            <input type="password" value="" class="form-control" id="usuario_senha" name="usuario_senha">
-        </div>
-        <div class="col-md-3">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">Atualizar</button>
-        </div>
-        <div class="col-md-3">
-            <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
-        </div>
-    </form>
+                </div>
+            </div>
+            <h4><b>Atualizar Senha</b></h4>
+            <div class="form-group" style="width:300px">
+                <label><font size=4>Senha Atual</font></label>
+                <input type="password" value="" class="form-control" id="usuario_senha" name="usuario_senha">
+            </div>
+            <div class="form-group" style="width: 300px">
+                <label><font size=4>Nova Senha</font></label>
+                <input type="password" value="" class="form-control" id="usuario_senha" name="usuario_senha">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-block" name="botao">Atualizar</button>
+            </div>
+            <div class="col-md-3">
+                <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
+            </div>
+        </form>
 
     <?php
 }

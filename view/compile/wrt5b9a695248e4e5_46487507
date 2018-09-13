@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 16:18:33
+/* Smarty version 3.1.32, created on 2018-09-13 15:42:42
   from 'D:\xampp\htdocs\credit2eat\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9a71b960fb84_65791104',
+  'unifunc' => 'content_5b9a695248b931_97416785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4af714d3c61d5fcd29f604c12bb9d74a851d33bf' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
-      1 => 1536846194,
+      1 => 1536846161,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9a71b960fb84_65791104 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a695248b931_97416785 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -196,13 +196,15 @@ function content_5b9a71b960fb84_65791104 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="container">
             <div class="card card-container">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+
                 <img id="profile-img" class="profile-img-card" src=".\media\imagens\Credit2Eat---Complete.png" /> <!-- IMAGEM -->
                 <p id="profile-name" class="profile-name-card"></p>
                 <form class="form-signin" action="./" method="post">
                     <span id="reauth-email" class="reauth-email"></span>
                     <input type="text" id="nome" name="nome" class="form-control" placeholder="Email" required autofocus>
                     <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Logar</button>
                 </form><!-- /form -->
                 <a href="./redireciona?caminho=cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
                 <br><br><center><h4><?php echo $_smarty_tpl->tpl_vars['ERRO']->value;?>

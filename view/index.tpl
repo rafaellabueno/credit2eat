@@ -243,7 +243,22 @@
 
 
                             });
-    </script>
+    </script> 
+    <!--<script type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
+                            $(document).ready(function () {
+                                var oldProdutos = $('#produtos-select').attr("value");
+                                $('#produtos-select').selectize({
+                                    placeholder: 'Digite a matrícula do Cliente...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProdutos, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        $('.selectize-input').addClass('form-control');
+                                    }
+                                });
+
+
+                            });
+    </script> -->
 
     <script type="text/javascript">
         /*$(document).ready(function () {

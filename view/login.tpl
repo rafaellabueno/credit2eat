@@ -168,15 +168,13 @@
 
         <div class="container">
             <div class="card card-container">
-                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-
                 <img id="profile-img" class="profile-img-card" src=".\media\imagens\Credit2Eat---Complete.png" /> <!-- IMAGEM -->
                 <p id="profile-name" class="profile-name-card"></p>
                 <form class="form-signin" action="./" method="post">
                     <span id="reauth-email" class="reauth-email"></span>
-                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" required autofocus>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Email" required autofocus>
                     <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Logar</button>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
                 </form><!-- /form -->
                 <a href="./redireciona?caminho=cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
                 <br><br><center><h4>{$ERRO}</h4></center>

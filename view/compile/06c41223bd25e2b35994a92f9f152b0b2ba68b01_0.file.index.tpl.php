@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 02:05:23
+/* Smarty version 3.1.32, created on 2018-09-13 15:30:57
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b99a9c34bbe37_46350330',
+  'unifunc' => 'content_5b9a669154fda0_39317479',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1536797122,
+      1 => 1536845264,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b99a9c34bbe37_46350330 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a669154fda0_39317479 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
     <head>
@@ -306,7 +306,24 @@ function content_5b99a9c34bbe37_46350330 (Smarty_Internal_Template $_smarty_tpl)
 
                             });
     <?php echo '</script'; ?>
->
+> 
+    <!--<?php echo '<script'; ?>
+ type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
+                            $(document).ready(function () {
+                                var oldProdutos = $('#produtos-select').attr("value");
+                                $('#produtos-select').selectize({
+                                    placeholder: 'Digite a matrícula do Cliente...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProdutos, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        $('.selectize-input').addClass('form-control');
+                                    }
+                                });
+
+
+                            });
+    <?php echo '</script'; ?>
+> -->
 
     <?php echo '<script'; ?>
  type="text/javascript">

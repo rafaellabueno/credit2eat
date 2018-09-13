@@ -4,21 +4,39 @@
 <hr>
 
 <html>
-    <form action="">
-        <div id="selects">
-            <div id="displayOriginal">
-                <div class="form-group" class="col-md-6" style="width:500px; display: none;">
-                    <label><font size=4>Escolha o Produto</font></label>
-                    <select class="produtos-select" required>
-                        {foreach from=$PRO item=P}
-                            <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
-                        {/foreach}
-                    </select>
-                </div>
+    <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
+        <div class="col-md-3" class="col-xs-6" style="width: 400px">
+            <div class="form-group">
+                <label><font size=4>Selecione o Cliente</font></label>
+                <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
+                    {foreach from=$CLI item=C}
+                        <option value="{$C.cli_id}">{$C.cli_nome} - {$C.cli_matricula} </option>
+                    {/foreach}
+                </select>
             </div>
         </div>
     </form>
 </html>
+
+<script>
+    $(document).ready(function () {
+        addProduto();
+    })
+</script>
+
+<script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+    $(document).ready(function () {
+        var oldProdutos = $('#produtos-select').attr("value");
+        $('#produtos-select').selectize({
+            placeholder: 'Digite a matrícula do Cliente...',
+            onInitialize: function () {
+                this.setValue(oldProdutos, true);
+                //$('.selectize-control').addClass('form-group');
+                $('.selectize-input').addClass('form-control');
+            }
+        });
+    });
+</script>
 
 <script type="text/javascript">
     $(document).ready(function () {
