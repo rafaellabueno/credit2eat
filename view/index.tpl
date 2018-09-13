@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png"> <!-- ICONE DO SITE -->
@@ -96,7 +96,7 @@
                                     </a>
                                 </li> 
                                 <li>
-                                    <a href="">
+                                    <a href="estoque">
                                         <i class="pe-7s-refresh-2"></i>
                                         <p href="">Atualizar Estoque</p>
                                     </a>

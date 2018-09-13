@@ -1,28 +1,27 @@
 <?php
-
 $smarty = new Template();
 
 $produtos = new Produtos();
 $produtos->GetProdutos();
 
-$smarty->assign('PRO',$produtos->GetItens());
+$smarty->assign('PRO', $produtos->GetItens());
 
 $produtos = new Clientes();
 $produtos->GetClientes();
 
-$smarty->assign('CLI',$produtos->GetItens());
+$smarty->assign('CLI', $produtos->GetItens());
 
-if(isset($_POST['produto'])){
+if (isset($_POST['produto'])) {
 
-	$realizarVenda = new Vendas();
-	$resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto']);
+    $realizarVenda = new Vendas();
+    $resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto']);
 
-	header("location:./vendas");
+    $quantidade = $realizarVenda->descontarQuantidade($_POST['produto']); //nao está funcionando
+
+    header("location:./vendas");
 }
 
 $smarty->display('realizar_vendas.tpl');
-
-
 ?>
 
 <!-- $_POST['a_prazo'],  -->

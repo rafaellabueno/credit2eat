@@ -29,7 +29,7 @@
 
                 {foreach from=$CLI item=C}
 
-                    <!--<li class="col-md-4">
+                   <!-- <li class="col-md-4">
                     
                     <div class="thumbnail"> 
 
@@ -37,11 +37,10 @@
 
                     <tbody>
                         <tr>			
-                            <th scope="row">{$C.cli_nome}</th>
+                            <th scope="row"><a href="" style="color: #030300">{$C.cli_nome}</a></th>
                             <td>{$C.cli_matricula}</td>
                             <td>{$C.cli_email}</td>
                             <td>{$C.cli_divida}</td>
-
                         </tr>
                     </tbody>
 

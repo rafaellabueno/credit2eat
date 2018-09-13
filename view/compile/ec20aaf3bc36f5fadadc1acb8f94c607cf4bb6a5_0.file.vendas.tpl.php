@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-03 14:55:50
+/* Smarty version 3.1.32, created on 2018-09-13 01:41:19
   from 'D:\xampp\htdocs\credit2eat\view\vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8d2f565c4479_08745936',
+  'unifunc' => 'content_5b99a41f3a71a2_59456357',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ec20aaf3bc36f5fadadc1acb8f94c607cf4bb6a5' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\vendas.tpl',
-      1 => 1535979347,
+      1 => 1536675634,
       2 => 'file',
     ),
   ),
@@ -20,71 +20,71 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8d2f565c4479_08745936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b99a41f3a71a2_59456357 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
-	<h3>Lista de Vendas</h3>
+    <h3>Lista de Vendas</h3>
 </center>
 <hr>
 
 <!--	<section>
-		<center>
-			PAGINAS
-		</center>	
-	</section> -->
+                <center>
+                        PAGINAS
+                </center>	
+        </section> -->
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">Cliente</th>
-					<th scope="col">Valor</th>
-					<th scope="col">Produto</th>
-					<th scope="col">Data</th>
-				</tr>
-			</thead>
-			
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Data</th>
+        </tr>
+    </thead>
 
-	<!-- começa a lista de vendas -->
-	<section id="vendas" class="row">
 
-		<ul style="list-style: none">
-			
-			<div class="row" id="pularlinha">
+    <!-- começa a lista de vendas -->
+    <section id="vendas" class="row">
 
-				<?php
+        <ul style="list-style: none">
+
+            <div class="row" id="pularlinha">
+
+                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['VEN']->value, 'V');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['V']->value) {
 ?>
-					<tbody>
-						<tr>	
-							<th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['id_venda'];?>
+                    <tbody>
+                        <tr>	
+                            <th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['id_venda'];?>
 </th>	
-							<th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['nome_cli'];?>
+                            <th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['nome_cli'];?>
 </th>
-							<td>R$<?php echo $_smarty_tpl->tpl_vars['V']->value['valor_prod'];?>
+                            <td>R$<?php echo $_smarty_tpl->tpl_vars['V']->value['valor_prod'];?>
 </td> <!-- VALOR TEM QUE SER SOMA DO VALOR DOS PRODUTOS DE DENTRO DA TABELA -->
-							<td><?php echo $_smarty_tpl->tpl_vars['V']->value['nome_prod'];?>
+                            <td><?php echo $_smarty_tpl->tpl_vars['V']->value['nome_prod'];?>
 </td>
                             <td><?php echo $_smarty_tpl->tpl_vars['V']->value['data_venda'];?>
 </td>		
-						</tr>
-					</tbody>
-					
-				<?php
+                        </tr>
+                    </tbody>
+
+                <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> 
-					
-				
 
-			</div>
 
-		</ul>
 
-	</section>
+            </div>
 
-	</table>
+        </ul>
 
-	<?php }
+    </section>
+
+</table>
+
+<?php }
 }

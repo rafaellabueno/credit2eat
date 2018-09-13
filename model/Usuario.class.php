@@ -10,6 +10,33 @@ class Usuario extends Conexao {
     public $email = '';
     public $senha = '';
 
+    function GetUsuario() {
+        //busca os produtos
+        $query = "SELECT * FROM usuario WHERE id = $_SESSION[id]";
+
+        $this->ExecuteSQL($query);
+
+        $this->GetLista();
+    }
+
+    private function GetLista() {
+        $i = 1;
+        while ($lista = $this->ListarDados()) {
+            $this->itens[$i] = array(
+                'id' => $lista['id'],
+                'nome' => $lista['nome'],
+                'email' => $lista['email'],
+                'senha' => $lista['senha'],
+            );
+            $i++;
+        }
+    }
+
+    public function alterarUsuario($nome, $email) {
+        $query = "UPDATE usuario SET nome='$nome', email='$email' WHERE id = $_SESSION[id]";
+        $var = $this->ExecuteSQL($query);
+    }
+
     function logar($id, $passwd) {
 
 
@@ -62,5 +89,4 @@ class Usuario extends Conexao {
     }
 
 }
-
-?>
+?>  

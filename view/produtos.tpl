@@ -30,15 +30,9 @@
 
                 {foreach from=$PRO item=P}
 
-                    <!--<li class="col-md-4">
-                    
-                    <div class="thumbnail"> -->
-
-                                        <!--<a href="{$PRO_INFO}/{$P.prod_id}"> -->
-
                     <tbody>
                         <tr>			
-                            <th scope="row">{$P.prod_nome}</th>
+                            <th scope="row"><a href="produtos_info" style="color: #030300">{$P.prod_nome}</a></th>                          
                             <td>R$ {$P.prod_valor}</td>
                             <td>{$P.prod_qnt}</td>
                             <td>{$P.prod_qnt_min}</td>
@@ -46,16 +40,7 @@
                         </tr>
                     </tbody>
 
-
-                    <!--</a>
-
-                    </div> 
-
-                    </li> -->
-
                 {/foreach}
-
-
 
             </div>
 

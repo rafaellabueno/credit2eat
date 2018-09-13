@@ -1,1 +1,4 @@
-<h2>essa é a pagina dos produtos info</h2>
+<center>
+    <h3>Editar Produto</h3> 
+</center>
+<hr>

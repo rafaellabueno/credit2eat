@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 16:36:24
+/* Smarty version 3.1.32, created on 2018-09-12 16:20:02
   from 'D:\xampp\htdocs\credit2eat\view\minhaconta.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9924686d0977_82673786',
+  'unifunc' => 'content_5b992092cb7cb9_75897525',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b9b244b3ab4ece577561b42a510ea52ec487819' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\minhaconta.tpl',
-      1 => 1536762982,
+      1 => 1536762001,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9924686d0977_82673786 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b992092cb7cb9_75897525 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,13 +31,14 @@ function content_5b9924686d0977_82673786 (Smarty_Internal_Template $_smarty_tpl)
     <body>
     <center><h3>Minha Conta</h3></center>
     <hr>
+    <br>
     <h4><b>Atualizar Dados</b></h4>
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['USER']->value, 'U');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['U']->value) {
 ?>
-    <form name="form_cliente" action="./atualizar_usuario" method="post">
+    <form name="form_cliente" action="#" method="post">
     <div class="section">
         <div class="form-group" style="width:300px">
             <label><font size=4>Nome</font></label>
@@ -59,10 +60,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['U']->value) {
             <label><font size=4>Nova Senha</font></label>
             <input type="password" value="" class="form-control" id="usuario_senha" name="usuario_senha">
         </div>
-        <div class="col-md-3">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">Atualizar</button>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
         </div>
     </form>
@@ -85,7 +86,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php echo '</script'; ?>
 >
 
-
-</html>
-<?php }
+</html><?php }
 }
