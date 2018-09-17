@@ -16,6 +16,7 @@
             <th scope="col">Matricula</th>
             <th scope="col">Email</th>
             <th scope="col">Pendências</th>
+            <th scope="col">Ações</th>
         </tr>
     </thead>
 
@@ -41,7 +42,10 @@
                             <td>{$C.cli_matricula}</td>
                             <td>{$C.cli_email}</td>
                             <td>{$C.cli_divida}</td>
-                        </tr>
+                    <form action="./exclui_cliente" method="post">
+                        <td><a href="#" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
+                    </form>
+                    </tr>
                     </tbody>
 
 
