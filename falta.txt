@@ -1,18 +1,25 @@
-//*Arrumar senha; 
+*Fazer uma tela para vendas a vista e uma para venda a prazo
+	*Venda a vista nao precisa informar o cliente
 
-*Arrumar Realizar Venda(pegar valor a partir do produto) e salvar no banco
-*Arrumar Realizar Venda(pegar nome a partir do CLIENTE) e salvar no banco
+*Senha cliente na hora da venda
 
-//*Pegar nome de quem loga; 
+*Criar um teto limite para as dividas
 
-*Pegar clientes e produtos só de quem logou $_SESSION[ID] = blabla ligar tabela venda com usuario;
+*Cadastrar os cursos
+	*Escolher o curso na hora de cadastrar o cliente
+*Cada cliente ter um perfil:
 
-*Fazer ver vendas bonito
+	*Mostrar os produtos que um cliente comprou
+	*Mostrar dívida / Limpar dívida
 
-*FAZER BOTAO DE CANCELAR LIMPAR FORMULARIO
+*Editar/excluir clientes e produtos
 
-*FAZER EDIT DE CLIENTE E PRODUTO
+*Decrescer quantidade de produtos quando vende
 
-*MOODLE 
+*Tela para atualizar estoque
 
-*SENHA DO CLIENTE NA HORA DE VENDER
+*Venda a prazo: 'X' centavos a mais por cada produto
+
+*Configurações:
+	*Definir valor a ser cobrado a mais na venda a prazo
+	*Cadastrar Cursos
