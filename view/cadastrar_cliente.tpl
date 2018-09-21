@@ -20,11 +20,11 @@
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Telefone</font></label>
-            <input type="text" class="form-control" id="cli_telefone" name="cli_telefone" maxlength="9" required>
+            <input type="text" class="form-control" id="cli_telefone" name="cli_telefone" maxlength="9" >
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Email</font></label>
-            <input type="email" class="form-control" id="cli_email" name="cli_email" required>
+            <input type="email" class="form-control" id="cli_email" name="cli_email" >
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Senha</font></label>

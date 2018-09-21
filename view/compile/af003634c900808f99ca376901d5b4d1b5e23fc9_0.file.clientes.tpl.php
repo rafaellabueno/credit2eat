@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-14 00:51:29
+/* Smarty version 3.1.32, created on 2018-09-21 15:06:33
   from 'D:\xampp\htdocs\credit2eat\view\clientes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9ae9f112bbd3_84802040',
+  'unifunc' => 'content_5ba4ecd9b22437_70285172',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af003634c900808f99ca376901d5b4d1b5e23fc9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\clientes.tpl',
-      1 => 1536879086,
+      1 => 1537187994,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9ae9f112bbd3_84802040 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba4ecd9b22437_70285172 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Lista de Clientes</h3> 
 </center>
@@ -76,10 +76,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
 </td>
                             <td><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_divida'];?>
 </td>
-                            <form action="./exclui_cliente" method="post">
-                                <td><a href="#" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
-                            </form>
-                        </tr>
+                    <form action="./exclui_cliente" method="post">
+                        <td><a href="#" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
+                    </form>
+                    </tr>
                     </tbody>
 
 

@@ -28,7 +28,7 @@
         <!--     Fonts and icons     -->
         <link href="{$GET_TEMA}/http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- TEM QUE INSTALAR A FONTE DIREITO --> 
+        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- TEM QUE INSTALAR A FONTE--> 
 
         <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
         <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
                 <div class="sidebar-wrapper">
                     <div class="logo">
                         <a href="./menu" class="simple-text">
-                            <img width="200px" height="50px"  
-                                 src=".\media\imagens\Credit2Eat---Complete.png"/>
+                            <img width="220px" height="55px"  
+                                src=".\media\imagens\Credit2Eat---Complete.png"/>
                         </a>
                     </div>
 
@@ -123,9 +123,15 @@
                                 </li> 
                             </ul>
                         </li>
+                        <li class="">
+                            <a href="#">
+                                <i class="pe-7s-tools"></i>
+                                <p>Configurações</p>
+                            </a>
+                        </li>
                         <li class="active-pro">
                             <a href="{$PAG_MINHACONTA}">
-                                <i class="pe-7s-smile"></i>
+                                <i class="pe-7s-user"></i>
                                 <p>Minha Conta</p>
                             </a>
                         </li>
@@ -143,7 +149,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Credit2Eat<!--{$PAG_NOME}--></a> <!-- PEGAR NOME DA PAGINA -->
+                            <a class="navbar-brand" href="#">Credit2Eat<!--{$PAG_NOME}--></a>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
@@ -192,7 +198,7 @@
                 <div class="content"> <!--// CONTEUDO DA PAGINA -->
                     <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
                         {php}
-                    Rotas::get_Pagina();
+                            Rotas::get_Pagina();
                         {/php}
                     </div>
                 </div>               

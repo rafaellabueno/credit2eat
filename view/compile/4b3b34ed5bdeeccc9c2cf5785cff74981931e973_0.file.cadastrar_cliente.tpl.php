@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 16:23:36
+/* Smarty version 3.1.32, created on 2018-09-21 15:06:23
   from 'D:\xampp\htdocs\credit2eat\view\cadastrar_cliente.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9921689fcc17_56754114',
+  'unifunc' => 'content_5ba4eccf158716_75352491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b3b34ed5bdeeccc9c2cf5785cff74981931e973' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_cliente.tpl',
-      1 => 1536675710,
+      1 => 1537534818,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9921689fcc17_56754114 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba4eccf158716_75352491 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,11 +44,11 @@ function content_5b9921689fcc17_56754114 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Telefone</font></label>
-            <input type="text" class="form-control" id="cli_telefone" name="cli_telefone" maxlength="9" required>
+            <input type="text" class="form-control" id="cli_telefone" name="cli_telefone" maxlength="9" >
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Email</font></label>
-            <input type="email" class="form-control" id="cli_email" name="cli_email" required>
+            <input type="email" class="form-control" id="cli_email" name="cli_email" >
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Senha</font></label>
