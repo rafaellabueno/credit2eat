@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Set-2018 às 15:51
+-- Generation Time: 24-Set-2018 às 16:04
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -50,7 +50,30 @@ INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_
 (6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL),
 (7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL),
 (8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 0, 25, NULL),
-(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL);
+(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL),
+(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL),
+(12, 'maicon da silva', '123454534654', 'maicon@gmail.com', 342894352, '827ccb0eea8a706c4c34a16891f84e7b', 0, 26, NULL),
+(13, '12311', '1123', '', 0, '202cb962ac59075b964b07152d234b70', 0, 25, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cursos`
+--
+
+DROP TABLE IF EXISTS `cursos`;
+CREATE TABLE `cursos` (
+  `id_curso` int(11) NOT NULL,
+  `nome_curso` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cursos`
+--
+
+INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
+(1, '123', 25);
 
 -- --------------------------------------------------------
 
@@ -117,6 +140,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 (25, 'admin', 'admin@admin.com', '$2y$10$ZunbSr7qmQEjGIKwdGq.veIsuH8i.1oEieal7NYJMfboXSUbeHDBy'),
 (26, 'Guilherme Bragagnollo Teixeira', 'guilherme.b.tei@gmail.com', '$2y$10$l3oSNlOx1zFfOHksWRy/JuBXulPYvFwWVNNFeTS4GtYgkpaNqNPOy'),
+(27, 'Elaine Teixeira', 'elaine@email.com', '$2y$10$VFxg6bOlPVv1bU4h7A6B3u34EjOY1BiZCoJEvIL2e38z2Nk2tfZsO'),
+(29, 'PEPE', 'pepe@email.com', '$2y$10$U24clp2EUKb85FntDyfdMOR6ThfoQQ98/1I2oZotjcWsYOj4SP5tG'),
 (30, 'maicon', 'maicon@email.com', '$2y$10$1DAjNIlzVxUW2LgzY2oGo.uB/ceVB00OPU.CeeKfeFUwvOC.PWxu6');
 
 -- --------------------------------------------------------
@@ -148,7 +173,6 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `a_prazo`, `id_cliente`, `data_v
 (9, 0, 8, 8, '2018-09-12 23:46:22', 25),
 (10, 0, 0, 9, '2018-09-12 23:46:23', 25),
 (11, 0, 0, 9, '2018-09-12 23:46:23', 25),
-(12, 0, 0, 10, '2018-09-12 23:46:23', 25),
 (13, 0, 0, 6, '2018-09-12 23:46:23', 25),
 (14, 0, 0, 6, '2018-09-12 23:46:23', 25),
 (15, 0, 0, 7, '2018-09-12 23:46:23', 25),
@@ -181,10 +205,6 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`) VALUES
 (10, 10),
 (11, 7),
 (11, 10),
-(12, 11),
-(12, 9),
-(12, 10),
-(12, 11),
 (13, 7),
 (14, 7),
 (15, 11),
@@ -203,6 +223,12 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cli_id`),
   ADD KEY `id_divida` (`id_divida`),
   ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Indexes for table `cursos`
+--
+ALTER TABLE `cursos`
+  ADD PRIMARY KEY (`id_curso`);
 
 --
 -- Indexes for table `divida`
@@ -246,7 +272,13 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `cursos`
+--
+ALTER TABLE `cursos`
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `divida`
