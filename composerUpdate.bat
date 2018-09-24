@@ -1,1 +1,1 @@
-c:\xampp\php\php.exe composer.phar update
+d:\xampp\php\php.exe composer.phar update

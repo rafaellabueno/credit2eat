@@ -10,6 +10,7 @@ return array(
     'Clientes' => $baseDir . '/model/Clientes.class.php',
     'Conexao' => $baseDir . '/model/Conexao.class.php',
     'Config' => $baseDir . '/model/Config.class.php',
+    'Configuracoes' => $baseDir . '/model/Configuracoes.class.php',
     'EasyPeasyICS' => $vendorDir . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
     'PHPMailer' => $vendorDir . '/phpmailer/phpmailer/class.phpmailer.php',
     'PHPMailerOAuth' => $vendorDir . '/phpmailer/phpmailer/class.phpmaileroauth.php',

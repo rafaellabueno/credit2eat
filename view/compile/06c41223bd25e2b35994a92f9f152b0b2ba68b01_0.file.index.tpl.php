@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-21 15:49:18
+/* Smarty version 3.1.33, created on 2018-09-24 15:52:04
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5ba4f6de5d65f4_16682871',
+  'version' => '3.1.33',
+  'unifunc' => 'content_5ba8ec04c0c796_97134800',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1537537754,
+      1 => 1537797123,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba4f6de5d65f4_16682871 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
     <head>
@@ -160,11 +160,25 @@ function content_5ba4f6de5d65f4_16682871 (Smarty_Internal_Template $_smarty_tpl)
                                 </li> 
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents4" data-parent="#exampleAccordion">
                                 <i class="pe-7s-tools"></i>
                                 <p>Configurações</p>
                             </a>
+                            <ul class="sidenav-second-level collapse" id="collapseComponents4">
+                                <li>
+                                    <a href="cadastrar_curso">
+                                        <i class="pe-7s-plus"></i>
+                                        <p href="">Cadastrar Curso</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="cursos">
+                                        <i class="pe-7s-menu"></i>
+                                        <p href="">Cursos</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="active-pro">
                             <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>

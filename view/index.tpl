@@ -123,11 +123,25 @@
                                 </li> 
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="#">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents4" data-parent="#exampleAccordion">
                                 <i class="pe-7s-tools"></i>
                                 <p>Configurações</p>
                             </a>
+                            <ul class="sidenav-second-level collapse" id="collapseComponents4">
+                                <li>
+                                    <a href="cadastrar_curso">
+                                        <i class="pe-7s-plus"></i>
+                                        <p href="">Cadastrar Curso</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="cursos">
+                                        <i class="pe-7s-menu"></i>
+                                        <p href="">Cursos</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="active-pro">
                             <a href="{$PAG_MINHACONTA}">

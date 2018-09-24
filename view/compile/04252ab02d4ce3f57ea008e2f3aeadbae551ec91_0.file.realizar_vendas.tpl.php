@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-21 15:48:37
+/* Smarty version 3.1.33, created on 2018-09-24 15:36:05
   from 'D:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5ba4f6b5d78ab2_22091564',
+  'version' => '3.1.33',
+  'unifunc' => 'content_5ba8e845959841_38199604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba4f6b5d78ab2_22091564 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ba8e845959841_38199604 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;

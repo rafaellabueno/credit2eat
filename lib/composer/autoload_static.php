@@ -15,6 +15,7 @@ class ComposerStaticInita6ce98e189fa620f588ca354b4de58f8
         'Clientes' => __DIR__ . '/../..' . '/model/Clientes.class.php',
         'Conexao' => __DIR__ . '/../..' . '/model/Conexao.class.php',
         'Config' => __DIR__ . '/../..' . '/model/Config.class.php',
+        'Configuracoes' => __DIR__ . '/../..' . '/model/Configuracoes.class.php',
         'EasyPeasyICS' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
         'PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
         'PHPMailerOAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauth.php',

@@ -22,4 +22,3 @@
 
 *Configurações:
 	*Definir valor a ser cobrado a mais na venda a prazo
-	*Cadastrar Cursos
