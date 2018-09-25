@@ -20,7 +20,7 @@
         <!--  Light Bootstrap Table core CSS    -->
         <link href="{$GET_TEMA}/tema/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
 
-
+        <link href="{$GET_TEMA}/tema/css/selectize.css" rel="stylesheet">
         <!--  CSS for Demo Purpose, don't include it in your project     -->
         <link href="{$GET_TEMA}/tema/css/demo.css" rel="stylesheet" />
 
@@ -231,12 +231,28 @@
 
 
     </body>
+    <div id="ModalDelete" class="modal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+            </div>
 
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
     <!--   Core JS Files   -->
     <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!--  Charts Plugin -->
     <script src="{$GET_TEMA}/tema/js/chartist.min.js"></script>
+
+    <script src="{$GET_TEMA}/tema/js/bootbox.min.js"></script>
 
     <!--  Notifications Plugin    -->
     <script src="{$GET_TEMA}/tema/js/bootstrap-notify.js"></script>
@@ -260,6 +276,31 @@
                                         $('.selectize-input').addClass('form-control');
                                     }
                                 });
+
+                                var oldProduto = '';
+                                $('#produto-select').selectize({
+                                    placeholder: 'Digite o nome do Produto...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProduto, true);
+                                    }
+                                });
+
+
+
+                                /*$('.produtos-select').each(function(id, el){
+                                    var oldProduto = $(el).attr("value");
+
+                                    $(el).selectize({
+                                        placeholder: 'Digite o nome do Produto...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProduto, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+
+
+                                });/**/
 
 
                             });

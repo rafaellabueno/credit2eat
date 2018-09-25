@@ -8,7 +8,7 @@ class Clientes extends Conexao {
 
     function GetClientes() {
         //busca os produtos
-        $query = "SELECT * FROM cliente WHERE id_usuario = $_SESSION[id]";
+        $query = "SELECT * FROM cliente WHERE id_usuario = $_SESSION[id] and valido = 1";
 
         $query .= " ORDER BY cli_nome "; 
 
@@ -19,14 +19,14 @@ class Clientes extends Conexao {
 
     public function setCliente($nome, $matricula, $telefone, $email, $senha) {
 
-        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]');";
+        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]', 1);";
         $var = $this->ExecuteSQL($query);
 
     }
 
     function GetClienteID($id) {
 
-        $query = "SELECT * FROM cliente WHERE cli_id = {$id}";
+        $query = "SELECT * FROM cliente WHERE cli_id = {$id} and valido = 1";
 
         $this->ExecuteSQL($query);
 
@@ -51,16 +51,17 @@ class Clientes extends Conexao {
     }
 
     public function atualizarCliente($nome, $email) {
-        $query = "UPDATE cliente SET nome='$nome', email='$email' WHERE id = #id_usuario"; #PEGAR ID DO CLIENTE
+        $query = "UPDATE cliente SET nome='$nome', email='$email' WHERE id = #id_usuario";
         $var = $this->ExecuteSQL($query);
     }
 
-    public function remove() {
+    public function remove($id) {
         
+        $query = "UPDATE cliente SET valido = 0 where cli_id = $id";
+        $var = $this->ExecuteSQL($query);
+        return $var;
+
     }
 
 }
 ?>
-
-<!--$query = "SELECT * FROM {this->prefix} produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id" 
-query para buscar os produtos de uma categoria específica-->

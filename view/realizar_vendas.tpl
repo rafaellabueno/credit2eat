@@ -17,15 +17,37 @@
 
         button = '<a class="btn btn-danger" role="button" onclick="deletaProduto(\'' + id + '\')" style="color: red;">Apagar Produto</a>'; //BOTAO PARA APAGAR PRODUTO // >APAGAR PRODUTO</A> TEXTO PARA BOTAO
 
-        console.log(button);
         newSelect.find('div').append(button);
 
-        console.log($('.produtos-select').attr("value"));
         $("#selects").append(newSelect.html());
+        $('#selects').find('.produtos-select').each(function(id, el){
+            /*$(el).selectize({
+                placeholder: 'Digite o nome do Produto...',
+                onInitialize: function () {
+                    //this.setValue(oldVal, true);
+                    //$('.selectize-control').addClass('form-group');
+                    //newSelect.find('div select').addClass('form-control');
+                }
+
+            });*/
 
 
 
-        console.log(newSelect.find('div select'));
+        });
+
+        /*newSelect.find('div select').selectize({
+                                    placeholder: 'Digite o nome do Produto...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProduto, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        //newSelect.find('div select').addClass('form-control');
+                                    }
+                                });/**/
+
+
+
+
+        //console.log(newSelect.find('div select'));
         /*newSelect.find('div select').selectize({
          placeholder: 'Digite o nome do Produto...',
          onInitialize: function () {
@@ -60,17 +82,18 @@
             <input type="password" class="form-control" id="senhacliente" name="senhacliente" required>
         </div>
     </div>
-    <div id="selects">
-        <div id="displayOriginal">
-            <div class="form-group" class="col-md-6" style="width:500px; display: none;">
-                <label><font size=4>Escolha o Produto</font></label>
-                <select class="produtos-select" required>
-                    {foreach from=$PRO item=P}
-                        <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
-                    {/foreach}
-                </select>
-            </div>
+
+    <div id="displayOriginal">
+        <div class="form-group" class="col-md-6" style="width:500px; display: none;">
+            <label><font size=4>Escolha o Produto</font></label>
+            <select  class="produtos-select" required>
+                {foreach from=$PRO item=P}
+                    <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
+                {/foreach}
+            </select>
         </div>
+    </div>
+    <div id="selects">
     </div>
     <div class="col-md-12" class="col-xs-6">
         <a onclick="addProduto()" class="btn btn-primary" role="button">

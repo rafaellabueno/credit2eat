@@ -56,6 +56,16 @@ class Produtos extends Conexao {
         //header("location:./menu");
     }
 
+    public function alterarProdutos($qtd, $produto) {
+        $query = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
+        $var = $this->ExecuteSQL($query);
+        $res = $this->ListarDados($query);
+        $qnt = $res['prod_qnt'] + $qtd;
+    
+        $query = "UPDATE produtos SET prod_qnt='$qnt' WHERE prod_id = $produto"; 
+        $var = $this->ExecuteSQL($query);
+    }
+
 }
 
 ?>

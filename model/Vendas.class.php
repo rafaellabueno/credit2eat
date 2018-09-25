@@ -20,33 +20,40 @@ class Vendas extends Conexao {
     }
 
     private function GetLista() {
-        $i = 1;
         while ($lista = $this->ListarDados()) {
 
             $cli = new Clientes();
             $nome_cli = $cli->GetClienteID($lista['id_cliente'])['cli_nome'];
+            if($nome_cli == '') continue;
 
             $prod = new Produtos();
             $nome_prod = $prod->GetProdutosID($lista['produto_id'])['prod_nome'];
             $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
             $qntd_prod = $prod->GetProdutosID($lista['produto_id'])['prod_qnt'];
+            $data = $lista['data_venda'];
 
+            $data = strtotime($data);
+            $data = date('H:i | d/m/Y',$data);  //DATA         
 
-            /* $data = strtotime($data_venda);
-              $data_venda = date('H:i:s D-m-y',$data); */ //DATA            
+            if(isset($this->itens[$lista['id_venda']])){
+                
+                $this->itens[$lista['id_venda']]['valor_prod']= number_format($this->itens[$lista['id_venda']]['valor_prod']+$valor_prod, 2, '.', '');
+                $this->itens[$lista['id_venda']]['nome_prod'].=', '.$nome_prod;
+            }else{
 
-            $this->itens[$i] = array(
-                'id_venda' => $lista['id_venda'],
-                'a_prazo' => $lista['a_prazo'],
-                'id_cliente' => $lista['id_cliente'],
-                'produto_id' => $lista['produto_id'],
-                'data_venda' => $lista['data_venda'],
-                'nome_cli' => $nome_cli,
-                'nome_prod' => $nome_prod,
-                'valor_prod' => $valor_prod,
-                'qntd_prod' => $qntd_prod
-            );
-            $i++;
+                $this->itens[$lista['id_venda']] = array(
+                    'id_venda' => $lista['id_venda'],
+                    'a_prazo' => $lista['a_prazo'],
+                    'id_cliente' => $lista['id_cliente'],
+                    'produto_id' => $lista['produto_id'],
+                    'data_venda' => $data,
+                    'nome_cli' => $nome_cli,
+                    'nome_prod' => $nome_prod,
+                    'valor_prod' => $valor_prod,
+                    'qntd_prod' => $qntd_prod
+                );
+
+            }
         }
     }
 
@@ -68,20 +75,3 @@ class Vendas extends Conexao {
 
 }
 ?>
-
-<!-- $query = "INSERT INTO venda (cliente, a_prazo) VALUES ('$cliente','$valorp','$aprazo')"; QUERY COM A PRAZO -->
-
-
-<!-- private function setVenda($id_cliente, $valor, $data, $id_produto, $aprazo){
-        $query = "INSERT INTO venda ('$id_cliente','$valor_venda','$a_prazo') VALUES ('$cliente','$valor','$aprazo')";
-        $var = $this->ExecuteSQL($query);
-}-->
-
-<!-- private function setVendas($cliente, $valor, $data, $produto, $aprazo){
-        $valorp = "SELECT prod_valor FROM produtos p WHERE p.prod_id = $produto";
-        $query = "INSERT INTO venda (id_cliente, valor_venda, a_prazo, data_venda) VALUES ('$cliente','$valorp','$aprazo','$data')";
-        $id = mysqli_insert_id();
-        $query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $id_produto);";
-        $var = $this->ExecuteSQL($query);
-        var2 = $this->ExecuteSQL($query2);
-} ExecuteSQL --> 

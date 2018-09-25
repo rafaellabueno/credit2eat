@@ -249,10 +249,6 @@
             }
         </script>
 
-        {php}
-                    Rotas::get_Pagina();
-                    //var_dump(Rotas::$pag);
-        {/php}
     </body>
 
 </html>

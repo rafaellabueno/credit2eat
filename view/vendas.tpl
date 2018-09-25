@@ -12,7 +12,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">ID</th>
             <th scope="col">Cliente</th>
             <th scope="col">Valor</th>
             <th scope="col">Produto</th>
@@ -31,9 +30,8 @@
                 {foreach from=$VEN item=V}
                     <tbody>
                         <tr>	
-                            <th scope="row">{$V.id_venda}</th>	
                             <th scope="row">{$V.nome_cli}</th>
-                            <td>R${$V.valor_prod}</td> <!-- VALOR TEM QUE SER SOMA DO VALOR DOS PRODUTOS DE DENTRO DA TABELA -->
+                            <td>R${$V.valor_prod}</td> 
                             <td>{$V.nome_prod}</td>
                             <td>{$V.data_venda}</td>		
                         </tr>

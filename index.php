@@ -26,30 +26,54 @@ $sql = "SELECT * FROM produtos";
 $dados->ExecuteSQL($sql);
 $dados->TotalDados();
 
+
+$path = '';
+
+
 if(isset($_REQUEST['pag'])){
-	if($_REQUEST['pag'] == 'logout'){
+	$path = explode('/',  $_REQUEST['pag']);
+	foreach($path as $str){
+		if($str != ''){
+			$path = $str;
+			break;
+		}
+	}
+
+
+	if($path == 'logout'){
 		session_destroy();
 		header("location:./");
+		return;
+	}
+
+	if($path == 'excluir'){
+
+		$cliente = new Clientes();
+		$id = explode('/',$_REQUEST['pag']);
+		$id = $id[sizeof($id)-1];
+		echo $cliente->remove($id);
+
+		return;
 	}
 }
 if(isset($_SESSION['id'])){
 	$smarty->display('index.tpl');
 }
 else{
-	$_REQUEST['pag'] = isset($_REQUEST['pag']) ? $_REQUEST['pag'] : '';
-		if($_REQUEST['pag'] == 'cadastro'){
-			$smarty->display('cadastro.tpl');
-		}else{
-				if((isset($_POST['nome']) && isset($_POST['senha']))){
-					$user = new Usuario();
-					$msg = $user->logar($_POST['nome'], $_POST['senha']);
-				}else{
-					$smarty->display('login.tpl');
-				}
-		}
+	if($path == 'cadastro'){
+		$smarty->display('cadastro.tpl');
+	}else{
+			if((isset($_POST['nome']) && isset($_POST['senha']))){
+				$user = new Usuario();
+				$msg = $user->logar($_POST['nome'], $_POST['senha']);
+			}else{
+				$smarty->display('login.tpl');
+			}
+	}
 
 
 	
 }
+
 
 ?>
