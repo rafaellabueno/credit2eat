@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-24 15:54:52
+/* Smarty version 3.1.33, created on 2018-09-26 00:49:41
   from 'D:\xampp\htdocs\credit2eat\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ba8ecaca17e18_06654878',
+  'unifunc' => 'content_5baabb85e4b848_51815399',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4af714d3c61d5fcd29f604c12bb9d74a851d33bf' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
-      1 => 1536846194,
+      1 => 1537915763,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba8ecaca17e18_06654878 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5baabb85e4b848_51815399 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -280,10 +280,6 @@ function content_5ba8ecaca17e18_06654878 (Smarty_Internal_Template $_smarty_tpl)
         <?php echo '</script'; ?>
 >
 
-        <?php 
-                    Rotas::get_Pagina();
-                    //var_dump(Rotas::$pag);
-        ?>
     </body>
 
 </html>

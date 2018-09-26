@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-24 15:52:04
+/* Smarty version 3.1.33, created on 2018-09-26 01:43:59
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ba8ec04c0c796_97134800',
+  'unifunc' => 'content_5baac83f396686_69795728',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1537797123,
+      1 => 1537919038,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5baac83f396686_69795728 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
     <head>
@@ -47,7 +47,8 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
 
-
+        <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/css/selectize.css" rel="stylesheet">
         <!--  CSS for Demo Purpose, don't include it in your project     -->
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/demo.css" rel="stylesheet" />
@@ -141,14 +142,20 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
-                                <i class="pe-7s-cash"></i>
+                                <i class="pe-7s-cart"></i>
                                 <p>Vendas</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents3">
                                 <li>
+                                    <a href="venda_vista">
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Venda à Vista</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="realizar_vendas">
-                                        <i class="pe-7s-plus"></i>
-                                        <p href="">Realizar Venda</p>
+                                        <i class="pe-7s-wallet"></i>
+                                        <p href="">Venda a Prazo</p>
                                     </a>
                                 </li>
                                 <li>
@@ -258,7 +265,7 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
                 </div>               
 
                 <!--RODAPÉ -->
-                <footer class="footer">
+                <footer class="sticky-footer">
                     <p class="copyright pull-right">
                     <center>
                         <h5>&copy; <?php echo '<script'; ?>
@@ -274,7 +281,24 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
 
 
     </body>
+    <div id="ModalDelete" class="modal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+            </div>
 
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/selectize.min.js"><?php echo '</script'; ?>
+>
     <!--   Core JS Files   -->
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
@@ -285,6 +309,11 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/chartist.min.js"><?php echo '</script'; ?>
+>
+
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/bootbox.min.js"><?php echo '</script'; ?>
 >
 
     <!--  Notifications Plugin    -->
@@ -322,6 +351,31 @@ function content_5ba8ec04c0c796_97134800 (Smarty_Internal_Template $_smarty_tpl)
                                         $('.selectize-input').addClass('form-control');
                                     }
                                 });
+
+                                var oldProduto = '';
+                                $('#produto-select').selectize({
+                                    placeholder: 'Digite o nome do Produto...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProduto, true);
+                                    }
+                                });
+
+
+
+                                /*$('.produtos-select').each(function(id, el){
+                                    var oldProduto = $(el).attr("value");
+
+                                    $(el).selectize({
+                                        placeholder: 'Digite o nome do Produto...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProduto, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+
+
+                                });/**/
 
 
                             });

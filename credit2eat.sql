@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Set-2018 às 16:04
--- Versão do servidor: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: 26-Set-2018 às 00:52
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,22 +38,22 @@ CREATE TABLE `cliente` (
   `cli_senha` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `cli_divida` float DEFAULT '0',
   `id_usuario` int(11) DEFAULT NULL,
-  `id_divida` int(11) DEFAULT NULL
+  `id_divida` int(11) DEFAULT NULL,
+  `valido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`) VALUES
-(5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 0, 25, NULL),
-(6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL),
-(7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL),
-(8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 0, 25, NULL),
-(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL),
-(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL),
-(12, 'maicon da silva', '123454534654', 'maicon@gmail.com', 342894352, '827ccb0eea8a706c4c34a16891f84e7b', 0, 26, NULL),
-(13, '12311', '1123', '', 0, '202cb962ac59075b964b07152d234b70', 0, 25, NULL);
+INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`, `valido`) VALUES
+(5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 0, 25, NULL, 0),
+(6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL, 0),
+(7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL, 1),
+(8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 0, 25, NULL, 1),
+(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL, 0),
+(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL, 0),
+(12, 'maicon da silva', '123454534654', 'maicon@gmail.com', 342894352, '827ccb0eea8a706c4c34a16891f84e7b', 0, 26, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,8 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
-(1, '123', 25);
+(1, '123', 25),
+(2, 'RE', 25);
 
 -- --------------------------------------------------------
 
@@ -112,12 +113,13 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
 (6, 'Pizza', 5.00, 10, 20, 0, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, 20, 0, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 40, 0, NULL, 25),
+(7, 'Enroladinho', 2.50, 15, -47, 0, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 46, 0, NULL, 25),
 (9, 'Pastel de Carne', 4.50, 12, 20, 0, NULL, 25),
 (10, 'Refrigerante 2L', 8.00, 12, 24, 0, NULL, 25),
-(11, 'Chocolate', 10.00, 10, 7, 0, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, 20, 0, NULL, 25);
+(11, 'Chocolate', 10.00, 10, 5, 0, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, 20, 0, NULL, 25),
+(13, 'LALALALALALALALALALALALALALALALALALALALA', 999.99, 12, 123, 0, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -173,12 +175,21 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `a_prazo`, `id_cliente`, `data_v
 (9, 0, 8, 8, '2018-09-12 23:46:22', 25),
 (10, 0, 0, 9, '2018-09-12 23:46:23', 25),
 (11, 0, 0, 9, '2018-09-12 23:46:23', 25),
+(12, 0, 0, 10, '2018-09-12 23:46:23', 25),
 (13, 0, 0, 6, '2018-09-12 23:46:23', 25),
 (14, 0, 0, 6, '2018-09-12 23:46:23', 25),
 (15, 0, 0, 7, '2018-09-12 23:46:23', 25),
 (16, 0, 0, 6, '2018-09-12 23:46:23', 25),
 (17, 0, 0, 11, '2018-09-12 23:45:47', 25),
-(18, 0, 0, 11, '2018-09-12 23:54:44', 25);
+(18, 0, 0, 11, '2018-09-12 23:54:44', 25),
+(19, 0, 0, 5, '2018-09-19 13:24:53', 25),
+(20, 0, 0, 5, '2018-09-19 13:30:27', 25),
+(21, 0, 0, 7, '2018-09-19 13:44:32', 25),
+(22, 0, 0, 9, '2018-09-19 17:18:00', 25),
+(24, 0, 0, 8, '2018-09-25 18:32:09', 25),
+(25, 0, 0, 8, '2018-09-25 18:53:55', 25),
+(26, 0, 0, 8, '2018-09-25 18:54:37', 25),
+(27, 0, 0, 8, '2018-09-25 19:00:03', 25);
 
 -- --------------------------------------------------------
 
@@ -210,7 +221,30 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`) VALUES
 (15, 11),
 (16, 12),
 (17, 12),
-(18, 11);
+(18, 11),
+(24, 12),
+(24, 6),
+(25, 7),
+(25, 6),
+(25, 7),
+(25, 8),
+(25, 9),
+(25, 11),
+(26, 11),
+(26, 12),
+(26, 7),
+(26, 8),
+(26, 9),
+(26, 6),
+(26, 10),
+(27, 11),
+(27, 12),
+(27, 7),
+(27, 8),
+(27, 13),
+(27, 9),
+(27, 6),
+(27, 10);
 
 --
 -- Indexes for dumped tables
@@ -272,13 +306,13 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `divida`
@@ -290,7 +324,7 @@ ALTER TABLE `divida`
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `usuario`
@@ -302,7 +336,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables

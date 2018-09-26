@@ -61,7 +61,7 @@
 </script>
 
 <center>
-    <h3>Realizar Venda</h3> 
+    <h3>Realizar Venda a Prazo</h3> 
 </center>
 <hr>
 <br>
@@ -102,10 +102,7 @@
     </div>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">VENDA À VISTA</button>
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-warning btn-block" name="botao3">VENDA A PRAZO</button>
+            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
         </div>
         <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>

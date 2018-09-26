@@ -105,14 +105,20 @@
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents3" data-parent="#exampleAccordion">
-                                <i class="pe-7s-cash"></i>
+                                <i class="pe-7s-cart"></i>
                                 <p>Vendas</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents3">
                                 <li>
+                                    <a href="venda_vista">
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Venda à Vista</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="realizar_vendas">
-                                        <i class="pe-7s-plus"></i>
-                                        <p href="">Realizar Venda</p>
+                                        <i class="pe-7s-wallet"></i>
+                                        <p href="">Venda a Prazo</p>
                                     </a>
                                 </li>
                                 <li>
@@ -218,7 +224,7 @@
                 </div>               
 
                 <!--RODAPÉ -->
-                <footer class="footer">
+                <footer class="sticky-footer">
                     <p class="copyright pull-right">
                     <center>
                         <h5>&copy; <script>document.write(new Date().getFullYear())</script> <a href="{$GET_HOME}">Credit2Eat</a></h5>

@@ -1,5 +1,5 @@
 <center>
-    <h3>Atualizar Estoque</h3> 
+    <h3>Realizar Venda à Vista</h3> 
 </center>
 <hr>
 <br>
@@ -23,21 +23,25 @@
     </div>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-3">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">ATUALIZAR ESTOQUE</button>
+            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+        </div>
+        <div class="col-md-3">
+            <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
         </div>
     </div>
+</div>
 </form>
 <hr>
-</div>
+
 
 
 
 
 <script>
     function limpa() {
-        if (document.getElementById('cliente').value != "") {
-            document.getElementById('cliente').value = "";
-            header('location:./realizar_vendas');
+        if (document.getElementById('produto').value != "") {
+            document.getElementById('produto').value = "";
+            header('location:./venda_vista');
         }
     }
 </script>

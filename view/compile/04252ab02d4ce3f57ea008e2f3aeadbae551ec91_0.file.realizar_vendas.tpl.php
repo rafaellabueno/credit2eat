@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-24 15:36:05
+/* Smarty version 3.1.33, created on 2018-09-26 01:13:47
   from 'D:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ba8e845959841_38199604',
+  'unifunc' => 'content_5baac12bae5808_45878683',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '04252ab02d4ce3f57ea008e2f3aeadbae551ec91' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1536844992,
+      1 => 1537917205,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba8e845959841_38199604 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5baac12bae5808_45878683 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -41,15 +41,37 @@ echo '<script'; ?>
 
         button = '<a class="btn btn-danger" role="button" onclick="deletaProduto(\'' + id + '\')" style="color: red;">Apagar Produto</a>'; //BOTAO PARA APAGAR PRODUTO // >APAGAR PRODUTO</A> TEXTO PARA BOTAO
 
-        console.log(button);
         newSelect.find('div').append(button);
 
-        console.log($('.produtos-select').attr("value"));
         $("#selects").append(newSelect.html());
+        $('#selects').find('.produtos-select').each(function(id, el){
+            /*$(el).selectize({
+                placeholder: 'Digite o nome do Produto...',
+                onInitialize: function () {
+                    //this.setValue(oldVal, true);
+                    //$('.selectize-control').addClass('form-group');
+                    //newSelect.find('div select').addClass('form-control');
+                }
+
+            });*/
 
 
 
-        console.log(newSelect.find('div select'));
+        });
+
+        /*newSelect.find('div select').selectize({
+                                    placeholder: 'Digite o nome do Produto...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProduto, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        //newSelect.find('div select').addClass('form-control');
+                                    }
+                                });/**/
+
+
+
+
+        //console.log(newSelect.find('div select'));
         /*newSelect.find('div select').selectize({
          placeholder: 'Digite o nome do Produto...',
          onInitialize: function () {
@@ -64,7 +86,7 @@ echo '<script'; ?>
 >
 
 <center>
-    <h3>Realizar Venda</h3> 
+    <h3>Realizar Venda a Prazo</h3> 
 </center>
 <hr>
 <br>
@@ -96,27 +118,28 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <input type="password" class="form-control" id="senhacliente" name="senhacliente" required>
         </div>
     </div>
-    <div id="selects">
-        <div id="displayOriginal">
-            <div class="form-group" class="col-md-6" style="width:500px; display: none;">
-                <label><font size=4>Escolha o Produto</font></label>
-                <select class="produtos-select" required>
-                    <?php
+
+    <div id="displayOriginal">
+        <div class="form-group" class="col-md-6" style="width:500px; display: none;">
+            <label><font size=4>Escolha o Produto</font></label>
+            <select  class="produtos-select" required>
+                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ?>
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
  - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
  </option>
-                    <?php
+                <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                </select>
-            </div>
+            </select>
         </div>
+    </div>
+    <div id="selects">
     </div>
     <div class="col-md-12" class="col-xs-6">
         <a onclick="addProduto()" class="btn btn-primary" role="button">
@@ -125,10 +148,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">VENDA À VISTA</button>
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-warning btn-block" name="botao3">VENDA A PRAZO</button>
+            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
         </div>
         <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
