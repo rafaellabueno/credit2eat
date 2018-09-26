@@ -18,6 +18,14 @@
             <label><font size=4>Matrícula do Cliente</font></label>
             <input type="text" class="form-control" id="cli_matricula" name="cli_matricula" required>
         </div>
+        <div class="form-group">
+            <label><font size=4>Selecione o Curso</font></label>
+            <select id="curso-select" name="curso" value="{$C.id_curso}" required>
+                {foreach from=$CUR item=C}
+                    <option value="{$C.id_curso}">{$C.nome_curso} </option>
+                {/foreach}
+            </select>
+        </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Telefone</font></label>
             <input type="text" class="form-control" id="cli_telefone" name="cli_telefone" maxlength="9" >
@@ -43,16 +51,29 @@
     </form>
 </body>
 
+<script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+    $(document).ready(function () {
+    var oldCurso = $('#curso-select').attr("value");
+            $('#curso-select').selectize({
+    placeholder: 'Selecione o curso...',
+            onInitialize: function () {
+            this.setValue(oldCurso, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+            }
+    });</script>
+
+
 <script>
-    function limpa() {
-        if (document.getElementById('cli_nome').value != "") {
+            function limpa() {
+            if (document.getElementById('cli_nome').value != "") {
             document.getElementById('cli_nome').value = "";
-            document.getElementById('cli_matricula').value = "";
-            document.getElementById('cli_telefone').value = "";
-            document.getElementById('cli_email').value = "";
-            document.getElementById('cli_senha').value = "";
-        }
-    }
+                    document.getElementById('cli_matricula').value = "";
+                    document.getElementById('cli_telefone').value = "";
+                    document.getElementById('cli_email').value = "";
+                    document.getElementById('cli_senha').value = "";
+            }
+            }
 </script>
 
 </html>

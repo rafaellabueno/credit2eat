@@ -24,7 +24,8 @@ class Vendas extends Conexao {
 
             $cli = new Clientes();
             $nome_cli = $cli->GetClienteID($lista['id_cliente'])['cli_nome'];
-            if($nome_cli == '') continue;
+            if ($nome_cli == '')
+                continue;
 
             $prod = new Produtos();
             $nome_prod = $prod->GetProdutosID($lista['produto_id'])['prod_nome'];
@@ -33,13 +34,13 @@ class Vendas extends Conexao {
             $data = $lista['data_venda'];
 
             $data = strtotime($data);
-            $data = date('H:i | d/m/Y',$data);  //DATA         
+            $data = date('H:i | d/m/Y', $data);  //DATA         d/m/Y | H:i
 
-            if(isset($this->itens[$lista['id_venda']])){
-                
-                $this->itens[$lista['id_venda']]['valor_prod']= number_format($this->itens[$lista['id_venda']]['valor_prod']+$valor_prod, 2, '.', '');
-                $this->itens[$lista['id_venda']]['nome_prod'].=', '.$nome_prod;
-            }else{
+            if (isset($this->itens[$lista['id_venda']])) {
+
+                $this->itens[$lista['id_venda']]['valor_prod'] = number_format($this->itens[$lista['id_venda']]['valor_prod'] + $valor_prod, 2, '.', '');
+                $this->itens[$lista['id_venda']]['nome_prod'] .= ', ' . $nome_prod;
+            } else {
 
                 $this->itens[$lista['id_venda']] = array(
                     'id_venda' => $lista['id_venda'],
@@ -52,7 +53,6 @@ class Vendas extends Conexao {
                     'valor_prod' => $valor_prod,
                     'qntd_prod' => $qntd_prod
                 );
-
             }
         }
     }
@@ -74,4 +74,5 @@ class Vendas extends Conexao {
     }
 
 }
+
 ?>

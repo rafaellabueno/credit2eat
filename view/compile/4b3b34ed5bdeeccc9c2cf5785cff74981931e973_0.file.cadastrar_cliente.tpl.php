@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-24 15:38:51
+/* Smarty version 3.1.33, created on 2018-09-26 14:57:27
   from 'D:\xampp\htdocs\credit2eat\view\cadastrar_cliente.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ba8e8eb5b08f2_83112367',
+  'unifunc' => 'content_5bab8237445518_51577576',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b3b34ed5bdeeccc9c2cf5785cff74981931e973' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_cliente.tpl',
-      1 => 1537534818,
+      1 => 1537966646,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ba8e8eb5b08f2_83112367 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bab8237445518_51577576 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,6 +41,24 @@ function content_5ba8e8eb5b08f2_83112367 (Smarty_Internal_Template $_smarty_tpl)
         <div class="form-group" style="width:200px">
             <label><font size=4>Matrícula do Cliente</font></label>
             <input type="text" class="form-control" id="cli_matricula" name="cli_matricula" required>
+        </div>
+        <div class="form-group">
+            <label><font size=4>Selecione o Curso</font></label>
+            <select id="curso-select" name="curso" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['id_curso'];?>
+" required>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CUR']->value, 'C');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['C']->value['id_curso'];?>
+"><?php echo $_smarty_tpl->tpl_vars['C']->value['nome_curso'];?>
+ </option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Telefone</font></label>
@@ -66,6 +84,22 @@ function content_5ba8e8eb5b08f2_83112367 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </form>
 </body>
+
+<?php echo '<script'; ?>
+ type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+                            $(document).ready(function () {
+                                var oldCurso = $('#curso-select').attr("value");
+                                $('#curso-select').selectize({
+                                    placeholder: 'Selecione o curso...',
+                                    onInitialize: function () {
+                                        this.setValue(oldCurso, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        $('.selectize-input').addClass('form-control');
+                                    }
+                                });
+<?php echo '</script'; ?>
+>
+
 
 <?php echo '<script'; ?>
 >

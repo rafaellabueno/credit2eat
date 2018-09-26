@@ -11,7 +11,7 @@ $produtos->GetClientes();
 
 $smarty->assign('CLI', $produtos->GetItens());
 
-if (isset($_POST['produto'])) {
+if (isset($_POST['produto']) && isset($_POST['cliente'])) {
 
     $realizarVenda = new Vendas();
     $resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto']);

@@ -3,6 +3,7 @@
     <center>
         <h3>Lista de Clientes</h3> 
     </center>
+    <!--<div style="text-align: right;"><a href="./cadastrar_cliente"><button class="btn btn-primary">Cadastrar Novo Cliente</button></a></div>-->
     <hr>
 
     <!--<section>
@@ -45,7 +46,7 @@
                                 <td>{$C.cli_email}</td>
                                 <td>{$C.cli_divida}</td>
                                 <td><a href="javascript:void(0);" class="excluir" id-pessoa="{$C.cli_id}" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
-                        </tr>
+                            </tr>
                         </tbody>
 
 
@@ -74,24 +75,24 @@
 
 
 <script type="text/javascript">
-    $('.excluir').click(function(){
+    $('.excluir').click(function () {
         var idPessoa = $(this).attr('id-pessoa');
 
         $("#ModalDelete").modal();
 
-        $('.excluirCliente').click(function(){
-            var urlConsulta = './excluir/'+idPessoa;
+        $('.excluirCliente').click(function () {
+            var urlConsulta = './excluir/' + idPessoa;
             console.log(idPessoa);
-            $.get(urlConsulta, function (res){
+            $.get(urlConsulta, function (res) {
                 console.log(res);
-                if(res === '1'){
-                    bootbox.alert("Cliente excluído com sucesso", function(){
+                if (res === '1') {
+                    bootbox.alert("Cliente excluído com sucesso", function () {
 
                         window.location.reload();
 
                     });
-                }else{
-                    bootbox.alert("Senha incorreta", function(){
+                } else {
+                    bootbox.alert("Falhou", function () {
 
 
                         window.location.reload();

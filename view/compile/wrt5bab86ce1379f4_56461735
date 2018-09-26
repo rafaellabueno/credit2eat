@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 15:17:03
+/* Smarty version 3.1.33, created on 2018-09-26 15:17:02
   from 'D:\xampp\htdocs\credit2eat\view\vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bab86cf974348_88040476',
+  'unifunc' => 'content_5bab86ce135071_99357625',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bab86cf974348_88040476 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bab86ce135071_99357625 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Lista de Vendas</h3>
 </center>

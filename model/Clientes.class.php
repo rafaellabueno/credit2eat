@@ -10,18 +10,17 @@ class Clientes extends Conexao {
         //busca os produtos
         $query = "SELECT * FROM cliente WHERE id_usuario = $_SESSION[id] and valido = 1";
 
-        $query .= " ORDER BY cli_nome "; 
+        $query .= " ORDER BY cli_nome ";
 
         $this->ExecuteSQL($query);
 
         $this->GetLista();
     }
 
-    public function setCliente($nome, $matricula, $telefone, $email, $senha) {
+    public function setCliente($nome, $matricula, $telefone, $email, $senha, $curso) {
 
-        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]', 1);";
+        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]', 1, '$curso');";
         $var = $this->ExecuteSQL($query);
-
     }
 
     function GetClienteID($id) {
@@ -43,7 +42,8 @@ class Clientes extends Conexao {
                 'cli_telefone' => $lista['cli_telefone'],
                 'cli_email' => $lista['cli_email'],
                 'cli_senha' => $lista['cli_senha'],
-                'cli_divida' => $lista['cli_divida']
+                'cli_divida' => $lista['cli_divida'],
+                'cli_curso' => $lista['cli_curso']
                     //'id_usuario' => $lista['id_usuario']
             );
             $i++;
@@ -56,12 +56,12 @@ class Clientes extends Conexao {
     }
 
     public function remove($id) {
-        
+
         $query = "UPDATE cliente SET valido = 0 where cli_id = $id";
         $var = $this->ExecuteSQL($query);
         return $var;
-
     }
 
 }
+
 ?>

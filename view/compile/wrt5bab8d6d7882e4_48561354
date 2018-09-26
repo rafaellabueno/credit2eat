@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 15:45:18
+/* Smarty version 3.1.33, created on 2018-09-26 15:45:17
   from 'D:\xampp\htdocs\credit2eat\view\estoque.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bab8d6eca6789_48198607',
+  'unifunc' => 'content_5bab8d6d7853d0_21507532',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bab8d6eca6789_48198607 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bab8d6d7853d0_21507532 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Atualizar Estoque</h3> 
 </center>

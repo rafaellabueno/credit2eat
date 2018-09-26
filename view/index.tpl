@@ -52,7 +52,7 @@
                     <div class="logo">
                         <a href="./menu" class="simple-text">
                             <img width="220px" height="55px"  
-                                src=".\media\imagens\Credit2Eat---Complete.png"/>
+                                 src=".\media\imagens\Credit2Eat---Complete.png"/>
                         </a>
                     </div>
 
@@ -199,7 +199,7 @@
                                     <a href="{$PAG_MINHACONTA}">
                                         <p>
                                             {php}
-                                        echo $_SESSION['nome'];
+                                                echo $_SESSION['nome'];
                                             {/php}
                                         </p> 
                                     </a>
@@ -227,6 +227,7 @@
                 <footer class="sticky-footer">
                     <p class="copyright pull-right">
                     <center>
+                        <hr>
                         <h5>&copy; <script>document.write(new Date().getFullYear())</script> <a href="{$GET_HOME}">Credit2Eat</a></h5>
                     </center>
                     </p>
@@ -238,19 +239,19 @@
 
     </body>
     <div id="ModalDelete" class="modal" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
-            </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                </div>
 
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
     <!--   Core JS Files   -->
     <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
@@ -294,19 +295,19 @@
 
 
                                 /*$('.produtos-select').each(function(id, el){
-                                    var oldProduto = $(el).attr("value");
-
-                                    $(el).selectize({
-                                        placeholder: 'Digite o nome do Produto...',
-                                        onInitialize: function () {
-                                            this.setValue(oldProduto, true);
-                                            //$('.selectize-control').addClass('form-group');
-                                            $('.selectize-input').addClass('form-control');
-                                        }
-                                    });
-
-
-                                });/**/
+                                 var oldProduto = $(el).attr("value");
+                                 
+                                 $(el).selectize({
+                                 placeholder: 'Digite o nome do Produto...',
+                                 onInitialize: function () {
+                                 this.setValue(oldProduto, true);
+                                 //$('.selectize-control').addClass('form-group');
+                                 $('.selectize-input').addClass('form-control');
+                                 }
+                                 });
+                                 
+                                 
+                                 });/**/
 
 
                             });

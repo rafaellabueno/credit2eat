@@ -14,8 +14,8 @@
         <tr>
             <th scope="col">Cliente</th>
             <th scope="col">Valor</th>
-            <th scope="col">Produto</th>
-            <th scope="col">Data</th>
+            <th scope="col">Produto(s)</th>
+            <th scope="col">Hora/data</th>
         </tr>
     </thead>
 

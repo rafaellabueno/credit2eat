@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 01:43:59
+/* Smarty version 3.1.33, created on 2018-09-26 15:48:10
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baac83f396686_69795728',
+  'unifunc' => 'content_5bab8e1a7ae295_29091291',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1537919038,
+      1 => 1537969689,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baac83f396686_69795728 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bab8e1a7ae295_29091291 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
     <head>
@@ -240,7 +240,7 @@ function content_5baac83f396686_69795728 (Smarty_Internal_Template $_smarty_tpl)
 ">
                                         <p>
                                             <?php 
-                                        echo $_SESSION['nome'];
+                                                echo $_SESSION['nome'];
                                             ?>
                                         </p> 
                                     </a>
@@ -268,6 +268,7 @@ function content_5baac83f396686_69795728 (Smarty_Internal_Template $_smarty_tpl)
                 <footer class="sticky-footer">
                     <p class="copyright pull-right">
                     <center>
+                        <hr>
                         <h5>&copy; <?php echo '<script'; ?>
 >document.write(new Date().getFullYear())<?php echo '</script'; ?>
 > <a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
