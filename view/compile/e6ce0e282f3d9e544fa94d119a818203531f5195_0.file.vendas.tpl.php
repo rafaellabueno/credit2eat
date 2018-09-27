@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-25 20:49:59
+/* Smarty version 3.1.33, created on 2018-09-26 22:32:33
   from 'C:\xampp\htdocs\credit2eat\view\vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baa83575cd669_66047082',
+  'unifunc' => 'content_5babece1ea38f0_47986501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e6ce0e282f3d9e544fa94d119a818203531f5195' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\vendas.tpl',
-      1 => 1537900663,
+      1 => 1537972197,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baa83575cd669_66047082 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5babece1ea38f0_47986501 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Lista de Vendas</h3>
 </center>
@@ -37,8 +37,8 @@ function content_5baa83575cd669_66047082 (Smarty_Internal_Template $_smarty_tpl)
         <tr>
             <th scope="col">Cliente</th>
             <th scope="col">Valor</th>
-            <th scope="col">Produto</th>
-            <th scope="col">Data</th>
+            <th scope="col">Produto(s)</th>
+            <th scope="col">Hora/data</th>
         </tr>
     </thead>
 

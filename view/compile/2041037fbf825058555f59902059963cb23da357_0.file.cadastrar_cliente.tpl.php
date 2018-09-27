@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-25 18:23:42
+/* Smarty version 3.1.33, created on 2018-09-26 16:30:31
   from 'C:\xampp\htdocs\credit2eat\view\cadastrar_cliente.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baa610eb4b793_55911137',
+  'unifunc' => 'content_5bab98071b7457_75470289',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2041037fbf825058555f59902059963cb23da357' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_cliente.tpl',
-      1 => 1537808123,
+      1 => 1537972197,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baa610eb4b793_55911137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bab98071b7457_75470289 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,6 +41,24 @@ function content_5baa610eb4b793_55911137 (Smarty_Internal_Template $_smarty_tpl)
         <div class="form-group" style="width:200px">
             <label><font size=4>Matrícula do Cliente</font></label>
             <input type="text" class="form-control" id="cli_matricula" name="cli_matricula" required>
+        </div>
+        <div class="form-group">
+            <label><font size=4>Selecione o Curso</font></label>
+            <select id="curso-select" name="curso" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['id_curso'];?>
+" required>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CUR']->value, 'C');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['C']->value['id_curso'];?>
+"><?php echo $_smarty_tpl->tpl_vars['C']->value['nome_curso'];?>
+ </option>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+            </select>
         </div>
         <div class="form-group" style="width:200px">
             <label><font size=4>Telefone</font></label>
@@ -68,16 +86,31 @@ function content_5baa610eb4b793_55911137 (Smarty_Internal_Template $_smarty_tpl)
 </body>
 
 <?php echo '<script'; ?>
+ type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+    $(document).ready(function () {
+    var oldCurso = $('#curso-select').attr("value");
+            $('#curso-select').selectize({
+    placeholder: 'Selecione o curso...',
+            onInitialize: function () {
+            this.setValue(oldCurso, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+            }
+    });<?php echo '</script'; ?>
 >
-    function limpa() {
-        if (document.getElementById('cli_nome').value != "") {
+
+
+<?php echo '<script'; ?>
+>
+            function limpa() {
+            if (document.getElementById('cli_nome').value != "") {
             document.getElementById('cli_nome').value = "";
-            document.getElementById('cli_matricula').value = "";
-            document.getElementById('cli_telefone').value = "";
-            document.getElementById('cli_email').value = "";
-            document.getElementById('cli_senha').value = "";
-        }
-    }
+                    document.getElementById('cli_matricula').value = "";
+                    document.getElementById('cli_telefone').value = "";
+                    document.getElementById('cli_email').value = "";
+                    document.getElementById('cli_senha').value = "";
+            }
+            }
 <?php echo '</script'; ?>
 >
 

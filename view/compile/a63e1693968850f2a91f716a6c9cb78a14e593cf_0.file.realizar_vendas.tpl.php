@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-25 22:38:25
+/* Smarty version 3.1.33, created on 2018-09-26 22:34:46
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5baa9cc121dc94_56181694',
+  'unifunc' => 'content_5babed66244907_78531900',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1537907904,
+      1 => 1537994085,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5baa9cc121dc94_56181694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5babed66244907_78531900 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -44,20 +44,14 @@ echo '<script'; ?>
         newSelect.find('div').append(button);
 
         $("#selects").append(newSelect.html());
-        $('#selects').find('.produtos-select').each(function(id, el){
-            /*$(el).selectize({
+        var oldVal = $("#selects select:last").attr('value');
+        $("#selects select:last").selectize({
                 placeholder: 'Digite o nome do Produto...',
                 onInitialize: function () {
-                    //this.setValue(oldVal, true);
-                    //$('.selectize-control').addClass('form-group');
-                    //newSelect.find('div select').addClass('form-control');
+                    this.setValue(oldVal, true);
                 }
 
-            });*/
-
-
-
-        });
+            });
 
         /*newSelect.find('div select').selectize({
                                     placeholder: 'Digite o nome do Produto...',
@@ -86,7 +80,7 @@ echo '<script'; ?>
 >
 
 <center>
-    <h3>Realizar Venda</h3> 
+    <h3>Realizar Venda a Prazo</h3> 
 </center>
 <hr>
 <br>
@@ -148,10 +142,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">VENDA À VISTA</button>
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-warning btn-block" name="botao3">VENDA A PRAZO</button>
+            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
         </div>
         <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>

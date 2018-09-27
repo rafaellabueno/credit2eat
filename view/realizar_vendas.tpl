@@ -20,20 +20,14 @@
         newSelect.find('div').append(button);
 
         $("#selects").append(newSelect.html());
-        $('#selects').find('.produtos-select').each(function(id, el){
-            /*$(el).selectize({
+        var oldVal = $("#selects select:last").attr('value');
+        $("#selects select:last").selectize({
                 placeholder: 'Digite o nome do Produto...',
                 onInitialize: function () {
-                    //this.setValue(oldVal, true);
-                    //$('.selectize-control').addClass('form-group');
-                    //newSelect.find('div select').addClass('form-control');
+                    this.setValue(oldVal, true);
                 }
 
-            });*/
-
-
-
-        });
+            });
 
         /*newSelect.find('div select').selectize({
                                     placeholder: 'Digite o nome do Produto...',
