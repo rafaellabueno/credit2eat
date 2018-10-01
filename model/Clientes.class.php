@@ -18,8 +18,8 @@ class Clientes extends Conexao {
     }
 
     public function setCliente($nome, $matricula, $telefone, $email, $senha, $curso) {
-
-        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]', 1, '$curso');";
+        #$ncurso = "SELECT nome_curso FROM cursos WHERE id_curso = $curso";
+        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula', '$telefone','$email', MD5('$senha'), '$_SESSION[id]', 1, '$ncurso');";
         $var = $this->ExecuteSQL($query);
     }
 
@@ -31,6 +31,7 @@ class Clientes extends Conexao {
 
         return $this->ListarDados();
     }
+
 
     private function GetLista() {
         $i = 1;
@@ -44,7 +45,7 @@ class Clientes extends Conexao {
                 'cli_senha' => $lista['cli_senha'],
                 'cli_divida' => $lista['cli_divida'],
                 'cli_curso' => $lista['cli_curso']
-                    //'id_usuario' => $lista['id_usuario']
+                //'id_usuario' => $lista['id_usuario']
             );
             $i++;
         }

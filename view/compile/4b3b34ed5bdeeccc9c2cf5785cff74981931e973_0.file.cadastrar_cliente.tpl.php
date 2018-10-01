@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 14:57:27
+/* Smarty version 3.1.33, created on 2018-10-01 15:46:12
   from 'D:\xampp\htdocs\credit2eat\view\cadastrar_cliente.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bab8237445518_51577576',
+  'unifunc' => 'content_5bb22524435b92_48527877',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4b3b34ed5bdeeccc9c2cf5785cff74981931e973' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_cliente.tpl',
-      1 => 1537966646,
+      1 => 1538400232,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bab8237445518_51577576 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb22524435b92_48527877 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -87,31 +87,31 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 <?php echo '<script'; ?>
  type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldCurso = $('#curso-select').attr("value");
-                                $('#curso-select').selectize({
-                                    placeholder: 'Selecione o curso...',
-                                    onInitialize: function () {
-                                        this.setValue(oldCurso, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
-                                });
+    $(document).ready(function () {
+    var oldCurso = $('#curso-select').attr("value");
+            $('#curso-select').selectize({
+    placeholder: 'Selecione o curso...',
+            onInitialize: function () {
+            this.setValue(oldCurso, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+            }
+    });
 <?php echo '</script'; ?>
 >
 
 
 <?php echo '<script'; ?>
 >
-    function limpa() {
-        if (document.getElementById('cli_nome').value != "") {
+            function limpa() {
+            if (document.getElementById('cli_nome').value != "") {
             document.getElementById('cli_nome').value = "";
-            document.getElementById('cli_matricula').value = "";
-            document.getElementById('cli_telefone').value = "";
-            document.getElementById('cli_email').value = "";
-            document.getElementById('cli_senha').value = "";
-        }
-    }
+                    document.getElementById('cli_matricula').value = "";
+                    document.getElementById('cli_telefone').value = "";
+                    document.getElementById('cli_email').value = "";
+                    document.getElementById('cli_senha').value = "";
+            }
+            }
 <?php echo '</script'; ?>
 >
 

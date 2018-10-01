@@ -1,1 +1,117 @@
-copiar venda prazo - tirar cliente
+<script>
+    var total = 0;
+
+    function deletaProduto(id) {
+        console.log($('#' + id));
+        $('#' + id).remove();
+    }
+
+    function addProduto() {
+        var newSelect = $("#displayOriginal");
+        newSelect = newSelect.clone();
+        id = 'select-' + total++;
+        newSelect.find('div').attr("id", id);
+        newSelect.find('div').css('display', 'block');
+
+        newSelect.find('div select').attr('name', 'produto[]');
+
+        button = '<a class="btn btn-danger" role="button" onclick="deletaProduto(\'' + id + '\')" style="color: red;">Apagar Produto</a>'; //BOTAO PARA APAGAR PRODUTO // >APAGAR PRODUTO</A> TEXTO PARA BOTAO
+
+        newSelect.find('div').append(button);
+
+        $("#selects").append(newSelect.html());
+        var oldVal = $("#selects select:last").attr('value');
+        $("#selects select:last").selectize({
+                placeholder: 'Digite o nome do Produto...',
+                onInitialize: function () {
+                    this.setValue(oldVal, true);
+                }
+
+            });
+
+        /*newSelect.find('div select').selectize({
+                                    placeholder: 'Digite o nome do Produto...',
+                                    onInitialize: function () {
+                                        this.setValue(oldProduto, true);
+                                        //$('.selectize-control').addClass('form-group');
+                                        //newSelect.find('div select').addClass('form-control');
+                                    }
+                                });/**/
+
+
+
+
+        //console.log(newSelect.find('div select'));
+        /*newSelect.find('div select').selectize({
+         placeholder: 'Digite o nome do Produto...',
+         onInitialize: function () {
+         this.setValue(undefined);
+         //$('.selectize-control').addClass('form-group');
+         $('.selectize-input').addClass('form-control');
+         }
+         });*/
+
+    }
+</script>
+
+<center>
+    <h3>Realizar Venda à Vista</h3> 
+</center>
+<hr>
+<br>
+<form id="form_venda_vista" name="form_venda_vista" action="./venda_vista" method="post">
+    <div align="left">
+    <div id="displayOriginal">
+        <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
+            <label><font size=4>Escolha o Produto</font></label>
+            <select  class="produtos-select" required>
+                {foreach from=$PRO item=P}
+                    <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div id="selects">
+    </div>
+    <div class="col-md-12" class="col-xs-6">
+        <a onclick="addProduto()" class="btn btn-primary" role="button">
+            Adicionar Produto
+        </a>
+    </div>
+    <div class="col-md-12" class="col-xs-6">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+        </div>
+        <div class="col-md-4">
+            <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+        </div>
+    </div>
+    </div>
+</form>
+<hr>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        addProduto();
+    })
+</script>
+
+<script>
+    function limpa() {
+        if (document.getElementById('produto').value != "") {
+            document.getElementById('produto').value = "";
+            header('location:./realizar_vendas');
+        }
+    }
+</script>
+
+
+<!--<div class="col-md-12" class="col-xs-6">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="a_prazo" id="a_prazo">
+            <label class="form-check-label" id="a_prazo" value="a_prazo" name="a_prazo" for="a_prazo"><font size=4>A Prazo</font></label>
+        </div> 
+</div> -->

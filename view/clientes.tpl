@@ -40,10 +40,11 @@
                                  <a href="{$CLI_INFO}/{$C.cli_id}/{$C.c_nome}"> -->
 
                         <tbody>
-                            <tr>			
-                                <th scope="row"><a href="" style="color: #030300">{$C.cli_nome}</a></th>
+                            <tr>	
+                                <th scope="row"><a href="" style="color: #000000">{$C.cli_nome}</a></th>
                                 <td>{$C.cli_matricula}</td>
                                 <td>{$C.cli_email}</td>
+                                <!--<td>{$C.cli_curso}</td>-->
                                 <td>{$C.cli_divida}</td>
                                 <td><a href="javascript:void(0);" class="excluir" id-pessoa="{$C.cli_id}" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
                             </tr>

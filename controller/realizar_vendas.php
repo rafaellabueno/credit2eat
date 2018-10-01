@@ -16,7 +16,7 @@ if (isset($_POST['produto']) && isset($_POST['cliente'])) {
     $realizarVenda = new Vendas();
     $resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto']);
 
-    $quantidade = $realizarVenda->descontarQuantidade($_POST['produto']); //nao está funcionando
+    $quantidade = $realizarVenda->descontarQuantidade($_POST['produto']); 
 
     header("location:./vendas");
 }

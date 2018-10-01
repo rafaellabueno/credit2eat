@@ -61,7 +61,8 @@
                     //$('.selectize-control').addClass('form-group');
                     $('.selectize-input').addClass('form-control');
             }
-    });</script>
+    });
+</script>
 
 
 <script>

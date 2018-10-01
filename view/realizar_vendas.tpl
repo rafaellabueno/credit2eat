@@ -60,6 +60,7 @@
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
+    <div align="left">
     <div class="col-md-3" class="col-xs-6" style="width: 400px">
         <div class="form-group">
             <label><font size=4>Selecione o Cliente</font></label>
@@ -78,7 +79,7 @@
     </div>
 
     <div id="displayOriginal">
-        <div class="form-group" class="col-md-6" style="width:500px; display: none;">
+        <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
             <label><font size=4>Escolha o Produto</font></label>
             <select  class="produtos-select" required>
                 {foreach from=$PRO item=P}
@@ -101,6 +102,7 @@
         <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
         </div>
+    </div>
     </div>
 </form>
 <hr>

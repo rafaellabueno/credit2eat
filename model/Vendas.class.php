@@ -11,7 +11,7 @@ class Vendas extends Conexao {
     public $cliente = '';
     public $produtos = '';
 
-    function GetVendas() { //busca as vendas
+    function GetVendas() {
         $query = "SELECT * FROM venda inner join venda_produto where venda.id_venda = venda_produto.venda_id and id_user = $_SESSION[id]";
 
         $this->ExecuteSQL($query);
@@ -58,13 +58,30 @@ class Vendas extends Conexao {
     }
 
     function descontarQuantidade($produtos) {
-        $qntd = $qntd_prod - 1;
-        $query = "UPDATE produto SET prod_qnt='$qntd' WHERE prod_id = produto_id";
-        $var = $this->ExecuteSQL($query);
+        foreach ($produtos as $produto) {
+            $qntd_prod = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
+            $qntd = $qntd_prod - 1;
+            $query = "UPDATE produtos SET prod_qnt='$qntd' WHERE prod_id = $produto";
+            $var = $this->ExecuteSQL($query);
+        }
     }
 
     function setVendas($cliente, $produtos) {
         $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('$cliente','$_SESSION[id]')";
+        $var = $this->ExecuteSQL($query);
+        $id = $this->LastInsertID();
+        foreach ($produtos as $produto) {
+            $valor = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
+            $valor_total = $valor + $valor_total;
+            $query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $produto);";
+            $var2 = $this->ExecuteSQL($query2);
+        }
+        $query3 = "UPDATE cliente SET cli_divida='$valor_total' WHERE cli_id = $cliente"; 
+        $var3 = $this->ExecuteSQL($query3);
+    }
+
+    function setVendaVista($produtos) {
+        $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('12','$_SESSION[id]')";
         $var = $this->ExecuteSQL($query);
         $id = $this->LastInsertID();
         foreach ($produtos as $produto) {

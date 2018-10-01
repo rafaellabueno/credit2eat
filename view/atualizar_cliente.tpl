@@ -22,6 +22,14 @@
                     <label><font size=4>Telefone</font></label>
                     <input type="telefone" value="{$C.telefone}" class="form-control"  id="cliente_telefone" name="cliente_telefone">
                 </div>
+                <div class="form-group">
+            <label><font size=4>Selecione o Curso</font></label>
+            <select id="curso-select" name="curso" value="{$C.id_curso}" required>
+                {foreach from=$CUR item=C}
+                    <option value="{$C.id_curso}">{$C.nome_curso} </option>
+                {/foreach}
+            </select>
+        </div>
             </div>
             <h4><b>Atualizar Senha</b></h4>
             <div class="form-group" style="width:300px">
@@ -42,6 +50,19 @@
 
 
 </body>
+
+<script type="text/javascript"> //PEGAR os cursos digitando
+    $(document).ready(function () {
+    var oldCurso = $('#curso-select').attr("value");
+            $('#curso-select').selectize({
+    placeholder: 'Selecione o curso...',
+            onInitialize: function () {
+            this.setValue(oldCurso, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+            }
+    });
+</script>
 
 <script>
     function limpa() {
