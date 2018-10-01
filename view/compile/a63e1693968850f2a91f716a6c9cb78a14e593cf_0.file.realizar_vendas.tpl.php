@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 22:34:46
+/* Smarty version 3.1.33, created on 2018-10-01 22:50:24
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5babed66244907_78531900',
+  'unifunc' => 'content_5bb2889045eb84_44224056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1537994085,
+      1 => 1538405064,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5babed66244907_78531900 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb2889045eb84_44224056 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -85,6 +85,7 @@ echo '<script'; ?>
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
+    <div align="left">
     <div class="col-md-3" class="col-xs-6" style="width: 400px">
         <div class="form-group">
             <label><font size=4>Selecione o Cliente</font></label>
@@ -114,7 +115,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <div id="displayOriginal">
-        <div class="form-group" class="col-md-6" style="width:500px; display: none;">
+        <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
             <label><font size=4>Escolha o Produto</font></label>
             <select  class="produtos-select" required>
                 <?php
@@ -147,6 +148,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="col-md-4">
             <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
         </div>
+    </div>
     </div>
 </form>
 <hr>

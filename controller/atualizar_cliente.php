@@ -3,18 +3,10 @@
 $smarty = new Template();
 
 $cliente = new Clientes();
-$cliente->GetClientes();
-
-$smarty->assign('CLI', $cliente->GetItens());
 
 
-#if (isset($_POST['usuario_nome'])) {
-   # $usuario = new Usuario();
+$smarty->assign('C', $cliente->GetClienteID(4));
 
-   # $resp = $usuario->alterarUsuario($_POST['usuario_nome'], $_POST['usuario_email']);
-
-   # header("location:./minhaconta");
-#}
 
 $smarty->display('atualizar_cliente.tpl');
 ?>

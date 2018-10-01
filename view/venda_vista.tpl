@@ -64,7 +64,7 @@
     <div id="displayOriginal">
         <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
             <label><font size=4>Escolha o Produto</font></label>
-            <select  class="produtos-select" required>
+            <select class="produtos-select" required>
                 {foreach from=$PRO item=P}
                     <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
                 {/foreach}

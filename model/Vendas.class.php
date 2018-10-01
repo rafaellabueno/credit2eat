@@ -57,13 +57,13 @@ class Vendas extends Conexao {
         }
     }
 
-    function descontarQuantidade($produtos) {
-        foreach ($produtos as $produto) {
+    function descontarQuantidade($produto) {
             $qntd_prod = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
-            $qntd = $qntd_prod - 1;
+            $var = $this->ExecuteSQL($qntd_prod);
+            $res = $this->ListarDados($qntd_prod);
+            $qntd = $res['prod_qnt'] - 1;
             $query = "UPDATE produtos SET prod_qnt='$qntd' WHERE prod_id = $produto";
             $var = $this->ExecuteSQL($query);
-        }
     }
 
     function setVendas($cliente, $produtos) {

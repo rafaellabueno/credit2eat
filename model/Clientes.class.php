@@ -25,7 +25,7 @@ class Clientes extends Conexao {
 
     function GetClienteID($id) {
 
-        $query = "SELECT * FROM cliente WHERE cli_id = {$id} and valido = 1";
+        $query = "SELECT * FROM cliente WHERE cli_id = {$id}";
 
         $this->ExecuteSQL($query);
 
