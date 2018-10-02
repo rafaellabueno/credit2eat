@@ -1,5 +1,4 @@
 <?php
-
 class Usuario extends Conexao {
 
     function __construct() {
@@ -55,10 +54,10 @@ class Usuario extends Conexao {
         if ($user && password_verify($passwd, $user['senha'])) {
             $_SESSION['nome'] = $this->nome = $user['nome'];
             $_SESSION['id'] = $this->id = $user['id'];
-            header("location:./menu");
+            header("Location: ./menu");
         } else {
             $_SESSION['erro'] = 'Nome ou Senha incorretos';
-            header("location:./");
+            header("Location: ./");
         }
     }
 
@@ -90,4 +89,4 @@ class Usuario extends Conexao {
     }
 
 }
-?>  
+?>

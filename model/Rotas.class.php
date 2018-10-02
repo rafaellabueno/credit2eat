@@ -75,26 +75,25 @@ class Rotas {
      * @return string - URL do template do site
      */
     public static function get_SiteTEMA(){
-        
-        return self::get_SiteHOME() . '/' . self::$pasta_view;
+        return Config::SITE_URL.'/'.self::$pasta_view;;
     }
     public static function get_SiteClientes(){
-        return self::get_SiteHOME() . '/clientes';
+        return Config::SITE_URL . '/clientes';
     }
     public static function get_SiteVENDAS(){
-        return self::get_SiteHOME() . '/vendas';
+        return Config::SITE_URL . '/vendas';
     }
     public static function pag_Contato(){
-        return self::get_SiteHOME() . '/contato';
+        return Config::SITE_URL . '/contato';
     }    
     public static function pag_MinhaConta(){
-        return self::get_SiteHOME() . '/minhaconta';
+        return Config::SITE_URL . '/minhaconta';
     }
     public static function pag_Produtos(){
-        return self::get_SiteHOME() . '/produtos';
+        return Config::SITE_URL . '/produtos';
     }
     public static function pag_CadastrarProdutos(){
-        return self::get_SiteHOME() . '/cadastrar_produtos';
+        return Config::SITE_URL . '/cadastrar_produtos';
     }
 
     

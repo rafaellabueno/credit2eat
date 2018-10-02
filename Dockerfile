@@ -5,3 +5,5 @@ RUN apt-get update -yqq && \
 
 RUN docker-php-ext-install pdo_mysql mysqli zip mbstring
 RUN docker-php-ext-install exif
+
+RUN a2enmod rewrite

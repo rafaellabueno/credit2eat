@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8" >
         <link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png"> <!-- ICONE DO SITE -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
@@ -26,11 +26,11 @@
 
 
         <!--     Fonts and icons     -->
-        <link href="{$GET_TEMA}/http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- TEM QUE INSTALAR A FONTE--> 
+        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> TEM QUE INSTALAR A FONTE-->
 
-        <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
         <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
         <script src="{$GET_TEMA}/tema/js/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -272,61 +272,64 @@
 
     <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
 
-    <script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldCliente = $('#cliente-select').attr("value");
-                                $('#cliente-select').selectize({
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldCliente, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
-                                });
+    <script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME
+        $(document).ready(function () {
+            var oldCliente = $('#cliente-select').attr("value");
+            $('#cliente-select').selectize({
+                placeholder: 'Digite a matrícula do Cliente...',
+                onInitialize: function () {
+                    this.setValue(oldCliente, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+                }
+            });
 
-                                var oldProduto = '';
-                                $('#produto-select').selectize({
-                                    placeholder: 'Digite o nome do Produto...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProduto, true);
-                                    }
-                                });
-
-
-
-                                /*$('.produtos-select').each(function(id, el){
-                                 var oldProduto = $(el).attr("value");
-                                 
-                                 $(el).selectize({
-                                 placeholder: 'Digite o nome do Produto...',
-                                 onInitialize: function () {
-                                 this.setValue(oldProduto, true);
-                                 //$('.selectize-control').addClass('form-group');
-                                 $('.selectize-input').addClass('form-control');
-                                 }
-                                 });
-                                 
-                                 
-                                 });/**/
+            var oldProduto = '';
+            $('#produto-select').selectize({
+                placeholder: 'Digite o nome do Produto...',
+                onInitialize: function () {
+                    this.setValue(oldProduto, true);
+                }
+            });
 
 
-                            });
-    </script> 
-    <!--<script type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldProdutos = $('#produtos-select').attr("value");
-                                $('#produtos-select').selectize({
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProdutos, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
-                                });
+
+            /*$('.produtos-select').each(function(id, el){
+             var oldProduto = $(el).attr("value");
+
+             $(el).selectize({
+             placeholder: 'Digite o nome do Produto...',
+             onInitialize: function () {
+             this.setValue(oldProduto, true);
+             //$('.selectize-control').addClass('form-group');
+             $('.selectize-input').addClass('form-control');
+             }
+             });
 
 
-                            });
-    </script> -->
+             });/**/
+
+
+        });
+    </script>
+    <!--
+    <script type="text/javascript">
+    //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME
+        $(document).ready(function () {
+            var oldProdutos = $('#produtos-select').attr("value");
+            $('#produtos-select').selectize({
+                placeholder: 'Digite a matrícula do Cliente...',
+                onInitialize: function () {
+                    this.setValue(oldProdutos, true);
+                    //$('.selectize-control').addClass('form-group');
+                    $('.selectize-input').addClass('form-control');
+                }
+            });
+
+
+        });
+    </script>
+    -->
 
     <script type="text/javascript">
         /*$(document).ready(function () {
@@ -358,7 +361,7 @@
        <p>Produtos</p>
    </a>
 </li> -->
-<!--<li> 
+<!--<li>
     <a href="{$PAG_CLIENTES}">
         <i class="pe-7s-user"></i>
         <p>Clientes</p>
