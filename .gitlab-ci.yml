@@ -1,0 +1,29 @@
+stages:
+  - composer-deps
+  - build-image
+
+cache:
+  paths:
+  - lib/
+
+job-composer:
+  stage: composer-deps
+  image: php:7.1.7-apache
+  script:
+    - apt-get update -yqq
+    - apt-get install -yqq --no-install-recommends git unzip libzip-dev
+    - docker-php-ext-configure zip --with-libzip
+    - docker-php-ext-install zip pdo_mysql mysqli mbstring exif
+    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    - composer install
+
+job-build:
+  stage: build-image
+  image: docker:latest
+  services:
+    - docker:dint
+  script:
+    - docker login -u "gitlab-ci-token" -p "$CI_JOB_TOKEN" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" -f ./Dockerfile .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+

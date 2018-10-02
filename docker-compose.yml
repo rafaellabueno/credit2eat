@@ -1,0 +1,41 @@
+version: '2'
+
+volumes:
+  mariadb_data:
+
+services:
+  credit2eat:
+    container_name: credit2eat
+    build:
+      context: .
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - '80:80'
+    links:
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    ports:
+      - '3306:3306'
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=credit2eat
+      - MYSQL_USER=credit2eat
+      - MYSQL_PASSWORD=123456
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+      - PMA_USER=credit2eat
+      - PMA_PASSWORD=123456
+      - PMA_ARBITRARY=1
+    ports:
+      - '8080:80'
+    links:
+      - mariadb

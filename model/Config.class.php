@@ -11,9 +11,10 @@ class Config {
      * BANCO DE DADOS ========================
      */
     
-    const BD_HOST = "localhost";
-    const BD_USER = "root";
-    const BD_SENHA = "";
+    const BD_HOST = "mariadb";
+    const BD_PORT = '3306';
+    const BD_USER = "credit2eat";
+    const BD_SENHA = "123456";
     const BD_BANCO = "credit2eat";
     const BD_PREFIX = "";
 

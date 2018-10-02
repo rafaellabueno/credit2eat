@@ -7,7 +7,6 @@ session_start();
 $smarty = new Template();
 
 
-
 $smarty->assign('NOME', 'GUILHERME TEIXEIRA');
 $smarty->assign('GET_TEMA', Rotas::get_SiteTEMA());
 $smarty->assign('GET_HOME', Rotas::get_SiteHOME());
