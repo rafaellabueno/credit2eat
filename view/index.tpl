@@ -238,13 +238,27 @@
 
 
     </body>
-    <div id="ModalDelete" class="modal" role="dialog">
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
                 </div>
 
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>

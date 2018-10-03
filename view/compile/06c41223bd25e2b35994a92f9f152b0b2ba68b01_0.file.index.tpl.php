@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-01 15:37:30
+/* Smarty version 3.1.33, created on 2018-10-02 16:23:31
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb2231aa44721_56223675',
+  'unifunc' => 'content_5bb37f63c8a4f0_66385045',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1538401015,
+      1 => 1538489549,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb2231aa44721_56223675 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="pt-br">
     <head>
@@ -282,13 +282,27 @@ function content_5bb2231aa44721_56223675 (Smarty_Internal_Template $_smarty_tpl)
 
 
     </body>
-    <div id="ModalDelete" class="modal" role="dialog">
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
                 </div>
 
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>

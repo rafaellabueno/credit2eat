@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 15:43:52
+/* Smarty version 3.1.33, created on 2018-10-02 01:58:57
   from 'D:\xampp\htdocs\credit2eat\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bab8d187059d1_01616951',
+  'unifunc' => 'content_5bb2b4c1e39287_11672878',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a33a808104077b766451d93f2b1746904dc2c0a3' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\produtos.tpl',
-      1 => 1537969430,
+      1 => 1537971816,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bab8d187059d1_01616951 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb2b4c1e39287_11672878 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Lista de Produtos</h3>
 </center>
-   <!-- <div style="text-align: right;"><a href="./cadastrar_produto"><button class="btn btn-primary">Cadastrar Novo Produto</button></a></div> -->
+<!-- <div style="text-align: right;"><a href="./cadastrar_produto"><button class="btn btn-primary">Cadastrar Novo Produto</button></a></div> -->
 <hr>
 
 <!--	<section>

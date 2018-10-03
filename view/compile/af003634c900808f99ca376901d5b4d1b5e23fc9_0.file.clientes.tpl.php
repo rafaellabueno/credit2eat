@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-01 15:51:43
+/* Smarty version 3.1.33, created on 2018-10-02 19:22:55
   from 'D:\xampp\htdocs\credit2eat\view\clientes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb2266fa23068_87650778',
+  'unifunc' => 'content_5bb3a96f63ac18_97148549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af003634c900808f99ca376901d5b4d1b5e23fc9' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\clientes.tpl',
-      1 => 1538401902,
+      1 => 1538499358,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb2266fa23068_87650778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb3a96f63ac18_97148549 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
     <center>
@@ -29,18 +29,13 @@ function content_5bb2266fa23068_87650778 (Smarty_Internal_Template $_smarty_tpl)
     <!--<div style="text-align: right;"><a href="./cadastrar_cliente"><button class="btn btn-primary">Cadastrar Novo Cliente</button></a></div>-->
     <hr>
 
-    <!--<section>
-            <center>
-                            
-            </center>	
-    </section> --> 
-
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Matricula</th>
                 <th scope="col">Email</th>
+                <th scope="col">Curso</th>
                 <th scope="col">Pendências</th>
                 <th scope="col">Ações</th>
             </tr>
@@ -77,12 +72,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
 </td>
                                 <td><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_email'];?>
 </td>
-                                <!--<td><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_curso'];?>
-</td>-->
-                                <td><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_divida'];?>
+                                <td><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_curso'];?>
 </td>
-                                <td><a href="javascript:void(0);" class="excluir" id-pessoa="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_id'];?>
-" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
+                                <td>R$<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_divida'];?>
+</td>
+                                <td>
+                                    <!--<a href="javascript:void(0);" class="zerar" id-pessoa="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_id'];?>
+" style="color: #030300" style=""><i class="pe-7s-refresh-2"></i>-->
+                                    <a href="javascript:void(0);" class="excluir" id-pessoa="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_id'];?>
+" style="color: #030300" style=""><i class="pe-7s-trash"></i></a>
+                                </td>
                             </tr>
                         </tbody>
 

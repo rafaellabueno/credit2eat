@@ -83,7 +83,7 @@
             <label><font size=4>Escolha o Produto</font></label>
             <select  class="produtos-select" required>
                 {foreach from=$PRO item=P}
-                    <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} </option>
+                    <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} - Quantidade: {$P.prod_qnt} </option>
                 {/foreach}
             </select>
         </div>
@@ -95,6 +95,9 @@
             Adicionar Produto
         </a>
     </div>
+    <br>
+    <br>
+    <br>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>

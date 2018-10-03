@@ -6,18 +6,13 @@
     <!--<div style="text-align: right;"><a href="./cadastrar_cliente"><button class="btn btn-primary">Cadastrar Novo Cliente</button></a></div>-->
     <hr>
 
-    <!--<section>
-            <center>
-                            
-            </center>	
-    </section> --> 
-
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Matricula</th>
                 <th scope="col">Email</th>
+                <th scope="col">Curso</th>
                 <th scope="col">Pendências</th>
                 <th scope="col">Ações</th>
             </tr>
@@ -44,9 +39,12 @@
                                 <th scope="row"><a href="" style="color: #000000">{$C.cli_nome}</a></th>
                                 <td>{$C.cli_matricula}</td>
                                 <td>{$C.cli_email}</td>
-                                <!--<td>{$C.cli_curso}</td>-->
-                                <td>{$C.cli_divida}</td>
-                                <td><a href="javascript:void(0);" class="excluir" id-pessoa="{$C.cli_id}" style="color: #030300" style=""><i class="pe-7s-trash"></i></a></td>
+                                <td>{$C.cli_curso}</td>
+                                <td>R${$C.cli_divida}</td>
+                                <td>
+                                    <!--<a href="javascript:void(0);" class="zerar" id-pessoa="{$C.cli_id}" style="color: #030300" style=""><i class="pe-7s-refresh-2"></i>-->
+                                    <a href="javascript:void(0);" class="excluir" id-pessoa="{$C.cli_id}" style="color: #030300" style=""><i class="pe-7s-trash"></i></a>
+                                </td>
                             </tr>
                         </tbody>
 
