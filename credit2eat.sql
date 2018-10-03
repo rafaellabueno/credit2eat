@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Out-2018 às 16:23
+-- Generation Time: 03-Out-2018 às 14:41
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -48,13 +48,13 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`, `valido`, `cli_curso`) VALUES
-(5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 0, 25, NULL, 1, '2'),
-(6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL, 1, '0'),
-(7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL, 1, '0'),
-(8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 0, 25, NULL, 1, '0'),
-(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL, 1, '0'),
+(5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 23, 25, NULL, 1, 'informática'),
+(6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 14.5, 25, NULL, 1, 'informática'),
+(7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL, 1, 'Professor'),
+(8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 20.25, 25, NULL, 1, 'informática'),
+(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 12.5, 25, NULL, 1, 'informática'),
 (10, 'Reginho', 'regis.teixeira', 'regis@gmail.com', 987456321, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL, 0, '0'),
-(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL, 1, '0'),
+(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 15.5, 25, NULL, 1, 'informática'),
 (12, 'Venda à Vista', '', '', 0, '', 0, 26, NULL, 1, '0');
 
 -- --------------------------------------------------------
@@ -75,12 +75,11 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
-(1, '123', 25),
-(2, 'RE', 25),
 (3, 'informática', 25),
 (4, 'administração', 25),
 (5, 'eletrônica', 25),
-(6, 'desenvolvimento de sistemas', 25);
+(6, 'desenvolvimento de sistemas', 25),
+(7, 'Professor', 25);
 
 -- --------------------------------------------------------
 
@@ -118,13 +117,13 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
-(6, 'Pizza', 5.00, 10, 20, 0, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, -1, 0, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 47, 0, NULL, 25),
-(9, 'Pastel de Carne', 4.50, 12, 20, 0, NULL, 25),
+(6, 'Pizza', 5.00, 10, 70, 0, NULL, 25),
+(7, 'Enroladinho', 2.50, 15, -3, 0, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 45, 0, NULL, 25),
+(9, 'Pastel de Carne', 4.50, 12, 18, 0, NULL, 25),
 (10, 'Refrigerante 2L', 8.00, 12, 24, 0, NULL, 25),
-(11, 'Chocolate', 10.00, 10, 5, 0, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, -1, 0, NULL, 25);
+(11, 'Chocolate', 10.00, 10, -6, 0, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, -2, 0, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -201,7 +200,27 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `a_prazo`, `id_cliente`, `data_v
 (35, 0, 0, 5, '2018-10-01 14:04:18', 25),
 (36, 0, 0, 9, '2018-10-01 14:05:10', 25),
 (37, 0, 0, 6, '2018-10-01 14:12:18', 25),
-(38, 0, 0, 6, '2018-10-01 14:19:47', 25);
+(38, 0, 0, 6, '2018-10-01 14:19:47', 25),
+(39, 0, 0, 12, '2018-10-01 23:59:08', 25),
+(40, 0, 0, 5, '2018-10-02 13:36:33', 25),
+(41, 0, 0, 11, '2018-10-02 13:40:33', 25),
+(42, 0, 0, 6, '2018-10-02 13:42:45', 25),
+(43, 0, 0, 6, '2018-10-02 13:43:11', 25),
+(44, 0, 0, 6, '2018-10-02 13:43:27', 25),
+(45, 0, 0, 6, '2018-10-02 13:43:36', 25),
+(46, 0, 0, 6, '2018-10-02 13:46:46', 25),
+(47, 0, 0, 6, '2018-10-02 13:47:40', 25),
+(48, 0, 0, 6, '2018-10-02 13:49:09', 25),
+(49, 0, 0, 6, '2018-10-02 13:49:54', 25),
+(50, 0, 0, 9, '2018-10-02 13:50:39', 25),
+(51, 0, 0, 9, '2018-10-02 13:51:31', 25),
+(52, 0, 0, 9, '2018-10-02 13:54:28', 25),
+(53, 0, 0, 5, '2018-10-02 13:57:57', 25),
+(54, 0, 0, 6, '2018-10-02 14:46:10', 25),
+(55, 0, 0, 5, '2018-10-02 14:48:22', 25),
+(56, 0, 0, 8, '2018-10-02 22:45:48', 25),
+(57, 0, 0, 8, '2018-10-02 22:46:05', 25),
+(58, 0, 0, 11, '2018-10-02 22:46:23', 25);
 
 -- --------------------------------------------------------
 
@@ -257,7 +276,25 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`) VALUES
 (36, 8),
 (37, 7),
 (37, 12),
-(38, 12);
+(38, 12),
+(39, 11),
+(40, 11),
+(41, 11),
+(47, 11),
+(49, 11),
+(50, 8),
+(51, 11),
+(52, 7),
+(53, 8),
+(54, 9),
+(54, 11),
+(55, 9),
+(55, 7),
+(55, 11),
+(56, 11),
+(57, 11),
+(58, 12),
+(58, 11);
 
 --
 -- Indexes for dumped tables
@@ -319,13 +356,13 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `divida`
@@ -349,7 +386,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- Constraints for dumped tables
