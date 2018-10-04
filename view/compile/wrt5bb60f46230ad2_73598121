@@ -1,0 +1,43 @@
+<?php
+/* Smarty version 3.1.33, created on 2018-10-04 15:01:58
+  from 'D:\xampp\htdocs\credit2eat\view\valor_prazo.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5bb60f4622e684_30684018',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'af6356418100efb75d04b019c2efe3ea9127e439' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\valor_prazo.tpl',
+      1 => 1538658117,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5bb60f4622e684_30684018 (Smarty_Internal_Template $_smarty_tpl) {
+?><center>
+    <h3>Definir Valor Venda a Prazo</h3> 
+</center>
+<hr>
+<br>
+
+<form id="atualiza" name="atualiza" action="./atualiza" method="post">
+	<div class="col-md-3" class="col-xs-6">
+        <div class="form-group" style="width:200px">
+            <label><font size=4>Insira a quantidade:</font></label>
+            <input type="number" class="form-control" id="qtd" name="qtd" required>
+        </div>
+    </div>
+    <div class="col-md-10" class="col-xs-6">
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary btn-block" name="botao">Definir Valor</button>
+        </div>
+    </div>
+</form><?php }
+}

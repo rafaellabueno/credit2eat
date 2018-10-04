@@ -41,7 +41,6 @@ class Produtos extends Conexao {
                 'prod_qnt_min' => $lista['prod_qnt_min'],
                 'prod_qnt' => $lista['prod_qnt'],
                 'prod_qnt_ven' => $lista['prod_qnt_ven'],
-                'valor_prazo' => $lista['valor_prazo'],
                 'usuario_id' => $lista['usuario_id']
             );
             $i++;

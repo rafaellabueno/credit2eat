@@ -67,12 +67,17 @@ class Vendas extends Conexao {
     }
 
     function setVendas($cliente, $produto, $senha) {
+        ///////////////////////////////////////PEGAR VALOR A PRAZO
+        $queryvalorprazo = "SELECT valor_prazo FROM valor_prazo WHERE id=1";
+        $varvalorprazo = $this->ExecuteSQL($queryvalorprazo);
+        $valorprazo = $this->ListarDados($queryvalorprazo);
+        $valor_prazo = $valorprazo['valor_prazo'];
+        ////////////////////////////////////////SENHA
         $querysenha = "SELECT cli_senha FROM cliente WHERE cli_id = $cliente";
         $varsenha = $this->ExecuteSQL($querysenha);
         $clientesenha = $this->ListarDados($querysenha);
         $senha123 = $clientesenha['cli_senha'];
-        //$senhacliente = password_hash($senha123, PASSWORD_DEFAULT);
-        if (password_verify($senha, $senha123)) {
+        if (password_verify($senha, $senha123)) { ////////////////// VERIFICA SENHA
             $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('$cliente','$_SESSION[id]')";
             $var = $this->ExecuteSQL($query);
             $id = $this->LastInsertID();
@@ -80,7 +85,7 @@ class Vendas extends Conexao {
                 $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
                 $var3 = $this->ExecuteSQL($valor_prod);
                 $res = $this->ListarDados($valor_prod);
-                $valor_total = $valor_total + $res['prod_valor'] + '0.25'; //VARIAVEL '+0,25'
+                $valor_total = $valor_total + $res['prod_valor'] + $valor_prazo; ////VALOR_PRODUTO + VALOR_PRAZO
                 $query2 = "INSERT INTO venda_produto (venda_id, produto_id, pendente) VALUES ('{$id}', $produto, 1);";
                 $var2 = $this->ExecuteSQL($query2);
                 /////////////////////////////////////ACRESCENTAR EM VENDIDOS

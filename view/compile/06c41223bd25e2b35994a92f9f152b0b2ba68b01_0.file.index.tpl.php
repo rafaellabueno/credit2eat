@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-02 16:23:31
+/* Smarty version 3.1.33, created on 2018-10-04 16:32:10
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb37f63c8a4f0_66385045',
+  'unifunc' => 'content_5bb6246aac61c8_83469068',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1538489549,
+      1 => 1538663529,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb6246aac61c8_83469068 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
+
+<!--<?php echo '<?php 
+
+';?>$usuario = ("");
+$senha = ("");
+
+//requires e sessions_start
+    if (MoodleUtil::geraToken($usuario, $senha)) {
+    $obj = MoodleUtil::requisita('core_webservice_get_site_info');
+    $url = str_replace('pluginfile.php', 'webservice/pluginfile.php', $obj->userpictureurl);
+    $urlToken = 'https://moodle.canoas.ifrs.edu.br/login/token.php?username=' . $usuario . '&password=' . $senha . '&service=moodle_mobile_app';
+    $str = json_decode(file_get_contents($urlToken));
+    $user = new Aluno();
+    $user->setNome($obj->fullname);
+    $user->setFoto($url);
+    $user->setIdUsuario($obj->userid);
+    $user->setToken($str->token);
+    $user->setMatricula($usuario);
+    $_SESSION['user'] = serialize($user);
+    $_SESSION["foto"] = $var->getFoto() . '&token=' . $var->getToken();
+
+
+}
+
+<?php echo '?>';?> -->
+
+
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -111,6 +138,12 @@ function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl)
                                         <p>Ver Clientes</p>
                                     </a>
                                 </li> 
+                                <li>
+                                    <a href="cliente_divida">
+                                        <i class="pe-7s-piggy"></i>
+                                        <p>Quitar Dívidas</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -185,6 +218,12 @@ function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl)
                                         <p href="">Cursos</p>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="valor_prazo">
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Valor a Prazo</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="active-pro">
@@ -218,15 +257,10 @@ function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl)
                                        <p>Account</p>
                                     </a>
                                 </li> -->
-                                <!--<li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fa fa-globe"></i>
-                                            <b class="caret hidden-lg hidden-md"></b>
-                                            <p class="pe-7s-bell">
-                                                5 Notifications
-                                                <b class="caret"></b>
-                                            </p>
-                                      </a>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="pe-7s-bell"></i>
+                                    </a>
                                       <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
                                         <li><a href="#">Notification 2</a></li>
@@ -234,7 +268,7 @@ function content_5bb37f63c8a4f0_66385045 (Smarty_Internal_Template $_smarty_tpl)
                                         <li><a href="#">Notification 4</a></li>
                                         <li><a href="#">Another notification</a></li>
                                       </ul>
-                                </li> -->
+                                </li> 
                                 <li>
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 ">

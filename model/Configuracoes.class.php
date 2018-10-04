@@ -33,10 +33,14 @@ class Configuracoes extends Conexao {
         }
     }
 
-    function setValorPrazo($valor_prazo){
-        $query = "INSERT INTO valor_prazo (valor_prazo) VALUES ('$valor_prazo')";
+    function setValorPrazo($valor_prazo) {
+        $query = "UPDATE valor_prazo SET valor_prazo='$valor' WHERE id=1";
         $this->ExecuteSQL($query);
     }
+
+    function getValorPrazo() {
+        $query = "SELECT valor_prazo FROM valor_prazo WHERE id=1";
+        $this->ExecuteSQL($query);
     }
 
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Out-2018 às 14:46
--- Versão do servidor: 10.1.35-MariaDB
--- versão do PHP: 7.2.9
+-- Generation Time: 04-Out-2018 às 16:35
+-- Versão do servidor: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -57,7 +57,7 @@ INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_
 (11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 10.5, 25, NULL, 1, 'informática'),
 (12, 'Venda à Vista', '', '', 0, '', 0, 26, NULL, 1, '0'),
 (13, 'teste', '123', '', 0, '$2y$10$GVEbolyuny1aMfg1gQD7xuIZys22A7hk0z/dfSvW93d', 0, 25, NULL, 1, 'informática'),
-(14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 10.25, 25, NULL, 1, 'informática');
+(14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 6, 25, NULL, 1, 'informática');
 
 -- --------------------------------------------------------
 
@@ -120,13 +120,13 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
-(6, 'Pizza', 5.00, 10, 70, 0, NULL, 25),
+(6, 'Pizza', 5.00, 10, 67, 2, NULL, 25),
 (7, 'Enroladinho', 2.50, 15, -8, 1, NULL, 25),
 (8, 'Folhado de Frango', 5.00, 20, 42, 2, NULL, 25),
-(9, 'Pastel de Carne', 4.50, 12, 17, 1, NULL, 25),
-(10, 'Refrigerante 2L', 8.00, 12, 24, 0, NULL, 25),
-(11, 'Chocolate', 10.00, 10, -2, 2, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, -13, 3, NULL, 25);
+(9, 'Pastel de Carne', 4.50, 12, 16, 2, NULL, 25),
+(10, 'Refrigerante 2L', 8.00, 12, 23, 1, NULL, 25),
+(11, 'Chocolate', 10.00, 10, -4, 4, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, -15, 5, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -161,8 +161,16 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 
 DROP TABLE IF EXISTS `valor_prazo`;
 CREATE TABLE `valor_prazo` (
-  `valor_prazo` int(20) NOT NULL
+  `id` int(11) NOT NULL,
+  `valor_prazo` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `valor_prazo`
+--
+
+INSERT INTO `valor_prazo` (`id`, `valor_prazo`) VALUES
+(1, 0.25);
 
 -- --------------------------------------------------------
 
@@ -248,7 +256,13 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_
 (69, 0, 6, '2018-10-03 21:59:36', 25, NULL),
 (70, 0, 5, '2018-10-03 21:59:55', 25, NULL),
 (71, 0, 8, '2018-10-03 22:00:59', 25, NULL),
-(72, 0, 14, '2018-10-03 22:21:23', 25, NULL);
+(72, 0, 14, '2018-10-03 22:21:23', 25, NULL),
+(73, 0, 14, '2018-10-04 13:06:17', 25, NULL),
+(74, 0, 14, '2018-10-04 13:24:07', 25, NULL),
+(75, 0, 14, '2018-10-04 13:26:15', 25, NULL),
+(76, 0, 14, '2018-10-04 13:27:52', 25, NULL),
+(77, 0, 14, '2018-10-04 13:28:22', 25, NULL),
+(78, 0, 14, '2018-10-04 13:28:55', 25, NULL);
 
 -- --------------------------------------------------------
 
@@ -344,7 +358,15 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
 (69, 7, 0),
 (70, 12, 1),
 (71, 9, 1),
-(72, 11, 1);
+(72, 11, 0),
+(73, 12, 0),
+(73, 12, 0),
+(74, 9, 0),
+(74, 11, 0),
+(75, 11, 0),
+(76, 6, 0),
+(77, 10, 0),
+(78, 6, 1);
 
 --
 -- Indexes for dumped tables
@@ -436,7 +458,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- Constraints for dumped tables

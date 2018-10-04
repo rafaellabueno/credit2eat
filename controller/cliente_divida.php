@@ -30,11 +30,6 @@ if (isset($_POST['cliente'])) {
     $buscaprodutos = "SELECT produtos.prod_nome, venda_produto.venda_id, venda_produto.produto_id FROM produtos INNER JOIN venda_produto ON venda_produto.produto_id = produtos.prod_id INNER JOIN venda ON venda.id_venda = venda_produto.venda_id INNER JOIN cliente ON cliente.cli_id = venda.id_cliente WHERE cli_id = $cliente and venda_produto.pendente = 1";
     $var2 = $produtos->ExecuteSQL($buscaprodutos);
     $dados2 = $produtos->ListarDadosArray($buscaprodutos);
-    //print_r($dados2);
-    /* foreach ($dados2 as $p) {
-      $nomeprodutos = $p['prod_nome'];
-      echo $nomeprodutos;
-      } */
     ?>
     <br>
     <br>
@@ -47,13 +42,14 @@ if (isset($_POST['cliente'])) {
         <br>
         <form name="cliente_divida" action="./zera_divida" method="post">
             <div class="section">
-                <input type="hidden" name="vendas" value="<?php foreach ($dados2 as $p) {
-        echo $p['produto_id'] . '-' . $p['venda_id'];
-        if (next($dados2)) {
-            echo (", ");
-        }
-    }
-    ?>">
+                <input type="hidden" name="vendas" value="<?php
+                foreach ($dados2 as $p) {
+                    echo $p['produto_id'] . '-' . $p['venda_id'];
+                    if (next($dados2)) {
+                        echo (", ");
+                    }
+                }
+                ?>">
                 <input type="hidden" name="cliente_nome" value="<?php echo $nomecliente ?>">
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Nome: </font></label>
@@ -63,16 +59,17 @@ if (isset($_POST['cliente'])) {
                     <label><font size=4>Pendências:</font></label>
                     <input type="text" value="R$<?php echo $dividacliente ?>" class="form-control"  id="cliente_divida" name="cliente_divida" disabled>
                 </div>
-                <div class="form-group" style="width:1000px">
-                    <label><font size=4>Produtos Comprados:</font></label>
-                    <input type="text" value="<?php foreach ($dados2 as $p) {
-                           $nomeprodutos = $p['prod_nome'];
-                           echo $nomeprodutos;
-                           if (next($dados2)) {
-                               echo (", ");
-                           }
-                       }
-                       ?>" class="form-control"  id="produto" name="produtos">
+                <div class="form-group" style="width:500px" style="height: 100px">
+                    <label><font size=4>Produtos Pendentes:</font></label>
+                    <input type="text" value="<?php
+                    foreach ($dados2 as $p) {
+                        $nomeprodutos = $p['prod_nome'];
+                        echo $nomeprodutos;
+                        if (next($dados2)) {
+                            echo (", ");
+                        }
+                    }
+                    ?>" class="form-control"  id="produto" name="produtos">
                 </div>
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Curso</font></label>
@@ -86,6 +83,6 @@ if (isset($_POST['cliente'])) {
                 <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">Cancelar</button>
             </div>
         </form>
-    <?php
-}
-?>
+        <?php
+    }
+    ?>

@@ -104,8 +104,8 @@ $senha = ("");
                                 </li> 
                                 <li>
                                     <a href="cliente_divida">
-                                        <i class="pe-7s-user-female"></i>
-                                        <p>zerar divida</p>
+                                        <i class="pe-7s-piggy"></i>
+                                        <p>Quitar Dívidas</p>
                                     </a>
                                 </li>
                             </ul>
@@ -180,6 +180,12 @@ $senha = ("");
                                         <p href="">Cursos</p>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="valor_prazo">
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Valor a Prazo</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="active-pro">
@@ -211,15 +217,10 @@ $senha = ("");
                                        <p>Account</p>
                                     </a>
                                 </li> -->
-                                <!--<li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fa fa-globe"></i>
-                                            <b class="caret hidden-lg hidden-md"></b>
-                                            <p class="pe-7s-bell">
-                                                5 Notifications
-                                                <b class="caret"></b>
-                                            </p>
-                                      </a>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="pe-7s-bell"></i>
+                                    </a>
                                       <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
                                         <li><a href="#">Notification 2</a></li>
@@ -227,7 +228,7 @@ $senha = ("");
                                         <li><a href="#">Notification 4</a></li>
                                         <li><a href="#">Another notification</a></li>
                                       </ul>
-                                </li> -->
+                                </li> 
                                 <li>
                                     <a href="{$PAG_MINHACONTA}">
                                         <p>

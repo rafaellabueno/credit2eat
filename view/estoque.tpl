@@ -26,6 +26,7 @@
                 <button type="submit" class="btn btn-primary btn-block" name="botao">ATUALIZAR ESTOQUE</button>
             </div>
         </div>
+    </div>
 </form>
 
 </div>
