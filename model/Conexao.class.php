@@ -46,6 +46,10 @@ class Conexao extends Config {
         return $this->obj->fetch(PDO::FETCH_ASSOC);
     }
 
+    function ListarDadosArray() {
+        return $this->obj->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function TotalDados() {
         return $this->obj->rowCount();
     }

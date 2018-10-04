@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-01 23:26:33
+/* Smarty version 3.1.33, created on 2018-10-03 23:26:40
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb29109ed11a4_73762511',
+  'unifunc' => 'content_5bb53410706b56_68759321',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1538429168,
+      1 => 1538601999,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb29109ed11a4_73762511 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb53410706b56_68759321 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
+
+<!--<?php echo '<?php 
+
+';?>$usuario = ("");
+$senha = ("");
+
+//requires e sessions_start
+    if (MoodleUtil::geraToken($usuario, $senha)) {
+    $obj = MoodleUtil::requisita('core_webservice_get_site_info');
+    $url = str_replace('pluginfile.php', 'webservice/pluginfile.php', $obj->userpictureurl);
+    $urlToken = 'https://moodle.canoas.ifrs.edu.br/login/token.php?username=' . $usuario . '&password=' . $senha . '&service=moodle_mobile_app';
+    $str = json_decode(file_get_contents($urlToken));
+    $user = new Aluno();
+    $user->setNome($obj->fullname);
+    $user->setFoto($url);
+    $user->setIdUsuario($obj->userid);
+    $user->setToken($str->token);
+    $user->setMatricula($usuario);
+    $_SESSION['user'] = serialize($user);
+    $_SESSION["foto"] = $var->getFoto() . '&token=' . $var->getToken();
+
+
+}
+
+<?php echo '?>';?> -->
+
+
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -111,6 +138,12 @@ function content_5bb29109ed11a4_73762511 (Smarty_Internal_Template $_smarty_tpl)
                                         <p>Ver Clientes</p>
                                     </a>
                                 </li> 
+                                <li>
+                                    <a href="cliente_divida">
+                                        <i class="pe-7s-user-female"></i>
+                                        <p>zerar divida</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -282,13 +315,27 @@ function content_5bb29109ed11a4_73762511 (Smarty_Internal_Template $_smarty_tpl)
 
 
     </body>
-    <div id="ModalDelete" class="modal" role="dialog">
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
                 </div>
 
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>

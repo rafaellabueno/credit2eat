@@ -1,4 +1,31 @@
 <!doctype html>
+
+<!--<?php 
+
+$usuario = ("");
+$senha = ("");
+
+//requires e sessions_start
+    if (MoodleUtil::geraToken($usuario, $senha)) {
+    $obj = MoodleUtil::requisita('core_webservice_get_site_info');
+    $url = str_replace('pluginfile.php', 'webservice/pluginfile.php', $obj->userpictureurl);
+    $urlToken = 'https://moodle.canoas.ifrs.edu.br/login/token.php?username=' . $usuario . '&password=' . $senha . '&service=moodle_mobile_app';
+    $str = json_decode(file_get_contents($urlToken));
+    $user = new Aluno();
+    $user->setNome($obj->fullname);
+    $user->setFoto($url);
+    $user->setIdUsuario($obj->userid);
+    $user->setToken($str->token);
+    $user->setMatricula($usuario);
+    $_SESSION['user'] = serialize($user);
+    $_SESSION["foto"] = $var->getFoto() . '&token=' . $var->getToken();
+
+
+}
+
+?> -->
+
+
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -75,6 +102,12 @@
                                         <p>Ver Clientes</p>
                                     </a>
                                 </li> 
+                                <li>
+                                    <a href="cliente_divida">
+                                        <i class="pe-7s-user-female"></i>
+                                        <p>zerar divida</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">

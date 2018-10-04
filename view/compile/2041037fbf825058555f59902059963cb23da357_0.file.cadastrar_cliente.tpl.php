@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-09-26 16:30:31
+/* Smarty version 3.1.33, created on 2018-10-04 00:11:50
   from 'C:\xampp\htdocs\credit2eat\view\cadastrar_cliente.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bab98071b7457_75470289',
+  'unifunc' => 'content_5bb53ea6d67d17_75381853',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2041037fbf825058555f59902059963cb23da357' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_cliente.tpl',
-      1 => 1537972197,
+      1 => 1538603519,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bab98071b7457_75470289 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb53ea6d67d17_75381853 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,7 +45,7 @@ function content_5bab98071b7457_75470289 (Smarty_Internal_Template $_smarty_tpl)
         <div class="form-group">
             <label><font size=4>Selecione o Curso</font></label>
             <select id="curso-select" name="curso" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['id_curso'];?>
-" required>
+" >
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CUR']->value, 'C');
 if ($_from !== null) {
@@ -68,14 +68,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <label><font size=4>Email</font></label>
             <input type="email" class="form-control" id="cli_email" name="cli_email" >
         </div>
-        <div class="form-group" style="width:200px">
+        <div class="form-group" style="width:200px"> 
             <label><font size=4>Senha</font></label>
             <input type="password" class="form-control" id="cli_senha" name="cli_senha" required>
         </div>
-        <!--<div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
         </div>
@@ -96,7 +92,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     //$('.selectize-control').addClass('form-group');
                     $('.selectize-input').addClass('form-control');
             }
-    });<?php echo '</script'; ?>
+    });
+<?php echo '</script'; ?>
 >
 
 

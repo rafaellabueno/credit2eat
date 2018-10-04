@@ -66,6 +66,7 @@ else{
 			if((isset($_POST['nome']) && isset($_POST['senha']))){
 				$user = new Usuario();
 				$msg = $user->logar($_POST['nome'], $_POST['senha']);
+				
 			}else{
 				$smarty->display('login.tpl');
 			}

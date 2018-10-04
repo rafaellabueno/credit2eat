@@ -33,6 +33,12 @@ class Configuracoes extends Conexao {
         }
     }
 
+    function setValorPrazo($valor_prazo){
+        $query = "INSERT INTO valor_prazo (valor_prazo) VALUES ('$valor_prazo')";
+        $this->ExecuteSQL($query);
+    }
+    }
+
 }
 
 ?>

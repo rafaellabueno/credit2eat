@@ -41,7 +41,7 @@ class Produtos extends Conexao {
                 'prod_qnt_min' => $lista['prod_qnt_min'],
                 'prod_qnt' => $lista['prod_qnt'],
                 'prod_qnt_ven' => $lista['prod_qnt_ven'],
-                'prod_slug' => $lista['prod_slug'],
+                'valor_prazo' => $lista['valor_prazo'],
                 'usuario_id' => $lista['usuario_id']
             );
             $i++;
@@ -64,6 +64,10 @@ class Produtos extends Conexao {
     
         $query = "UPDATE produtos SET prod_qnt='$qnt' WHERE prod_id = $produto"; 
         $var = $this->ExecuteSQL($query);
+    }
+
+    function ExibirProdutos() {
+        return $this->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

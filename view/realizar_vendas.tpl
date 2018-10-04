@@ -22,21 +22,21 @@
         $("#selects").append(newSelect.html());
         var oldVal = $("#selects select:last").attr('value');
         $("#selects select:last").selectize({
-                placeholder: 'Digite o nome do Produto...',
-                onInitialize: function () {
-                    this.setValue(oldVal, true);
-                }
+            placeholder: 'Digite o nome do Produto...',
+            onInitialize: function () {
+                this.setValue(oldVal, true);
+            }
 
-            });
+        });
 
         /*newSelect.find('div select').selectize({
-                                    placeholder: 'Digite o nome do Produto...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProduto, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        //newSelect.find('div select').addClass('form-control');
-                                    }
-                                });/**/
+         placeholder: 'Digite o nome do Produto...',
+         onInitialize: function () {
+         this.setValue(oldProduto, true);
+         //$('.selectize-control').addClass('form-group');
+         //newSelect.find('div select').addClass('form-control');
+         }
+         });/**/
 
 
 
@@ -61,51 +61,51 @@
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
     <div align="left">
-    <div class="col-md-3" class="col-xs-6" style="width: 400px">
-        <div class="form-group">
-            <label><font size=4>Selecione o Cliente</font></label>
-            <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
-                {foreach from=$CLI item=C}
-                    <option value="{$C.cli_id}">{$C.cli_nome} - {$C.cli_matricula} </option>
-                {/foreach}
-            </select>
+        <div class="col-md-3" class="col-xs-6" style="width: 400px">
+            <div class="form-group">
+                <label><font size=4>Selecione o Cliente</font></label>
+                <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
+                    {foreach from=$CLI item=C}
+                        <option value="{$C.cli_id}">{$C.cli_nome} - {$C.cli_matricula} </option>
+                    {/foreach}
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="col-md-3" class="col-xs-6">
-        <div class="form-group" style="width:400px">
-            <label><font size=4>Insira a senha do cliente</font></label>
-            <input type="password" class="form-control" id="senhacliente" name="senhacliente" required>
+        <div class="col-md-3" class="col-xs-6">
+            <div class="form-group" style="width:400px">
+                <label><font size=4>Insira a senha do cliente</font></label>
+                <input type="password" class="form-control" id="senha" name="senha" required>
+            </div>
         </div>
-    </div>
 
-    <div id="displayOriginal">
-        <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
-            <label><font size=4>Escolha o Produto</font></label>
-            <select  class="produtos-select" required>
-                {foreach from=$PRO item=P}
-                    <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} - Quantidade: {$P.prod_qnt} </option>
-                {/foreach}
-            </select>
+        <div id="displayOriginal">
+            <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
+                <label><font size=4>Escolha o Produto</font></label>
+                <select  class="produtos-select" required>
+                    {foreach from=$PRO item=P}
+                        <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} - Quantidade: {$P.prod_qnt} </option>
+                    {/foreach}
+                </select>
+            </div>
         </div>
-    </div>
-    <div id="selects">
-    </div>
-    <div class="col-md-12" class="col-xs-6">
-        <a onclick="addProduto()" class="btn btn-primary" role="button">
-            Adicionar Produto
-        </a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="col-md-12" class="col-xs-6">
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+        <div id="selects">
         </div>
-        <div class="col-md-4">
-            <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+        <div class="col-md-12" class="col-xs-6">
+            <a onclick="addProduto()" class="btn btn-primary" role="button">
+                Adicionar Produto
+            </a>
         </div>
-    </div>
+        <br>
+        <br>
+        <br>
+        <div class="col-md-12" class="col-xs-6">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+            </div>
+            <div class="col-md-4">
+                <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+            </div>
+        </div>
     </div>
 </form>
 <hr>

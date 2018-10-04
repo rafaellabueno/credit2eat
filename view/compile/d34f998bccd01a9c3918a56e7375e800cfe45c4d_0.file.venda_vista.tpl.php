@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-01 23:27:04
+/* Smarty version 3.1.33, created on 2018-10-03 23:29:51
   from 'C:\xampp\htdocs\credit2eat\view\venda_vista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb291285e2cf7_09100045',
+  'unifunc' => 'content_5bb534cf982889_28285107',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd34f998bccd01a9c3918a56e7375e800cfe45c4d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\venda_vista.tpl',
-      1 => 1538429166,
+      1 => 1538570898,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb291285e2cf7_09100045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb534cf982889_28285107 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -98,6 +98,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                     <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
  - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
+ - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
  </option>
                 <?php
 }
@@ -113,6 +114,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             Adicionar Produto
         </a>
     </div>
+    <br>
+    <br>
+    <br>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-01 22:50:24
+/* Smarty version 3.1.33, created on 2018-10-03 23:59:29
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb2889045eb84_44224056',
+  'unifunc' => 'content_5bb53bc159a1d3_54720043',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1538405064,
+      1 => 1538603920,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb2889045eb84_44224056 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb53bc159a1d3_54720043 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -110,7 +110,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <div class="col-md-3" class="col-xs-6">
         <div class="form-group" style="width:400px">
             <label><font size=4>Insira a senha do cliente</font></label>
-            <input type="password" class="form-control" id="senhacliente" name="senhacliente" required>
+            <input type="password" class="form-control" id="senha" name="senha" required>
         </div>
     </div>
 
@@ -126,6 +126,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                     <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
  - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
+ - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
  </option>
                 <?php
 }
@@ -141,6 +142,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             Adicionar Produto
         </a>
     </div>
+    <br>
+    <br>
+    <br>
     <div class="col-md-12" class="col-xs-6">
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>

@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label><font size=4>Selecione o Curso</font></label>
-            <select id="curso-select" name="curso" value="{$C.id_curso}" required>
+            <select id="curso-select" name="curso" value="{$C.id_curso}" >
                 {foreach from=$CUR item=C}
                     <option value="{$C.id_curso}">{$C.nome_curso} </option>
                 {/foreach}
@@ -34,14 +34,10 @@
             <label><font size=4>Email</font></label>
             <input type="email" class="form-control" id="cli_email" name="cli_email" >
         </div>
-        <div class="form-group" style="width:200px">
+        <div class="form-group" style="width:200px"> 
             <label><font size=4>Senha</font></label>
             <input type="password" class="form-control" id="cli_senha" name="cli_senha" required>
         </div>
-        <!--<div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
         <div class="col-md-4">
             <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
         </div>

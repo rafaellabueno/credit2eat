@@ -66,24 +66,39 @@ class Vendas extends Conexao {
         $var = $this->ExecuteSQL($query);
     }
 
-    function setVendas($cliente, $produto) {
-        $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('$cliente','$_SESSION[id]')";
-        $var = $this->ExecuteSQL($query);
-        $id = $this->LastInsertID();
-        foreach ($produto as $produto) {
-            $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
-            $var3 = $this->ExecuteSQL($valor_prod);
-            $res = $this->ListarDados($valor_prod);
-            $valor_total = $valor_total + $res['prod_valor'] + '0.25';
-            $query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $produto);";
-            $var2 = $this->ExecuteSQL($query2);
+    function setVendas($cliente, $produto, $senha) {
+        $querysenha = "SELECT cli_senha FROM cliente WHERE cli_id = $cliente";
+        $varsenha = $this->ExecuteSQL($querysenha);
+        $clientesenha = $this->ListarDados($querysenha);
+        $senha123 = $clientesenha['cli_senha'];
+        //$senhacliente = password_hash($senha123, PASSWORD_DEFAULT);
+        if (password_verify($senha, $senha123)) {
+            $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('$cliente','$_SESSION[id]')";
+            $var = $this->ExecuteSQL($query);
+            $id = $this->LastInsertID();
+            foreach ($produto as $produto) {
+                $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
+                $var3 = $this->ExecuteSQL($valor_prod);
+                $res = $this->ListarDados($valor_prod);
+                $valor_total = $valor_total + $res['prod_valor'] + '0.25'; //VARIAVEL '+0,25'
+                $query2 = "INSERT INTO venda_produto (venda_id, produto_id, pendente) VALUES ('{$id}', $produto, 1);";
+                $var2 = $this->ExecuteSQL($query2);
+                /////////////////////////////////////ACRESCENTAR EM VENDIDOS
+                $vendidos = "SELECT prod_qnt_ven FROM produtos WHERE prod_id = $produto";
+                $var7 = $this->ExecuteSQL($vendidos);
+                $res7 = $this->ListarDados($vendidos);
+                $novo_vendidos = $res7['prod_qnt_ven'] + 1;
+                $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
+                $var8 = $this->ExecuteSQL($query7);
+            }
+            ////////////////////////////////////////////// SETAR DIVIDA
+            $divida_atual = "SELECT cli_divida FROM cliente WHERE cli_id = $cliente";
+            $var5 = $this->ExecuteSQL($divida_atual);
+            $res2 = $this->ListarDados($divida_atual);
+            $nova_divida = $valor_total + $res2['cli_divida'];
+            $query3 = "UPDATE cliente SET cli_divida='$nova_divida' WHERE cli_id = $cliente";
+            $var4 = $this->ExecuteSQL($query3);
         }
-        $divida_atual = "SELECT cli_divida FROM cliente WHERE cli_id = $cliente";
-        $var5 = $this->ExecuteSQL($divida_atual);
-        $res2 = $this->ListarDados($divida_atual);
-        $nova_divida = $valor_total + $res2['cli_divida'];
-        $query3 = "UPDATE cliente SET cli_divida='$nova_divida' WHERE cli_id = $cliente";
-        $var4 = $this->ExecuteSQL($query3);
     }
 
     function setVendaVista($produtos) {
@@ -93,6 +108,13 @@ class Vendas extends Conexao {
         foreach ($produtos as $produto) {
             $query2 = "INSERT INTO venda_produto (venda_id, produto_id) VALUES ('{$id}', $produto);";
             $var2 = $this->ExecuteSQL($query2);
+            /////////////////////////////////////ACRESCENTAR EM VENDIDOS
+            $vendidos = "SELECT prod_qnt_ven FROM produtos WHERE prod_id = $produto";
+            $var7 = $this->ExecuteSQL($vendidos);
+            $res7 = $this->ListarDados($vendidos);
+            $novo_vendidos = $res7['prod_qnt_ven'] + 1;
+            $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
+            $var8 = $this->ExecuteSQL($query7);
         }
     }
 
