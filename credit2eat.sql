@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Out-2018 às 16:35
--- Versão do servidor: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: 05-Out-2018 às 00:06
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -100,6 +100,35 @@ CREATE TABLE `divida` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `estoque`
+--
+
+DROP TABLE IF EXISTS `estoque`;
+CREATE TABLE `estoque` (
+  `id` int(11) NOT NULL,
+  `produto` int(11) NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `qntd` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `estoque`
+--
+
+INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
+(1, 12, '2018-10-04 16:30:11', 5),
+(2, 6, '2018-10-04 16:30:53', 10),
+(3, 7, '2018-10-04 17:24:48', 12),
+(4, 8, '2018-10-04 17:39:04', 7),
+(5, 6, '2018-10-04 17:43:45', 34),
+(6, 10, '2018-10-04 17:44:27', 2),
+(7, 10, '2018-10-04 17:44:33', 5),
+(8, 10, '2018-10-04 17:45:08', 2),
+(9, 12, '2018-10-04 18:10:01', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `produtos`
 --
 
@@ -120,13 +149,13 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
-(6, 'Pizza', 5.00, 10, 67, 2, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, -8, 1, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 42, 2, NULL, 25),
+(6, 'Pizza', 5.00, 10, 111, 2, NULL, 25),
+(7, 'Enroladinho', 2.50, 15, 4, 1, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 49, 2, NULL, 25),
 (9, 'Pastel de Carne', 4.50, 12, 16, 2, NULL, 25),
-(10, 'Refrigerante 2L', 8.00, 12, 23, 1, NULL, 25),
+(10, 'Refrigerante 2L', 8.00, 12, 32, 1, NULL, 25),
 (11, 'Chocolate', 10.00, 10, -4, 4, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, -15, 5, NULL, 25);
+(12, 'Croissant de Frango', 5.00, 12, 6, 5, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -394,6 +423,12 @@ ALTER TABLE `divida`
   ADD KEY `fk_divida_venda1_idx` (`venda_id_venda`);
 
 --
+-- Indexes for table `estoque`
+--
+ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `produtos`
 --
 ALTER TABLE `produtos`
@@ -441,6 +476,12 @@ ALTER TABLE `cursos`
 --
 ALTER TABLE `divida`
   MODIFY `id_divida` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `estoque`
+--
+ALTER TABLE `estoque`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `produtos`
