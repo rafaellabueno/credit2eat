@@ -131,7 +131,7 @@ $senha = ("");
                                 <li>
                                     <a href="estoque">
                                         <i class="pe-7s-refresh-2"></i>
-                                        <p href="">Atualizar Estoque</p>
+                                        <p href="">Estoque</p>
                                     </a>
                                 </li>
                             </ul>
@@ -219,7 +219,7 @@ $senha = ("");
                                 </li> -->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="pe-7s-bell"></i>
+                                        <p>Notificações</p>
                                     </a>
                                       <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>

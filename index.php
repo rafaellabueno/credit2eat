@@ -55,6 +55,19 @@ if(isset($_REQUEST['pag'])){
 
 		return;
 	}
+
+	if($path == 'atualizar'){
+
+		$cliente = new Clientes();
+		$id = explode('/',$_REQUEST['pag']);
+		$idA = $id[sizeof($id)-1];
+		$idB = $id[sizeof($id)-2];
+
+		$produto = new Produtos();
+    	echo $produto->alterarProdutos($idA, $idB);
+
+		return;
+	}
 }
 if(isset($_SESSION['id'])){
 	$smarty->display('index.tpl');

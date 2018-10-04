@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-03 23:26:40
+/* Smarty version 3.1.33, created on 2018-10-04 18:35:40
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb53410706b56_68759321',
+  'unifunc' => 'content_5bb6415c8147b3_17133604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1538601999,
+      1 => 1538670938,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb53410706b56_68759321 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb6415c8147b3_17133604 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 
 <!--<?php echo '<?php 
@@ -140,8 +140,8 @@ $senha = ("");
                                 </li> 
                                 <li>
                                     <a href="cliente_divida">
-                                        <i class="pe-7s-user-female"></i>
-                                        <p>zerar divida</p>
+                                        <i class="pe-7s-piggy"></i>
+                                        <p>Quitar Dívidas</p>
                                     </a>
                                 </li>
                             </ul>
@@ -168,7 +168,7 @@ $senha = ("");
                                 <li>
                                     <a href="estoque">
                                         <i class="pe-7s-refresh-2"></i>
-                                        <p href="">Atualizar Estoque</p>
+                                        <p href="">Estoque</p>
                                     </a>
                                 </li>
                             </ul>
@@ -218,6 +218,12 @@ $senha = ("");
                                         <p href="">Cursos</p>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="valor_prazo">
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Valor a Prazo</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="active-pro">
@@ -251,15 +257,10 @@ $senha = ("");
                                        <p>Account</p>
                                     </a>
                                 </li> -->
-                                <!--<li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fa fa-globe"></i>
-                                            <b class="caret hidden-lg hidden-md"></b>
-                                            <p class="pe-7s-bell">
-                                                5 Notifications
-                                                <b class="caret"></b>
-                                            </p>
-                                      </a>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <p>Notificações</p>
+                                    </a>
                                       <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
                                         <li><a href="#">Notification 2</a></li>
@@ -267,7 +268,7 @@ $senha = ("");
                                         <li><a href="#">Notification 4</a></li>
                                         <li><a href="#">Another notification</a></li>
                                       </ul>
-                                </li> -->
+                                </li> 
                                 <li>
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 ">
