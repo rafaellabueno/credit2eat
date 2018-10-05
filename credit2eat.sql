@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Out-2018 às 00:06
--- Versão do servidor: 10.1.35-MariaDB
--- versão do PHP: 7.2.9
+-- Generation Time: 05-Out-2018 às 13:44
+-- Versão do servidor: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cliente`
 --
 
-DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `cli_id` int(10) NOT NULL,
   `cli_nome` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -65,7 +64,6 @@ INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_
 -- Estrutura da tabela `cursos`
 --
 
-DROP TABLE IF EXISTS `cursos`;
 CREATE TABLE `cursos` (
   `id_curso` int(11) NOT NULL,
   `nome_curso` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -90,7 +88,6 @@ INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
 -- Estrutura da tabela `divida`
 --
 
-DROP TABLE IF EXISTS `divida`;
 CREATE TABLE `divida` (
   `id_divida` int(11) NOT NULL,
   `valor_divida` float DEFAULT NULL,
@@ -103,7 +100,6 @@ CREATE TABLE `divida` (
 -- Estrutura da tabela `estoque`
 --
 
-DROP TABLE IF EXISTS `estoque`;
 CREATE TABLE `estoque` (
   `id` int(11) NOT NULL,
   `produto` int(11) NOT NULL,
@@ -132,7 +128,6 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 -- Estrutura da tabela `produtos`
 --
 
-DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `prod_id` int(11) NOT NULL,
   `prod_nome` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -163,7 +158,6 @@ INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `p
 -- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
@@ -188,7 +182,6 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 -- Estrutura da tabela `valor_prazo`
 --
 
-DROP TABLE IF EXISTS `valor_prazo`;
 CREATE TABLE `valor_prazo` (
   `id` int(11) NOT NULL,
   `valor_prazo` float NOT NULL
@@ -207,7 +200,6 @@ INSERT INTO `valor_prazo` (`id`, `valor_prazo`) VALUES
 -- Estrutura da tabela `venda`
 --
 
-DROP TABLE IF EXISTS `venda`;
 CREATE TABLE `venda` (
   `id_venda` int(10) NOT NULL,
   `valor_venda` float NOT NULL,
@@ -299,7 +291,6 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_
 -- Estrutura da tabela `venda_produto`
 --
 
-DROP TABLE IF EXISTS `venda_produto`;
 CREATE TABLE `venda_produto` (
   `venda_id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,

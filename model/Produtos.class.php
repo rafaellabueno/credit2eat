@@ -102,7 +102,7 @@ class Produtos extends Conexao {
         }
     }
 
-    function verificaEstoque(){
+    function verificaEstoque($produto){
         $query = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
         $var = $this->ExecuteSQL($query);
         $res = $this->ListarDados($query);
@@ -114,8 +114,20 @@ class Produtos extends Conexao {
         $quantidademinima = $res['prod_qnt_min'];
 
         if ($quantidade <= $quantidademinima) {
-            echo "penis";
+            echo "a"; ////////TEM QUE NOTIFICAR
+            if ($quantidade == 0) {
+                /////////////NAO REALIZA VENDA
+            }
+            else {
+                //////REALIZA VENDA
+            }
         }
+
+        else{
+            //////REALIZA VENDA
+        }
+
+        
     }
 
 }

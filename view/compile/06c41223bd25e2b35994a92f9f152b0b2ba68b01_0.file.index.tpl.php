@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-04 16:32:10
+/* Smarty version 3.1.33, created on 2018-10-05 00:40:00
   from 'D:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bb6246aac61c8_83469068',
+  'unifunc' => 'content_5bb696c0a833b2_79318683',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06c41223bd25e2b35994a92f9f152b0b2ba68b01' => 
     array (
       0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1538663529,
+      1 => 1538691229,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bb6246aac61c8_83469068 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bb696c0a833b2_79318683 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 
 <!--<?php echo '<?php 
@@ -168,7 +168,7 @@ $senha = ("");
                                 <li>
                                     <a href="estoque">
                                         <i class="pe-7s-refresh-2"></i>
-                                        <p href="">Atualizar Estoque</p>
+                                        <p href="">Estoque</p>
                                     </a>
                                 </li>
                             </ul>
@@ -259,7 +259,7 @@ $senha = ("");
                                 </li> -->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="pe-7s-bell"></i>
+                                        <p>Notificações</p>
                                     </a>
                                       <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
