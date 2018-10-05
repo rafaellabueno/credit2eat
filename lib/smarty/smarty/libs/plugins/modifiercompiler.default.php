@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty default modifier plugin
  * Type:     modifier
@@ -18,11 +20,10 @@
  *
  * @return string with compiled code
  */
-function smarty_modifiercompiler_default($params)
-{
-    $output = $params[ 0 ];
-    if (!isset($params[ 1 ])) {
-        $params[ 1 ] = "''";
+function smarty_modifiercompiler_default($params) {
+    $output = $params[0];
+    if (!isset($params[1])) {
+        $params[1] = "''";
     }
     array_shift($params);
     foreach ($params as $param) {

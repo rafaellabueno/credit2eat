@@ -3,34 +3,36 @@
   from 'D:\xampp\htdocs\credit2eat\view\venda_vista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.33',
-  'unifunc' => 'content_5bb3ab71da92f5_69773547',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '9f2cb3a7da77cf1ebf5feb1b6955b5f4abdf6fe9' => 
-    array (
-      0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\venda_vista.tpl',
-      1 => 1538501487,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5bb3ab71da92f5_69773547 (Smarty_Internal_Template $_smarty_tpl) {
-echo '<script'; ?>
->
-    var total = 0;
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.33',
+            'unifunc' => 'content_5bb3ab71da92f5_69773547',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                '9f2cb3a7da77cf1ebf5feb1b6955b5f4abdf6fe9' =>
+                array(
+                    0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\venda_vista.tpl',
+                    1 => 1538501487,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-    function deletaProduto(id) {
+    function content_5bb3ab71da92f5_69773547(Smarty_Internal_Template $_smarty_tpl) {
+        echo '<script';
+        ?>
+        >
+        var total = 0;
+
+        function deletaProduto(id) {
         console.log($('#' + id));
         $('#' + id).remove();
-    }
+        }
 
-    function addProduto() {
+        function addProduto() {
         var newSelect = $("#displayOriginal");
         newSelect = newSelect.clone();
         id = 'select-' + total++;
@@ -46,116 +48,119 @@ echo '<script'; ?>
         $("#selects").append(newSelect.html());
         var oldVal = $("#selects select:last").attr('value');
         $("#selects select:last").selectize({
-                placeholder: 'Digite o nome do Produto...',
-                onInitialize: function () {
-                    this.setValue(oldVal, true);
-                }
+        placeholder: 'Digite o nome do Produto...',
+        onInitialize: function () {
+        this.setValue(oldVal, true);
+        }
 
-            });
+        });
 
         /*newSelect.find('div select').selectize({
-                                    placeholder: 'Digite o nome do Produto...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProduto, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        //newSelect.find('div select').addClass('form-control');
-                                    }
-                                });/**/
+        placeholder: 'Digite o nome do Produto...',
+        onInitialize: function () {
+        this.setValue(oldProduto, true);
+        //$('.selectize-control').addClass('form-group');
+        //newSelect.find('div select').addClass('form-control');
+        }
+        });/**/
 
 
 
 
         //console.log(newSelect.find('div select'));
         /*newSelect.find('div select').selectize({
-         placeholder: 'Digite o nome do Produto...',
-         onInitialize: function () {
-         this.setValue(undefined);
-         //$('.selectize-control').addClass('form-group');
-         $('.selectize-input').addClass('form-control');
-         }
-         });*/
-
-    }
-<?php echo '</script'; ?>
->
-
-<center>
-    <h3>Realizar Venda à Vista</h3> 
-</center>
-<hr>
-<br>
-<form id="form_venda_vista" name="form_venda_vista" action="./venda_vista" method="post">
-    <div align="left">
-    <div id="displayOriginal">
-        <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
-            <label><font size=4>Escolha o Produto</font></label>
-            <select class="produtos-select" required>
-                <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
-?>
-                    <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
- - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
- - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
- </option>
-                <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </select>
-        </div>
-    </div>
-    <div id="selects">
-    </div>
-    <div class="col-md-12" class="col-xs-6">
-        <a onclick="addProduto()" class="btn btn-primary" role="button">
-            Adicionar Produto
-        </a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="col-md-12" class="col-xs-6">
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
-        </div>
-        <div class="col-md-4">
-            <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
-        </div>
-    </div>
-    </div>
-</form>
-<hr>
-
-
-
-
-<?php echo '<script'; ?>
->
-    $(document).ready(function () {
-        addProduto();
-    })
-<?php echo '</script'; ?>
->
-
-<?php echo '<script'; ?>
->
-    function limpa() {
-        if (document.getElementById('produto').value != "") {
-            document.getElementById('produto').value = "";
-            header('location:./realizar_vendas');
+        placeholder: 'Digite o nome do Produto...',
+        onInitialize: function () {
+        this.setValue(undefined);
+        //$('.selectize-control').addClass('form-group');
+        $('.selectize-input').addClass('form-control');
         }
+        });*/
+
+        }
+        <?php echo '</script'; ?>
+        >
+
+        <center>
+            <h3>Realizar Venda à Vista</h3> 
+        </center>
+        <hr>
+        <br>
+        <form id="form_venda_vista" name="form_venda_vista" action="./venda_vista" method="post">
+            <div align="left">
+                <div id="displayOriginal">
+                    <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
+                        <label><font size=4>Escolha o Produto</font></label>
+                        <select class="produtos-select" required>
+                            <?php
+                            $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
+                            if ($_from !== null) {
+                                foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+                                    ?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id']; ?>
+                                            "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome']; ?>
+                                        - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor']; ?>
+                                        - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt']; ?>
+                                    </option>
+                                    <?php
+                                }
+                            }
+                            $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div id="selects">
+                </div>
+                <div class="col-md-12" class="col-xs-6">
+                    <a onclick="addProduto()" class="btn btn-primary" role="button">
+                        Adicionar Produto
+                    </a>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-12" class="col-xs-6">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+
+
+
+
+        <?php echo '<script'; ?>
+        >
+        $(document).ready(function () {
+        addProduto();
+        })
+        <?php echo '</script'; ?>
+        >
+
+        <?php echo '<script'; ?>
+        >
+        function limpa() {
+        if (document.getElementById('produto').value != "") {
+        document.getElementById('produto').value = "";
+        header('location:./realizar_vendas');
+        }
+        }
+        <?php echo '</script'; ?>
+        >
+
+
+        <!--<div class="col-md-12" class="col-xs-6">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="a_prazo" id="a_prazo">
+                    <label class="form-check-label" id="a_prazo" value="a_prazo" name="a_prazo" for="a_prazo"><font size=4>A Prazo</font></label>
+                </div> 
+        </div> --><?php
     }
-<?php echo '</script'; ?>
->
 
-
-<!--<div class="col-md-12" class="col-xs-6">
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" name="a_prazo" id="a_prazo">
-            <label class="form-check-label" id="a_prazo" value="a_prazo" name="a_prazo" for="a_prazo"><font size=4>A Prazo</font></label>
-        </div> 
-</div> --><?php }
 }

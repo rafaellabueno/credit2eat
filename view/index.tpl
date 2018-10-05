@@ -55,7 +55,7 @@ $senha = ("");
         <!--     Fonts and icons     -->
         <link href="{$GET_TEMA}/http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> <!-- TEM QUE INSTALAR A FONTE--> 
+        <!--  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">  TEM QUE INSTALAR A FONTE--> 
 
         <link href='{$GET_TEMA}/http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
         <link href="{$GET_TEMA}/tema/css/pe-icon-7-stroke.css" rel="stylesheet" />
@@ -221,13 +221,13 @@ $senha = ("");
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <p>Notificações</p>
                                     </a>
-                                      <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
                                         <li><a href="#">Notification 2</a></li>
                                         <li><a href="#">Notification 3</a></li>
                                         <li><a href="#">Notification 4</a></li>
                                         <li><a href="#">Another notification</a></li>
-                                      </ul>
+                                    </ul>
                                 </li> 
                                 <li>
                                     <a href="{$PAG_MINHACONTA}">
@@ -324,6 +324,7 @@ $senha = ("");
                             $(document).ready(function () {
                                 var oldCliente = $('#cliente-select').attr("value");
                                 $('#cliente-select').selectize({
+                                    create: true,
                                     placeholder: 'Digite a matrícula do Cliente...',
                                     onInitialize: function () {
                                         this.setValue(oldCliente, true);

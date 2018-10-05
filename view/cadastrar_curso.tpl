@@ -25,8 +25,8 @@
 
 <script>
     function limpa() {
-        if (document.getElementById('curso_nome').value != "") {
-            document.getElementById('curso_nome').value = "";
+    if (document.getElementById('curso_nome').value != "") {
+    document.getElementById('curso_nome').value = "";
     }
 </script>
 

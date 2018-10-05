@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This example shows signing a message and then sending it via the mail() function of PHP.
  * 

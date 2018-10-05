@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifier
  */
+
 /**
  * Smarty replace modifier plugin
  * Type:     modifier
@@ -21,8 +23,7 @@
  *
  * @return string
  */
-function smarty_modifier_replace($string, $search, $replace)
-{
+function smarty_modifier_replace($string, $search, $replace) {
     static $is_loaded = false;
     if (Smarty::$_MBSTRING) {
         if (!$is_loaded) {

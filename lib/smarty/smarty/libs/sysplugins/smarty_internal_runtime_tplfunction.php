@@ -6,9 +6,9 @@
  * @package    Smarty
  * @subpackage PluginsInternal
  * @author     Uwe Tews
- **/
-class Smarty_Internal_Runtime_TplFunction
-{
+ * */
+class Smarty_Internal_Runtime_TplFunction {
+
     /**
      * Call template function
      *
@@ -19,18 +19,17 @@ class Smarty_Internal_Runtime_TplFunction
      *
      * @throws \SmartyException
      */
-    public function callTemplateFunction(Smarty_Internal_Template $tpl, $name, $params, $nocache)
-    {
-        $funcParam = isset($tpl->tplFunctions[ $name ]) ? $tpl->tplFunctions[ $name ] :
-            (isset($tpl->smarty->tplFunctions[ $name ]) ? $tpl->smarty->tplFunctions[ $name ] : null);
+    public function callTemplateFunction(Smarty_Internal_Template $tpl, $name, $params, $nocache) {
+        $funcParam = isset($tpl->tplFunctions[$name]) ? $tpl->tplFunctions[$name] :
+                (isset($tpl->smarty->tplFunctions[$name]) ? $tpl->smarty->tplFunctions[$name] : null);
         if (isset($funcParam)) {
             if (!$tpl->caching || ($tpl->caching && $nocache)) {
-                $function = $funcParam[ 'call_name' ];
+                $function = $funcParam['call_name'];
             } else {
-                if (isset($funcParam[ 'call_name_caching' ])) {
-                    $function = $funcParam[ 'call_name_caching' ];
+                if (isset($funcParam['call_name_caching'])) {
+                    $function = $funcParam['call_name_caching'];
                 } else {
-                    $function = $funcParam[ 'call_name' ];
+                    $function = $funcParam['call_name'];
                 }
             }
             if (function_exists($function)) {
@@ -60,16 +59,14 @@ class Smarty_Internal_Runtime_TplFunction
      * @param bool                                                            $override     if true replace existing
      *                                                                                      functions with same name
      */
-    public function registerTplFunctions(Smarty_Internal_TemplateBase $obj, $tplFunctions, $override = true)
-    {
-        $obj->tplFunctions =
-            $override ? array_merge($obj->tplFunctions, $tplFunctions) : array_merge($tplFunctions, $obj->tplFunctions);
+    public function registerTplFunctions(Smarty_Internal_TemplateBase $obj, $tplFunctions, $override = true) {
+        $obj->tplFunctions = $override ? array_merge($obj->tplFunctions, $tplFunctions) : array_merge($tplFunctions, $obj->tplFunctions);
         // make sure that the template functions are known in parent templates
         if ($obj->_isSubTpl()) {
             $obj->smarty->ext->_tplFunction->registerTplFunctions($obj->parent, $tplFunctions, false);
         } else {
             $obj->smarty->tplFunctions = $override ? array_merge($obj->smarty->tplFunctions, $tplFunctions) :
-                array_merge($tplFunctions, $obj->smarty->tplFunctions);
+                    array_merge($tplFunctions, $obj->smarty->tplFunctions);
         }
     }
 
@@ -81,11 +78,10 @@ class Smarty_Internal_Runtime_TplFunction
      *
      * @return array|bool|mixed
      */
-    public function getTplFunction(Smarty_Internal_Template $tpl, $name = null)
-    {
+    public function getTplFunction(Smarty_Internal_Template $tpl, $name = null) {
         if (isset($name)) {
-            return isset($tpl->tplFunctions[ $name ]) ? $tpl->tplFunctions[ $name ] :
-                (isset($tpl->smarty->tplFunctions[ $name ]) ? $tpl->smarty->tplFunctions[ $name ] : false);
+            return isset($tpl->tplFunctions[$name]) ? $tpl->tplFunctions[$name] :
+                    (isset($tpl->smarty->tplFunctions[$name]) ? $tpl->smarty->tplFunctions[$name] : false);
         } else {
             return empty($tpl->tplFunctions) ? $tpl->smarty->tplFunctions : $tpl->tplFunctions;
         }
@@ -100,19 +96,18 @@ class Smarty_Internal_Runtime_TplFunction
      *
      * @return bool
      */
-    public function addTplFuncToCache(Smarty_Internal_Template $tpl, $_name, $_function)
-    {
-        $funcParam = $tpl->tplFunctions[ $_name ];
-        if (is_file($funcParam[ 'compiled_filepath' ])) {
+    public function addTplFuncToCache(Smarty_Internal_Template $tpl, $_name, $_function) {
+        $funcParam = $tpl->tplFunctions[$_name];
+        if (is_file($funcParam['compiled_filepath'])) {
             // read compiled file
-            $code = file_get_contents($funcParam[ 'compiled_filepath' ]);
+            $code = file_get_contents($funcParam['compiled_filepath']);
             // grab template function
             if (preg_match("/\/\* {$_function} \*\/([\S\s]*?)\/\*\/ {$_function} \*\//", $code, $match)) {
                 // grab source info from file dependency
                 preg_match("/\s*'{$funcParam['uid']}'([\S\s]*?)\),/", $code, $match1);
                 unset($code);
                 // make PHP function known
-                eval($match[ 0 ]);
+                eval($match[0]);
                 if (function_exists($_function)) {
                     // search cache file template
                     $tplPtr = $tpl;
@@ -128,16 +123,13 @@ class Smarty_Internal_Runtime_TplFunction
                                 $content = preg_replace("/('file_dependency'(.*?)\()/", "\\1{$match1[0]}", $content);
                             }
                             $tplPtr->smarty->ext->_updateCache->write(
-                                $tplPtr,
-                                preg_replace('/\s*\?>\s*$/', "\n", $content) .
-                                "\n" . preg_replace(
-                                    array(
+                                    $tplPtr, preg_replace('/\s*\?>\s*$/', "\n", $content) .
+                                    "\n" . preg_replace(
+                                            array(
                                         '/^\s*<\?php\s+/',
                                         '/\s*\?>\s*$/',
-                                    ),
-                                    "\n",
-                                    $match[ 0 ]
-                                )
+                                            ), "\n", $match[0]
+                                    )
                             );
                         }
                     }
@@ -154,10 +146,8 @@ class Smarty_Internal_Runtime_TplFunction
      * @param \Smarty_Internal_Template $tpl
      * @param string                    $name stack name
      */
-    public function saveTemplateVariables(Smarty_Internal_Template $tpl, $name)
-    {
-        $tpl->_cache[ 'varStack' ][] =
-            array('tpl' => $tpl->tpl_vars, 'config' => $tpl->config_vars, 'name' => "_tplFunction_{$name}");
+    public function saveTemplateVariables(Smarty_Internal_Template $tpl, $name) {
+        $tpl->_cache['varStack'][] = array('tpl' => $tpl->tpl_vars, 'config' => $tpl->config_vars, 'name' => "_tplFunction_{$name}");
     }
 
     /**
@@ -166,12 +156,12 @@ class Smarty_Internal_Runtime_TplFunction
      * @param \Smarty_Internal_Template $tpl
      * @param string                    $name stack name
      */
-    public function restoreTemplateVariables(Smarty_Internal_Template $tpl, $name)
-    {
-        if (isset($tpl->_cache[ 'varStack' ])) {
-            $vars = array_pop($tpl->_cache[ 'varStack' ]);
-            $tpl->tpl_vars = $vars[ 'tpl' ];
-            $tpl->config_vars = $vars[ 'config' ];
+    public function restoreTemplateVariables(Smarty_Internal_Template $tpl, $name) {
+        if (isset($tpl->_cache['varStack'])) {
+            $vars = array_pop($tpl->_cache['varStack']);
+            $tpl->tpl_vars = $vars['tpl'];
+            $tpl->config_vars = $vars['config'];
         }
     }
+
 }

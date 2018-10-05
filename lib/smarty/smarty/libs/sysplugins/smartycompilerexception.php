@@ -5,13 +5,12 @@
  *
  * @package Smarty
  */
-class SmartyCompilerException extends SmartyException
-{
+class SmartyCompilerException extends SmartyException {
+
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return ' --> Smarty Compiler: ' . $this->message . ' <-- ';
     }
 
@@ -42,4 +41,5 @@ class SmartyCompilerException extends SmartyException
      * @type string|null
      */
     public $template = null;
+
 }

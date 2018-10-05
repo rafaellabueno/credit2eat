@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This example shows how to use DKIM message authentication with PHPMailer.
  * There's more to using DKIM than just this code - check out this article:

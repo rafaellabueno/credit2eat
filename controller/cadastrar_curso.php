@@ -1,16 +1,15 @@
-<?php 
+<?php
 
 $smarty = new Template();
 
-if(isset($_POST['curso_nome'])){
+if (isset($_POST['curso_nome'])) {
 
-	$curso = new Configuracoes();
+    $curso = new Configuracoes();
 
-	$resp = $curso->setCursos($_POST['curso_nome']);
+    $resp = $curso->setCursos($_POST['curso_nome']);
 
-	header("location:./cursos");
+    header("location:./cursos");
 }
 
 $smarty->display('cadastrar_curso.tpl');
-
 ?>

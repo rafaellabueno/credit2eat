@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty Internal Plugin CompileBase
  *
@@ -13,8 +14,8 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-abstract class Smarty_Internal_CompileBase
-{
+abstract class Smarty_Internal_CompileBase {
+
     /**
      * Array of names of required attribute required by tag
      *
@@ -70,21 +71,20 @@ abstract class Smarty_Internal_CompileBase
      *
      * @return array  of mapped attributes for further processing
      */
-    public function getAttributes($compiler, $attributes)
-    {
+    public function getAttributes($compiler, $attributes) {
         $_indexed_attr = array();
-        if (!isset($this->mapCache[ 'option' ])) {
-            $this->mapCache[ 'option' ] = array_fill_keys($this->option_flags, true);
+        if (!isset($this->mapCache['option'])) {
+            $this->mapCache['option'] = array_fill_keys($this->option_flags, true);
         }
         foreach ($attributes as $key => $mixed) {
             // shorthand ?
             if (!is_array($mixed)) {
                 // option flag ?
-                if (isset($this->mapCache[ 'option' ][ trim($mixed, '\'"') ])) {
-                    $_indexed_attr[ trim($mixed, '\'"') ] = true;
+                if (isset($this->mapCache['option'][trim($mixed, '\'"')])) {
+                    $_indexed_attr[trim($mixed, '\'"')] = true;
                     // shorthand attribute ?
-                } elseif (isset($this->shorttag_order[ $key ])) {
-                    $_indexed_attr[ $this->shorttag_order[ $key ] ] = $mixed;
+                } elseif (isset($this->shorttag_order[$key])) {
+                    $_indexed_attr[$this->shorttag_order[$key]] = $mixed;
                 } else {
                     // too many shorthands
                     $compiler->trigger_template_error('too many shorthand attributes', null, true);
@@ -93,63 +93,57 @@ abstract class Smarty_Internal_CompileBase
             } else {
                 foreach ($mixed as $k => $v) {
                     // option flag?
-                    if (isset($this->mapCache[ 'option' ][ $k ])) {
+                    if (isset($this->mapCache['option'][$k])) {
                         if (is_bool($v)) {
-                            $_indexed_attr[ $k ] = $v;
+                            $_indexed_attr[$k] = $v;
                         } else {
                             if (is_string($v)) {
                                 $v = trim($v, '\'" ');
                             }
-                            if (isset($this->optionMap[ $v ])) {
-                                $_indexed_attr[ $k ] = $this->optionMap[ $v ];
+                            if (isset($this->optionMap[$v])) {
+                                $_indexed_attr[$k] = $this->optionMap[$v];
                             } else {
                                 $compiler->trigger_template_error(
-                                    "illegal value '" . var_export($v, true) .
-                                    "' for option flag '{$k}'",
-                                    null,
-                                    true
+                                        "illegal value '" . var_export($v, true) .
+                                        "' for option flag '{$k}'", null, true
                                 );
                             }
                         }
                         // must be named attribute
                     } else {
-                        $_indexed_attr[ $k ] = $v;
+                        $_indexed_attr[$k] = $v;
                     }
                 }
             }
         }
         // check if all required attributes present
         foreach ($this->required_attributes as $attr) {
-            if (!isset($_indexed_attr[ $attr ])) {
+            if (!isset($_indexed_attr[$attr])) {
                 $compiler->trigger_template_error("missing '{$attr}' attribute", null, true);
             }
         }
         // check for not allowed attributes
         if ($this->optional_attributes !== array('_any')) {
-            if (!isset($this->mapCache[ 'all' ])) {
-                $this->mapCache[ 'all' ] =
-                    array_fill_keys(
+            if (!isset($this->mapCache['all'])) {
+                $this->mapCache['all'] = array_fill_keys(
                         array_merge(
-                            $this->required_attributes,
-                            $this->optional_attributes,
-                            $this->option_flags
-                        ),
-                        true
-                    );
+                                $this->required_attributes, $this->optional_attributes, $this->option_flags
+                        ), true
+                );
             }
             foreach ($_indexed_attr as $key => $dummy) {
-                if (!isset($this->mapCache[ 'all' ][ $key ]) && $key !== 0) {
+                if (!isset($this->mapCache['all'][$key]) && $key !== 0) {
                     $compiler->trigger_template_error("unexpected '{$key}' attribute", null, true);
                 }
             }
         }
         // default 'false' for all option flags not set
         foreach ($this->option_flags as $flag) {
-            if (!isset($_indexed_attr[ $flag ])) {
-                $_indexed_attr[ $flag ] = false;
+            if (!isset($_indexed_attr[$flag])) {
+                $_indexed_attr[$flag] = false;
             }
         }
-        if (isset($_indexed_attr[ 'nocache' ]) && $_indexed_attr[ 'nocache' ]) {
+        if (isset($_indexed_attr['nocache']) && $_indexed_attr['nocache']) {
             $compiler->tag_nocache = true;
         }
         return $_indexed_attr;
@@ -163,8 +157,7 @@ abstract class Smarty_Internal_CompileBase
      * @param string $openTag  the opening tag's name
      * @param mixed  $data     optional data saved
      */
-    public function openTag($compiler, $openTag, $data = null)
-    {
+    public function openTag($compiler, $openTag, $data = null) {
         array_push($compiler->_tag_stack, array($openTag, $data));
     }
 
@@ -177,13 +170,12 @@ abstract class Smarty_Internal_CompileBase
      *
      * @return mixed        any type the opening tag's name or saved data
      */
-    public function closeTag($compiler, $expectedTag)
-    {
+    public function closeTag($compiler, $expectedTag) {
         if (count($compiler->_tag_stack) > 0) {
             // get stacked info
             list($_openTag, $_data) = array_pop($compiler->_tag_stack);
             // open tag must match with the expected ones
-            if (in_array($_openTag, (array)$expectedTag)) {
+            if (in_array($_openTag, (array) $expectedTag)) {
                 if (is_null($_data)) {
                     // return opening tag
                     return $_openTag;
@@ -200,4 +192,5 @@ abstract class Smarty_Internal_CompileBase
         $compiler->trigger_template_error('unexpected closing tag', null, true);
         return;
     }
+
 }

@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifier
  */
+
 /**
  * Smarty escape modifier plugin
  * Type:     modifier
@@ -21,8 +23,7 @@
  *
  * @return string escaped input string
  */
-function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true)
-{
+function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true) {
     static $_double_encode = null;
     static $is_loaded_1 = false;
     static $is_loaded_2 = false;
@@ -46,15 +47,13 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                     $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                     $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
                     $string = str_replace(
-                        array(
-                            '%%%SMARTY_START%%%',
-                            '%%%SMARTY_END%%%'
-                        ),
-                        array(
-                            '&',
-                            ';'
-                        ),
-                        $string
+                            array(
+                        '%%%SMARTY_START%%%',
+                        '%%%SMARTY_END%%%'
+                            ), array(
+                        '&',
+                        ';'
+                            ), $string
                     );
                     return $string;
                 }
@@ -74,18 +73,15 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                         // php <5.2.3 - prevent double encoding
                         $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                         $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
-                        $string =
-                            str_replace(
+                        $string = str_replace(
                                 array(
-                                    '%%%SMARTY_START%%%',
-                                    '%%%SMARTY_END%%%'
-                                ),
-                                array(
-                                    '&',
-                                    ';'
-                                ),
-                                $string
-                            );
+                            '%%%SMARTY_START%%%',
+                            '%%%SMARTY_END%%%'
+                                ), array(
+                            '&',
+                            ';'
+                                ), $string
+                        );
                         return $string;
                     }
                 }
@@ -102,15 +98,13 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                     $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
                     $string = htmlentities($string, ENT_QUOTES, $char_set);
                     $string = str_replace(
-                        array(
-                            '%%%SMARTY_START%%%',
-                            '%%%SMARTY_END%%%'
-                        ),
-                        array(
-                            '&',
-                            ';'
-                        ),
-                        $string
+                            array(
+                        '%%%SMARTY_START%%%',
+                        '%%%SMARTY_END%%%'
+                            ), array(
+                        '&',
+                        ';'
+                            ), $string
                     );
                     return $string;
                 }
@@ -129,7 +123,7 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             $return = '';
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x++) {
-                $return .= '%' . bin2hex($string[ $x ]);
+                $return .= '%' . bin2hex($string[$x]);
             }
             return $return;
         case 'hexentity':
@@ -150,7 +144,7 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             // no MBString fallback
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x++) {
-                $return .= '&#x' . bin2hex($string[ $x ]) . ';';
+                $return .= '&#x' . bin2hex($string[$x]) . ';';
             }
             return $return;
         case 'decentity':
@@ -171,21 +165,20 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
             // no MBString fallback
             $_length = strlen($string);
             for ($x = 0; $x < $_length; $x++) {
-                $return .= '&#' . ord($string[ $x ]) . ';';
+                $return .= '&#' . ord($string[$x]) . ';';
             }
             return $return;
         case 'javascript':
             // escape quotes and backslashes, newlines, etc.
             return strtr(
-                $string,
-                array(
-                    '\\' => '\\\\',
-                    "'"  => "\\'",
-                    '"'  => '\\"',
-                    "\r" => '\\r',
-                    "\n" => '\\n',
-                    '</' => '<\/'
-                )
+                    $string, array(
+                '\\' => '\\\\',
+                "'" => "\\'",
+                '"' => '\\"',
+                "\r" => '\\r',
+                "\n" => '\\n',
+                '</' => '<\/'
+                    )
             );
         case 'mail':
             if (Smarty::$_MBSTRING) {
@@ -196,28 +189,24 @@ function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $
                     $is_loaded_2 = true;
                 }
                 return smarty_mb_str_replace(
-                    array(
-                        '@',
-                        '.'
-                    ),
-                    array(
-                        ' [AT] ',
-                        ' [DOT] '
-                    ),
-                    $string
+                        array(
+                    '@',
+                    '.'
+                        ), array(
+                    ' [AT] ',
+                    ' [DOT] '
+                        ), $string
                 );
             }
             // no MBString fallback
             return str_replace(
-                array(
-                    '@',
-                    '.'
-                ),
-                array(
-                    ' [AT] ',
-                    ' [DOT] '
-                ),
-                $string
+                    array(
+                '@',
+                '.'
+                    ), array(
+                ' [AT] ',
+                ' [DOT] '
+                    ), $string
             );
         case 'nonstd':
             // escape non-standard chars, such as ms document quotes

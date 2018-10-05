@@ -3,37 +3,40 @@
   from 'C:\xampp\htdocs\credit2eat\view\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5b4020a44f06c7_80682825',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '0f2b01634c63c7708dcb36d2560c69851fb5011c' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\menu.tpl',
-      1 => 1530929314,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5b4020a44f06c7_80682825 (Smarty_Internal_Template $_smarty_tpl) {
-?><center>
-    <p> <h2> BEM VINDO AO CREDIT2EAT </h2> <BR>
-    <h3> Sistema de Gerenciamento de Cantinas </h3> <BR> </p>
-</center>
-<center>
-	<p><h3>ESCOLHA O QUE DESEJA FAZER</h3> <br> </p>  
-</center>
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.32',
+            'unifunc' => 'content_5b4020a44f06c7_80682825',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                '0f2b01634c63c7708dcb36d2560c69851fb5011c' =>
+                array(
+                    0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\menu.tpl',
+                    1 => 1530929314,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-<br>
-<!--<center> -->
-	<h3> <a href='cadastrar_cliente'>  Cadastra Novo Cliente  </a> <a href='clientes'> <h3> Ver Clientes </h3></a> </h3> 
-	<h3><a href="cadastrar_cliente."> Cadastrar Novo Cliente ||  <a href="">Ver Clientes<h3>
-	<a href=''> <h3> opção 2 </h3> </a>  
-	<a href=''> <h3> opção 3 </h3> </a> 
-<!--</center>  -->      <?php }
-}
+    function content_5b4020a44f06c7_80682825(Smarty_Internal_Template $_smarty_tpl) {
+        ?><center>
+            <p> <h2> BEM VINDO AO CREDIT2EAT </h2> <BR>
+            <h3> Sistema de Gerenciamento de Cantinas </h3> <BR> </p>
+        </center>
+        <center>
+            <p><h3>ESCOLHA O QUE DESEJA FAZER</h3> <br> </p>  
+        </center>
+
+        <br>
+        <!--<center> -->
+        <h3> <a href='cadastrar_cliente'>  Cadastra Novo Cliente  </a> <a href='clientes'> <h3> Ver Clientes </h3></a> </h3> 
+        <h3><a href="cadastrar_cliente."> Cadastrar Novo Cliente ||  <a href="">Ver Clientes<h3>
+                        <a href=''> <h3> opção 2 </h3> </a>  
+                        <a href=''> <h3> opção 3 </h3> </a> 
+                        <!--</center>  -->      <?php
+                    }
+
+                }

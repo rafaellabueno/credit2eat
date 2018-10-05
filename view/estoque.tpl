@@ -3,34 +3,34 @@
 </center>
 <hr>
 <br>
-        <div class="col-md-3" class="col-xs-6" style="width: 400px">
-            <div class="form-group">
-                <label><font size=4>Escolha um Produto</font></label>
-                <select id="produto-select" name="produto" value="{$P.prod_id}" required>
-                    {foreach from=$PRO item=P}
-                        <option id="produto" value="{$P.prod_id}">{$P.prod_nome} - {$P.prod_qnt} unidades </option>
-                    {/foreach}
-                </select>
-            </div>
-        </div>
-        <div class="col-md-3" class="col-xs-6">
-            <div class="form-group" style="width:400px">
-                <label><font size=4>Insira a quantidade:</font></label>
-                <input type="number" class="form-control" id="qtd" name="qtd" required>
-            </div>
-        </div>
-        <div class="col-md-12" class="col-xs-6">
-            <div class="col-md-3">
-                <a href="javascript:void(0);" class="atualizar btn" style="color: #030300">ATUALIZAR ESTOQUE</a>
-            </div>
-        </div>
-        <div class="col-md-12" class="col-xs-6">
-            <hr>
-            <center>
-                <h3>Histórico de Atualizações</h3> 
-            </center>
-            <hr>
-            <table class="table">
+<div class="col-md-3" class="col-xs-6" style="width: 400px">
+    <div class="form-group">
+        <label><font size=4>Escolha um Produto</font></label>
+        <select id="produto-select" name="produto" value="{$P.prod_id}" required>
+            {foreach from=$PRO item=P}
+                <option id="produto" value="{$P.prod_id}">{$P.prod_nome} - {$P.prod_qnt} unidades </option>
+            {/foreach}
+        </select>
+    </div>
+</div>
+<div class="col-md-3" class="col-xs-6">
+    <div class="form-group" style="width:400px">
+        <label><font size=4>Insira a quantidade:</font></label>
+        <input type="number" class="form-control" id="qtd" name="qtd" required>
+    </div>
+</div>
+<div class="col-md-12" class="col-xs-6">
+    <div class="col-md-3">
+        <a href="javascript:void(0);" class="atualizar btn" style="color: #030300">ATUALIZAR ESTOQUE</a>
+    </div>
+</div>
+<div class="col-md-12" class="col-xs-6">
+    <hr>
+    <center>
+        <h3>Histórico de Atualizações</h3> 
+    </center>
+    <hr>
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Produto</th>
@@ -50,13 +50,13 @@
                     {foreach from=$EST item=E}
                         {foreach from=$PRO item=P}
                             {if $P.prod_id == $E.produto}
-                        <tbody>
-                            <tr>    
-                                <th scope="row"><a href="" style="color: #000000">{$P.prod_nome}</a></th>
-                                <td>{$E.qntd}</td>
-                                <td>{$E.data}</td>
-                            </tr>
-                        </tbody>
+                                <tbody>
+                                    <tr>    
+                                        <th scope="row"><a href="" style="color: #000000">{$P.prod_nome}</a></th>
+                                        <td>{$E.qntd}</td>
+                                        <td>{$E.data}</td>
+                                    </tr>
+                                </tbody>
                             {/if}
                         {/foreach}
                     {/foreach}
@@ -71,28 +71,29 @@
 
     </table>
 
-        </div>
+</div>
 <script>
     $('.atualizar').click(function () {
-        var idProduto = $('#produto').attr("value");
-        var qtd = $('#qtd').attr("value");
-        console.log(qtd);
-            var urlConsulta = './atualizar/' + idProduto + '/' + qtd;
-            $.get(urlConsulta, function (res) {
-                console.log(res);
-                if (res === '1') {
-                    bootbox.alert("Estoque atualizado", function () {
+        var idProduto = $('#produto-select').val();
+        var qtd = $('#qtd').val();
+        //console.log(qtd + idProduto);
+        var urlConsulta = './atualizar/' + idProduto + '/' + qtd;
+        $.get(urlConsulta, function (res) {
 
-                        window.location.reload();
+            console.log(res);
+            if (res === '1') {
+                bootbox.alert("Estoque atualizado", function () {
 
-                    });
-                } else {
-                    bootbox.alert("Não foi possível atualizar o estoque!", function () {
+                    window.location.reload();
+
+                });
+            } else {
+                bootbox.alert("Não foi possível atualizar o estoque!", function () {
 
 
-                        window.location.reload();
-                    });
-                }
+                    window.location.reload();
+                });
+            }
         });
 
     });

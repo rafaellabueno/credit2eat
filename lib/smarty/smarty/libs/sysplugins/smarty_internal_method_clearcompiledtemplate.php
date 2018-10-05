@@ -9,8 +9,8 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_ClearCompiledTemplate
-{
+class Smarty_Internal_Method_ClearCompiledTemplate {
+
     /**
      * Valid for Smarty object
      *
@@ -32,8 +32,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
      * @return int number of template files deleted
      * @throws \SmartyException
      */
-    public function clearCompiledTemplate(Smarty $smarty, $resource_name = null, $compile_id = null, $exp_time = null)
-    {
+    public function clearCompiledTemplate(Smarty $smarty, $resource_name = null, $compile_id = null, $exp_time = null) {
         // clear template objects cache
         $smarty->_clearTemplateCache();
         $_compile_dir = $smarty->getCompileDir();
@@ -77,7 +76,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
             if (substr(basename($_file->getPathname()), 0, 1) === '.') {
                 continue;
             }
-            $_filepath = (string)$_file;
+            $_filepath = (string) $_file;
             if ($_file->isDir()) {
                 if (!$_compile->isDot()) {
                     // delete folder if empty
@@ -90,21 +89,12 @@ class Smarty_Internal_Method_ClearCompiledTemplate
                 }
                 $unlink = false;
                 if ((!isset($_compile_id) ||
-                     (isset($_filepath[ $_compile_id_part_length ]) &&
-                      $a = !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length)))
-                    && (!isset($resource_name) || (isset($_filepath[ $_resource_part_1_length ])
-                                                   && substr_compare(
-                                                          $_filepath,
-                                                          $_resource_part_1,
-                                                          -$_resource_part_1_length,
-                                                          $_resource_part_1_length
-                                                      ) === 0) || (isset($_filepath[ $_resource_part_2_length ])
-                                                                   && substr_compare(
-                                                                          $_filepath,
-                                                                          $_resource_part_2,
-                                                                          -$_resource_part_2_length,
-                                                                          $_resource_part_2_length
-                                                                      ) === 0))
+                        (isset($_filepath[$_compile_id_part_length]) &&
+                        $a = !strncmp($_filepath, $_compile_id_part, $_compile_id_part_length))) && (!isset($resource_name) || (isset($_filepath[$_resource_part_1_length]) && substr_compare(
+                                $_filepath, $_resource_part_1, -$_resource_part_1_length, $_resource_part_1_length
+                        ) === 0) || (isset($_filepath[$_resource_part_2_length]) && substr_compare(
+                                $_filepath, $_resource_part_2, -$_resource_part_2_length, $_resource_part_2_length
+                        ) === 0))
                 ) {
                     if (isset($exp_time)) {
                         if (is_file($_filepath) && time() - filemtime($_filepath) >= $exp_time) {
@@ -116,8 +106,7 @@ class Smarty_Internal_Method_ClearCompiledTemplate
                 }
                 if ($unlink && is_file($_filepath) && @unlink($_filepath)) {
                     $_count++;
-                    if (function_exists('opcache_invalidate')
-                        && (!function_exists('ini_get') || strlen(ini_get('opcache.restrict_api')) < 1)
+                    if (function_exists('opcache_invalidate') && (!function_exists('ini_get') || strlen(ini_get('opcache.restrict_api')) < 1)
                     ) {
                         opcache_invalidate($_filepath, true);
                     } elseif (function_exists('apc_delete_file')) {
@@ -128,4 +117,5 @@ class Smarty_Internal_Method_ClearCompiledTemplate
         }
         return $_count;
     }
+
 }

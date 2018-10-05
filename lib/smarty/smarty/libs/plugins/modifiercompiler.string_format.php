@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty string_format modifier plugin
  * Type:     modifier
@@ -18,7 +20,6 @@
  *
  * @return string with compiled code
  */
-function smarty_modifiercompiler_string_format($params)
-{
-    return 'sprintf(' . $params[ 1 ] . ',' . $params[ 0 ] . ')';
+function smarty_modifiercompiler_string_format($params) {
+    return 'sprintf(' . $params[1] . ',' . $params[0] . ')';
 }

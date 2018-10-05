@@ -9,8 +9,8 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_GetTags
-{
+class Smarty_Internal_Method_GetTags {
+
     /**
      * Valid for Smarty and template object
      *
@@ -31,8 +31,7 @@ class Smarty_Internal_Method_GetTags
      * @throws \Exception
      * @throws \SmartyException
      */
-    public function getTags(Smarty_Internal_TemplateBase $obj, $template = null)
-    {
+    public function getTags(Smarty_Internal_TemplateBase $obj, $template = null) {
         /* @var Smarty $smarty */
         $smarty = $obj->_getSmartyObj();
         if ($obj->_isTplObj() && !isset($template)) {
@@ -49,15 +48,16 @@ class Smarty_Internal_Method_GetTags
         }
         if (isset($tpl)) {
             $tpl->smarty = clone $tpl->smarty;
-            $tpl->smarty->_cache[ 'get_used_tags' ] = true;
-            $tpl->_cache[ 'used_tags' ] = array();
+            $tpl->smarty->_cache['get_used_tags'] = true;
+            $tpl->_cache['used_tags'] = array();
             $tpl->smarty->merge_compiled_includes = false;
             $tpl->smarty->disableSecurity();
             $tpl->caching = Smarty::CACHING_OFF;
             $tpl->loadCompiler();
             $tpl->compiler->compileTemplate($tpl);
-            return $tpl->_cache[ 'used_tags' ];
+            return $tpl->_cache['used_tags'];
         }
         throw new SmartyException('Missing template specification');
     }
+
 }

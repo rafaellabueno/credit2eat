@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty upper modifier plugin
  * Type:     modifier
@@ -18,11 +20,10 @@
  *
  * @return string with compiled code
  */
-function smarty_modifiercompiler_upper($params)
-{
+function smarty_modifiercompiler_upper($params) {
     if (Smarty::$_MBSTRING) {
-        return 'mb_strtoupper(' . $params[ 0 ] . ', \'' . addslashes(Smarty::$_CHARSET) . '\')';
+        return 'mb_strtoupper(' . $params[0] . ', \'' . addslashes(Smarty::$_CHARSET) . '\')';
     }
     // no MBString fallback
-    return 'strtoupper(' . $params[ 0 ] . ')';
+    return 'strtoupper(' . $params[0] . ')';
 }

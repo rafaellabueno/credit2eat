@@ -1,14 +1,14 @@
 .form-control::-moz-placeholder{
-   @include placeholder($medium-gray,1);
+    @include placeholder($medium-gray,1);
 }
 .form-control:-moz-placeholder{
-   @include placeholder($medium-gray,1);
+    @include placeholder($medium-gray,1);
 }  
 .form-control::-webkit-input-placeholder{
-   @include placeholder($medium-gray,1); 
+    @include placeholder($medium-gray,1); 
 } 
 .form-control:-ms-input-placeholder{
-   @include placeholder($medium-gray,1);
+    @include placeholder($medium-gray,1);
 }
 
 .form-control {
@@ -18,23 +18,23 @@
     color: #565656;
     @include input-size($padding-base-vertical, $padding-base-horizontal - 4, $height-base);
     @include box-shadow(none);
-    
+
     &:focus{
-           background-color: $white-bg;
-           border: 1px solid $medium-dark-gray;
-           @include box-shadow(none);
-           outline: 0 !important;    
-           color: #333333;   
+        background-color: $white-bg;
+        border: 1px solid $medium-dark-gray;
+        @include box-shadow(none);
+        outline: 0 !important;    
+        color: #333333;   
     }
-    
+
     .has-success &,
     .has-error &,
     .has-success &:focus,
-    .has-error &:focus{
+        .has-error &:focus{
         border-color: $light-gray;
         @include box-shadow(none);
     }
-    
+
     .has-success &{
         color: $success-color;
     }
@@ -47,7 +47,7 @@
     .has-error &:focus{
         border-color: $danger-color;
     }
-    
+
     & + .form-control-feedback{
         border-radius: $border-radius-large;
         font-size: $font-size-base;
@@ -57,7 +57,7 @@
         top: 50%;
         vertical-align: middle;
     }
-    
+
     .open &{
         border-radius: $border-radius-base $border-radius-base 0 0;
         border-bottom-color: transparent;
@@ -85,7 +85,7 @@
     background-color: $white-color;
     border: 1px solid $light-gray;
     border-radius: $border-radius-base;
-    
+
     .has-success &,
     .has-error &{
         background-color: $white-color;
@@ -100,7 +100,7 @@
         color: $success-color;
     }
     .form-control:focus + &,
-    .form-control:focus ~ &{
+        .form-control:focus ~ &{
         background-color: $white-color;
         border-color: $dark-gray;
     }

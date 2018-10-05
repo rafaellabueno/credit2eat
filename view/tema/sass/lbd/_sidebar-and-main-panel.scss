@@ -81,7 +81,7 @@
 
         .open > a,
         li.dropdown .dropdown-menu li:hover > a,
-        li:hover > a{
+            li:hover > a{
             background-color: rgba(255,255,255,0.13);
             opacity: 1;
         }
@@ -178,7 +178,7 @@
     }
 
     &:after,
-    &:before{
+        &:before{
         display: block;
         content: "";
         position: absolute;
@@ -195,13 +195,13 @@
     }
 
     &:after{
-       @include icon-gradient($black-color-top, $black-color-bottom);
-       z-index: 3;
-       opacity: 1;
+        @include icon-gradient($black-color-top, $black-color-bottom);
+        z-index: 3;
+        opacity: 1;
     }
 
     &[data-image]:after,
-    &.has-image:after{
+        &.has-image:after{
         opacity: .77;
     }
 

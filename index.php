@@ -30,64 +30,57 @@ $dados->TotalDados();
 $path = '';
 
 
-if(isset($_REQUEST['pag'])){
-	$path = explode('/',  $_REQUEST['pag']);
-	foreach($path as $str){
-		if($str != ''){
-			$path = $str;
-			break;
-		}
-	}
+if (isset($_REQUEST['pag'])) {
+    $path = explode('/', $_REQUEST['pag']);
+    foreach ($path as $str) {
+        if ($str != '') {
+            $path = $str;
+            break;
+        }
+    }
 
 
-	if($path == 'logout'){
-		session_destroy();
-		header("location:./");
-		return;
-	}
+    if ($path == 'logout') {
+        session_destroy();
+        header("location:./");
+        return;
+    }
 
-	if($path == 'excluir'){
+    if ($path == 'excluir') {
 
-		$cliente = new Clientes();
-		$id = explode('/',$_REQUEST['pag']);
-		$id = $id[sizeof($id)-1];
-		echo $cliente->remove($id);
+        $cliente = new Clientes();
+        $id = explode('/', $_REQUEST['pag']);
+        $id = $id[sizeof($id) - 1];
+        echo $cliente->remove($id);
 
-		return;
-	}
+        return;
+    }
 
-	if($path == 'atualizar'){
+    if ($path == 'atualizar') {
 
-		$cliente = new Clientes();
-		$id = explode('/',$_REQUEST['pag']);
-		$idA = $id[sizeof($id)-1];
-		$idB = $id[sizeof($id)-2];
+        $cliente = new Clientes();
+        $id = explode('/', $_REQUEST['pag']);
+        $idA = $id[sizeof($id) - 1];
+        $idB = $id[sizeof($id) - 2];
 
-		$produto = new Produtos();
-    	echo $produto->alterarProdutos($idA, $idB);
+        $produto = new Produtos();
+        echo $produto->alterarProdutos($idA, $idB);
 
-		return;
-	}
+        return;
+    }
 }
-if(isset($_SESSION['id'])){
-	$smarty->display('index.tpl');
+if (isset($_SESSION['id'])) {
+    $smarty->display('index.tpl');
+} else {
+    if ($path == 'cadastro') {
+        $smarty->display('cadastro.tpl');
+    } else {
+        if ((isset($_POST['nome']) && isset($_POST['senha']))) {
+            $user = new Usuario();
+            $msg = $user->logar($_POST['nome'], $_POST['senha']);
+        } else {
+            $smarty->display('login.tpl');
+        }
+    }
 }
-else{
-	if($path == 'cadastro'){
-		$smarty->display('cadastro.tpl');
-	}else{
-			if((isset($_POST['nome']) && isset($_POST['senha']))){
-				$user = new Usuario();
-				$msg = $user->logar($_POST['nome'], $_POST['senha']);
-				
-			}else{
-				$smarty->display('login.tpl');
-			}
-	}
-
-
-	
-}
-
-
 ?>

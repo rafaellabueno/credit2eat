@@ -66,7 +66,7 @@
                 <label><font size=4>Selecione o Cliente</font></label>
                 <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
                     {foreach from=$CLI item=C}
-                        <option value="{$C.cli_id}">{$C.cli_nome} - {$C.cli_matricula} </option>
+                        <option value="{$C.cli_matricula}">{$C.cli_nome} - {$C.cli_matricula} </option>
                     {/foreach}
                 </select>
             </div>

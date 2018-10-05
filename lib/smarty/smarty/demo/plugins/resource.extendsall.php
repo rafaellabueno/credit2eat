@@ -8,8 +8,8 @@
  * @package Resource-examples
  * @author  Rodney Rehm
  */
-class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
-{
+class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends {
+
     /**
      * populate Source Object with meta data from Resource
      *
@@ -18,8 +18,7 @@ class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
      *
      * @return void
      */
-    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template = null)
-    {
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template = null) {
         $uid = '';
         $sources = array();
         $timestamp = 0;
@@ -29,10 +28,11 @@ class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
                 if (!$s->exists) {
                     continue;
                 }
-                $sources[ $s->uid ] = $s;
+                $sources[$s->uid] = $s;
                 $uid .= $s->filepath;
                 $timestamp = $s->timestamp > $timestamp ? $s->timestamp : $timestamp;
             } catch (SmartyException $e) {
+                
             }
         }
         if (!$sources) {
@@ -55,8 +55,8 @@ class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
      *
      * @return bool false
      */
-    public function checkTimestamps()
-    {
+    public function checkTimestamps() {
         return false;
     }
+
 }

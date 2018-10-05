@@ -22,8 +22,8 @@
  * @package CacheResource-examples
  * @author  Rodney Rehm
  */
-class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
-{
+class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom {
+
     /**
      * @var \PDO
      */
@@ -49,8 +49,7 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
      *
      * @throws \SmartyException
      */
-    public function __construct()
-    {
+    public function __construct() {
         try {
             $this->db = new PDO("mysql:dbname=test;host=127.0.0.1", "smarty");
         } catch (PDOException $e) {
@@ -59,7 +58,7 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
         $this->fetch = $this->db->prepare('SELECT modified, content FROM output_cache WHERE id = :id');
         $this->fetchTimestamp = $this->db->prepare('SELECT modified FROM output_cache WHERE id = :id');
         $this->save = $this->db->prepare(
-            'REPLACE INTO output_cache (id, name, cache_id, compile_id, content)
+                'REPLACE INTO output_cache (id, name, cache_id, compile_id, content)
             VALUES  (:id, :name, :cache_id, :compile_id, :content)'
         );
     }
@@ -76,14 +75,13 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
      *
      * @return void
      */
-    protected function fetch($id, $name, $cache_id, $compile_id, &$content, &$mtime)
-    {
+    protected function fetch($id, $name, $cache_id, $compile_id, &$content, &$mtime) {
         $this->fetch->execute(array('id' => $id));
         $row = $this->fetch->fetch();
         $this->fetch->closeCursor();
         if ($row) {
-            $content = $row[ 'content' ];
-            $mtime = strtotime($row[ 'modified' ]);
+            $content = $row['content'];
+            $mtime = strtotime($row['modified']);
         } else {
             $content = null;
             $mtime = null;
@@ -103,8 +101,7 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
      *
      * @return integer|boolean timestamp (epoch) the template was modified, or false if not found
      */
-    protected function fetchTimestamp($id, $name, $cache_id, $compile_id)
-    {
+    protected function fetchTimestamp($id, $name, $cache_id, $compile_id) {
         $this->fetchTimestamp->execute(array('id' => $id));
         $mtime = strtotime($this->fetchTimestamp->fetchColumn());
         $this->fetchTimestamp->closeCursor();
@@ -123,14 +120,13 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
      *
      * @return boolean      success
      */
-    protected function save($id, $name, $cache_id, $compile_id, $exp_time, $content)
-    {
+    protected function save($id, $name, $cache_id, $compile_id, $exp_time, $content) {
         $this->save->execute(
-            array('id' => $id,
-                  'name' => $name,
-                  'cache_id' => $cache_id,
-                  'compile_id' => $compile_id,
-                  'content' => $content,)
+                array('id' => $id,
+                    'name' => $name,
+                    'cache_id' => $cache_id,
+                    'compile_id' => $compile_id,
+                    'content' => $content,)
         );
         return !!$this->save->rowCount();
     }
@@ -145,8 +141,7 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
      *
      * @return integer      number of deleted caches
      */
-    protected function delete($name, $cache_id, $compile_id, $exp_time)
-    {
+    protected function delete($name, $cache_id, $compile_id, $exp_time) {
         // delete the whole cache
         if ($name === null && $cache_id === null && $compile_id === null && $exp_time === null) {
             // returning the number of deleted caches would require a second query to count them
@@ -169,15 +164,15 @@ class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
         }
         // equal test cache_id and match sub-groups
         if ($cache_id !== null) {
-            $where[] =
-                '(cache_id = ' .
-                $this->db->quote($cache_id) .
-                ' OR cache_id LIKE ' .
-                $this->db->quote($cache_id . '|%') .
-                ')';
+            $where[] = '(cache_id = ' .
+                    $this->db->quote($cache_id) .
+                    ' OR cache_id LIKE ' .
+                    $this->db->quote($cache_id . '|%') .
+                    ')';
         }
         // run delete query
         $query = $this->db->query('DELETE FROM output_cache WHERE ' . join(' AND ', $where));
         return $query->rowCount();
     }
+
 }

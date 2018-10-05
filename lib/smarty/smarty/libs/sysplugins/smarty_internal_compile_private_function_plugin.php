@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty Internal Plugin Compile Function Plugin
  * Compiles code for the execution of function plugin
@@ -14,8 +15,8 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-class Smarty_Internal_Compile_Private_Function_Plugin extends Smarty_Internal_CompileBase
-{
+class Smarty_Internal_Compile_Private_Function_Plugin extends Smarty_Internal_CompileBase {
+
     /**
      * Attribute definition: Overwrites base class.
      *
@@ -45,11 +46,10 @@ class Smarty_Internal_Compile_Private_Function_Plugin extends Smarty_Internal_Co
      * @throws \SmartyCompilerException
      * @throws \SmartyException
      */
-    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter, $tag, $function)
-    {
+    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler, $parameter, $tag, $function) {
         // check and get attributes
         $_attr = $this->getAttributes($compiler, $args);
-        unset($_attr[ 'nocache' ]);
+        unset($_attr['nocache']);
         // convert attributes into parameter array string
         $_paramsArray = array();
         foreach ($_attr as $_key => $_value) {
@@ -62,17 +62,16 @@ class Smarty_Internal_Compile_Private_Function_Plugin extends Smarty_Internal_Co
         $_params = 'array(' . implode(',', $_paramsArray) . ')';
         // compile code
         $output = "{$function}({$_params},\$_smarty_tpl)";
-        if (!empty($parameter[ 'modifierlist' ])) {
+        if (!empty($parameter['modifierlist'])) {
             $output = $compiler->compileTag(
-                'private_modifier',
-                array(),
-                array(
-                    'modifierlist' => $parameter[ 'modifierlist' ],
-                    'value'        => $output
-                )
+                    'private_modifier', array(), array(
+                'modifierlist' => $parameter['modifierlist'],
+                'value' => $output
+                    )
             );
         }
         $output = "<?php echo {$output};?>\n";
         return $output;
     }
+
 }

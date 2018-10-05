@@ -1,80 +1,80 @@
 <center>
-	<h3>Lista de Produtos</h3>
+    <h3>Lista de Produtos</h3>
 </center>
 <hr>
 
 <!--	<section>
-		<center>
-			PAGINAS
-		</center>	
-	</section> -->
+                <center>
+                        PAGINAS
+                </center>	
+        </section> -->
 
-	<!-- começa a lista de produtos -->
-	<section id="produtos" class="row">
+<!-- começa a lista de produtos -->
+<section id="produtos" class="row">
 
-		<ul style="list-style: none">
-			
-			<div class="row" id="pularlinha">
+    <ul style="list-style: none">
 
-				{foreach from=$PRO item=P}
+        <div class="row" id="pularlinha">
 
-				<li class="col-md-4">
-				
-				<div class="thumbnail">
+            {foreach from=$PRO item=P}
 
-					<!--<a href="{$PRO_INFO}/{$P.prod_id}/{$P.prod_slug}"> -->
+            <li class="col-md-4">
 
-					<<table>
-						<caption></caption>
-						<thead>
-							<tr>
-								<th>header</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>{$P.prod_nome}</td>
-								<td>R${$P.prod_valor}</td>
-							</tr>
-						</tbody>
-					</table>
+                <div class="thumbnail">
 
-					<div class="caption">
-						
-						<h5 class="text-center"><b>{$P.prod_nome}</b></h5>
-						<h5 class="text-center">R${$P.prod_valor}</h5>
-						<h5 class="text-center">Quantidade: {$P.prod_qnt} Unidades</h5>
-						<h5 class="text-center">Quantidade mínima: {$P.prod_qnt_min}</h5>
-						<h5 class="text-center">Quantidade vendidos: {$P.prod_qnt_ven}</h5>
-					</div>
+                    <!--<a href="{$PRO_INFO}/{$P.prod_id}/{$P.prod_slug}"> -->
 
-					</a>
+                    <<table>
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>header</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{$P.prod_nome}</td>
+                                <td>R${$P.prod_valor}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-				</div>
+                    <div class="caption">
 
-				</li>
+                        <h5 class="text-center"><b>{$P.prod_nome}</b></h5>
+                        <h5 class="text-center">R${$P.prod_valor}</h5>
+                        <h5 class="text-center">Quantidade: {$P.prod_qnt} Unidades</h5>
+                        <h5 class="text-center">Quantidade mínima: {$P.prod_qnt_min}</h5>
+                        <h5 class="text-center">Quantidade vendidos: {$P.prod_qnt_ven}</h5>
+                    </div>
 
-				{/foreach}
+                    </a>
 
-			</div>
-		
-		</ul>
+                </div>
 
-	</section>
+            </li>
 
-	<!-- paginação inferior -->
-	<!--<section id="paginacao" class="row">
-		<center>
-			PAGINAS
-		</center>
-	</section> -->
+            {/foreach}
+
+        </div>
+
+    </ul>
+
+</section>
+
+<!-- paginação inferior -->
+<!--<section id="paginacao" class="row">
+        <center>
+                PAGINAS
+        </center>
+</section> -->
 
 
-						<div class="caption">
-						
-						<h5 class="text-center"><b>{$P.prod_nome}</b></h5>
-						<h5 class="text-center">R${$P.prod_valor}</h5>
-						<h5 class="text-center">Quantidade: {$P.prod_qnt} Unidades</h5>
-						<h5 class="text-center">Quantidade mínima: {$P.prod_qnt_min}</h5>
-						<h5 class="text-center">Quantidade vendidos: {$P.prod_qnt_ven}</h5>
-					</div>
+<div class="caption">
+
+    <h5 class="text-center"><b>{$P.prod_nome}</b></h5>
+    <h5 class="text-center">R${$P.prod_valor}</h5>
+    <h5 class="text-center">Quantidade: {$P.prod_qnt} Unidades</h5>
+    <h5 class="text-center">Quantidade mínima: {$P.prod_qnt_min}</h5>
+    <h5 class="text-center">Quantidade vendidos: {$P.prod_qnt_ven}</h5>
+</div>

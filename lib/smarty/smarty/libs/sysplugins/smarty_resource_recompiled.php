@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty Resource Plugin
  *
@@ -14,8 +15,8 @@
  * @package    Smarty
  * @subpackage TemplateResources
  */
-abstract class Smarty_Resource_Recompiled extends Smarty_Resource
-{
+abstract class Smarty_Resource_Recompiled extends Smarty_Resource {
+
     /**
      * Flag that it's an recompiled resource
      *
@@ -37,8 +38,7 @@ abstract class Smarty_Resource_Recompiled extends Smarty_Resource
      *
      * @throws Exception
      */
-    public function process(Smarty_Internal_Template $_smarty_tpl)
-    {
+    public function process(Smarty_Internal_Template $_smarty_tpl) {
         $compiled = &$_smarty_tpl->compiled;
         $compiled->file_dependency = array();
         $compiled->includes = array();
@@ -72,23 +72,23 @@ abstract class Smarty_Resource_Recompiled extends Smarty_Resource
      *
      * @return void
      */
-    public function populateCompiledFilepath(Smarty_Template_Compiled $compiled, Smarty_Internal_Template $_template)
-    {
+    public function populateCompiledFilepath(Smarty_Template_Compiled $compiled, Smarty_Internal_Template $_template) {
         $compiled->filepath = false;
         $compiled->timestamp = false;
         $compiled->exists = false;
     }
 
     /*
-       * Disable timestamp checks for recompiled resource.
-       *
-       * @return bool
-       */
+     * Disable timestamp checks for recompiled resource.
+     *
+     * @return bool
+     */
+
     /**
      * @return bool
      */
-    public function checkTimestamps()
-    {
+    public function checkTimestamps() {
         return false;
     }
+
 }

@@ -3,7 +3,7 @@
 
 <PRE>
 
-{* bold and title are read from the config file *}
+    {* bold and title are read from the config file *}
     {if #bold#}<b>{/if}
         {* capitalize the first letters of each word of the title *}
         Title: {#title#|capitalize}
@@ -26,18 +26,18 @@ An example of a section loop:
 
     {section name=outer
     loop=$FirstName}
-        {if $smarty.section.outer.index is odd by 2}
-            {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
-        {else}
-            {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
-        {/if}
-        {sectionelse}
+    {if $smarty.section.outer.index is odd by 2}
+        {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
+    {else}
+        {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
+    {/if}
+    {sectionelse}
         none
-    {/section}
+        {/section}
 
     An example of section looped key values:
 
-    {section name=sec1 loop=$contacts}
+            {section name=sec1 loop=$contacts}
         phone: {$contacts[sec1].phone}
         <br>
 
@@ -46,11 +46,11 @@ An example of a section loop:
 
             cell: {$contacts[sec1].cell}
         <br>
-    {/section}
+            {/section}
     <p>
 
         testing strip tags
-        {strip}
+                {strip}
 <table border=0>
     <tr>
         <td>
@@ -60,28 +60,28 @@ An example of a section loop:
         </td>
     </tr>
 </table>
-    {/strip}
+            {/strip}
 
 </PRE>
 
 This is an example of the html_select_date function:
 
 <form>
-    {html_select_date start_year=1998 end_year=2010}
+            {html_select_date start_year=1998 end_year=2010}
 </form>
 
 This is an example of the html_select_time function:
 
 <form>
-    {html_select_time use_24_hours=false}
+            {html_select_time use_24_hours=false}
 </form>
 
 This is an example of the html_options function:
 
 <form>
     <select name=states>
-        {html_options values=$option_values selected=$option_selected output=$option_output}
+                {html_options values=$option_values selected=$option_selected output=$option_output}
     </select>
 </form>
 
-{include file="footer.tpl"}
+        {include file="footer.tpl"}

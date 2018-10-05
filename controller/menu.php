@@ -1,6 +1,6 @@
 <?php
 
-	$smarty = new Template();
+$smarty = new Template();
 
-	$smarty->display('menu.tpl');
+$smarty->display('menu.tpl');
 ?>

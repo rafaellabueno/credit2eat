@@ -3,119 +3,123 @@
   from 'D:\xampp\htdocs\credit2eat\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5b735f9ca71682_47400667',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'a33a808104077b766451d93f2b1746904dc2c0a3' => 
-    array (
-      0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\produtos.tpl',
-      1 => 1534287771,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5b735f9ca71682_47400667 (Smarty_Internal_Template $_smarty_tpl) {
-?><center>
-	<h3>Lista de Produtos</h3>
-</center>
-<hr>
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.32',
+            'unifunc' => 'content_5b735f9ca71682_47400667',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                'a33a808104077b766451d93f2b1746904dc2c0a3' =>
+                array(
+                    0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\produtos.tpl',
+                    1 => 1534287771,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-<!--	<section>
-		<center>
-			PAGINAS
-		</center>	
-	</section> -->
+    function content_5b735f9ca71682_47400667(Smarty_Internal_Template $_smarty_tpl) {
+        ?><center>
+            <h3>Lista de Produtos</h3>
+        </center>
+        <hr>
 
-	<!-- começa a lista de produtos -->
-	<section id="produtos" class="row">
+        <!--	<section>
+                        <center>
+                                PAGINAS
+                        </center>	
+                </section> -->
 
-		<ul style="list-style: none">
-			
-			<div class="row" id="pularlinha">
+        <!-- começa a lista de produtos -->
+        <section id="produtos" class="row">
 
-				<table border="1">
-					<tbody>
-						<tr>
-							<td>Nome:</td><td>Preço:</td><td>Quantidade:</td> 				
-						</tr>
-					</tbody>
-				</table>
+            <ul style="list-style: none">
 
-				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
-?>
+                <div class="row" id="pularlinha">
 
-				<li class="col-md-4">
-				
-<!--				<div class="thumbnail"> -->
+                    <table border="1">
+                        <tbody>
+                            <tr>
+                                <td>Nome:</td><td>Preço:</td><td>Quantidade:</td> 				
+                            </tr>
+                        </tbody>
+                    </table>
 
-					<!--<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value;?>
-/<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
-/<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_slug'];?>
-"> -->
+                    <?php
+                    $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
+                    if ($_from !== null) {
+                        foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+                            ?>
 
-					<table>
-						<caption></caption>
-						<thead>
-							<tr>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
-</td>
-								<td>R$<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
-</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
+                            <li class="col-md-4">
 
-					</a>
+                                <!--				<div class="thumbnail"> -->
 
-				</div>
+                                <!--<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value; ?>
+                /<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id']; ?>
+                /<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_slug']; ?>
+                "> -->
 
-				</li>
+                                <table>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome']; ?>
+                                            </td>
+                                            <td>R$<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor']; ?>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-				<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                </a>
 
-			</div>
-		
-		</ul>
+                        </div>
 
-	</section>
+                        </li>
 
-	<!-- paginação inferior -->
-	<!--<section id="paginacao" class="row">
-		<center>
-			PAGINAS
-		</center>
-	</section> -->
+                        <?php
+                    }
+                }
+                $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                ?>
+
+                </div>
+
+            </ul>
+
+        </section>
+
+        <!-- paginação inferior -->
+        <!--<section id="paginacao" class="row">
+                <center>
+                        PAGINAS
+                </center>
+        </section> -->
 
 
-<!--						<div class="caption">
-						
-						<h5 class="text-center"><b><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
-</b></h5>
-						<h5 class="text-center">R$<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
-</h5>
-						<h5 class="text-center">Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
- Unidades</h5>
-						<h5 class="text-center">Quantidade mínima: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_min'];?>
-</h5>
-						<h5 class="text-center">Quantidade vendidos: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_ven'];?>
-</h5>
-					</div> --><?php }
-}
+        <!--						<div class="caption">
+                                                        
+                                                        <h5 class="text-center"><b><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome']; ?>
+        </b></h5>
+                                                        <h5 class="text-center">R$<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor']; ?>
+        </h5>
+                                                        <h5 class="text-center">Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt']; ?>
+         Unidades</h5>
+                                                        <h5 class="text-center">Quantidade mínima: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_min']; ?>
+        </h5>
+                                                        <h5 class="text-center">Quantidade vendidos: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_ven']; ?>
+        </h5>
+                                                </div> --><?php
+            }
+
+        }

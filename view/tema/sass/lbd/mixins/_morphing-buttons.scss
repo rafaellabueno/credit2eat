@@ -1,9 +1,9 @@
 $prefixes: ('', '-moz-', '-webkit-', '-ms-') !default;
 
 @mixin circle-animation(){
-   @for $i from 0 to length($prefixes) {
+    @for $i from 0 to length($prefixes) {
         @include circle-animation-details(nth($prefixes, $i + 1));
-   }  
+    }  
 }
 
 @mixin circle-animation-details($name){

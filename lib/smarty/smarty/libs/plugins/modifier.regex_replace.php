@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifier
  */
+
 /**
  * Smarty regex_replace modifier plugin
  * Type:     modifier
@@ -22,11 +24,10 @@
  *
  * @return string
  */
-function smarty_modifier_regex_replace($string, $search, $replace, $limit = -1)
-{
+function smarty_modifier_regex_replace($string, $search, $replace, $limit = -1) {
     if (is_array($search)) {
         foreach ($search as $idx => $s) {
-            $search[ $idx ] = _smarty_regex_replace_check($s);
+            $search[$idx] = _smarty_regex_replace_check($s);
         }
     } else {
         $search = _smarty_regex_replace_check($search);
@@ -40,16 +41,15 @@ function smarty_modifier_regex_replace($string, $search, $replace, $limit = -1)
  * @return string
  * @ignore
  */
-function _smarty_regex_replace_check($search)
-{
+function _smarty_regex_replace_check($search) {
     // null-byte injection detection
     // anything behind the first null-byte is ignored
     if (($pos = strpos($search, "\0")) !== false) {
         $search = substr($search, 0, $pos);
     }
     // remove eval-modifier from $search
-    if (preg_match('!([a-zA-Z\s]+)$!s', $search, $match) && (strpos($match[ 1 ], 'e') !== false)) {
-        $search = substr($search, 0, -strlen($match[ 1 ])) . preg_replace('![e\s]+!', '', $match[ 1 ]);
+    if (preg_match('!([a-zA-Z\s]+)$!s', $search, $match) && (strpos($match[1], 'e') !== false)) {
+        $search = substr($search, 0, -strlen($match[1])) . preg_replace('![e\s]+!', '', $match[1]);
     }
     return $search;
 }

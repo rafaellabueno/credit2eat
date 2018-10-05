@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This example shows settings to use when sending over SMTP with TLS and custom connection options.
  */

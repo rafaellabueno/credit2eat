@@ -10,12 +10,12 @@ body{
 }
 
 a{
-  color: $info-color;
+    color: $info-color;
 
-  &:hover, &:focus{
-     color: $info-states-color;
-     text-decoration: none;
-  }
+    &:hover, &:focus{
+        color: $info-states-color;
+        text-decoration: none;
+    }
 }
 
 a:focus, a:active,

@@ -3,47 +3,49 @@
   from 'D:\xampp\htdocs\credit2eat\view\estoque.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.33',
-  'unifunc' => 'content_5bb696f8e20753_36112530',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '5801e75ec3446fcc4a037cb7b87fcae9be44aacd' => 
-    array (
-      0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\estoque.tpl',
-      1 => 1538691229,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5bb696f8e20753_36112530 (Smarty_Internal_Template $_smarty_tpl) {
-?><center>
-    <h3>Atualizar Estoque</h3> 
-</center>
-<hr>
-<br>
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.33',
+            'unifunc' => 'content_5bb696f8e20753_36112530',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                '5801e75ec3446fcc4a037cb7b87fcae9be44aacd' =>
+                array(
+                    0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\estoque.tpl',
+                    1 => 1538691229,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
+
+    function content_5bb696f8e20753_36112530(Smarty_Internal_Template $_smarty_tpl) {
+        ?><center>
+            <h3>Atualizar Estoque</h3> 
+        </center>
+        <hr>
+        <br>
         <div class="col-md-3" class="col-xs-6" style="width: 400px">
             <div class="form-group">
                 <label><font size=4>Escolha um Produto</font></label>
-                <select id="produto-select" name="produto" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
-" required>
-                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
-?>
-                        <option id="produto" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
- - <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
- unidades </option>
-                    <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                <select id="produto-select" name="produto" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id']; ?>
+                        " required>
+                            <?php
+                            $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
+                            if ($_from !== null) {
+                                foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+                                    ?>
+                            <option id="produto" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id']; ?>
+                                    "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome']; ?>
+                                - <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt']; ?>
+                                unidades </option>
+                            <?php
+                        }
+                    }
+                    $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                    ?>
                 </select>
             </div>
         </div>
@@ -65,96 +67,100 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </center>
             <hr>
             <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Produto</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Data</th>
-            </tr>
-        </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Data</th>
+                    </tr>
+                </thead>
 
 
-        <!-- começa a lista de clientes -->
-        <section id="produtos" class="row">
+                <!-- começa a lista de clientes -->
+                <section id="produtos" class="row">
 
-            <ul style="list-style: none">
+                    <ul style="list-style: none">
 
-                <div class="row" id="pularlinha">
+                        <div class="row" id="pularlinha">
 
-                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['EST']->value, 'E');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['E']->value) {
-?>
-                        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
-?>
-                            <?php if ($_smarty_tpl->tpl_vars['P']->value['prod_id'] == $_smarty_tpl->tpl_vars['E']->value['produto']) {?>
-                        <tbody>
-                            <tr>    
-                                <th scope="row"><a href="" style="color: #000000"><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
-</a></th>
-                                <td><?php echo $_smarty_tpl->tpl_vars['E']->value['qntd'];?>
-</td>
-                                <td><?php echo $_smarty_tpl->tpl_vars['E']->value['data'];?>
-</td>
-                            </tr>
-                        </tbody>
-                            <?php }?>
-                        <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                            <?php
+                            $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['EST']->value, 'E');
+                            if ($_from !== null) {
+                                foreach ($_from as $_smarty_tpl->tpl_vars['E']->value) {
+                                    ?>
+                                    <?php
+                                    $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
+                                    if ($_from !== null) {
+                                        foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+                                            ?>
+                        <?php if ($_smarty_tpl->tpl_vars['P']->value['prod_id'] == $_smarty_tpl->tpl_vars['E']->value['produto']) { ?>
+                                                <tbody>
+                                                    <tr>    
+                                                        <th scope="row"><a href="" style="color: #000000"><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome']; ?>
+                                                            </a></th>
+                                                        <td><?php echo $_smarty_tpl->tpl_vars['E']->value['qntd']; ?>
+                                                        </td>
+                                                        <td><?php echo $_smarty_tpl->tpl_vars['E']->value['data']; ?>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            <?php } ?>
+                                            <?php
+                                        }
+                                    }
+                                    $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                                    ?>
+                                    <?php
+                                }
+                            }
+                            $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                            ?>
 
 
 
-                </div>
+                        </div>
 
-            </ul>
+                    </ul>
 
-        </section>
+                </section>
 
-    </table>
+            </table>
 
         </div>
-<?php echo '<script'; ?>
->
-    $('.atualizar').click(function () {
+        <?php echo '<script'; ?>
+        >
+        $('.atualizar').click(function () {
         var idProduto = $('#produto').attr("value");
         var qtd = $('#qtd').attr("value");
         console.log(qtd);
-            var urlConsulta = './atualizar/' + idProduto + '/' + qtd;
-            $.get(urlConsulta, function (res) {
-                console.log(res);
-                if (res === '1') {
-                    bootbox.alert("Estoque atualizado", function () {
+        var urlConsulta = './atualizar/' + idProduto + '/' + qtd;
+        $.get(urlConsulta, function (res) {
+        console.log(res);
+        if (res === '1') {
+        bootbox.alert("Estoque atualizado", function () {
 
-                        window.location.reload();
+        window.location.reload();
 
-                    });
-                } else {
-                    bootbox.alert("Não foi possível atualizar o estoque!", function () {
+        });
+        } else {
+        bootbox.alert("Não foi possível atualizar o estoque!", function () {
 
 
-                        window.location.reload();
-                    });
-                }
+        window.location.reload();
+        });
+        }
         });
 
-    });
+        });
 
-    function limpa() {
+        function limpa() {
         if (document.getElementById('cliente').value != "") {
-            document.getElementById('cliente').value = "";
-            header('location:./realizar_vendas');
+        document.getElementById('cliente').value = "";
+        header('location:./realizar_vendas');
         }
+        }
+        <?php echo '</script'; ?>
+        ><?php
     }
-<?php echo '</script'; ?>
-><?php }
+
 }

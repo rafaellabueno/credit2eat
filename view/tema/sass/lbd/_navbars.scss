@@ -1,7 +1,7 @@
 .nav {
     > li{
         > a:hover,
-        > a:focus{
+            > a:focus{
             background-color: transparent;
         }
     }
@@ -24,23 +24,23 @@
         font-size: $font-size-large-navbar;
     }
     .navbar-nav{
-         > li > a {
-             padding: $navbar-padding-a;
-             margin: $navbar-margin-a;
-             position: relative;
-         }
-         > li > a.btn{
-             margin: $navbar-margin-a-btn;
-             padding: $padding-base-vertical $padding-base-horizontal;
-         }
-         > li > a.btn-round{
-             margin: $navbar-margin-a-btn-round;
-         }
-         > li > a [class^="fa"]{
-             font-size: $font-size-large + 1;
-             position: relative;
-             line-height: 16px;
-             top: 1px;
+        > li > a {
+            padding: $navbar-padding-a;
+            margin: $navbar-margin-a;
+            position: relative;
+        }
+        > li > a.btn{
+            margin: $navbar-margin-a-btn;
+            padding: $padding-base-vertical $padding-base-horizontal;
+        }
+        > li > a.btn-round{
+            margin: $navbar-margin-a-btn-round;
+        }
+        > li > a [class^="fa"]{
+            font-size: $font-size-large + 1;
+            position: relative;
+            line-height: 16px;
+            top: 1px;
         }
 
         .notification{
@@ -60,14 +60,14 @@
         }
     }
     .btn{
-       margin: $navbar-margin-btn;
-       font-size: $font-size-base;
+        margin: $navbar-margin-btn;
+        font-size: $font-size-base;
     }
     .btn-simple{
         font-size: $font-size-medium;
     }
     .caret{
-       // @include center-item();
+        // @include center-item();
     }
 
     &.fixed{
@@ -90,7 +90,7 @@
         @include opacity(.9);
 
         &:focus,
-        &:hover{
+            &:hover{
             background-color: transparent;
             @include opacity(1);
         }
@@ -103,10 +103,10 @@
             @include opacity(0.8);
         }
         > .active > a:not(.btn),
-        > .active > a:hover:not(.btn),
-        > .active > a:focus:not(.btn),
-        > li > a:hover:not(.btn),
-        > li > a:focus:not(.btn){
+            > .active > a:hover:not(.btn),
+            > .active > a:focus:not(.btn),
+            > li > a:hover:not(.btn),
+            > li > a:focus:not(.btn){
             background-color: transparent;
             border-radius: 3px;
             color: $white-color;
@@ -118,14 +118,14 @@
 
         > .dropdown > a .caret,
         > .dropdown > a:hover .caret,
-        > .dropdown > a:focus .caret{
+            > .dropdown > a:focus .caret{
             border-bottom-color: $white-color;
             border-top-color: $white-color;
         }
 
         > .open > a,
         > .open > a:hover,
-        > .open > a:focus {
+            > .open > a:focus {
             background-color: transparent;
             color: $white-color;
             @include opacity(1);
@@ -142,10 +142,10 @@
         @include opacity(.9);
     }
     .btn-default.btn-fill:hover,
-    .btn-default.btn-fill:focus,
-    .btn-default.btn-fill:active,
-    .btn-default.btn-fill.active,
-    .open .dropdown-toggle.btn-fill.btn-default{
+        .btn-default.btn-fill:focus,
+        .btn-default.btn-fill:active,
+        .btn-default.btn-fill.active,
+        .open .dropdown-toggle.btn-fill.btn-default{
         border-color: $white-color;
         @include opacity(1);
     }
@@ -173,9 +173,9 @@
 
         > .active > a,
         > .active > a:not(.btn):hover,
-        > .active > a:not(.btn):focus,
-        > li > a:not(.btn):hover,
-        > li > a:not(.btn):focus {
+            > .active > a:not(.btn):focus,
+            > li > a:not(.btn):hover,
+            > li > a:not(.btn):focus {
             background-color: transparent;
             border-radius: 3px;
             color: $info-color;
@@ -183,7 +183,7 @@
         }
 
         > .dropdown > a:hover .caret,
-        > .dropdown > a:focus .caret {
+            > .dropdown > a:focus .caret {
             border-bottom-color: $info-color;
             border-top-color: $info-color;
 
@@ -191,7 +191,7 @@
 
         > .open > a,
         > .open > a:hover,
-        > .open > a:focus{
+            > .open > a:focus{
             background-color: transparent;
             color: $info-color;
         }
@@ -207,10 +207,10 @@
         border-color: $info-color;
     }
     &:not(.navbar-transparent) .btn-neutral,
-    &:not(.navbar-transparent) .btn-neutral:hover,
-    &:not(.navbar-transparent) .btn-neutral:active{
-            color: $dark-gray;
-        }
+        &:not(.navbar-transparent) .btn-neutral:hover,
+        &:not(.navbar-transparent) .btn-neutral:active{
+        color: $dark-gray;
+    }
 }
 
 /*      Navbar with icons            */
@@ -238,8 +238,8 @@
 }
 
 .navbar-form{
-   @include box-shadow(none);
-   .form-control{
+    @include box-shadow(none);
+    .form-control{
         @include light-form();
         height: 22px;
         font-size: $font-size-navbar;
@@ -285,13 +285,13 @@
     .icon-bar {
         background-color: $white-color;
     }
-     .navbar-collapse,
-     .navbar-form {
+    .navbar-collapse,
+    .navbar-form {
         border-color: transparent;
     }
 
     &.navbar-default .navbar-toggle:hover,
-    &.navbar-default .navbar-toggle:focus {
+        &.navbar-default .navbar-toggle:focus {
         background-color: transparent;
     }
 }

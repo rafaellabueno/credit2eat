@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty cat modifier plugin
  * Type:     modifier
@@ -22,7 +24,6 @@
  *
  * @return string with compiled code
  */
-function smarty_modifiercompiler_cat($params)
-{
+function smarty_modifiercompiler_cat($params) {
     return '(' . implode(').(', $params) . ')';
 }

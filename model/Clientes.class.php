@@ -17,13 +17,13 @@ class Clientes extends Conexao {
         $this->GetLista();
     }
 
-    public function setCliente($nome, $matricula, $telefone, $email, $senha, $curso) {
+    public function setCliente($nome, $matricula, $email, $senha, $curso) {
         $ncurso = "SELECT nome_curso FROM cursos WHERE id_curso = $curso";
         $var1 = $this->ExecuteSQL($ncurso);
         $res = $this->ListarDados($ncurso);
         $nome_curso = $res['nome_curso'];
         $passwordhash = password_hash($senha, PASSWORD_DEFAULT);
-        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_telefone, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula', '$telefone','$email', '$passwordhash', '$_SESSION[id]', 1, '$nome_curso');";
+        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula','$email', '$passwordhash', '$_SESSION[id]', 1, '$nome_curso');";
         $var = $this->ExecuteSQL($query);
     }
 

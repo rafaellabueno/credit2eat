@@ -3,285 +3,288 @@
   from 'C:\xampp\htdocs\credit2eat\view\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.33',
-  'unifunc' => 'content_5bb544f823c141_02991393',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '90c8feb86e88a795d6f20ecd17d8d59e123e46ec' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
-      1 => 1538599309,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5bb544f823c141_02991393 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
-<html lang="en">
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.33',
+            'unifunc' => 'content_5bb544f823c141_02991393',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                '90c8feb86e88a795d6f20ecd17d8d59e123e46ec' =>
+                array(
+                    0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
+                    1 => 1538599309,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-    <head>
-        <link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png">
-        <title><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value;?>
-</title>
+    function content_5bb544f823c141_02991393(Smarty_Internal_Template $_smarty_tpl) {
+        ?><!DOCTYPE html>
+        <html lang="en">
 
-        <link href="tema/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <head>
+                <link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png">
+                <title><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value; ?>
+                </title>
+
+                <link href="tema/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <?php echo '<script'; ?>
- src="tema/js/bootstrap.min.js"><?php echo '</script'; ?>
->
+                src="tema/js/bootstrap.min.js"><?php echo '</script'; ?>
+                >
         <?php echo '<script'; ?>
- src="tema/js/jquery.3.2.1.js"><?php echo '</script'; ?>
->
-        <style>
+                src="tema/js/jquery.3.2.1.js"><?php echo '</script'; ?>
+                >
+                <style>
 
-            /*
-             * Specific styles of signin component
-             */
-            /*
-             * General styles
-             */
-            .card-container.card {
-                max-width: 350px;
-                padding: 40px 40px;
-            }
+                    /*
+                     * Specific styles of signin component
+                     */
+                    /*
+                     * General styles
+                     */
+                    .card-container.card {
+                        max-width: 350px;
+                        padding: 40px 40px;
+                    }
 
-            .btn {
-                font-weight: 700;
-                height: 36px;
-                -moz-user-select: none;
-                -webkit-user-select: none;
-                user-select: none;
-                cursor: default;
-            }
+                    .btn {
+                        font-weight: 700;
+                        height: 36px;
+                        -moz-user-select: none;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        cursor: default;
+                    }
 
-            /*
-             * Card component
-             */
-            .card {
-                background-color: #F7F7F7;
-                /* just in case there no content*/
-                padding: 20px 25px 30px;
-                margin: 0 auto 25px;
-                margin-top: 50px;
-                /* shadows and rounded borders */
-                -moz-border-radius: 2px;
-                -webkit-border-radius: 2px;
-                border-radius: 2px;
-                -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-                -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            }
+                    /*
+                     * Card component
+                     */
+                    .card {
+                        background-color: #F7F7F7;
+                        /* just in case there no content*/
+                        padding: 20px 25px 30px;
+                        margin: 0 auto 25px;
+                        margin-top: 50px;
+                        /* shadows and rounded borders */
+                        -moz-border-radius: 2px;
+                        -webkit-border-radius: 2px;
+                        border-radius: 2px;
+                        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                    }
 
-            .profile-img-card {
-                width: 100%;
-                height: 96px;
-                margin: 0 auto 10px;
-                display: block;
-            }
+                    .profile-img-card {
+                        width: 100%;
+                        height: 96px;
+                        margin: 0 auto 10px;
+                        display: block;
+                    }
 
-            /*
-             * Form styles
-             */
-            .profile-name-card {
-                font-size: 16px;
-                font-weight: bold;
-                text-align: center;
-                margin: 10px 0 0;
-                min-height: 1em;
-            }
+                    /*
+                     * Form styles
+                     */
+                    .profile-name-card {
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin: 10px 0 0;
+                        min-height: 1em;
+                    }
 
-            .reauth-email {
-                display: block;
-                color: #404040;
-                line-height: 2;
-                margin-bottom: 10px;
-                font-size: 14px;
-                text-align: center;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-            }
+                    .reauth-email {
+                        display: block;
+                        color: #404040;
+                        line-height: 2;
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                        text-align: center;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
 
-            .form-signin #nome,
-            .form-signin #senha {
-                direction: ltr;
-                height: 44px;
-                font-size: 16px;
-            }
+                    .form-signin #nome,
+                    .form-signin #senha {
+                        direction: ltr;
+                        height: 44px;
+                        font-size: 16px;
+                    }
 
-            .form-signin input[type=email],
-            .form-signin input[type=password],
-            .form-signin input[type=text],
-            .form-signin button {
-                width: 100%;
-                display: block;
-                margin-bottom: 10px;
-                z-index: 1;
-                position: relative;
-                -moz-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-            }
+                    .form-signin input[type=email],
+                    .form-signin input[type=password],
+                    .form-signin input[type=text],
+                    .form-signin button {
+                        width: 100%;
+                        display: block;
+                        margin-bottom: 10px;
+                        z-index: 1;
+                        position: relative;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
 
-            .form-signin .form-control:focus {
-                border-color: rgb(104, 145, 162);
-                outline: 0;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-                box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-            }
+                    .form-signin .form-control:focus {
+                        border-color: rgb(104, 145, 162);
+                        outline: 0;
+                        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+                        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+                    }
 
-            .btn.btn-signin {
-                /*background-color: #4d90fe; */
-                background-color: rgb(104, 145, 162);
-                /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
-                padding: 0px;
-                font-weight: 700;
-                font-size: 14px;
-                height: 36px;
-                -moz-border-radius: 3px;
-                -webkit-border-radius: 3px;
-                border-radius: 3px;
-                border: none;
-                -o-transition: all 0.218s;
-                -moz-transition: all 0.218s;
-                -webkit-transition: all 0.218s;
-                transition: all 0.218s;
-            }
+                    .btn.btn-signin {
+                        /*background-color: #4d90fe; */
+                        background-color: rgb(104, 145, 162);
+                        /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+                        padding: 0px;
+                        font-weight: 700;
+                        font-size: 14px;
+                        height: 36px;
+                        -moz-border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                        border: none;
+                        -o-transition: all 0.218s;
+                        -moz-transition: all 0.218s;
+                        -webkit-transition: all 0.218s;
+                        transition: all 0.218s;
+                    }
 
-            .btn.btn-signin:hover,
-            .btn.btn-signin:active,
-            .btn.btn-signin:focus {
-                background-color: rgb(12, 97, 33);
-            }
+                    .btn.btn-signin:hover,
+                    .btn.btn-signin:active,
+                    .btn.btn-signin:focus {
+                        background-color: rgb(12, 97, 33);
+                    }
 
-            .forgot-password {
-                color: rgb(104, 145, 162);
-            }
+                    .forgot-password {
+                        color: rgb(104, 145, 162);
+                    }
 
-            .forgot-password:hover,
-            .forgot-password:active,
-            .forgot-password:focus{
-                color: rgb(12, 97, 33);
-            }
-
-
-            body {
-                padding: 0px;
-                border: 0px;
-                margin: 0px;
-                height: 100%;
-            }
-            html {
-                height: 100%;
-                background-repeat: no-repeat;
-                background-image: linear-gradient(rgb(104, 145, 162), rgb(104, 145, 162));
-                overflow: hidden;
-            }
+                    .forgot-password:hover,
+                    .forgot-password:active,
+                    .forgot-password:focus{
+                        color: rgb(12, 97, 33);
+                    }
 
 
-        </style>
+                    body {
+                        padding: 0px;
+                        border: 0px;
+                        margin: 0px;
+                        height: 100%;
+                    }
+                    html {
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-image: linear-gradient(rgb(104, 145, 162), rgb(104, 145, 162));
+                        overflow: hidden;
+                    }
+
+
+                </style>
 
 
 
-    </head>
+            </head>
 
-    <body class="bg-dark">
+            <body class="bg-dark">
 
-        <div class="container">
-            <div class="card card-container">
-                <img id="profile-img" class="profile-img-card" src=".\media\imagens\Credit2Eat---Complete.png" /> <!-- IMAGEM -->
-                <p id="profile-name" class="profile-name-card"></p>
-                <form class="form-signin" action="./" method="post">
-                    <span id="reauth-email" class="reauth-email"></span>
-                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Email" required autofocus>
-                    <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
-                </form><!-- /form -->
-                <a href="./redireciona?caminho=cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
-                <br><br><center><h4><?php echo $_smarty_tpl->tpl_vars['ERRO']->value;?>
-</h4></center>
+                <div class="container">
+                    <div class="card card-container">
+                        <img id="profile-img" class="profile-img-card" src=".\media\imagens\Credit2Eat---Complete.png" /> <!-- IMAGEM -->
+                        <p id="profile-name" class="profile-name-card"></p>
+                        <form class="form-signin" action="./" method="post">
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <input type="text" id="nome" name="nome" class="form-control" placeholder="Email" required autofocus>
+                            <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
+                            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
+                        </form><!-- /form -->
+                        <a href="./redireciona?caminho=cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
+                        <br><br><center><h4><?php echo $_smarty_tpl->tpl_vars['ERRO']->value; ?>
+                            </h4></center>
 
-            </div><!-- /card-container -->
-        </div><!-- /container -->
+                    </div><!-- /card-container -->
+                </div><!-- /container -->
 
 
         <?php echo '<script'; ?>
- src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
-            $(document).ready(function () {
+                src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+                $(document).ready(function () {
                 // DOM ready
 
                 // Test data
                 /*
-                 * To test the script you should discomment the function
-                 * testLocalStorageData and refresh the page. The function
-                 * will load some test data and the loadProfile
-                 * will do the changes in the UI
-                 */
+                * To test the script you should discomment the function
+                * testLocalStorageData and refresh the page. The function
+                * will load some test data and the loadProfile
+                * will do the changes in the UI
+                */
                 // testLocalStorageData();
                 // Load profile if it exits
                 loadProfile();
-            });
+                });
 
 
-            /**
-             * Main function that load the profile if exists
-             * in localstorage
-             */
-            function loadProfile() {
+                /**
+                * Main function that load the profile if exists
+                * in localstorage
+                */
+                function loadProfile() {
                 if (!supportsHTML5Storage()) {
-                    return false;
+                return false;
                 }
                 // we have to provide to the callback the basic
                 // information to set the profile
                 getLocalProfile(function (profileImgSrc, profileName, profileReAuthEmail) {
-                    //changes in the UI
-                    $("#profile-name").html(profileName);
-                    $("#reauth-email").html(profileReAuthEmail);
-                    $("#nome").hide();
-                    $("#remember").hide();
+                //changes in the UI
+                $("#profile-name").html(profileName);
+                $("#reauth-email").html(profileReAuthEmail);
+                $("#nome").hide();
+                $("#remember").hide();
                 });
-            }
-
-            /**
-             * function that checks if the browser supports HTML5
-             * local storage
-             *
-             */
-            function supportsHTML5Storage() {
-                try {
-                    return 'localStorage' in window && window['localStorage'] !== null;
-                } catch (e) {
-                    return false;
                 }
-            }
 
-            /**
-             * Test data. This data will be safe by the web app
-             * in the first successful login of a auth user.
-             * To Test the scripts, delete the localstorage data
-             * and comment this call.
-             *
-             */
-            function testLocalStorageData() {
+                /**
+                * function that checks if the browser supports HTML5
+                * local storage
+                *
+                */
+                function supportsHTML5Storage() {
+                try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+                } catch (e) {
+                return false;
+                }
+                }
+
+                /**
+                * Test data. This data will be safe by the web app
+                * in the first successful login of a auth user.
+                * To Test the scripts, delete the localstorage data
+                * and comment this call.
+                *
+                */
+                function testLocalStorageData() {
                 if (!supportsHTML5Storage()) {
-                    return false;
+                return false;
                 }
 
                 localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
                 localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
-            }
+                }
         <?php echo '</script'; ?>
->
+                >
 
-    </body>
+            </body>
 
-</html>
-<?php }
+        </html>
+    <?php
+    }
+
 }

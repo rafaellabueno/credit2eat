@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Smarty plugin
  *
  * @package    Smarty
  * @subpackage PluginsModifierCompiler
  */
+
 /**
  * Smarty noprint modifier plugin
  * Type:     modifier
@@ -14,7 +16,6 @@
  * @author Uwe Tews
  * @return string with compiled code
  */
-function smarty_modifiercompiler_noprint()
-{
+function smarty_modifiercompiler_noprint() {
     return "''";
 }

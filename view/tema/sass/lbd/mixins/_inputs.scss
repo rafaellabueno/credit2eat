@@ -4,8 +4,8 @@
 }
 
 @mixin placeholder($color, $opacity){
-   color: $color;
-   @include opacity(1);
+    color: $color;
+    @include opacity(1);
 }
 
 @mixin light-form(){

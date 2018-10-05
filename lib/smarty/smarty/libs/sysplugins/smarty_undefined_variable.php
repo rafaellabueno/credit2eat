@@ -7,8 +7,8 @@
  * @package    Smarty
  * @subpackage Template
  */
-class Smarty_Undefined_Variable extends Smarty_Variable
-{
+class Smarty_Undefined_Variable extends Smarty_Variable {
+
     /**
      * Returns null for not existing properties
      *
@@ -16,8 +16,7 @@ class Smarty_Undefined_Variable extends Smarty_Variable
      *
      * @return null
      */
-    public function __get($name)
-    {
+    public function __get($name) {
         return null;
     }
 
@@ -26,8 +25,8 @@ class Smarty_Undefined_Variable extends Smarty_Variable
      *
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return '';
     }
+
 }

@@ -3,106 +3,110 @@
   from 'D:\xampp\htdocs\credit2eat\view\vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5b818f1413b7d8_06474112',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'ec20aaf3bc36f5fadadc1acb8f94c607cf4bb6a5' => 
-    array (
-      0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\vendas.tpl',
-      1 => 1535217426,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5b818f1413b7d8_06474112 (Smarty_Internal_Template $_smarty_tpl) {
-?><center>
-	<h3>Lista de Vendas</h3>
-</center>
-<hr>
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.32',
+            'unifunc' => 'content_5b818f1413b7d8_06474112',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                'ec20aaf3bc36f5fadadc1acb8f94c607cf4bb6a5' =>
+                array(
+                    0 => 'D:\\xampp\\htdocs\\credit2eat\\view\\vendas.tpl',
+                    1 => 1535217426,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-<!--	<section>
-		<center>
-			PAGINAS
-		</center>	
-	</section> -->
+    function content_5b818f1413b7d8_06474112(Smarty_Internal_Template $_smarty_tpl) {
+        ?><center>
+            <h3>Lista de Vendas</h3>
+        </center>
+        <hr>
 
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">Cliente</th>
-					<th scope="col">Valor</th>
-					<th scope="col">Data</th>
-					<th scope="col">Produtos</th>
-				</tr>
-			</thead>
-			
+        <!--	<section>
+                        <center>
+                                PAGINAS
+                        </center>	
+                </section> -->
 
-	<!-- começa a lista de vendas -->
-	<section id="vendas" class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Produtos</th>
+                </tr>
+            </thead>
 
-		<ul style="list-style: none">
-			
-			<div class="row" id="pularlinha">
 
-				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['VEN']->value, 'V');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['V']->value) {
-?>
-				<!--<li class="col-md-4">
-				
-				<div class="thumbnail"> -->
+            <!-- começa a lista de vendas -->
+            <section id="vendas" class="row">
 
-					<!--<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value;?>
-/<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
-"> -->
+                <ul style="list-style: none">
 
-				<tbody>
-					<tr>			
-							<th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['id_cliente'];?>
-</th>
-							<td>R$ <?php echo $_smarty_tpl->tpl_vars['V']->value['valor_venda'];?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['V']->value['data_venda'];?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['V']->value['id_produto'];?>
-</td>
-							<!--<td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_min'];?>
-</td>
-							<td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_ven'];?>
-</td>		-->		
-					</tr>
-				</tbody>
-					
+                    <div class="row" id="pularlinha">
 
-				<!--</a>
+                        <?php
+                        $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['VEN']->value, 'V');
+                        if ($_from !== null) {
+                            foreach ($_from as $_smarty_tpl->tpl_vars['V']->value) {
+                                ?>
+                                <!--<li class="col-md-4">
+                                
+                                <div class="thumbnail"> -->
 
-				</div> 
+                                <!--<a href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value; ?>
+                /<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id']; ?>
+                "> -->
 
-				</li> 
+                                <tbody>
+                                    <tr>			
+                                        <th scope="row"><?php echo $_smarty_tpl->tpl_vars['V']->value['id_cliente']; ?>
+                                        </th>
+                                        <td>R$ <?php echo $_smarty_tpl->tpl_vars['V']->value['valor_venda']; ?>
+                                        </td>
+                                        <td><?php echo $_smarty_tpl->tpl_vars['V']->value['data_venda']; ?>
+                                        </td>
+                                        <td><?php echo $_smarty_tpl->tpl_vars['V']->value['id_produto']; ?>
+                                        </td>
+                                                                                                <!--<td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt']; ?>
+                                        </td>
+                                                                                                <td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_min']; ?>
+                                        </td>
+                                                                                                <td><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt_ven']; ?>
+                                        </td>		-->		
+                                    </tr>
+                                </tbody>
 
-				<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> -->
-					
-				
 
-			</div>
+                                <!--</a>
 
-		</ul>
+                                </div> 
 
-	</section>
+                                </li> 
 
-	</table>
+                                <?php
+                            }
+                        }
+                        $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+                        ?> -->
 
-	<?php }
+
+
+                    </div>
+
+                </ul>
+
+            </section>
+
+        </table>
+
+    <?php
+    }
+
 }

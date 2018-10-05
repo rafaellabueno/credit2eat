@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty Internal Plugin Compile Break
  * Compiles the {break} tag
@@ -14,8 +15,8 @@
  * @package    Smarty
  * @subpackage Compiler
  */
-class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
-{
+class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase {
+
     /**
      * Attribute definition: Overwrites base class.
      *
@@ -48,8 +49,7 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
      * @return string compiled code
      * @throws \SmartyCompilerException
      */
-    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler)
-    {
+    public function compile($args, Smarty_Internal_TemplateCompilerBase $compiler) {
         list($levels, $foreachLevels) = $this->checkLevels($args, $compiler);
         $output = "<?php ";
         if ($foreachLevels > 0 && $this->tag === 'continue') {
@@ -73,19 +73,18 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
      * @return array
      * @throws \SmartyCompilerException
      */
-    public function checkLevels($args, Smarty_Internal_TemplateCompilerBase $compiler)
-    {
+    public function checkLevels($args, Smarty_Internal_TemplateCompilerBase $compiler) {
         static $_is_loopy = array('for' => true, 'foreach' => true, 'while' => true, 'section' => true);
         // check and get attributes
         $_attr = $this->getAttributes($compiler, $args);
-        if ($_attr[ 'nocache' ] === true) {
+        if ($_attr['nocache'] === true) {
             $compiler->trigger_template_error('nocache option not allowed', null, true);
         }
-        if (isset($_attr[ 'levels' ])) {
-            if (!is_numeric($_attr[ 'levels' ])) {
+        if (isset($_attr['levels'])) {
+            if (!is_numeric($_attr['levels'])) {
                 $compiler->trigger_template_error('level attribute must be a numeric constant', null, true);
             }
-            $levels = $_attr[ 'levels' ];
+            $levels = $_attr['levels'];
         } else {
             $levels = 1;
         }
@@ -94,13 +93,13 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
         $foreachLevels = 0;
         $lastTag = '';
         while ($level_count > 0 && $stack_count >= 0) {
-            if (isset($_is_loopy[ $compiler->_tag_stack[ $stack_count ][ 0 ] ])) {
-                $lastTag = $compiler->_tag_stack[ $stack_count ][ 0 ];
+            if (isset($_is_loopy[$compiler->_tag_stack[$stack_count][0]])) {
+                $lastTag = $compiler->_tag_stack[$stack_count][0];
                 if ($level_count === 0) {
                     break;
                 }
                 $level_count--;
-                if ($compiler->_tag_stack[ $stack_count ][ 0 ] === 'foreach') {
+                if ($compiler->_tag_stack[$stack_count][0] === 'foreach') {
                     $foreachLevels++;
                 }
             }
@@ -114,4 +113,5 @@ class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
         }
         return array($levels, $foreachLevels);
     }
+
 }

@@ -9,7 +9,7 @@ class Produtos extends Conexao {
     public $nome = '';
     public $valor = '';
     public $qnt_min = '';
-    public $qnt = '';
+    public $qnt = ''; 
 
     function GetProdutos() {
         //busca os produtos
@@ -61,19 +61,20 @@ class Produtos extends Conexao {
         $var = $this->ExecuteSQL($query);
         $res = $this->ListarDados($query);
         $qnt = $res['prod_qnt'] + $qtd;
-         /////// ALTERA QUANTIDADE DO PRODUTO
-        $query2 = "UPDATE produtos SET prod_qnt='$qnt' WHERE prod_id = $produto"; 
+        /////// ALTERA QUANTIDADE DO PRODUTO
+        $query2 = "UPDATE produtos SET prod_qnt='$qnt' WHERE prod_id = $produto";
         $var2 = $this->ExecuteSQL($query2);
         //////// ATUALIZA INFORMAÇÕES NO ESTOQUE
         $query3 = "INSERT INTO estoque (produto, qntd) VALUES ($produto, $qtd)";
         $var3 = $this->ExecuteSQL($query3);
+        return $var3;
     }
 
     function ExibirProdutos() {
         return $this->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function GetEstoque (){
+    function GetEstoque() {
         $query = "SELECT * FROM estoque";
 
         $this->ExecuteSQL($query);
@@ -81,7 +82,7 @@ class Produtos extends Conexao {
         $this->GetListaEstoque();
     }
 
-     private function GetListaEstoque() {
+    private function GetListaEstoque() {
         while ($lista = $this->ListarDados()) {
 
             $i = 1;
@@ -95,14 +96,14 @@ class Produtos extends Conexao {
                     'qntd' => $lista['qntd'],
                     'datav' => $lista['data'],
                     'data' => $data
-                    //'usuario_id' => $lista['usuario_id']
+                        //'usuario_id' => $lista['usuario_id']
                 );
                 $i++;
             }
         }
     }
 
-    function verificaEstoque($produto){
+    function verificaEstoque($produto) {
         $query = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
         $var = $this->ExecuteSQL($query);
         $res = $this->ListarDados($query);
@@ -117,20 +118,14 @@ class Produtos extends Conexao {
             echo "a"; ////////TEM QUE NOTIFICAR
             if ($quantidade == 0) {
                 /////////////NAO REALIZA VENDA
-            }
-            else {
+            } else {
                 //////REALIZA VENDA
             }
-        }
-
-        else{
+        } else {
             //////REALIZA VENDA
         }
-
-        
     }
 
 }
-
 
 ?>

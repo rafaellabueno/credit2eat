@@ -2,28 +2,28 @@
     border-width: $border-thick;
     background-color: $transparent-bg;
     font-weight: $font-weight-normal;
-    
+
     @include opacity(.8);
     padding: $padding-base-vertical $padding-base-horizontal;
-    
+
     @include btn-styles($default-color, $default-states-color);
-    
+
     &:hover,
-    &:focus{
+        &:focus{
         @include opacity(1);
         outline: 0 !important;
     }
     &:active,
-    &.active,
-    .open > &.dropdown-toggle {
-         @include box-shadow(none);
-         outline: 0 !important;
+        &.active,
+        .open > &.dropdown-toggle {
+        @include box-shadow(none);
+        outline: 0 !important;
     }
-    
+
     &.btn-icon{
         padding: $padding-base-vertical;
     }
-    
+
 }
 
 // Apply the mixin to the buttons
@@ -35,30 +35,30 @@
 .btn-danger  { @include btn-styles($danger-color, $danger-states-color); }
 .btn-neutral { 
     @include btn-styles($white-color, $white-color);
-    
+
     &:active,
-    &.active,
-    .open > &.dropdown-toggle{
-         background-color: $white-color;
-         color: $default-color;
+        &.active,
+        .open > &.dropdown-toggle{
+        background-color: $white-color;
+        color: $default-color;
     }    
-    
+
     &.btn-fill,
     &.btn-fill:hover,
-    &.btn-fill:focus{
+        &.btn-fill:focus{
         color: $default-color;
     }
-    
+
     &.btn-simple:active,
-    &.btn-simple.active{
+        &.btn-simple.active{
         background-color: transparent;
     }
 }
 
 .btn{
-     &:disabled,
-     &[disabled],
-     &.disabled{
+    &:disabled,
+        &[disabled],
+        &.disabled{
         @include opacity(.5);
     }
 }
@@ -66,7 +66,7 @@
     border-width: $border-thin;
     border-radius: $btn-round-radius !important;
     padding: $padding-round-vertical $padding-round-horizontal;
-    
+
     &.btn-icon{
         padding: $padding-round-vertical;
     }
@@ -75,14 +75,14 @@
     border: $none;
     font-size: $font-size-medium;
     padding: $padding-base-vertical $padding-base-horizontal;
-    
+
     &.btn-icon{
         padding: $padding-base-vertical;
     }
 }
 .btn-lg{
-   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
-   font-weight: $font-weight-normal;
+    @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+    font-weight: $font-weight-normal;
 }
 .btn-sm{
     @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);    

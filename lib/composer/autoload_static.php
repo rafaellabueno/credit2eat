@@ -4,13 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita6ce98e189fa620f588ca354b4de58f8
-{
-    public static $files = array (
+class ComposerStaticInita6ce98e189fa620f588ca354b4de58f8 {
+
+    public static $files = array(
         'f084d01b0a599f67676cffef638aa95b' => __DIR__ . '/..' . '/smarty/smarty/libs/bootstrap.php',
     );
-
-    public static $classMap = array (
+    public static $classMap = array(
         'Cadastro' => __DIR__ . '/../..' . '/model/Cadastro.class.php',
         'Clientes' => __DIR__ . '/../..' . '/model/Clientes.class.php',
         'Conexao' => __DIR__ . '/../..' . '/model/Conexao.class.php',
@@ -31,11 +30,10 @@ class ComposerStaticInita6ce98e189fa620f588ca354b4de58f8
         'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
     );
 
-    public static function getInitializer(ClassLoader $loader)
-    {
+    public static function getInitializer(ClassLoader $loader) {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita6ce98e189fa620f588ca354b4de58f8::$classMap;
-
-        }, null, ClassLoader::class);
+                    $loader->classMap = ComposerStaticInita6ce98e189fa620f588ca354b4de58f8::$classMap;
+                }, null, ClassLoader::class);
     }
+
 }

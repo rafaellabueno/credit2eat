@@ -9,8 +9,8 @@
  * @subpackage PluginsInternal
  * @author     Uwe Tews
  */
-class Smarty_Internal_Method_CompileAllTemplates
-{
+class Smarty_Internal_Method_CompileAllTemplates {
+
     /**
      * Valid for Smarty object
      *
@@ -32,11 +32,7 @@ class Smarty_Internal_Method_CompileAllTemplates
      * @return integer number of template files recompiled
      */
     public function compileAllTemplates(
-        Smarty $smarty,
-        $extension = '.tpl',
-        $force_compile = false,
-        $time_limit = 0,
-        $max_errors = null
+    Smarty $smarty, $extension = '.tpl', $force_compile = false, $time_limit = 0, $max_errors = null
     ) {
         return $this->compileAll($smarty, $extension, $force_compile, $time_limit, $max_errors);
     }
@@ -54,12 +50,7 @@ class Smarty_Internal_Method_CompileAllTemplates
      * @return int number of template files compiled
      */
     protected function compileAll(
-        Smarty $smarty,
-        $extension,
-        $force_compile,
-        $time_limit,
-        $max_errors,
-        $isConfig = false
+    Smarty $smarty, $extension, $force_compile, $time_limit, $max_errors, $isConfig = false
     ) {
         // switch off time limit
         if (function_exists('set_time_limit')) {
@@ -71,8 +62,7 @@ class Smarty_Internal_Method_CompileAllTemplates
         // loop over array of source directories
         foreach ($sourceDir as $_dir) {
             $_dir_1 = new RecursiveDirectoryIterator(
-                $_dir,
-                defined('FilesystemIterator::FOLLOW_SYMLINKS') ?
+                    $_dir, defined('FilesystemIterator::FOLLOW_SYMLINKS') ?
                     FilesystemIterator::FOLLOW_SYMLINKS : 0
             );
             $_dir_2 = new RecursiveIteratorIterator($_dir_1);
@@ -100,8 +90,7 @@ class Smarty_Internal_Method_CompileAllTemplates
                     /* @var Smarty_Internal_Template $_tpl */
                     $_tpl = new $smarty->template_class($_file, $_smarty);
                     $_tpl->caching = Smarty::CACHING_OFF;
-                    $_tpl->source =
-                        $isConfig ? Smarty_Template_Config::load($_tpl) : Smarty_Template_Source::load($_tpl);
+                    $_tpl->source = $isConfig ? Smarty_Template_Config::load($_tpl) : Smarty_Template_Source::load($_tpl);
                     if ($_tpl->mustCompile()) {
                         $_tpl->compileTemplateSource();
                         $_count++;
@@ -127,4 +116,5 @@ class Smarty_Internal_Method_CompileAllTemplates
         echo "\n<br>";
         return $_count;
     }
+
 }

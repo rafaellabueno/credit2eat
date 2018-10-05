@@ -10,8 +10,8 @@
  * @package CacheResource-examples
  * @author  Rodney Rehm
  */
-class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
-{
+class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore {
+
     /**
      * memcache instance
      *
@@ -22,8 +22,7 @@ class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
     /**
      * Smarty_CacheResource_Memcache constructor.
      */
-    public function __construct()
-    {
+    public function __construct() {
         if (class_exists('Memcached')) {
             $this->memcache = new Memcached();
         } else {
@@ -40,18 +39,17 @@ class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
      * @return array   list of values with the given keys used as indexes
      * @return boolean true on success, false on failure
      */
-    protected function read(array $keys)
-    {
+    protected function read(array $keys) {
         $_keys = $lookup = array();
         foreach ($keys as $k) {
             $_k = sha1($k);
             $_keys[] = $_k;
-            $lookup[ $_k ] = $k;
+            $lookup[$_k] = $k;
         }
         $_res = array();
         $res = $this->memcache->get($_keys);
         foreach ($res as $k => $v) {
-            $_res[ $lookup[ $k ] ] = $v;
+            $_res[$lookup[$k]] = $v;
         }
         return $_res;
     }
@@ -64,8 +62,7 @@ class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
      *
      * @return boolean true on success, false on failure
      */
-    protected function write(array $keys, $expire = null)
-    {
+    protected function write(array $keys, $expire = null) {
         foreach ($keys as $k => $v) {
             $k = sha1($k);
             $this->memcache->set($k, $v, 0, $expire);
@@ -80,8 +77,7 @@ class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
      *
      * @return boolean true on success, false on failure
      */
-    protected function delete(array $keys)
-    {
+    protected function delete(array $keys) {
         foreach ($keys as $k) {
             $k = sha1($k);
             $this->memcache->delete($k);
@@ -94,8 +90,8 @@ class Smarty_CacheResource_Memcache extends Smarty_CacheResource_KeyValueStore
      *
      * @return boolean true on success, false on failure
      */
-    protected function purge()
-    {
+    protected function purge() {
         return $this->memcache->flush();
     }
+
 }

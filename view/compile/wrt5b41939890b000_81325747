@@ -3,52 +3,55 @@
   from 'C:\xampp\htdocs\credit2eat\view\cadastrar_produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32',
-  'unifunc' => 'content_5b4193989083d6_97164610',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '929cb0cd5cbb7d14ae5cd4190396802270fbc99a' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_produto.tpl',
-      1 => 1531024277,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_5b4193989083d6_97164610 (Smarty_Internal_Template $_smarty_tpl) {
-?><h3>Cadastrar Novo Produto</h3>
-<hr>
-<br>
-	<form name="form_produto" action="./cadastrar_produto" method="post">
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
+            'version' => '3.1.32',
+            'unifunc' => 'content_5b4193989083d6_97164610',
+            'has_nocache_code' => false,
+            'file_dependency' =>
+            array(
+                '929cb0cd5cbb7d14ae5cd4190396802270fbc99a' =>
+                array(
+                    0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_produto.tpl',
+                    1 => 1531024277,
+                    2 => 'file',
+                ),
+            ),
+            'includes' =>
+            array(
+            ),
+                ), false)) {
 
-	 	<div class="form-group" style="width:300px">
-		    <label><font size=4>Nome do Produto</font></label>
-		    <input type="text" class="form-control" name="prod_nome" id="prod_nome" required>
-	  	</div>
-	  	<div class="form-group" style="width:200px">
-		    <label><font size=4>Valor do Produto</font></label>
-		    <input type="text" class="form-control" id="prod_valor" name="prod_valor" required>
-	  	</div>
-	  	<div class="form-group" style="width:200px">
-		    <label><font size=4>Quantidade Mínima</font></label>
-		    <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min" required>
-	  	</div>
-	  	<div class="form-group" style="width:200px">
-		    <label><font size=4>Quantidade Atual</font></label>
-		    <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" required>
-	  	</div>
-	  	<!--<div class="form-check">
-		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-	  	</div> -->
-	
-		<div class="col-md-2">
-	  		<button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
-		</div>
-	</form><?php }
+    function content_5b4193989083d6_97164610(Smarty_Internal_Template $_smarty_tpl) {
+        ?><h3>Cadastrar Novo Produto</h3>
+        <hr>
+        <br>
+        <form name="form_produto" action="./cadastrar_produto" method="post">
+
+            <div class="form-group" style="width:300px">
+                <label><font size=4>Nome do Produto</font></label>
+                <input type="text" class="form-control" name="prod_nome" id="prod_nome" required>
+            </div>
+            <div class="form-group" style="width:200px">
+                <label><font size=4>Valor do Produto</font></label>
+                <input type="text" class="form-control" id="prod_valor" name="prod_valor" required>
+            </div>
+            <div class="form-group" style="width:200px">
+                <label><font size=4>Quantidade Mínima</font></label>
+                <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min" required>
+            </div>
+            <div class="form-group" style="width:200px">
+                <label><font size=4>Quantidade Atual</font></label>
+                <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" required>
+            </div>
+            <!--<div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>
+            </div>
+        </form><?php
+    }
+
 }

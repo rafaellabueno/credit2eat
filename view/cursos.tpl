@@ -10,7 +10,7 @@
         </tr>
     </thead>
 
-<section id="cursos" class="row">
+    <section id="cursos" class="row">
 
         <ul style="list-style: none">
 
@@ -21,7 +21,7 @@
                     <tbody>
                         <tr>			
                             <th scope="row"><a href="" style="color: #030300">{$C.nome_curso}</a></th>
-                    	</tr>
+                        </tr>
                     </tbody>
 
                 {/foreach}
