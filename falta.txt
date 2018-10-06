@@ -1,26 +1,2 @@
-*Fazer uma tela para vendas a vista e uma para venda a prazo
-	*Venda a vista nao precisa informar o cliente
 
-*Senha cliente na hora da venda
 
-*Criar um teto limite para as dividas
-
-*Cadastrar os cursos
-	*Escolher o curso na hora de cadastrar o cliente
-*Cada cliente ter um perfil:
-
-	*Mostrar os produtos que um cliente comprou
-	*Mostrar dívida / Limpar dívida
-
-*Editar/excluir clientes e produtos
-
-*Decrescer quantidade de produtos quando vende
-
-*Tela para atualizar estoque
-
-*Venda a prazo: 'X' centavos a mais por cada produto
-
-*Configurações:
-	*Definir valor a ser cobrado a mais na venda a prazo
-
-////////venda_vista 

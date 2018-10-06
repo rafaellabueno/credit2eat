@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Out-2018 às 13:44
--- Versão do servidor: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: 06-Out-2018 às 17:16
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,15 +48,17 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`, `valido`, `cli_curso`) VALUES
 (5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 5.25, 25, NULL, 1, 'informática'),
-(6, 'Brenda Barbosa', '02060128', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL, 1, 'informática'),
+(6, 'Brenda Barbosa', '02060130', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL, 1, 'informática'),
 (7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL, 1, 'Professor'),
 (8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 25, 25, NULL, 1, 'informática'),
 (9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 22.75, 25, NULL, 1, 'informática'),
 (10, 'Reginho', 'regis.teixeira', 'regis@gmail.com', 987456321, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL, 0, '0'),
-(11, 'Guilherme Bragagnollo Teixeira', '02060128', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 10.5, 25, NULL, 1, 'informática'),
-(12, 'Venda à Vista', '', '', 0, '', 0, 26, NULL, 1, '0'),
-(13, 'teste', '123', '', 0, '$2y$10$GVEbolyuny1aMfg1gQD7xuIZys22A7hk0z/dfSvW93d', 0, 25, NULL, 1, 'informática'),
-(14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 6, 25, NULL, 1, 'informática');
+(11, 'Guilherme Bragagnollo Teixeira', 'asdvc', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL, 1, 'informática'),
+(12, 'Venda à Vista', '666', '', 0, '', 0, 26, NULL, 1, '0'),
+(14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 6, 25, NULL, 1, 'informática'),
+(15, 'Augusto Flach', '0206012300', 'augustofalcaoflach@gmail.com', 993135398, '$2y$10$vkprgWOB8mfvhgHpKov6LuRqJxGgtUySIB0x/HrsMg/5p5i1eA1ZW', 10.25, 25, NULL, 1, 'informática'),
+(16, 'Guilherme Bragagnollo Teixeira', '02060156', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$dtH1kiCkSCmw9Gqoo07z8..sSDletztvP9lGNKvbxmQn.mnji9cYm', 0, 25, NULL, 0, ''),
+(17, 'Brenda Anghinoni Barbosa', '02060129', 'brendaab.2010@gmail.com', NULL, '$2y$10$U2h2LR7AyTapYloSU/gGWuu50xaQhP0aezSg.C215FbvuDlcwPY6O', 5.25, 25, NULL, 1, '');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,18 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 (6, 10, '2018-10-04 17:44:27', 2),
 (7, 10, '2018-10-04 17:44:33', 5),
 (8, 10, '2018-10-04 17:45:08', 2),
-(9, 12, '2018-10-04 18:10:01', 1);
+(9, 12, '2018-10-04 18:10:01', 1),
+(10, 12, '2018-10-05 20:32:09', 1234),
+(11, 11, '2018-10-05 20:32:47', 10),
+(12, 11, '2018-10-05 20:33:05', 50),
+(13, 12, '2018-10-05 20:33:33', 12),
+(14, 11, '2018-10-05 20:36:17', 1),
+(15, 11, '2018-10-05 20:36:42', 1),
+(16, 11, '2018-10-05 20:37:21', 1),
+(17, 7, '2018-10-05 20:37:47', 10),
+(18, 7, '2018-10-05 22:38:21', 22),
+(19, 7, '2018-10-05 22:40:44', 2),
+(20, 12, '2018-10-05 22:43:22', 3);
 
 -- --------------------------------------------------------
 
@@ -145,12 +158,12 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
 (6, 'Pizza', 5.00, 10, 111, 2, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, 4, 1, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 49, 2, NULL, 25),
+(7, 'Enroladinho', 2.50, 15, 36, 1, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 48, 2, NULL, 25),
 (9, 'Pastel de Carne', 4.50, 12, 16, 2, NULL, 25),
 (10, 'Refrigerante 2L', 8.00, 12, 32, 1, NULL, 25),
-(11, 'Chocolate', 10.00, 10, -4, 4, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, 6, 5, NULL, 25);
+(11, 'Chocolate', 10.00, 10, 52, 5, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, 1249, 7, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -283,7 +296,10 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_
 (75, 0, 14, '2018-10-04 13:26:15', 25, NULL),
 (76, 0, 14, '2018-10-04 13:27:52', 25, NULL),
 (77, 0, 14, '2018-10-04 13:28:22', 25, NULL),
-(78, 0, 14, '2018-10-04 13:28:55', 25, NULL);
+(78, 0, 14, '2018-10-04 13:28:55', 25, NULL),
+(79, 0, 15, '2018-10-05 13:20:06', 25, NULL),
+(80, 0, 16, '2018-10-05 14:14:04', 25, NULL),
+(81, 0, 17, '2018-10-05 17:51:44', 25, NULL);
 
 -- --------------------------------------------------------
 
@@ -371,8 +387,8 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
 (64, 12, 0),
 (65, 12, 0),
 (66, 11, 0),
-(67, 8, 1),
-(67, 8, 1),
+(67, 8, 0),
+(67, 8, 0),
 (68, 12, NULL),
 (68, 12, NULL),
 (69, 7, 0),
@@ -386,7 +402,10 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
 (75, 11, 0),
 (76, 6, 0),
 (77, 10, 0),
-(78, 6, 1);
+(78, 6, 1),
+(79, 11, 1),
+(80, 12, 1),
+(81, 12, 1);
 
 --
 -- Indexes for dumped tables
@@ -397,6 +416,7 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`cli_id`),
+  ADD UNIQUE KEY `cli_matricula` (`cli_matricula`),
   ADD KEY `id_divida` (`id_divida`),
   ADD KEY `id_usuario` (`id_usuario`);
 
@@ -454,7 +474,7 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `cursos`
@@ -472,7 +492,7 @@ ALTER TABLE `divida`
 -- AUTO_INCREMENT for table `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `produtos`
@@ -490,7 +510,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- Constraints for dumped tables
