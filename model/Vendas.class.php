@@ -87,6 +87,7 @@ class Vendas extends Conexao {
                 $query = "INSERT INTO venda (id_cliente, id_user) VALUES ('$cliente','$_SESSION[id]')";
                 $var = $this->ExecuteSQL($query);
                 $id = $this->LastInsertID();
+                $valor_total = '0';
                 foreach ($produto as $produto) {
                     $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
                     $var3 = $this->ExecuteSQL($valor_prod);
@@ -101,6 +102,9 @@ class Vendas extends Conexao {
                     $novo_vendidos = $res7['prod_qnt_ven'] + 1;
                     $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
                     $var8 = $this->ExecuteSQL($query7);
+                    /////////VERIFICAR ESTOQUE A CADA PRODUTO
+                    $prod = new Produtos();
+                    $verifica = $prod->verificaEstoque($produto);
                 }
                 ////////////////////////////////////////////// SETAR DIVIDA
                 $divida_atual = "SELECT cli_divida FROM cliente WHERE cli_id = $cliente";
@@ -109,6 +113,8 @@ class Vendas extends Conexao {
                 $nova_divida = $valor_total + $res2['cli_divida'];
                 $query3 = "UPDATE cliente SET cli_divida='$nova_divida' WHERE cli_id = $cliente";
                 $var4 = $this->ExecuteSQL($query3);
+
+                header('location:./vendas');
             }
         } else {
 
@@ -167,25 +173,22 @@ class Vendas extends Conexao {
 
                       return redirect('/select-game');/* */
 
-                      $arr = array(
-                      'nome' => $response['name'],
-                      'matricula' => $fields['user'],
-                      'email' => $response['mail'],
-                      'curso' => $response['curso'],
-                      'sexo' => $response['genre'],
-                      'imagem' => $response['foto'],
-                      'moodle' => true,
-                      );
+                    $arr = array(
+                        'nome' => $response['name'],
+                        'matricula' => $fields['user'],
+                        'email' => $response['mail'],
+                        'curso' => $response['curso'],
+                        'sexo' => $response['genre'],
+                        'imagem' => $response['foto'],
+                        'moodle' => true,
+                    );
 
-                      file_put_contents('./img.jpg', $arr['imagem']);
+                    return $arr;
 
-                      //return $arr;
+                    $newCliente = new Clientes();
+                    $newCliente->setCliente($arr['nome'], $arr['matricula'], $arr['email'], $fields['password'], $arr['curso']);
 
-                      $newCliente = new Clientes();
-                      $newCliente->setCliente($arr['nome'], $arr['matricula'], $arr['email'], $fields['password'], $arr['curso']);
-
-                      $this->setVendas($clienteMat, $produto, $senha);
-
+                    $this->setVendas($clienteMat, $produto, $senha);
                 } else {
                     
                 }

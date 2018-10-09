@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Out-2018 às 17:16
+-- Generation Time: 09-Out-2018 às 05:20
 -- Versão do servidor: 10.1.35-MariaDB
 -- versão do PHP: 7.2.9
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cliente`
 --
 
+DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `cli_id` int(10) NOT NULL,
   `cli_nome` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -39,7 +40,7 @@ CREATE TABLE `cliente` (
   `id_usuario` int(11) DEFAULT NULL,
   `id_divida` int(11) DEFAULT NULL,
   `valido` tinyint(1) NOT NULL,
-  `cli_curso` varchar(20) NOT NULL
+  `cli_curso` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -56,9 +57,13 @@ INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_
 (11, 'Guilherme Bragagnollo Teixeira', 'asdvc', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL, 1, 'informática'),
 (12, 'Venda à Vista', '666', '', 0, '', 0, 26, NULL, 1, '0'),
 (14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 6, 25, NULL, 1, 'informática'),
-(15, 'Augusto Flach', '0206012300', 'augustofalcaoflach@gmail.com', 993135398, '$2y$10$vkprgWOB8mfvhgHpKov6LuRqJxGgtUySIB0x/HrsMg/5p5i1eA1ZW', 10.25, 25, NULL, 1, 'informática'),
-(16, 'Guilherme Bragagnollo Teixeira', '02060156', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$dtH1kiCkSCmw9Gqoo07z8..sSDletztvP9lGNKvbxmQn.mnji9cYm', 0, 25, NULL, 0, ''),
-(17, 'Brenda Anghinoni Barbosa', '02060129', 'brendaab.2010@gmail.com', NULL, '$2y$10$U2h2LR7AyTapYloSU/gGWuu50xaQhP0aezSg.C215FbvuDlcwPY6O', 5.25, 25, NULL, 1, '');
+(15, 'Augusto Fddddddddddlach', '0206012300', 'augustofalcaoflach@gmail.com', 993135398, '$2y$10$vkprgWOB8mfvhgHpKov6LuRqJxGgtUySIB0x/HrsMg/5p5i1eA1ZW', 10.25, 25, NULL, 1, 'informática'),
+(16, 'ddasdasdasd', 'dadsadas', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$dtH1kiCkSCmw9Gqoo07z8..sSDletztvP9lGNKvbxmQn.mnji9cYm', 0, 25, NULL, 1, ''),
+(17, 'Brenda Anghinoni Barbosa', '02060129', 'brendaab.2010@gmail.com', NULL, '$2y$10$U2h2LR7AyTapYloSU/gGWuu50xaQhP0aezSg.C215FbvuDlcwPY6O', 5.25, 25, NULL, 1, ''),
+(18, 'swqeqweqwsdsa', '0dsadas6', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$S.4lveNZ0Q2MpU7Fow15bejb5k1hFg24/x4UkRMnIAzdYVqibUvgC', 5.25, 25, NULL, 1, ''),
+(19, 'bla', 'ble', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$guh2IyoqjwSAQtiA.rdADehwT5FiohtkfBm/YjcAFbkZbIwi74rzq', 2.75, 25, NULL, 1, ''),
+(20, 'Guilherme Bragagnollo Teixeira', '02060156', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$jf2Efj78y7L7G8S3cUf7yu5Cp5kaeBuMKoIWajqSiAgcdxxYxiccO', 57.25, 25, NULL, 1, 'Técnico em Informática'),
+(21, 'Augusto Falcão Flach22222222222', '020601282', 'augustofalcaoflach@gmail.com', NULL, '$2y$10$ZXuwWXAavZAzzjZnT6Ah5e8PXyxlbtkIqqFDco4Lv0UnYKvtpi3sa', 3.25, 25, NULL, 1, 'Técnico em Informática');
 
 -- --------------------------------------------------------
 
@@ -66,6 +71,7 @@ INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_
 -- Estrutura da tabela `cursos`
 --
 
+DROP TABLE IF EXISTS `cursos`;
 CREATE TABLE `cursos` (
   `id_curso` int(11) NOT NULL,
   `nome_curso` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -90,6 +96,7 @@ INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
 -- Estrutura da tabela `divida`
 --
 
+DROP TABLE IF EXISTS `divida`;
 CREATE TABLE `divida` (
   `id_divida` int(11) NOT NULL,
   `valor_divida` float DEFAULT NULL,
@@ -102,6 +109,7 @@ CREATE TABLE `divida` (
 -- Estrutura da tabela `estoque`
 --
 
+DROP TABLE IF EXISTS `estoque`;
 CREATE TABLE `estoque` (
   `id` int(11) NOT NULL,
   `produto` int(11) NOT NULL,
@@ -133,7 +141,36 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 (17, 7, '2018-10-05 20:37:47', 10),
 (18, 7, '2018-10-05 22:38:21', 22),
 (19, 7, '2018-10-05 22:40:44', 2),
-(20, 12, '2018-10-05 22:43:22', 3);
+(20, 12, '2018-10-05 22:43:22', 3),
+(21, 12, '2018-10-06 16:17:09', 1),
+(22, 7, '2018-10-06 16:26:27', 5),
+(23, 9, '2018-10-06 16:30:07', 2),
+(24, 9, '2018-10-08 13:04:13', 2),
+(25, 11, '2018-10-09 01:25:11', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `notificacoes`
+--
+
+DROP TABLE IF EXISTS `notificacoes`;
+CREATE TABLE `notificacoes` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Extraindo dados da tabela `notificacoes`
+--
+
+INSERT INTO `notificacoes` (`id`, `titulo`) VALUES
+(1, 'MAIOR'),
+(2, 'MAIOR'),
+(3, '-4 | '),
+(4, '1'),
+(5, 'O produto 13 possui poucas unidades'),
+(6, 'O produto Negrinho possui poucas unidades!');
 
 -- --------------------------------------------------------
 
@@ -141,6 +178,7 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 -- Estrutura da tabela `produtos`
 --
 
+DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE `produtos` (
   `prod_id` int(11) NOT NULL,
   `prod_nome` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -157,13 +195,14 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
-(6, 'Pizza', 5.00, 10, 111, 2, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, 36, 1, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 48, 2, NULL, 25),
-(9, 'Pastel de Carne', 4.50, 12, 16, 2, NULL, 25),
-(10, 'Refrigerante 2L', 8.00, 12, 32, 1, NULL, 25),
-(11, 'Chocolate', 10.00, 10, 52, 5, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, 1249, 7, NULL, 25);
+(6, 'Pizza', 5.00, 10, 111, 6, NULL, 25),
+(7, 'Enroladinho', 2.50, 15, 41, 2, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 47, 4, NULL, 25),
+(9, 'Pastel de Carne', 4.50, 12, 20, 3, NULL, 25),
+(10, 'Refrigerante 2L', 8.00, 12, 32, 2, NULL, 25),
+(11, 'Chocolate', 10.00, 10, 53, 5, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, 1250, 7, NULL, 25),
+(13, 'Negrinho', 3.00, 10, -9, 18, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -171,6 +210,7 @@ INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `p
 -- Estrutura da tabela `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
@@ -195,6 +235,7 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 -- Estrutura da tabela `valor_prazo`
 --
 
+DROP TABLE IF EXISTS `valor_prazo`;
 CREATE TABLE `valor_prazo` (
   `id` int(11) NOT NULL,
   `valor_prazo` float NOT NULL
@@ -213,6 +254,7 @@ INSERT INTO `valor_prazo` (`id`, `valor_prazo`) VALUES
 -- Estrutura da tabela `venda`
 --
 
+DROP TABLE IF EXISTS `venda`;
 CREATE TABLE `venda` (
   `id_venda` int(10) NOT NULL,
   `valor_venda` float NOT NULL,
@@ -299,7 +341,34 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_
 (78, 0, 14, '2018-10-04 13:28:55', 25, NULL),
 (79, 0, 15, '2018-10-05 13:20:06', 25, NULL),
 (80, 0, 16, '2018-10-05 14:14:04', 25, NULL),
-(81, 0, 17, '2018-10-05 17:51:44', 25, NULL);
+(81, 0, 17, '2018-10-05 17:51:44', 25, NULL),
+(82, 0, 16, '2018-10-08 13:04:50', 25, NULL),
+(83, 0, 16, '2018-10-08 13:05:50', 25, NULL),
+(84, 0, 16, '2018-10-08 13:09:01', 25, NULL),
+(85, 0, 16, '2018-10-08 13:11:44', 25, NULL),
+(86, 0, 16, '2018-10-08 13:12:27', 25, NULL),
+(87, 0, 18, '2018-10-08 13:17:51', 25, NULL),
+(88, 0, 19, '2018-10-08 13:19:31', 25, NULL),
+(89, 0, 20, '2018-10-08 13:20:42', 25, NULL),
+(90, 0, 20, '2018-10-08 14:00:36', 25, NULL),
+(91, 0, 20, '2018-10-08 14:02:05', 25, NULL),
+(92, 0, 12, '2018-10-08 14:05:37', 25, NULL),
+(93, 0, 20, '2018-10-08 14:06:17', 25, NULL),
+(94, 0, 20, '2018-10-08 14:10:27', 25, NULL),
+(95, 0, 20, '2018-10-08 14:15:08', 25, NULL),
+(96, 0, 20, '2018-10-08 14:23:21', 25, NULL),
+(97, 0, 20, '2018-10-08 14:26:12', 25, NULL),
+(98, 0, 20, '2018-10-08 14:27:46', 25, NULL),
+(99, 0, 20, '2018-10-08 14:28:16', 25, NULL),
+(100, 0, 20, '2018-10-08 16:45:16', 25, NULL),
+(101, 0, 20, '2018-10-08 16:45:59', 25, NULL),
+(102, 0, 20, '2018-10-08 16:46:54', 25, NULL),
+(103, 0, 20, '2018-10-08 16:47:57', 25, NULL),
+(104, 0, 20, '2018-10-08 16:48:22', 25, NULL),
+(105, 0, 20, '2018-10-08 16:48:44', 25, NULL),
+(106, 0, 21, '2018-10-08 16:50:02', 25, NULL),
+(107, 0, 20, '2018-10-09 01:26:23', 25, NULL),
+(108, 0, 20, '2018-10-09 01:38:18', 25, NULL);
 
 -- --------------------------------------------------------
 
@@ -307,6 +376,7 @@ INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_
 -- Estrutura da tabela `venda_produto`
 --
 
+DROP TABLE IF EXISTS `venda_produto`;
 CREATE TABLE `venda_produto` (
   `venda_id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
@@ -404,8 +474,35 @@ INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
 (77, 10, 0),
 (78, 6, 1),
 (79, 11, 1),
-(80, 12, 1),
-(81, 12, 1);
+(80, 12, 0),
+(81, 12, 1),
+(82, 6, 0),
+(83, 10, 0),
+(84, 9, 0),
+(85, 6, 0),
+(86, 6, 0),
+(87, 8, 1),
+(88, 7, 1),
+(89, 6, 0),
+(90, 13, 1),
+(91, 13, 1),
+(92, 13, NULL),
+(93, 13, 1),
+(94, 13, 1),
+(95, 13, 1),
+(96, 13, 1),
+(97, 13, 1),
+(98, 13, 1),
+(99, 13, 1),
+(100, 13, 1),
+(101, 8, 1),
+(102, 13, 1),
+(103, 13, 1),
+(104, 13, 1),
+(105, 13, 1),
+(106, 13, 1),
+(107, 13, 1),
+(108, 13, 1);
 
 --
 -- Indexes for dumped tables
@@ -437,6 +534,12 @@ ALTER TABLE `divida`
 -- Indexes for table `estoque`
 --
 ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notificacoes`
+--
+ALTER TABLE `notificacoes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -474,7 +577,7 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `cursos`
@@ -492,13 +595,19 @@ ALTER TABLE `divida`
 -- AUTO_INCREMENT for table `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `notificacoes`
+--
+ALTER TABLE `notificacoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `usuario`
@@ -510,7 +619,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- Constraints for dumped tables

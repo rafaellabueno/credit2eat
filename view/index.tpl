@@ -1,31 +1,5 @@
 <!doctype html>
 
-<!--<?php 
-
-$usuario = ("");
-$senha = ("");
-
-//requires e sessions_start
-    if (MoodleUtil::geraToken($usuario, $senha)) {
-    $obj = MoodleUtil::requisita('core_webservice_get_site_info');
-    $url = str_replace('pluginfile.php', 'webservice/pluginfile.php', $obj->userpictureurl);
-    $urlToken = 'https://moodle.canoas.ifrs.edu.br/login/token.php?username=' . $usuario . '&password=' . $senha . '&service=moodle_mobile_app';
-    $str = json_decode(file_get_contents($urlToken));
-    $user = new Aluno();
-    $user->setNome($obj->fullname);
-    $user->setFoto($url);
-    $user->setIdUsuario($obj->userid);
-    $user->setToken($str->token);
-    $user->setMatricula($usuario);
-    $_SESSION['user'] = serialize($user);
-    $_SESSION["foto"] = $var->getFoto() . '&token=' . $var->getToken();
-
-
-}
-
-?> -->
-
-
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
@@ -90,12 +64,12 @@ $senha = ("");
                                 <p>Clientes</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents1">
-                                <li>
+                                <!-- <li>
                                     <a href="cadastrar_cliente">
                                         <i class="pe-7s-add-user"></i>
                                         <p href="">Cadastrar Cliente</p>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="{$PAG_CLIENTES}">
                                         <i class="pe-7s-users"></i>
@@ -168,7 +142,7 @@ $senha = ("");
                                 <p>Configurações</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents4">
-                                <li>
+                                <!-- <li>
                                     <a href="cadastrar_curso">
                                         <i class="pe-7s-plus"></i>
                                         <p href="">Cadastrar Curso</p>
@@ -179,11 +153,11 @@ $senha = ("");
                                         <i class="pe-7s-menu"></i>
                                         <p href="">Cursos</p>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="valor_prazo">
                                         <i class="pe-7s-cash"></i>
-                                        <p href="">Valor a Prazo</p>
+                                        <p href="">Definir Valor a Prazo</p>
                                     </a>
                                 </li>
                             </ul>
@@ -222,11 +196,9 @@ $senha = ("");
                                         <p>Notificações</p>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Notification 1</a></li>
-                                        <li><a href="#">Notification 2</a></li>
-                                        <li><a href="#">Notification 3</a></li>
-                                        <li><a href="#">Notification 4</a></li>
-                                        <li><a href="#">Another notification</a></li>
+                                        {foreach from=$CLI item=$C}
+                                        <li><a href="#">{$C.cli_id}</a></li>
+                                        {/foreach}
                                     </ul>
                                 </li> 
                                 <li>

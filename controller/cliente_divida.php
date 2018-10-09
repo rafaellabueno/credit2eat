@@ -53,11 +53,11 @@ if (isset($_POST['cliente'])) {
                 <input type="hidden" name="cliente_nome" value="<?php echo $nomecliente ?>">
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Nome: </font></label>
-                    <input type="text" value="<?php echo $nomecliente ?>" class="form-control" name="cliente_nome" id="cliente_nome" disabled>
+                    <input type="text" value="<?php echo $nomecliente ?>" class="form-control" name="cliente_nome" id="cliente_nome" >
                 </div>
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Pendências:</font></label>
-                    <input type="text" value="R$<?php echo $dividacliente ?>" class="form-control"  id="cliente_divida" name="cliente_divida" disabled>
+                    <input type="text" value="R$<?php echo $dividacliente ?>" class="form-control"  id="cliente_divida" name="cliente_divida" >
                 </div>
                 <div class="form-group" style="width:500px" style="height: 100px">
                     <label><font size=4>Produtos Pendentes:</font></label>
@@ -70,10 +70,6 @@ if (isset($_POST['cliente'])) {
                         }
                     }
                     ?>" class="form-control"  id="produto" name="produtos">
-                </div>
-                <div class="form-group" style="width:300px">
-                    <label><font size=4>Curso</font></label>
-                    <input type="text" value="" class="form-control"  id="cliente_curso" name="cliente_curso">
                 </div>
             </div>
             <div class="col-md-3">

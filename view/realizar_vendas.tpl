@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="col-md-3" class="col-xs-6">
-            <div class="form-group" style="width:400px">
+            <div class="form-group" style="width:300px">
                 <label><font size=4>Insira a senha do cliente</font></label>
                 <input type="password" class="form-control" id="senha" name="senha" required>
             </div>

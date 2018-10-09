@@ -104,25 +104,46 @@ class Produtos extends Conexao {
     }
 
     function verificaEstoque($produto) {
+        /////////QUANTIDADE ATUAL DO PRODUTO
         $query = "SELECT prod_qnt FROM produtos WHERE prod_id = $produto";
         $var = $this->ExecuteSQL($query);
         $res = $this->ListarDados($query);
         $quantidade = $res['prod_qnt'];
-
+        /////////QUANTIDADE MINIMA DO PRODUTO
         $query2 = "SELECT prod_qnt_min FROM produtos WHERE prod_id = $produto";
-        $var2 = $this->ExecuteSQL($query);
-        $res2 = $this->ListarDados($query);
-        $quantidademinima = $res['prod_qnt_min'];
+        $var2 = $this->ExecuteSQL($query2);
+        $res2 = $this->ListarDados($query2);
+        $quantidademinima = $res2['prod_qnt_min'];
+        //////VERIFICA SE A QUANTIDADE É MENOR QUE A MINIMA
+        if ($quantidade < $quantidademinima) {
+            $query4 = "SELECT prod_nome FROM produtos WHERE prod_id = $produto";
+            $var4 = $this->ExecuteSQL($query4);
+            $res4 = $this->ListarDados($query4);
+            $nomeproduto = $res4['prod_nome'];
+            $query3 = "INSERT INTO notificacoes (titulo) VALUES ('O produto $nomeproduto possui poucas unidades!')";
+            $var3 = $this->ExecuteSQL($query3);
+        }
+    }
 
-        if ($quantidade <= $quantidademinima) {
-            echo "a"; ////////TEM QUE NOTIFICAR
-            if ($quantidade == 0) {
-                /////////////NAO REALIZA VENDA
-            } else {
-                //////REALIZA VENDA
-            }
-        } else {
-            //////REALIZA VENDA
+    function GetNotificacoes() {
+        //busca os produtos
+        $query = "SELECT * FROM notificacoes";
+
+        //$query .= " ORDER BY id DESC"; //prod_id DESC
+
+        $this->ExecuteSQL($query);
+
+        $this->GetListaNotificacoes();
+    }
+
+    private function GetListaNotificacoes() {
+        $i = 1;
+        while ($lista = $this->ListarDados()) {
+            $this->itens[$i] = array(
+                'id' => $lista['id'],
+                'titulo' => $lista['titulo']
+            );
+            $i++;
         }
     }
 

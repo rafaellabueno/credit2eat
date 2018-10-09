@@ -23,7 +23,7 @@ class Clientes extends Conexao {
         $res = $this->ListarDados($ncurso);
         $nome_curso = $res['nome_curso'];
         $passwordhash = password_hash($senha, PASSWORD_DEFAULT);
-        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula','$email', '$passwordhash', '$_SESSION[id]', 1, '$nome_curso');";
+        $query = "INSERT INTO cliente (cli_nome, cli_matricula, cli_email, cli_senha, id_usuario, valido, cli_curso) VALUES ('$nome', '$matricula','$email', '$passwordhash', '$_SESSION[id]', '1', '$curso');";
         $var = $this->ExecuteSQL($query);
     }
 
