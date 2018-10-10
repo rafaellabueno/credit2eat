@@ -3,10 +3,11 @@
     <center>
         <h3>Lista de Clientes</h3> 
     </center>
-    <!--<div style="text-align: right;"><a href="./cadastrar_cliente"><button class="btn btn-primary">Cadastrar Novo Cliente</button></a></div>-->
+    
     <hr>
 
-    <table class="table">
+    <div class="table-responsive table-full-width">
+    <table class="table table-hover table-striped">
         <thead>
             <tr>
                 <th scope="col">Nome</th>
@@ -59,6 +60,7 @@
         </section>
 
     </table>
+</div>
 
 
 

@@ -97,6 +97,12 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="editar_produto">
+                                        <i class="pe-7s-pen"></i>
+                                        <p href="">Editar Produto</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="{$PAG_PRODUTOS}">
                                         <i class="pe-7s-server"></i>
                                         <p>Ver Produtos</p>
@@ -175,14 +181,14 @@
             <div class="main-panel">
                 <nav class="navbar navbar-default navbar-fixed">
                     <div class="container-fluid">
-                        <div class="navbar-header">
+                        <div class="navbar-header" >
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Credit2Eat<!--{$PAG_NOME}--></a>
+                            <a class="navbar-brand" href="#"><!--{$PAG_NOME}--></a>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
@@ -195,11 +201,15 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <p>Notificações</p>
                                     </a>
+                                    {php} $notif = new Produtos();
+                                        $notif->GetNotificacoes(); 
+                                        $teste = $notif->GetItens();
+                                    {/php}
                                     <ul class="dropdown-menu">
-                                        {foreach from=$CLI item=$C}
-                                        <li><a href="#">{$C.cli_id}</a></li>
-                                        {/foreach}
-                                    </ul>
+                                        {php} foreach($teste as $t){ {/php}
+                                        <li><a href="tela_notificacoes">{php} echo $t['titulo'] {/php}</a></li>
+                                        {php} } {/php}
+                                </ul>
                                 </li> 
                                 <li>
                                     <a href="{$PAG_MINHACONTA}">
@@ -216,195 +226,195 @@
                                     </a>
                                 </li>
                                 <li class="separator hidden-lg"></li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
 
-                <div class="content"> <!--// CONTEUDO DA PAGINA -->
-                    <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
-                        {php}
+                    <div class="content"> <!--// CONTEUDO DA PAGINA -->
+                        <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
+                            {php}
                             Rotas::get_Pagina();
-                        {/php}
+                            {/php}
+                        </div>
+                    </div>               
+
+                    <!--RODAPÉ -->
+                    <footer class="sticky-footer">
+                        <p class="copyright pull-right">
+                        <center>
+                            <hr>
+                            <h5>&copy; <script>document.write(new Date().getFullYear())</script> <a href="{$GET_HOME}">Credit2Eat</a></h5>
+                        </center>
+                        </p>
+                    </footer>
+
+                </div>
+            </div>
+
+
+        </body>
+        <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
                     </div>
-                </div>               
-
-                <!--RODAPÉ -->
-                <footer class="sticky-footer">
-                    <p class="copyright pull-right">
-                    <center>
-                        <hr>
-                        <h5>&copy; <script>document.write(new Date().getFullYear())</script> <a href="{$GET_HOME}">Credit2Eat</a></h5>
-                    </center>
-                    </p>
-                </footer>
-
-            </div>
-        </div>
 
 
-    </body>
-    <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
-                </div>
+        <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                    </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
+        <!--   Core JS Files   -->
+        <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <!--  Charts Plugin -->
-    <script src="{$GET_TEMA}/tema/js/chartist.min.js"></script>
+        <!--  Charts Plugin -->
+        <script src="{$GET_TEMA}/tema/js/chartist.min.js"></script>
 
-    <script src="{$GET_TEMA}/tema/js/bootbox.min.js"></script>
+        <script src="{$GET_TEMA}/tema/js/bootbox.min.js"></script>
 
-    <!--  Notifications Plugin    -->
-    <script src="{$GET_TEMA}/tema/js/bootstrap-notify.js"></script>
+        <!--  Notifications Plugin    -->
+        <script src="{$GET_TEMA}/tema/js/bootstrap-notify.js"></script>
 
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-    <script src="{$GET_TEMA}/tema/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+        <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+        <script src="{$GET_TEMA}/tema/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
-    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <script src="{$GET_TEMA}/tema/js/demo.js"></script>
+        <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+        <script src="{$GET_TEMA}/tema/js/demo.js"></script>
 
-    <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
+        <script type="text/javascript" src="{$GET_TEMA}/tema/js/selectize.min.js"></script>
 
-    <script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldCliente = $('#cliente-select').attr("value");
-                                $('#cliente-select').selectize({
-                                    create: true,
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldCliente, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
+        <script type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
+                                $(document).ready(function () {
+                                    var oldCliente = $('#cliente-select').attr("value");
+                                    $('#cliente-select').selectize({
+                                        create: true,
+                                        placeholder: 'Digite a matrícula do Cliente...',
+                                        onInitialize: function () {
+                                            this.setValue(oldCliente, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+
+                                    var oldProduto = '';
+                                    $('#produto-select').selectize({
+                                        placeholder: 'Digite o nome do Produto...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProduto, true);
+                                        }
+                                    });
+
+
+
+                                    /*$('.produtos-select').each(function(id, el){
+                                     var oldProduto = $(el).attr("value");
+                                     
+                                     $(el).selectize({
+                                     placeholder: 'Digite o nome do Produto...',
+                                     onInitialize: function () {
+                                     this.setValue(oldProduto, true);
+                                     //$('.selectize-control').addClass('form-group');
+                                     $('.selectize-input').addClass('form-control');
+                                     }
+                                     });
+                                     
+                                     
+                                     });/**/
+
+
                                 });
-
-                                var oldProduto = '';
-                                $('#produto-select').selectize({
-                                    placeholder: 'Digite o nome do Produto...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProduto, true);
-                                    }
+        </script> 
+        <!--<script type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
+                                $(document).ready(function () {
+                                    var oldProdutos = $('#produtos-select').attr("value");
+                                    $('#produtos-select').selectize({
+                                        placeholder: 'Digite a matrícula do Cliente...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProdutos, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+    
+    
                                 });
+        </script> -->
+
+        <script type="text/javascript">
+            /*$(document).ready(function () {
+             $('.produtos-select').selectize({
+             placeholder: 'Digite o nome do Produto...',
+             onInitialize: function () {
+             this.setValue(null);
+             //$('.selectize-control').addClass('form-group');
+             $('.selectize-input').addClass('form-control');
+             }
+             });
+             });*/
+
+        </script>
 
 
-
-                                /*$('.produtos-select').each(function(id, el){
-                                 var oldProduto = $(el).attr("value");
-                                 
-                                 $(el).selectize({
-                                 placeholder: 'Digite o nome do Produto...',
-                                 onInitialize: function () {
-                                 this.setValue(oldProduto, true);
-                                 //$('.selectize-control').addClass('form-group');
-                                 $('.selectize-input').addClass('form-control');
-                                 }
-                                 });
-                                 
-                                 
-                                 });/**/
+    </html>
 
 
-                            });
-    </script> 
-    <!--<script type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldProdutos = $('#produtos-select').attr("value");
-                                $('#produtos-select').selectize({
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProdutos, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
-                                });
-
-
-                            });
-    </script> -->
-
-    <script type="text/javascript">
-        /*$(document).ready(function () {
-         $('.produtos-select').selectize({
-         placeholder: 'Digite o nome do Produto...',
-         onInitialize: function () {
-         this.setValue(null);
-         //$('.selectize-control').addClass('form-group');
-         $('.selectize-input').addClass('form-control');
-         }
-         });
-         });*/
-
-    </script>
-
-
-</html>
-
-
-<!--<li>
-                    <a href="{$GET_VENDAS}">
-                        <i class="pe-7s-cash"></i>
-                        <p>Vendas</p>
-                    </a>
-                </li> -->
-<!--<li>
-   <a href="{$PAG_PRODUTOS}">
-       <i class="pe-7s-graph"></i>
-       <p>Produtos</p>
-   </a>
-</li> -->
-<!--<li> 
-    <a href="{$PAG_CLIENTES}">
-        <i class="pe-7s-user"></i>
-        <p>Clientes</p>
-    </a>
-</li>-->
-<!--<li>
-    <a href="">
-        <i class="pe-7s-news-paper"></i>
-        <p>Minha Conta</p>
-    </a>
-</li> -->
-<!--<li>
-    <a href="{$PAG_CONTATO}">
-        <i class="pe-7s-science"></i>
-        <p>Contato</p>
-    </a>
-</li> -->
-
-
-
-<!--<ul class="nav navbar-nav navbar-left">
-    <li>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-dashboard"></i>
-            <p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+    <!--<li>
+                        <a href="{$GET_VENDAS}">
+                            <i class="pe-7s-cash"></i>
+                            <p>Vendas</p>
+                        </a>
+                    </li> -->
+    <!--<li>
+       <a href="{$PAG_PRODUTOS}">
+           <i class="pe-7s-graph"></i>
+           <p>Produtos</p>
+       </a>
+    </li> -->
+    <!--<li> 
+        <a href="{$PAG_CLIENTES}">
+            <i class="pe-7s-user"></i>
+            <p>Clientes</p>
         </a>
-    </li>
-</ul>-->
+    </li>-->
+    <!--<li>
+        <a href="">
+            <i class="pe-7s-news-paper"></i>
+            <p>Minha Conta</p>
+        </a>
+    </li> -->
+    <!--<li>
+        <a href="{$PAG_CONTATO}">
+            <i class="pe-7s-science"></i>
+            <p>Contato</p>
+        </a>
+    </li> -->
+
+
+
+    <!--<ul class="nav navbar-nav navbar-left">
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-dashboard"></i>
+                <p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+            </a>
+        </li>
+    </ul>-->

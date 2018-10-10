@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 04:55:12
+/* Smarty version 3.1.33, created on 2018-10-09 22:15:55
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbc1890b55192_93824208',
+  'unifunc' => 'content_5bbd0c7b5357b8_05154490',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1539053710,
+      1 => 1539116118,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbc1890b55192_93824208 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbd0c7b5357b8_05154490 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 
 <html lang="pt-br">
@@ -133,6 +133,12 @@ function content_5bbc1890b55192_93824208 (Smarty_Internal_Template $_smarty_tpl)
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="editar_produto">
+                                        <i class="pe-7s-pen"></i>
+                                        <p href="">Editar Produto</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 ">
                                         <i class="pe-7s-server"></i>
@@ -214,14 +220,14 @@ function content_5bbc1890b55192_93824208 (Smarty_Internal_Template $_smarty_tpl)
             <div class="main-panel">
                 <nav class="navbar navbar-default navbar-fixed">
                     <div class="container-fluid">
-                        <div class="navbar-header">
+                        <div class="navbar-header" >
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Credit2Eat<!--<?php echo $_smarty_tpl->tpl_vars['PAG_NOME']->value;?>
+                            <a class="navbar-brand" href="#"><!--<?php echo $_smarty_tpl->tpl_vars['PAG_NOME']->value;?>
 --></a>
                         </div>
                         <div class="collapse navbar-collapse">
@@ -235,18 +241,14 @@ function content_5bbc1890b55192_93824208 (Smarty_Internal_Template $_smarty_tpl)
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <p>Notificações</p>
                                     </a>
+                                    <?php  $notif = new Produtos();
+                                        $notif->GetNotificacoes(); 
+                                        $teste = $notif->GetItens();
+                                        ?>
                                     <ul class="dropdown-menu">
-                                        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CLI']->value, 'C');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
-?>
-                                        <li><a href="#"><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_id'];?>
-</a></li>
-                                        <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                        <?php  foreach($teste as $t){ ?>
+                                        <li><a href="tela_notificacoes"><?php  echo $t['titulo'] ?></a></li>
+                                        <?php  } ?>
                                     </ul>
                                 </li> 
                                 <li>

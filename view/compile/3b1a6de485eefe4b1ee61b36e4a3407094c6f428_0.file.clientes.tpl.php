@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 04:56:33
+/* Smarty version 3.1.33, created on 2018-10-10 02:30:45
   from 'C:\xampp\htdocs\credit2eat\view\clientes.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbc18e1ba6824_67789650',
+  'unifunc' => 'content_5bbd4835b76458_71736623',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3b1a6de485eefe4b1ee61b36e4a3407094c6f428' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\clientes.tpl',
-      1 => 1539049625,
+      1 => 1539131192,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbc18e1ba6824_67789650 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbd4835b76458_71736623 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
     <center>
         <h3>Lista de Clientes</h3> 
     </center>
-    <!--<div style="text-align: right;"><a href="./cadastrar_cliente"><button class="btn btn-primary">Cadastrar Novo Cliente</button></a></div>-->
+    
     <hr>
 
-    <table class="table">
+    <div class="table-responsive table-full-width">
+    <table class="table table-hover table-striped">
         <thead>
             <tr>
                 <th scope="col">Nome</th>
@@ -95,6 +96,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </section>
 
     </table>
+</div>
 
 
 

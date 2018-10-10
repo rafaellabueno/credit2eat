@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Out-2018 às 05:20
+-- Generation Time: 10-Out-2018 às 03:14
 -- Versão do servidor: 10.1.35-MariaDB
 -- versão do PHP: 7.2.9
 
@@ -40,55 +40,18 @@ CREATE TABLE `cliente` (
   `id_usuario` int(11) DEFAULT NULL,
   `id_divida` int(11) DEFAULT NULL,
   `valido` tinyint(1) NOT NULL,
-  `cli_curso` varchar(60) NOT NULL
+  `cli_curso` varchar(60) NOT NULL,
+  `imagem` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`, `valido`, `cli_curso`) VALUES
-(5, 'Alex', '02060126', 'alek@gmail.com', 999393393, '81dc9bdb52d04dc20036dbd8313ed055', 5.25, 25, NULL, 1, 'informática'),
-(6, 'Brenda Barbosa', '02060130', 'brendab@gmail.com', 995545121, 'e10adc3949ba59abbe56e057f20f883e', 0, 25, NULL, 1, 'informática'),
-(7, 'Sandro Silva', 'sandro.silva', 'sandro.silva@ifrs.edu.br', 996644112, 'sandrosilva', 0, 25, NULL, 1, 'Professor'),
-(8, 'Lucas Sombra', '02060150', 'lucassombra@gmail.com', 994564512, '123', 25, 25, NULL, 1, 'informática'),
-(9, 'Rafaella', '02060140', 'rafaella@rafaella.com', 943924943, '827ccb0eea8a706c4c34a16891f84e7b', 22.75, 25, NULL, 1, 'informática'),
-(10, 'Reginho', 'regis.teixeira', 'regis@gmail.com', 987456321, '827ccb0eea8a706c4c34a16891f84e7b', 0, 25, NULL, 0, '0'),
-(11, 'Guilherme Bragagnollo Teixeira', 'asdvc', 'guilherme.b.tei@gmail.com', 995213689, 'e1026678df1ff3a31c104cdeb8e4bb95', 0, 25, NULL, 1, 'informática'),
-(12, 'Venda à Vista', '666', '', 0, '', 0, 26, NULL, 1, '0'),
-(14, 'teste2', '123', '', 0, '$2y$10$/IAcYI8KmHCcOiS3Wg.j/.5yUana9LRnG4H2UxwfaI3wzTyEPAxMG', 6, 25, NULL, 1, 'informática'),
-(15, 'Augusto Fddddddddddlach', '0206012300', 'augustofalcaoflach@gmail.com', 993135398, '$2y$10$vkprgWOB8mfvhgHpKov6LuRqJxGgtUySIB0x/HrsMg/5p5i1eA1ZW', 10.25, 25, NULL, 1, 'informática'),
-(16, 'ddasdasdasd', 'dadsadas', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$dtH1kiCkSCmw9Gqoo07z8..sSDletztvP9lGNKvbxmQn.mnji9cYm', 0, 25, NULL, 1, ''),
-(17, 'Brenda Anghinoni Barbosa', '02060129', 'brendaab.2010@gmail.com', NULL, '$2y$10$U2h2LR7AyTapYloSU/gGWuu50xaQhP0aezSg.C215FbvuDlcwPY6O', 5.25, 25, NULL, 1, ''),
-(18, 'swqeqweqwsdsa', '0dsadas6', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$S.4lveNZ0Q2MpU7Fow15bejb5k1hFg24/x4UkRMnIAzdYVqibUvgC', 5.25, 25, NULL, 1, ''),
-(19, 'bla', 'ble', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$guh2IyoqjwSAQtiA.rdADehwT5FiohtkfBm/YjcAFbkZbIwi74rzq', 2.75, 25, NULL, 1, ''),
-(20, 'Guilherme Bragagnollo Teixeira', '02060156', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$jf2Efj78y7L7G8S3cUf7yu5Cp5kaeBuMKoIWajqSiAgcdxxYxiccO', 57.25, 25, NULL, 1, 'Técnico em Informática'),
-(21, 'Augusto Falcão Flach22222222222', '020601282', 'augustofalcaoflach@gmail.com', NULL, '$2y$10$ZXuwWXAavZAzzjZnT6Ah5e8PXyxlbtkIqqFDco4Lv0UnYKvtpi3sa', 3.25, 25, NULL, 1, 'Técnico em Informática');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cursos`
---
-
-DROP TABLE IF EXISTS `cursos`;
-CREATE TABLE `cursos` (
-  `id_curso` int(11) NOT NULL,
-  `nome_curso` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `cursos`
---
-
-INSERT INTO `cursos` (`id_curso`, `nome_curso`, `user_id`) VALUES
-(3, 'informática', 25),
-(4, 'administração', 25),
-(5, 'eletrônica', 25),
-(6, 'desenvolvimento de sistemas', 25),
-(7, 'Professor', 25),
-(8, 'logística', 25);
+INSERT INTO `cliente` (`cli_id`, `cli_nome`, `cli_matricula`, `cli_email`, `cli_telefone`, `cli_senha`, `cli_divida`, `id_usuario`, `id_divida`, `valido`, `cli_curso`, `imagem`) VALUES
+(12, 'Venda à Vista', '666', '', 0, '', 0, NULL, NULL, 1, '0', ''),
+(22, 'Lucas Sombra Almeida', '02060148', 'precutshadow@gmail.com', NULL, '$2y$10$pSzN2CL7AKN4dhl/6DHlG.FhPp1MynIeAxmGqPnO7N76emd6ioPRi', 0, 25, NULL, 1, 'Técnico em Informática', ''),
+(23, 'Guilherme Bragagnollo Teixeira', '02060156', 'guilherme.b.tei@gmail.com', NULL, '$2y$10$xmxDBbwT8cO7Ny5mfAFQVeeovkYthhNxQ7wLn8LZw0dH/CZ83/zqe', 8.5, 25, NULL, 1, 'Técnico em Informática', '');
 
 -- --------------------------------------------------------
 
@@ -122,23 +85,6 @@ CREATE TABLE `estoque` (
 --
 
 INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
-(1, 12, '2018-10-04 16:30:11', 5),
-(2, 6, '2018-10-04 16:30:53', 10),
-(3, 7, '2018-10-04 17:24:48', 12),
-(4, 8, '2018-10-04 17:39:04', 7),
-(5, 6, '2018-10-04 17:43:45', 34),
-(6, 10, '2018-10-04 17:44:27', 2),
-(7, 10, '2018-10-04 17:44:33', 5),
-(8, 10, '2018-10-04 17:45:08', 2),
-(9, 12, '2018-10-04 18:10:01', 1),
-(10, 12, '2018-10-05 20:32:09', 1234),
-(11, 11, '2018-10-05 20:32:47', 10),
-(12, 11, '2018-10-05 20:33:05', 50),
-(13, 12, '2018-10-05 20:33:33', 12),
-(14, 11, '2018-10-05 20:36:17', 1),
-(15, 11, '2018-10-05 20:36:42', 1),
-(16, 11, '2018-10-05 20:37:21', 1),
-(17, 7, '2018-10-05 20:37:47', 10),
 (18, 7, '2018-10-05 22:38:21', 22),
 (19, 7, '2018-10-05 22:40:44', 2),
 (20, 12, '2018-10-05 22:43:22', 3),
@@ -146,7 +92,9 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 (22, 7, '2018-10-06 16:26:27', 5),
 (23, 9, '2018-10-06 16:30:07', 2),
 (24, 9, '2018-10-08 13:04:13', 2),
-(25, 11, '2018-10-09 01:25:11', 2);
+(25, 11, '2018-10-09 01:25:11', 2),
+(26, 13, '2018-10-09 13:58:31', 10),
+(27, 12, '2018-10-09 20:16:24', 3);
 
 -- --------------------------------------------------------
 
@@ -157,20 +105,18 @@ INSERT INTO `estoque` (`id`, `produto`, `data`, `qntd`) VALUES
 DROP TABLE IF EXISTS `notificacoes`;
 CREATE TABLE `notificacoes` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+  `titulo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `data` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `notificacoes`
 --
 
-INSERT INTO `notificacoes` (`id`, `titulo`) VALUES
-(1, 'MAIOR'),
-(2, 'MAIOR'),
-(3, '-4 | '),
-(4, '1'),
-(5, 'O produto 13 possui poucas unidades'),
-(6, 'O produto Negrinho possui poucas unidades!');
+INSERT INTO `notificacoes` (`id`, `titulo`, `data`) VALUES
+(13, 'O produto Croissant de Frango possui poucas unidades!', '2018-10-09 22:31:07'),
+(14, 'O produto Croissant de Frango possui poucas unidades!', '2018-10-10 00:53:09'),
+(15, 'O produto Negrinho possui poucas unidades!', '2018-10-10 00:54:23');
 
 -- --------------------------------------------------------
 
@@ -196,13 +142,13 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`prod_id`, `prod_nome`, `prod_valor`, `prod_qnt_min`, `prod_qnt`, `prod_qnt_ven`, `prod_slug`, `usuario_id`) VALUES
 (6, 'Pizza', 5.00, 10, 111, 6, NULL, 25),
-(7, 'Enroladinho', 2.50, 15, 41, 2, NULL, 25),
-(8, 'Folhado de Frango', 5.00, 20, 47, 4, NULL, 25),
-(9, 'Pastel de Carne', 4.50, 12, 20, 3, NULL, 25),
+(7, 'Enroladinho', 3.50, 15, 39, 4, NULL, 25),
+(8, 'Folhado de Frango', 5.00, 20, 45, 6, NULL, 25),
+(9, 'Pastel de Carne', 4.50, 12, 18, 5, NULL, 25),
 (10, 'Refrigerante 2L', 8.00, 12, 32, 2, NULL, 25),
-(11, 'Chocolate', 10.00, 10, 53, 5, NULL, 25),
-(12, 'Croissant de Frango', 5.00, 12, 1250, 7, NULL, 25),
-(13, 'Negrinho', 3.00, 10, -9, 18, NULL, 25);
+(11, 'Chocolate', 5.00, 10, 52, 7, NULL, 25),
+(12, 'Croissant de Frango', 5.00, 12, 6, 12, NULL, 25),
+(13, 'Negrinho', 3.00, 10, -10, 20, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -223,11 +169,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(25, 'admin', 'admin@admin.com', '$2y$10$ZunbSr7qmQEjGIKwdGq.veIsuH8i.1oEieal7NYJMfboXSUbeHDBy'),
-(26, 'Guilherme Bragagnollo Teixeira', 'guilherme.b.tei@gmail.com', '$2y$10$l3oSNlOx1zFfOHksWRy/JuBXulPYvFwWVNNFeTS4GtYgkpaNqNPOy'),
-(27, 'Elaine Teixeira', 'elaine@email.com', '$2y$10$VFxg6bOlPVv1bU4h7A6B3u34EjOY1BiZCoJEvIL2e38z2Nk2tfZsO'),
-(29, 'PEPE', 'pepe@email.com', '$2y$10$U24clp2EUKb85FntDyfdMOR6ThfoQQ98/1I2oZotjcWsYOj4SP5tG'),
-(30, 'maicon', 'maicon@email.com', '$2y$10$1DAjNIlzVxUW2LgzY2oGo.uB/ceVB00OPU.CeeKfeFUwvOC.PWxu6');
+(25, 'admin', 'admin@admin.com', '$2y$10$ZunbSr7qmQEjGIKwdGq.veIsuH8i.1oEieal7NYJMfboXSUbeHDBy');
 
 -- --------------------------------------------------------
 
@@ -269,106 +211,12 @@ CREATE TABLE `venda` (
 --
 
 INSERT INTO `venda` (`id_venda`, `valor_venda`, `id_cliente`, `data_venda`, `id_user`, `a_prazo`) VALUES
-(1, 10, 6, '2018-09-12 23:46:22', 25, NULL),
-(2, 15, 7, '2018-09-12 23:46:22', 25, NULL),
-(6, 0, 9, '2018-09-12 23:46:22', 25, NULL),
-(7, 0, 8, '2018-09-12 23:46:22', 25, NULL),
-(8, 0, 8, '2018-09-12 23:46:22', 25, NULL),
-(9, 0, 8, '2018-09-12 23:46:22', 25, NULL),
-(10, 0, 9, '2018-09-12 23:46:23', 25, NULL),
-(11, 0, 9, '2018-09-12 23:46:23', 25, NULL),
-(12, 0, 10, '2018-09-12 23:46:23', 25, NULL),
-(13, 0, 6, '2018-09-12 23:46:23', 25, NULL),
-(14, 0, 6, '2018-09-12 23:46:23', 25, NULL),
-(15, 0, 7, '2018-09-12 23:46:23', 25, NULL),
-(16, 0, 6, '2018-09-12 23:46:23', 25, NULL),
-(17, 0, 11, '2018-09-12 23:45:47', 25, NULL),
-(18, 0, 11, '2018-09-12 23:54:44', 25, NULL),
-(19, 0, 5, '2018-09-19 13:24:53', 25, NULL),
-(20, 0, 5, '2018-09-19 13:30:27', 25, NULL),
-(21, 0, 7, '2018-09-19 13:44:32', 25, NULL),
-(22, 0, 9, '2018-09-19 17:18:00', 25, NULL),
-(24, 0, 8, '2018-09-25 18:32:09', 25, NULL),
-(25, 0, 8, '2018-09-25 18:53:55', 25, NULL),
-(28, 0, 6, '2018-09-26 13:29:08', 25, NULL),
-(31, 0, 12, '2018-10-01 13:17:27', 25, NULL),
-(32, 0, 11, '2018-10-01 14:00:49', 25, NULL),
-(33, 0, 6, '2018-10-01 14:01:42', 25, NULL),
-(34, 0, 7, '2018-10-01 14:02:38', 25, NULL),
-(35, 0, 5, '2018-10-01 14:04:18', 25, NULL),
-(36, 0, 9, '2018-10-01 14:05:10', 25, NULL),
-(37, 0, 6, '2018-10-01 14:12:18', 25, NULL),
-(38, 0, 6, '2018-10-01 14:19:47', 25, NULL),
-(39, 0, 12, '2018-10-01 23:59:08', 25, NULL),
-(40, 0, 5, '2018-10-02 13:36:33', 25, NULL),
-(41, 0, 11, '2018-10-02 13:40:33', 25, NULL),
-(42, 0, 6, '2018-10-02 13:42:45', 25, NULL),
-(43, 0, 6, '2018-10-02 13:43:11', 25, NULL),
-(44, 0, 6, '2018-10-02 13:43:27', 25, NULL),
-(45, 0, 6, '2018-10-02 13:43:36', 25, NULL),
-(46, 0, 6, '2018-10-02 13:46:46', 25, NULL),
-(47, 0, 6, '2018-10-02 13:47:40', 25, NULL),
-(48, 0, 6, '2018-10-02 13:49:09', 25, NULL),
-(49, 0, 6, '2018-10-02 13:49:54', 25, NULL),
-(50, 0, 9, '2018-10-02 13:50:39', 25, NULL),
-(51, 0, 9, '2018-10-02 13:51:31', 25, NULL),
-(52, 0, 9, '2018-10-02 13:54:28', 25, NULL),
-(53, 0, 5, '2018-10-02 13:57:57', 25, NULL),
-(54, 0, 6, '2018-10-02 14:46:10', 25, NULL),
-(55, 0, 5, '2018-10-02 14:48:22', 25, NULL),
-(56, 0, 8, '2018-10-02 22:45:48', 25, NULL),
-(57, 0, 8, '2018-10-02 22:46:05', 25, NULL),
-(58, 0, 11, '2018-10-02 22:46:23', 25, NULL),
-(59, 0, 9, '2018-10-03 13:35:06', 25, NULL),
-(60, 0, 11, '2018-10-03 14:22:54', 25, NULL),
-(61, 0, 11, '2018-10-03 19:53:05', 25, NULL),
-(62, 0, 11, '2018-10-03 19:56:59', 25, NULL),
-(63, 0, 11, '2018-10-03 19:58:57', 25, NULL),
-(64, 0, 11, '2018-10-03 20:07:25', 25, NULL),
-(65, 0, 11, '2018-10-03 20:08:06', 25, NULL),
-(66, 0, 5, '2018-10-03 20:17:23', 25, NULL),
-(67, 0, 11, '2018-10-03 21:28:48', 25, NULL),
-(68, 0, 12, '2018-10-03 21:29:57', 25, NULL),
-(69, 0, 6, '2018-10-03 21:59:36', 25, NULL),
-(70, 0, 5, '2018-10-03 21:59:55', 25, NULL),
-(71, 0, 8, '2018-10-03 22:00:59', 25, NULL),
-(72, 0, 14, '2018-10-03 22:21:23', 25, NULL),
-(73, 0, 14, '2018-10-04 13:06:17', 25, NULL),
-(74, 0, 14, '2018-10-04 13:24:07', 25, NULL),
-(75, 0, 14, '2018-10-04 13:26:15', 25, NULL),
-(76, 0, 14, '2018-10-04 13:27:52', 25, NULL),
-(77, 0, 14, '2018-10-04 13:28:22', 25, NULL),
-(78, 0, 14, '2018-10-04 13:28:55', 25, NULL),
-(79, 0, 15, '2018-10-05 13:20:06', 25, NULL),
-(80, 0, 16, '2018-10-05 14:14:04', 25, NULL),
-(81, 0, 17, '2018-10-05 17:51:44', 25, NULL),
-(82, 0, 16, '2018-10-08 13:04:50', 25, NULL),
-(83, 0, 16, '2018-10-08 13:05:50', 25, NULL),
-(84, 0, 16, '2018-10-08 13:09:01', 25, NULL),
-(85, 0, 16, '2018-10-08 13:11:44', 25, NULL),
-(86, 0, 16, '2018-10-08 13:12:27', 25, NULL),
-(87, 0, 18, '2018-10-08 13:17:51', 25, NULL),
-(88, 0, 19, '2018-10-08 13:19:31', 25, NULL),
-(89, 0, 20, '2018-10-08 13:20:42', 25, NULL),
-(90, 0, 20, '2018-10-08 14:00:36', 25, NULL),
-(91, 0, 20, '2018-10-08 14:02:05', 25, NULL),
-(92, 0, 12, '2018-10-08 14:05:37', 25, NULL),
-(93, 0, 20, '2018-10-08 14:06:17', 25, NULL),
-(94, 0, 20, '2018-10-08 14:10:27', 25, NULL),
-(95, 0, 20, '2018-10-08 14:15:08', 25, NULL),
-(96, 0, 20, '2018-10-08 14:23:21', 25, NULL),
-(97, 0, 20, '2018-10-08 14:26:12', 25, NULL),
-(98, 0, 20, '2018-10-08 14:27:46', 25, NULL),
-(99, 0, 20, '2018-10-08 14:28:16', 25, NULL),
-(100, 0, 20, '2018-10-08 16:45:16', 25, NULL),
-(101, 0, 20, '2018-10-08 16:45:59', 25, NULL),
-(102, 0, 20, '2018-10-08 16:46:54', 25, NULL),
-(103, 0, 20, '2018-10-08 16:47:57', 25, NULL),
-(104, 0, 20, '2018-10-08 16:48:22', 25, NULL),
-(105, 0, 20, '2018-10-08 16:48:44', 25, NULL),
-(106, 0, 21, '2018-10-08 16:50:02', 25, NULL),
-(107, 0, 20, '2018-10-09 01:26:23', 25, NULL),
-(108, 0, 20, '2018-10-09 01:38:18', 25, NULL);
+(115, 0, 22, '2018-10-09 20:10:33', 25, NULL),
+(116, 0, 23, '2018-10-09 22:31:07', 25, NULL),
+(117, 0, 23, '2018-10-10 00:30:01', 25, NULL),
+(118, 0, 23, '2018-10-10 00:52:12', 25, NULL),
+(119, 0, 23, '2018-10-10 00:53:09', 25, NULL),
+(120, 0, 23, '2018-10-10 00:54:22', 25, NULL);
 
 -- --------------------------------------------------------
 
@@ -388,121 +236,14 @@ CREATE TABLE `venda_produto` (
 --
 
 INSERT INTO `venda_produto` (`venda_id`, `produto_id`, `pendente`) VALUES
-(1, 7, 0),
-(2, 9, 0),
-(10, 7, 0),
-(10, 8, 0),
-(10, 6, 0),
-(10, 10, 0),
-(11, 7, 0),
-(11, 10, 0),
-(13, 7, 0),
-(14, 7, 0),
-(15, 11, 0),
-(16, 12, 0),
-(17, 12, 0),
-(18, 11, 0),
-(24, 12, 0),
-(24, 6, 0),
-(25, 7, 0),
-(25, 6, 0),
-(25, 7, 0),
-(25, 8, 0),
-(25, 9, 0),
-(25, 11, 0),
-(28, 7, 0),
-(28, 8, 0),
-(31, 12, 0),
-(31, 7, 0),
-(32, 7, 0),
-(32, 12, 0),
-(33, 11, 0),
-(34, 11, 0),
-(34, 8, 0),
-(35, 12, 0),
-(35, 12, 0),
-(36, 12, 0),
-(36, 8, 0),
-(37, 7, 0),
-(37, 12, 0),
-(38, 12, 0),
-(39, 11, 0),
-(40, 11, 0),
-(41, 11, 0),
-(47, 11, 0),
-(49, 11, 0),
-(50, 8, 0),
-(51, 11, 0),
-(52, 7, 0),
-(53, 8, 0),
-(54, 9, 0),
-(54, 11, 0),
-(55, 9, 0),
-(55, 7, 0),
-(55, 11, 0),
-(56, 11, 0),
-(57, 11, 0),
-(58, 12, 0),
-(58, 11, 0),
-(59, 11, 0),
-(60, 12, 0),
-(60, 7, 0),
-(61, 11, 0),
-(61, 7, 0),
-(62, 7, 0),
-(62, 7, 0),
-(62, 8, 0),
-(63, 12, 0),
-(63, 12, 0),
-(64, 12, 0),
-(65, 12, 0),
-(66, 11, 0),
-(67, 8, 0),
-(67, 8, 0),
-(68, 12, NULL),
-(68, 12, NULL),
-(69, 7, 0),
-(70, 12, 1),
-(71, 9, 1),
-(72, 11, 0),
-(73, 12, 0),
-(73, 12, 0),
-(74, 9, 0),
-(74, 11, 0),
-(75, 11, 0),
-(76, 6, 0),
-(77, 10, 0),
-(78, 6, 1),
-(79, 11, 1),
-(80, 12, 0),
-(81, 12, 1),
-(82, 6, 0),
-(83, 10, 0),
-(84, 9, 0),
-(85, 6, 0),
-(86, 6, 0),
-(87, 8, 1),
-(88, 7, 1),
-(89, 6, 0),
-(90, 13, 1),
-(91, 13, 1),
-(92, 13, NULL),
-(93, 13, 1),
-(94, 13, 1),
-(95, 13, 1),
-(96, 13, 1),
-(97, 13, 1),
-(98, 13, 1),
-(99, 13, 1),
-(100, 13, 1),
-(101, 8, 1),
-(102, 13, 1),
-(103, 13, 1),
-(104, 13, 1),
-(105, 13, 1),
-(106, 13, 1),
-(107, 13, 1),
-(108, 13, 1);
+(115, 8, 0),
+(115, 8, 0),
+(116, 12, 0),
+(117, 11, 0),
+(118, 9, 0),
+(118, 7, 0),
+(119, 12, 1),
+(120, 13, 1);
 
 --
 -- Indexes for dumped tables
@@ -516,12 +257,6 @@ ALTER TABLE `cliente`
   ADD UNIQUE KEY `cli_matricula` (`cli_matricula`),
   ADD KEY `id_divida` (`id_divida`),
   ADD KEY `id_usuario` (`id_usuario`);
-
---
--- Indexes for table `cursos`
---
-ALTER TABLE `cursos`
-  ADD PRIMARY KEY (`id_curso`);
 
 --
 -- Indexes for table `divida`
@@ -577,13 +312,7 @@ ALTER TABLE `venda_produto`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `cursos`
---
-ALTER TABLE `cursos`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cli_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `divida`
@@ -595,19 +324,19 @@ ALTER TABLE `divida`
 -- AUTO_INCREMENT for table `estoque`
 --
 ALTER TABLE `estoque`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `notificacoes`
 --
 ALTER TABLE `notificacoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `usuario`
@@ -619,7 +348,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- Constraints for dumped tables

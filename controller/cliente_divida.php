@@ -59,7 +59,7 @@ if (isset($_POST['cliente'])) {
                     <label><font size=4>Pendências:</font></label>
                     <input type="text" value="R$<?php echo $dividacliente ?>" class="form-control"  id="cliente_divida" name="cliente_divida" >
                 </div>
-                <div class="form-group" style="width:500px" style="height: 100px">
+                <div class="form-group">
                     <label><font size=4>Produtos Pendentes:</font></label>
                     <input type="text" value="<?php
                     foreach ($dados2 as $p) {

@@ -58,6 +58,13 @@ if (isset($_REQUEST['pag'])) {
         return;
     }
 
+    if ($path == 'getImagem') {
+        $usr = new Clientes();
+        echo $usr->getImagem();
+        return;
+
+    }
+
     if ($path == 'atualizar') {
 
         $cliente = new Clientes();

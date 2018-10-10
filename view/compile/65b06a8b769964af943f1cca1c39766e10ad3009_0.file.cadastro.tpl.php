@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 22:26:10
-  from 'C:\xampp\htdocs\credit2eat\view\login.tpl' */
+/* Smarty version 3.1.33, created on 2018-10-09 22:26:15
+  from 'C:\xampp\htdocs\credit2eat\view\cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbd0ee2e91731_66441322',
+  'unifunc' => 'content_5bbd0ee723ada4_62815477',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '90c8feb86e88a795d6f20ecd17d8d59e123e46ec' => 
+    '65b06a8b769964af943f1cca1c39766e10ad3009' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\login.tpl',
-      1 => 1539116769,
+      0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastro.tpl',
+      1 => 1537808123,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbd0ee2e91731_66441322 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbd0ee723ada4_62815477 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +28,6 @@ function content_5bbd0ee2e91731_66441322 (Smarty_Internal_Template $_smarty_tpl)
         <link rel="icon" type="image/png" href=".\media\imagens\Credit2Eat---Icon.png">
         <title><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value;?>
 </title>
-
         <link href="tema/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <?php echo '<script'; ?>
  src="tema/js/bootstrap.min.js"><?php echo '</script'; ?>
@@ -110,7 +109,8 @@ function content_5bbd0ee2e91731_66441322 (Smarty_Internal_Template $_smarty_tpl)
             }
 
             .form-signin #nome,
-            .form-signin #senha {
+            .form-signin #senha,
+            .form-signin #email {
                 direction: ltr;
                 height: 44px;
                 font-size: 16px;
@@ -196,15 +196,18 @@ function content_5bbd0ee2e91731_66441322 (Smarty_Internal_Template $_smarty_tpl)
 
         <div class="container">
             <div class="card card-container">
+                <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+
                 <img id="profile-img" class="profile-img-card" src=".\media\imagens\Credit2Eat---Complete.png" /> <!-- IMAGEM -->
                 <p id="profile-name" class="profile-name-card"></p>
-                <form class="form-signin" action="./" method="post">
+                <form class="form-signin" action="./cadastro" method="post">
                     <span id="reauth-email" class="reauth-email"></span>
-                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Email" required autofocus>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" required autofocus>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
                     <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
                 </form><!-- /form -->
-                <a href="./cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
+                <a href="./redireciona?caminho=login" style="text-decoration: none;"><center>Logar</center></a>
                 <br><br><center><h4><?php echo $_smarty_tpl->tpl_vars['ERRO']->value;?>
 </h4></center>
 
@@ -280,6 +283,10 @@ function content_5bbd0ee2e91731_66441322 (Smarty_Internal_Template $_smarty_tpl)
         <?php echo '</script'; ?>
 >
 
+        <?php 
+                    Rotas::get_Pagina();
+                    //var_dump(Rotas::$pag);
+        ?>
     </body>
 
 </html>

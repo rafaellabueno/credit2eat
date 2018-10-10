@@ -54,46 +54,77 @@
     }
 </script>
 
+
+<div class="row" style="display: block;">
+    <div class="col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-4" id="img"></div>
+    </div>
+</div>
+
+
 <center>
     <h3>Realizar Venda a Prazo</h3> 
 </center>
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
-    <div align="left">
-        <div class="col-md-3" class="col-xs-6" style="width: 400px">
-            <div class="form-group">
-                <label><font size=4>Selecione o Cliente</font></label>
-                <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" required>
-                    {foreach from=$CLI item=C}
-                        <option value="{$C.cli_matricula}">{$C.cli_nome} - {$C.cli_matricula} </option>
-                    {/foreach}
-                </select>
+    <div class="container">
+
+
+
+        <div class="row">
+
+            <div class="col-md-3" style="width: 400px">
+                <div class="form-group">
+                    <label><font size=4>Selecione o Cliente</font></label>
+                    <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" style="background-color: #f7f7f8; border: 0px;" required>
+                        {foreach from=$CLI item=C}
+                            <option value="{$C.cli_matricula}">{$C.cli_nome} - {$C.cli_matricula} </option>
+                        {/foreach}
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3" class="col-xs-6">
-            <div class="form-group" style="width:300px">
-                <label><font size=4>Insira a senha do cliente</font></label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
+            <div class="col-md-3">
+                <div class="form-group" style="width:300px">
+                    <label><font size=4>Insira a senha do cliente</font></label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+
+                </div>
             </div>
         </div>
 
-        <div id="displayOriginal">
-            <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
-                <label><font size=4>Escolha o Produto</font></label>
-                <select  class="produtos-select" required>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <a onclick="searchCli()" class="btn btn-primary" role="button" style="display: inline-block;">
+                    Procurar Cliente</a>
+            </div>          
+        </div>
+
+
+        <div id="displayOriginal" class="row">
+            <div class="form-group" class="col-md-12" style="display: none;">
+                <label><font size="4">Escolha o Produto</font></label><br>
+                <select  class="produtos-select col-md-6" required>
                     {foreach from=$PRO item=P}
                         <option value="{$P.prod_id}">{$P.prod_nome} - R$ {$P.prod_valor} - Quantidade: {$P.prod_qnt} </option>
                     {/foreach}
                 </select>
+
             </div>
         </div>
+
+
         <div id="selects">
         </div>
-        <div class="col-md-12" class="col-xs-6">
-            <a onclick="addProduto()" class="btn btn-primary" role="button">
-                Adicionar Produto
-            </a>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <a onclick="addProduto()" class="btn btn-primary" role="button" style="display: inline-block;">
+                    Adicionar Produto</a>
+            </div>          
         </div>
         <br>
         <br>
@@ -108,7 +139,7 @@
         </div>
     </div>
 </form>
-<hr>
+</hr>
 
 
 
@@ -126,6 +157,32 @@
             header('location:./realizar_vendas');
         }
     }
+</script>
+
+
+<script>
+
+    function searchCli() {
+
+        var mat = $('#cliente-select').val();
+        var passwd = $('#senha').val();
+
+        var obj = {};
+        obj.clienteMat = mat;
+        obj.senha = passwd
+        $.post('getImagem', obj, function (data) {
+
+            console.log(data);
+
+            $('#img').html('<img src="' + data + '"  style="margin-bottom: 20px; position: fixed; border: 0px solid black; border-radius: 15px; width: 20%; right: 0; z-index: 5">');
+
+
+        });
+
+
+
+    }
+
 </script>
 
 

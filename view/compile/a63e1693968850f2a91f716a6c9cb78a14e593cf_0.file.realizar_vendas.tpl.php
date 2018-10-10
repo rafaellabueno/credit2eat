@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-08 18:45:17
+/* Smarty version 3.1.33, created on 2018-10-09 23:57:35
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbb899d3b1c93_28907633',
+  'unifunc' => 'content_5bbd244f4b8a68_63119618',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1539009819,
+      1 => 1539122254,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbb899d3b1c93_28907633 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbd244f4b8a68_63119618 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -79,19 +79,33 @@ echo '<script'; ?>
 <?php echo '</script'; ?>
 >
 
+
+<div class="row" style="display: block;">
+    <div class="col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-4" id="img"></div>
+    </div>
+</div>
+
+
 <center>
     <h3>Realizar Venda a Prazo</h3> 
 </center>
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
-    <div align="left">
-        <div class="col-md-3" class="col-xs-6" style="width: 400px">
-            <div class="form-group">
-                <label><font size=4>Selecione o Cliente</font></label>
-                <select id="cliente-select" name="cliente" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
-" required>
-                    <?php
+    <div class="container">
+
+
+
+        <div class="row">
+
+            <div class="col-md-3" style="width: 400px">
+                <div class="form-group">
+                    <label><font size=4>Selecione o Cliente</font></label>
+                    <select id="cliente-select" name="cliente" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
+" style="background-color: #f7f7f8; border: 0px;" required>
+                        <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CLI']->value, 'C');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
@@ -100,30 +114,42 @@ foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
 "><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_nome'];?>
  - <?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
  </option>
-                    <?php
+                        <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                </select>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3" class="col-xs-6">
-            <div class="form-group" style="width:300px">
-                <label><font size=4>Insira a senha do cliente</font></label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
+            <div class="col-md-3">
+                <div class="form-group" style="width:300px">
+                    <label><font size=4>Insira a senha do cliente</font></label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+
+                </div>
             </div>
         </div>
 
-        <div id="displayOriginal">
-            <div class="form-group" class="col-md-3" class="col-md-6" style="width:500px; display: none;">
-                <label><font size=4>Escolha o Produto</font></label>
-                <select  class="produtos-select" required>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <a onclick="searchCli()" class="btn btn-primary" role="button" style="display: inline-block;">
+                    Procurar Cliente</a>
+            </div>          
+        </div>
+
+
+        <div id="displayOriginal" class="row">
+            <div class="form-group" class="col-md-12" style="display: none;">
+                <label><font size="4">Escolha o Produto</font></label><br>
+                <select  class="produtos-select col-md-6" required>
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ?>
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
+                    <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
  - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
  - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
@@ -133,14 +159,19 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </select>
+
             </div>
         </div>
+
+
         <div id="selects">
         </div>
-        <div class="col-md-12" class="col-xs-6">
-            <a onclick="addProduto()" class="btn btn-primary" role="button">
-                Adicionar Produto
-            </a>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <a onclick="addProduto()" class="btn btn-primary" role="button" style="display: inline-block;">
+                    Adicionar Produto</a>
+            </div>          
         </div>
         <br>
         <br>
@@ -155,7 +186,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
 </form>
-<hr>
+</hr>
 
 
 
@@ -176,6 +207,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             header('location:./realizar_vendas');
         }
     }
+<?php echo '</script'; ?>
+>
+
+
+<?php echo '<script'; ?>
+>
+
+    function searchCli() {
+
+        var mat = $('#cliente-select').val();
+        var passwd = $('#senha').val();
+
+        var obj = {};
+        obj.clienteMat = mat;
+        obj.senha = passwd
+        $.post('getImagem', obj, function (data) {
+
+            console.log(data);
+
+            $('#img').html('<img src="' + data + '"  style="margin-bottom: 20px; position: fixed; border: 0px solid black; border-radius: 15px; width: 20%; right: 0; z-index: 5">');
+
+
+        });
+
+
+
+    }
+
 <?php echo '</script'; ?>
 >
 

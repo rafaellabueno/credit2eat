@@ -9,7 +9,7 @@ class Produtos extends Conexao {
     public $nome = '';
     public $valor = '';
     public $qnt_min = '';
-    public $qnt = ''; 
+    public $qnt = '';
 
     function GetProdutos() {
         //busca os produtos
@@ -75,7 +75,7 @@ class Produtos extends Conexao {
     }
 
     function GetEstoque() {
-        $query = "SELECT * FROM estoque";
+        $query = "SELECT * FROM estoque ORDER BY id DESC";
 
         $this->ExecuteSQL($query);
 
@@ -83,24 +83,24 @@ class Produtos extends Conexao {
     }
 
     private function GetListaEstoque() {
-        while ($lista = $this->ListarDados()) {
+        //while ($lista = $this->ListarDados()) {
 
-            $i = 1;
-            while ($lista = $this->ListarDados()) {
-                $data = $lista['data'];
-                $data = strtotime($data);
-                $data = date('H:i | d/m/Y', $data);
-                $this->itens[$i] = array(
-                    'id' => $lista['id'],
-                    'produto' => $lista['produto'],
-                    'qntd' => $lista['qntd'],
-                    'datav' => $lista['data'],
-                    'data' => $data
-                        //'usuario_id' => $lista['usuario_id']
-                );
-                $i++;
-            }
+        $i = 1;
+        while ($lista = $this->ListarDados()) {
+            $data = $lista['data'];
+            $data = strtotime($data);
+            $data = date('H:i | d/m/Y', $data);
+            $this->itens[$i] = array(
+                'id' => $lista['id'],
+                'produto' => $lista['produto'],
+                'qntd' => $lista['qntd'],
+                'datav' => $lista['data'],
+                'data' => $data
+                    //'usuario_id' => $lista['usuario_id']
+            );
+            $i++;
         }
+        //}
     }
 
     function verificaEstoque($produto) {
@@ -122,14 +122,16 @@ class Produtos extends Conexao {
             $nomeproduto = $res4['prod_nome'];
             $query3 = "INSERT INTO notificacoes (titulo) VALUES ('O produto $nomeproduto possui poucas unidades!')";
             $var3 = $this->ExecuteSQL($query3);
+            if ($quantidade = 0) {
+                $query5 = "INSERT INTO notificacoes (titulo) VALUES ('O produto $nomeproduto chegou a ZERO unidades!')";
+                $var5 = $this->ExecuteSQL($query5);
+            }
         }
     }
 
     function GetNotificacoes() {
         //busca os produtos
-        $query = "SELECT * FROM notificacoes";
-
-        //$query .= " ORDER BY id DESC"; //prod_id DESC
+        $query = "SELECT * FROM notificacoes ORDER BY id DESC";
 
         $this->ExecuteSQL($query);
 
@@ -137,14 +139,29 @@ class Produtos extends Conexao {
     }
 
     private function GetListaNotificacoes() {
+        //while ($lista = $this->ListarDados()) {
+
         $i = 1;
         while ($lista = $this->ListarDados()) {
+            $data = $lista['data'];
+            $data = strtotime($data);
+            $data = date('H:i | d/m/Y', $data);
             $this->itens[$i] = array(
                 'id' => $lista['id'],
-                'titulo' => $lista['titulo']
+                'titulo' => $lista['titulo'],
+                'data' => $data
+                    //'usuario_id' => $lista['usuario_id']
             );
             $i++;
         }
+        //}
+    }
+
+    public function atualizarProduto($nome, $valor, $qntmin, $id) {
+        echo $nome;
+        echo $id;
+        $query = "UPDATE produtos SET prod_nome='$nome', prod_valor='$valor', prod_qnt_min='$qntmin' WHERE prod_id = $id AND usuario_id = $_SESSION[id]";
+        $var = $this->ExecuteSQL($query);
     }
 
 }

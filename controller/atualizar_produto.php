@@ -2,17 +2,13 @@
 
 $smarty = new Template();
 
-$produto = new Produtos();
-$produto->GetProdutos();
+if (isset($_POST['nome_produto']) && ($_POST['valor_produto'])) {
+    $produto = new Produtos();
 
-$smarty->assign('PRO', $produto->GetItens());
+    $resp = $produto->atualizarProduto($_POST['nome_produto'], $_POST['valor_produto'], $_POST['quantidade_produto'], $_POST['id']);
+    echo 'oi';
+    header("location:./editar_produto");
+}
 
-
-#if (isset($_POST['usuario_nome'])) {
-# $usuario = new Usuario();
-# $resp = $usuario->alterarUsuario($_POST['usuario_nome'], $_POST['usuario_email']);
-# header("location:./minhaconta");
-#}
-
-$smarty->display('atualizar_produto.tpl');
+$smarty->display('editar_produto.tpl');
 ?>

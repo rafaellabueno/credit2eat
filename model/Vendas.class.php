@@ -183,10 +183,9 @@ class Vendas extends Conexao {
                         'moodle' => true,
                     );
 
-                    return $arr;
 
                     $newCliente = new Clientes();
-                    $newCliente->setCliente($arr['nome'], $arr['matricula'], $arr['email'], $fields['password'], $arr['curso']);
+                    $newCliente->setCliente($arr['nome'], $arr['matricula'], $arr['email'], $fields['password'], $arr['curso'], $arr['imagem']);
 
                     $this->setVendas($clienteMat, $produto, $senha);
                 } else {

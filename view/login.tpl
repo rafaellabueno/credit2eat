@@ -176,7 +176,7 @@
                     <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
                     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Conectar</button>
                 </form><!-- /form -->
-                <a href="./redireciona?caminho=cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
+                <a href="./cadastro" style="text-decoration: none;"><center>Cadastrar</center></a>
                 <br><br><center><h4>{$ERRO}</h4></center>
 
             </div><!-- /card-container -->
