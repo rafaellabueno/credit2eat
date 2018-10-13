@@ -55,17 +55,19 @@
 </script>
 
 
-<div class="row" style="display: block;">
-    <div class="col-md-12">
-        <div class="col-md-2"></div>
-        <div class="col-md-4" id="img"></div>
+
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <center>
+            <h3>Realizar Venda</h3> 
+        </center>
     </div>
+
+    <div class="col-md-4" style="" >
+        <div id="img"></div>
+    </div>
+
 </div>
-
-
-<center>
-    <h3>Realizar Venda a Prazo</h3> 
-</center>
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
@@ -78,7 +80,7 @@
             <div class="col-md-3" style="width: 400px">
                 <div class="form-group">
                     <label><font size=4>Selecione o Cliente</font></label>
-                    <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" style="background-color: #f7f7f8; border: 0px;" required>
+                    <select id="cliente-select" name="cliente" value="{$C.cli_matricula}" style="background-color: #f7f7f8; border: 0px;" >
                         {foreach from=$CLI item=C}
                             <option value="{$C.cli_matricula}">{$C.cli_nome} - {$C.cli_matricula} </option>
                         {/foreach}
@@ -88,8 +90,7 @@
             <div class="col-md-3">
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Insira a senha do cliente</font></label>
-                    <input type="password" class="form-control" id="senha" name="senha" required>
-
+                    <input type="password" class="form-control" id="senha" name="senha" >
                 </div>
             </div>
         </div>
@@ -97,11 +98,11 @@
 
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3"></div>
                 <a onclick="searchCli()" class="btn btn-primary" role="button" style="display: inline-block;">
                     Procurar Cliente</a>
             </div>          
         </div>
+        <br>
 
 
         <div id="displayOriginal" class="row">
@@ -121,24 +122,34 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3"></div>
                 <a onclick="addProduto()" class="btn btn-primary" role="button" style="display: inline-block;">
                     Adicionar Produto</a>
             </div>          
         </div>
         <br>
-        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group" style="width:150px">
+                    <label><font size=4>Valor</font></label>
+                    <input type="text" class="form-control" id="valor" name="valor" >
+                </div>
+            </div>
+        </div>
         <br>
         <div class="col-md-12" class="col-xs-6">
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA A PRAZO</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-warning btn-block" name="botao3">REALIZAR VENDA À VISTA</button>
             </div>
         </div>
     </div>
 </form>
+
 </hr>
 
 
@@ -174,7 +185,7 @@
 
             console.log(data);
 
-            $('#img').html('<img src="' + data + '"  style="margin-bottom: 20px; position: fixed; border: 0px solid black; border-radius: 15px; width: 20%; right: 0; z-index: 5">');
+            $('#img').html('<div class="float-right" style="position: absolute; right: 0"><img src="' + data + '"  style="margin-bottom: 20px; border: 0px solid black; border-radius: 15px; width: 100%; right: 0; z-index: 5"></div>');
 
 
         });

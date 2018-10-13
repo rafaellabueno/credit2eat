@@ -17,11 +17,10 @@ class Clientes extends Conexao {
         $this->GetLista();
     }
 
-
-    function getImagem(){
+    function getImagem() {
 
         $clienteMat = isset($_POST['clienteMat']) ? $_POST['clienteMat'] : '';
-        
+
         $queryExiste = "SELECT cli_id FROM cliente WHERE cli_matricula = $clienteMat";
         $varExiste = $this->ExecuteSQL($queryExiste);
         $clienteExiste = $this->ListarDados($queryExiste);
@@ -29,7 +28,6 @@ class Clientes extends Conexao {
         if ($cliente) {
 
             return $cliente;
-
         } else {
 
             // Dispara a consulta ao WebService
@@ -88,7 +86,6 @@ class Clientes extends Conexao {
                       return redirect('/select-game');/* */
 
                     return $response['foto'];
-
                 } else {
                     
                 }
@@ -97,8 +94,6 @@ class Clientes extends Conexao {
             }
         }
     }
-
-
 
     public function setCliente($nome, $matricula, $email, $senha, $curso) {
         $ncurso = "SELECT nome_curso FROM cursos WHERE id_curso = $curso";

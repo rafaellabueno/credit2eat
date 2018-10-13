@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 22:15:55
+/* Smarty version 3.1.33, created on 2018-10-13 20:17:42
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbd0c7b5357b8_05154490',
+  'unifunc' => 'content_5bc236c6e7b118_42095137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1539116118,
+      1 => 1539454662,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbd0c7b5357b8_05154490 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bc236c6e7b118_42095137 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 
 <html lang="pt-br">
@@ -159,16 +159,16 @@ function content_5bbd0c7b5357b8_05154490 (Smarty_Internal_Template $_smarty_tpl)
                                 <p>Vendas</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents3">
-                                <li>
+                                <!--<li>
                                     <a href="venda_vista">
                                         <i class="pe-7s-cash"></i>
                                         <p href="">Venda à Vista</p>
                                     </a>
-                                </li>
+                                </li>-->
                                 <li>
                                     <a href="realizar_vendas">
-                                        <i class="pe-7s-wallet"></i>
-                                        <p href="">Venda a Prazo</p>
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Realizar Venda</p>
                                     </a>
                                 </li>
                                 <li>
@@ -242,13 +242,16 @@ function content_5bbd0c7b5357b8_05154490 (Smarty_Internal_Template $_smarty_tpl)
                                         <p>Notificações</p>
                                     </a>
                                     <?php  $notif = new Produtos();
-                                        $notif->GetNotificacoes(); 
+                                        $notif->GetNotificacoesCima(); 
                                         $teste = $notif->GetItens();
-                                        ?>
+                                    ?>
                                     <ul class="dropdown-menu">
                                         <?php  foreach($teste as $t){ ?>
                                         <li><a href="tela_notificacoes"><?php  echo $t['titulo'] ?></a></li>
                                         <?php  } ?>
+                                        
+                                        
+
                                     </ul>
                                 </li> 
                                 <li>
@@ -267,233 +270,233 @@ function content_5bbd0c7b5357b8_05154490 (Smarty_Internal_Template $_smarty_tpl)
                                     </a>
                                 </li>
                                 <li class="separator hidden-lg"></li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
 
-                <div class="content"> <!--// CONTEUDO DA PAGINA -->
-                    <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
-                        <?php 
+                    <div class="content"> <!--// CONTEUDO DA PAGINA -->
+                        <div class="container-fluid"> <!-- CONTEUDO DA PAGINA // CONTEUDO DA PAGINA // CONTEUDO DA PAGINA -->
+                            <?php 
                             Rotas::get_Pagina();
-                        ?>
-                    </div>
-                </div>               
+                            ?>
+                        </div>
+                    </div>               
 
-                <!--RODAPÉ -->
-                <footer class="sticky-footer">
-                    <p class="copyright pull-right">
-                    <center>
-                        <hr>
-                        <h5>&copy; <?php echo '<script'; ?>
+                    <!--RODAPÉ -->
+                    <footer class="sticky-footer">
+                        <p class="copyright pull-right">
+                        <center>
+                            <hr>
+                            <h5>&copy; <?php echo '<script'; ?>
 >document.write(new Date().getFullYear())<?php echo '</script'; ?>
 > <a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
 ">Credit2Eat</a></h5>
-                    </center>
-                    </p>
-                </footer>
+                        </center>
+                        </p>
+                    </footer>
 
+                </div>
+            </div>
+
+
+        </body>
+        <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
+                    </div>
 
-    </body>
-    <div id="ModalDelete" class="modal" role="dialog"> <!-- EXCLUIR CLIENTE -->
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="ModalDelete" class="modal" role="dialog"> <!-- ZERAR DIVIDA CLIENTE -->
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Você tem certeza que deseja excluir o cliente?</h5>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary excluirCliente" data-dismiss="modal">Excluir</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/selectize.min.js"><?php echo '</script'; ?>
 >
-    <!--   Core JS Files   -->
-    <?php echo '<script'; ?>
+        <!--   Core JS Files   -->
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
 >
 
-    <!--  Charts Plugin -->
-    <?php echo '<script'; ?>
+        <!--  Charts Plugin -->
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/chartist.min.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootbox.min.js"><?php echo '</script'; ?>
 >
 
-    <!--  Notifications Plugin    -->
-    <?php echo '<script'; ?>
+        <!--  Notifications Plugin    -->
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap-notify.js"><?php echo '</script'; ?>
 >
 
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-    <?php echo '<script'; ?>
+        <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/light-bootstrap-dashboard.js?v=1.4.0"><?php echo '</script'; ?>
 >
 
-    <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-    <?php echo '<script'; ?>
+        <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+        <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/demo.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/selectize.min.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript"> //PEGAR TODOS OS CLIENTES DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldCliente = $('#cliente-select').attr("value");
-                                $('#cliente-select').selectize({
-                                    create: true,
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldCliente, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
+                                $(document).ready(function () {
+                                    var oldCliente = $('#cliente-select').attr("value");
+                                    $('#cliente-select').selectize({
+                                        create: true,
+                                        placeholder: 'Digite a matrícula do Cliente...',
+                                        onInitialize: function () {
+                                            this.setValue(oldCliente, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+
+                                    var oldProduto = '';
+                                    $('#produto-select').selectize({
+                                        placeholder: 'Digite o nome do Produto...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProduto, true);
+                                        }
+                                    });
+
+
+
+                                    /*$('.produtos-select').each(function(id, el){
+                                     var oldProduto = $(el).attr("value");
+                                     
+                                     $(el).selectize({
+                                     placeholder: 'Digite o nome do Produto...',
+                                     onInitialize: function () {
+                                     this.setValue(oldProduto, true);
+                                     //$('.selectize-control').addClass('form-group');
+                                     $('.selectize-input').addClass('form-control');
+                                     }
+                                     });
+                                     
+                                     
+                                     });/**/
+
+
                                 });
-
-                                var oldProduto = '';
-                                $('#produto-select').selectize({
-                                    placeholder: 'Digite o nome do Produto...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProduto, true);
-                                    }
-                                });
-
-
-
-                                /*$('.produtos-select').each(function(id, el){
-                                 var oldProduto = $(el).attr("value");
-                                 
-                                 $(el).selectize({
-                                 placeholder: 'Digite o nome do Produto...',
-                                 onInitialize: function () {
-                                 this.setValue(oldProduto, true);
-                                 //$('.selectize-control').addClass('form-group');
-                                 $('.selectize-input').addClass('form-control');
-                                 }
-                                 });
-                                 
-                                 
-                                 });/**/
-
-
-                            });
-    <?php echo '</script'; ?>
+        <?php echo '</script'; ?>
 > 
-    <!--<?php echo '<script'; ?>
+        <!--<?php echo '<script'; ?>
  type="text/javascript"> //PEGAR TODOS OS PRODUTOS DIGITANDO MATRICULA OU NOME  
-                            $(document).ready(function () {
-                                var oldProdutos = $('#produtos-select').attr("value");
-                                $('#produtos-select').selectize({
-                                    placeholder: 'Digite a matrícula do Cliente...',
-                                    onInitialize: function () {
-                                        this.setValue(oldProdutos, true);
-                                        //$('.selectize-control').addClass('form-group');
-                                        $('.selectize-input').addClass('form-control');
-                                    }
+                                $(document).ready(function () {
+                                    var oldProdutos = $('#produtos-select').attr("value");
+                                    $('#produtos-select').selectize({
+                                        placeholder: 'Digite a matrícula do Cliente...',
+                                        onInitialize: function () {
+                                            this.setValue(oldProdutos, true);
+                                            //$('.selectize-control').addClass('form-group');
+                                            $('.selectize-input').addClass('form-control');
+                                        }
+                                    });
+    
+    
                                 });
-
-
-                            });
-    <?php echo '</script'; ?>
+        <?php echo '</script'; ?>
 > -->
 
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript">
-        /*$(document).ready(function () {
-         $('.produtos-select').selectize({
-         placeholder: 'Digite o nome do Produto...',
-         onInitialize: function () {
-         this.setValue(null);
-         //$('.selectize-control').addClass('form-group');
-         $('.selectize-input').addClass('form-control');
-         }
-         });
-         });*/
+            /*$(document).ready(function () {
+             $('.produtos-select').selectize({
+             placeholder: 'Digite o nome do Produto...',
+             onInitialize: function () {
+             this.setValue(null);
+             //$('.selectize-control').addClass('form-group');
+             $('.selectize-input').addClass('form-control');
+             }
+             });
+             });*/
 
-    <?php echo '</script'; ?>
+        <?php echo '</script'; ?>
 >
 
 
-</html>
+    </html>
 
 
-<!--<li>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['GET_VENDAS']->value;?>
+    <!--<li>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['GET_VENDAS']->value;?>
 ">
-                        <i class="pe-7s-cash"></i>
-                        <p>Vendas</p>
-                    </a>
-                </li> -->
-<!--<li>
-   <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
+                            <i class="pe-7s-cash"></i>
+                            <p>Vendas</p>
+                        </a>
+                    </li> -->
+    <!--<li>
+       <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
 ">
-       <i class="pe-7s-graph"></i>
-       <p>Produtos</p>
-   </a>
-</li> -->
-<!--<li> 
-    <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTES']->value;?>
+           <i class="pe-7s-graph"></i>
+           <p>Produtos</p>
+       </a>
+    </li> -->
+    <!--<li> 
+        <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CLIENTES']->value;?>
 ">
-        <i class="pe-7s-user"></i>
-        <p>Clientes</p>
-    </a>
-</li>-->
-<!--<li>
-    <a href="">
-        <i class="pe-7s-news-paper"></i>
-        <p>Minha Conta</p>
-    </a>
-</li> -->
-<!--<li>
-    <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
-">
-        <i class="pe-7s-science"></i>
-        <p>Contato</p>
-    </a>
-</li> -->
-
-
-
-<!--<ul class="nav navbar-nav navbar-left">
-    <li>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-dashboard"></i>
-            <p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+            <i class="pe-7s-user"></i>
+            <p>Clientes</p>
         </a>
-    </li>
-</ul>--><?php }
+    </li>-->
+    <!--<li>
+        <a href="">
+            <i class="pe-7s-news-paper"></i>
+            <p>Minha Conta</p>
+        </a>
+    </li> -->
+    <!--<li>
+        <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
+">
+            <i class="pe-7s-science"></i>
+            <p>Contato</p>
+        </a>
+    </li> -->
+
+
+
+    <!--<ul class="nav navbar-nav navbar-left">
+        <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-dashboard"></i>
+                <p class="hidden-lg hidden-md">(pegar nome da pagina atual)</p>
+            </a>
+        </li>
+    </ul>--><?php }
 }

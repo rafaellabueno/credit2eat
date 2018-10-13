@@ -4,7 +4,7 @@
 <hr>
 <div class="row">
     <!--<div class="form-group" style="text-align: left;"><a href="./venda_vista"><button class="btn btn-primary">Realizar Venda à Vista</button></a></div>-->
-    <div style="text-align: left;"><a href="./realizar_vendas"><button class="btn btn-primary btn-sm">REALIZAR NOVA VENDA A PRAZO</button></a></div>
+    <div style="text-align: left;"><a href="./realizar_vendas"><button class="btn btn-primary btn-sm">REALIZAR NOVA VENDA</button></a></div>
 </div>
 <hr>
 
@@ -44,8 +44,6 @@
                         </tbody>
 
                     {/foreach} 
-
-
 
                 </div>
 

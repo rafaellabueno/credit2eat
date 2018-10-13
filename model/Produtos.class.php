@@ -65,7 +65,7 @@ class Produtos extends Conexao {
         $query2 = "UPDATE produtos SET prod_qnt='$qnt' WHERE prod_id = $produto";
         $var2 = $this->ExecuteSQL($query2);
         //////// ATUALIZA INFORMAÇÕES NO ESTOQUE
-        $query3 = "INSERT INTO estoque (produto, qntd) VALUES ($produto, $qtd)";
+        $query3 = "INSERT INTO estoque (produto, qntd, id_usuario) VALUES ($produto, $qtd, '$_SESSION[id]')";
         $var3 = $this->ExecuteSQL($query3);
         return $var3;
     }
@@ -75,7 +75,7 @@ class Produtos extends Conexao {
     }
 
     function GetEstoque() {
-        $query = "SELECT * FROM estoque ORDER BY id DESC";
+        $query = "SELECT * FROM estoque WHERE id_usuario = $_SESSION[id] ORDER BY id DESC";
 
         $this->ExecuteSQL($query);
 
@@ -120,10 +120,10 @@ class Produtos extends Conexao {
             $var4 = $this->ExecuteSQL($query4);
             $res4 = $this->ListarDados($query4);
             $nomeproduto = $res4['prod_nome'];
-            $query3 = "INSERT INTO notificacoes (titulo) VALUES ('O produto $nomeproduto possui poucas unidades!')";
+            $query3 = "INSERT INTO notificacoes (titulo, id_usuario) VALUES ('O produto $nomeproduto possui poucas unidades!','$_SESSION[id]')";
             $var3 = $this->ExecuteSQL($query3);
             if ($quantidade = 0) {
-                $query5 = "INSERT INTO notificacoes (titulo) VALUES ('O produto $nomeproduto chegou a ZERO unidades!')";
+                $query5 = "INSERT INTO notificacoes (titulo, id_usuario) VALUES ('O produto $nomeproduto chegou a ZERO unidades!', '$_SESSION[id]')";
                 $var5 = $this->ExecuteSQL($query5);
             }
         }
@@ -131,7 +131,16 @@ class Produtos extends Conexao {
 
     function GetNotificacoes() {
         //busca os produtos
-        $query = "SELECT * FROM notificacoes ORDER BY id DESC";
+        $query = "SELECT * FROM notificacoes WHERE id_usuario = $_SESSION[id] ORDER BY id DESC";
+
+        $this->ExecuteSQL($query);
+
+        $this->GetListaNotificacoes();
+    }
+
+    function GetNotificacoesCima() {
+        //busca os produtos
+        $query = "SELECT * FROM notificacoes WHERE visto='0' AND id_usuario = $_SESSION[id] ORDER BY id DESC";
 
         $this->ExecuteSQL($query);
 

@@ -122,16 +122,16 @@
                                 <p>Vendas</p>
                             </a>
                             <ul class="sidenav-second-level collapse" id="collapseComponents3">
-                                <li>
+                                <!--<li>
                                     <a href="venda_vista">
                                         <i class="pe-7s-cash"></i>
                                         <p href="">Venda à Vista</p>
                                     </a>
-                                </li>
+                                </li>-->
                                 <li>
                                     <a href="realizar_vendas">
-                                        <i class="pe-7s-wallet"></i>
-                                        <p href="">Venda a Prazo</p>
+                                        <i class="pe-7s-cash"></i>
+                                        <p href="">Realizar Venda</p>
                                     </a>
                                 </li>
                                 <li>
@@ -202,13 +202,16 @@
                                         <p>Notificações</p>
                                     </a>
                                     {php} $notif = new Produtos();
-                                        $notif->GetNotificacoes(); 
+                                        $notif->GetNotificacoesCima(); 
                                         $teste = $notif->GetItens();
                                     {/php}
                                     <ul class="dropdown-menu">
                                         {php} foreach($teste as $t){ {/php}
                                         <li><a href="tela_notificacoes">{php} echo $t['titulo'] {/php}</a></li>
                                         {php} } {/php}
+
+
+
                                 </ul>
                                 </li> 
                                 <li>

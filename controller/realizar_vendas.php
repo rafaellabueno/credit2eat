@@ -10,18 +10,26 @@ $produtos = new Clientes();
 $produtos->GetClientes();
 
 $smarty->assign('CLI', $produtos->GetItens());
-if (isset($_POST['produto']) && isset($_POST['cliente'])) {
 
+if (isset($_POST['produto']) && isset($_POST['cliente'])) {
     $realizarVenda = new Vendas();
-    $resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto'], $_POST['senha']);
+
     foreach ($_POST['produto'] as $p) {
         $quantidade = $realizarVenda->descontarQuantidade($p);
     }
 
-
+    $resp = $realizarVenda->setVendas($_POST['cliente'], $_POST['produto'], $_POST['senha'], $_POST['valor']);
 
     header("location:./vendas");
 }
+if (isset($_POST['produto']) && empty($_POST['cliente'])) {
+    $realizarVendaVista = new Vendas();
+    $resp = $realizarVendaVista->setVendaVista($_POST['produto']);
+    foreach ($_POST['produto'] as $p) {
+        $quantidade = $realizarVendaVista->descontarQuantidade($p);
+    }
+}
+
 
 $smarty->display('realizar_vendas.tpl');
 ?>

@@ -11,15 +11,15 @@
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Valor do Produto</font></label>
-        <input type="text" class="form-control" id="prod_valor" name="prod_valor" required>
+        <input type="text" class="form-control" id="prod_valor" name="prod_valor">
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Quantidade Mínima</font></label>
-        <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min" required>
+        <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min">
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Quantidade Atual</font></label>
-        <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" required>
+        <input type="text" class="form-control" id="prod_qnt" name="prod_qnt">
     </div>
     <div class="col-md-4">
         <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>

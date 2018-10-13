@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-09 23:57:35
+/* Smarty version 3.1.33, created on 2018-10-11 16:09:54
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbd244f4b8a68_63119618',
+  'unifunc' => 'content_5bbf59b2e7b811_31730385',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1539122254,
+      1 => 1539266993,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbd244f4b8a68_63119618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbf59b2e7b811_31730385 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -80,17 +80,19 @@ echo '<script'; ?>
 >
 
 
-<div class="row" style="display: block;">
-    <div class="col-md-12">
-        <div class="col-md-2"></div>
-        <div class="col-md-4" id="img"></div>
+
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <center>
+            <h3>Realizar Venda</h3> 
+        </center>
     </div>
+
+    <div class="col-md-4" style="" >
+        <div id="img"></div>
+    </div>
+    
 </div>
-
-
-<center>
-    <h3>Realizar Venda a Prazo</h3> 
-</center>
 <hr>
 <br>
 <form id="form_venda" name="form_venda" action="./realizar_vendas" method="post">
@@ -104,13 +106,13 @@ echo '<script'; ?>
                 <div class="form-group">
                     <label><font size=4>Selecione o Cliente</font></label>
                     <select id="cliente-select" name="cliente" value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
-" style="background-color: #f7f7f8; border: 0px;" required>
+" style="background-color: #f7f7f8; border: 0px;" >
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CLI']->value, 'C');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
 ?>
-                        <option value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
 "><?php echo $_smarty_tpl->tpl_vars['C']->value['cli_nome'];?>
  - <?php echo $_smarty_tpl->tpl_vars['C']->value['cli_matricula'];?>
  </option>
@@ -124,8 +126,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="col-md-3">
                 <div class="form-group" style="width:300px">
                     <label><font size=4>Insira a senha do cliente</font></label>
-                    <input type="password" class="form-control" id="senha" name="senha" required>
-
+                    <input type="password" class="form-control" id="senha" name="senha" >
                 </div>
             </div>
         </div>
@@ -133,11 +134,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3"></div>
                 <a onclick="searchCli()" class="btn btn-primary" role="button" style="display: inline-block;">
                     Procurar Cliente</a>
             </div>          
         </div>
+        <br>
 
 
         <div id="displayOriginal" class="row">
@@ -149,7 +150,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ?>
-                    <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['P']->value['prod_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['P']->value['prod_nome'];?>
  - R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_valor'];?>
  - Quantidade: <?php echo $_smarty_tpl->tpl_vars['P']->value['prod_qnt'];?>
@@ -168,24 +169,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3"></div>
                 <a onclick="addProduto()" class="btn btn-primary" role="button" style="display: inline-block;">
                     Adicionar Produto</a>
             </div>          
         </div>
         <br>
-        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group" style="width:150px">
+                    <label><font size=4>Valor</font></label>
+                    <input type="text" class="form-control" id="valor" name="valor" >
+                </div>
+            </div>
+        </div>
         <br>
         <div class="col-md-12" class="col-xs-6">
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA</button>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary btn-block" name="botao">REALIZAR VENDA A PRAZO</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <button type="reset" onclick="limpa()" class="btn btn-danger btn-block" name="botao2">CANCELAR</button>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-warning btn-block" name="botao3">REALIZAR VENDA À VISTA</button>
             </div>
         </div>
     </div>
 </form>
+
 </hr>
 
 
@@ -226,7 +237,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
             console.log(data);
 
-            $('#img').html('<img src="' + data + '"  style="margin-bottom: 20px; position: fixed; border: 0px solid black; border-radius: 15px; width: 20%; right: 0; z-index: 5">');
+            $('#img').html('<div class="float-right" style="position: absolute; right: 0"><img src="' + data + '"  style="margin-bottom: 20px; border: 0px solid black; border-radius: 15px; width: 100%; right: 0; z-index: 5"></div>');
 
 
         });

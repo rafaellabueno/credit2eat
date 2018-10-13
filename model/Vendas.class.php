@@ -66,19 +66,20 @@ class Vendas extends Conexao {
         $var = $this->ExecuteSQL($query);
     }
 
-    function setVendas($clienteMat, $produto, $senha) {
+    function setVendas($clienteMat, $produto, $senha, $valor) {
         ///////////////////////////////////////PEGAR VALOR A PRAZO
         $queryvalorprazo = "SELECT valor_prazo FROM valor_prazo WHERE id=1";
         $varvalorprazo = $this->ExecuteSQL($queryvalorprazo);
         $valorprazo = $this->ListarDados($queryvalorprazo);
         $valor_prazo = $valorprazo['valor_prazo'];
-        ////////////////////////////////////////SENHA
+        ////////////////////////////////////////ver se o cliente existe
         $queryExiste = "SELECT cli_id FROM cliente WHERE cli_matricula = $clienteMat";
         $varExiste = $this->ExecuteSQL($queryExiste);
         $clienteExiste = $this->ListarDados($queryExiste);
         $cliente = false;
         $cliente = $clienteExiste['cli_id'];
         if ($cliente) {
+            ///////////////////VERIFICAR SENHA
             $querysenha = "SELECT cli_senha FROM cliente WHERE cli_id = $cliente";
             $varsenha = $this->ExecuteSQL($querysenha);
             $clientesenha = $this->ListarDados($querysenha);
@@ -89,22 +90,39 @@ class Vendas extends Conexao {
                 $id = $this->LastInsertID();
                 $valor_total = '0';
                 foreach ($produto as $produto) {
-                    $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
-                    $var3 = $this->ExecuteSQL($valor_prod);
-                    $res = $this->ListarDados($valor_prod);
-                    $valor_total = $valor_total + $res['prod_valor'] + $valor_prazo; ////VALOR_PRODUTO + VALOR_PRAZO
-                    $query2 = "INSERT INTO venda_produto (venda_id, produto_id, pendente) VALUES ('{$id}', $produto, 1);";
-                    $var2 = $this->ExecuteSQL($query2);
-                    /////////////////////////////////////ACRESCENTAR EM VENDIDOS
-                    $vendidos = "SELECT prod_qnt_ven FROM produtos WHERE prod_id = $produto";
-                    $var7 = $this->ExecuteSQL($vendidos);
-                    $res7 = $this->ListarDados($vendidos);
-                    $novo_vendidos = $res7['prod_qnt_ven'] + 1;
-                    $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
-                    $var8 = $this->ExecuteSQL($query7);
-                    /////////VERIFICAR ESTOQUE A CADA PRODUTO
-                    $prod = new Produtos();
-                    $verifica = $prod->verificaEstoque($produto);
+                    if ($produto == 14) { //SE FOR IGUAL DIVERSOS/ALMOÇO
+                        $valordiverso = $_POST['valor'];
+                        $valor_total = $valor_total + $valordiverso + $valor_prazo; ////VALOR_PRODUTO + VALOR_PRAZO
+                        $query2 = "INSERT INTO venda_produto (venda_id, produto_id, pendente) VALUES ('{$id}', $produto, 1);";
+                        $var2 = $this->ExecuteSQL($query2);
+                        $vendidos = "SELECT prod_qnt_ven FROM produtos WHERE prod_id = $produto";
+                        $var7 = $this->ExecuteSQL($vendidos);
+                        $res7 = $this->ListarDados($vendidos);
+                        $novo_vendidos = $res7['prod_qnt_ven'] + 1;
+                        $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
+                        $var8 = $this->ExecuteSQL($query7);
+                        //////////////colocar quantidade para 0 do diversos
+                        $query0 = "UPDATE produtos SET prod_qnt='0' WHERE prod_id = $produto";
+                        $var0 = $this->ExecuteSQL($query0);
+                    }
+                    if ($produto != 14) {
+                        $valor_prod = "SELECT prod_valor FROM produtos WHERE prod_id = $produto";
+                        $var3 = $this->ExecuteSQL($valor_prod);
+                        $res = $this->ListarDados($valor_prod);
+                        $valor_total = $valor_total + $res['prod_valor'] + $valor_prazo; ////VALOR_PRODUTO + VALOR_PRAZO
+                        $query2 = "INSERT INTO venda_produto (venda_id, produto_id, pendente) VALUES ('{$id}', $produto, 1);";
+                        $var2 = $this->ExecuteSQL($query2);
+                        /////////////////////////////////////ACRESCENTAR EM VENDIDOS
+                        $vendidos = "SELECT prod_qnt_ven FROM produtos WHERE prod_id = $produto";
+                        $var7 = $this->ExecuteSQL($vendidos);
+                        $res7 = $this->ListarDados($vendidos);
+                        $novo_vendidos = $res7['prod_qnt_ven'] + 1;
+                        $query7 = "UPDATE produtos SET prod_qnt_ven='$novo_vendidos' WHERE prod_id = $produto";
+                        $var8 = $this->ExecuteSQL($query7);
+                        /////////VERIFICAR ESTOQUE A CADA PRODUTO
+                        $prod = new Produtos();
+                        $verifica = $prod->verificaEstoque($produto);
+                    }
                 }
                 ////////////////////////////////////////////// SETAR DIVIDA
                 $divida_atual = "SELECT cli_divida FROM cliente WHERE cli_id = $cliente";
@@ -187,7 +205,7 @@ class Vendas extends Conexao {
                     $newCliente = new Clientes();
                     $newCliente->setCliente($arr['nome'], $arr['matricula'], $arr['email'], $fields['password'], $arr['curso'], $arr['imagem']);
 
-                    $this->setVendas($clienteMat, $produto, $senha);
+                    $this->setVendas($clienteMat, $produto, $senha, $valor);
                 } else {
                     
                 }
