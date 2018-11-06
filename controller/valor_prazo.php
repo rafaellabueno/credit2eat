@@ -3,7 +3,7 @@ $smarty = new Template();
 
 $exec = new Configuracoes();
 
-$query2 = "SELECT valor_prazo FROM valor_prazo WHERE id=1";
+$query2 = "SELECT valor_prazo FROM valor_prazo WHERE id=1 and id_usuario='$_SESSION[id]'";
 $var2 = $exec->ExecuteSQL($query2);
 $valor2 = $exec->ListarDados($query2);
 $valor_prazo = $valor2['valor_prazo'];

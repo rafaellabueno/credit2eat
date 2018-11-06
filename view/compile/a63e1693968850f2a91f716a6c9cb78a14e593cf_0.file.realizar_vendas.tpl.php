@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-11 16:09:54
+/* Smarty version 3.1.33, created on 2018-10-22 21:28:13
   from 'C:\xampp\htdocs\credit2eat\view\realizar_vendas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbf59b2e7b811_31730385',
+  'unifunc' => 'content_5bce24cd5aab84_19941542',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a63e1693968850f2a91f716a6c9cb78a14e593cf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\realizar_vendas.tpl',
-      1 => 1539266993,
+      1 => 1539455948,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbf59b2e7b811_31730385 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bce24cd5aab84_19941542 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     var total = 0;
@@ -91,7 +91,7 @@ echo '<script'; ?>
     <div class="col-md-4" style="" >
         <div id="img"></div>
     </div>
-    
+
 </div>
 <hr>
 <br>

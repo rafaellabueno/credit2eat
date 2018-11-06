@@ -77,6 +77,12 @@
                                     </a>
                                 </li> 
                                 <li>
+                                    <a href="clientes_pend">
+                                        <i class="pe-7s-note2"></i>
+                                        <p>Ver Clientes Pendentes</p>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="cliente_divida">
                                         <i class="pe-7s-piggy"></i>
                                         <p>Quitar Dívidas</p>

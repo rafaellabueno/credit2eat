@@ -17,6 +17,17 @@ class Clientes extends Conexao {
         $this->GetLista();
     }
 
+    function GetClientesDevem() {
+        //busca os produtos
+        $query = "SELECT * FROM cliente WHERE id_usuario = $_SESSION[id] and valido = 1 and cli_divida > 0";
+
+        $query .= " ORDER BY cli_nome ";
+
+        $this->ExecuteSQL($query);
+
+        $this->GetLista();
+    }
+
     function getImagem() {
 
         $clienteMat = isset($_POST['clienteMat']) ? $_POST['clienteMat'] : '';

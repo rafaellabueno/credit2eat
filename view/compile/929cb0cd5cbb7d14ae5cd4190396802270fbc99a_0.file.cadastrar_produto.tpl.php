@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-11 16:12:30
+/* Smarty version 3.1.33, created on 2018-10-25 15:14:28
   from 'C:\xampp\htdocs\credit2eat\view\cadastrar_produto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bbf5a4e1af856_05060011',
+  'unifunc' => 'content_5bd1c1b4127b83_44067975',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '929cb0cd5cbb7d14ae5cd4190396802270fbc99a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\cadastrar_produto.tpl',
-      1 => 1539267105,
+      1 => 1539267236,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bbf5a4e1af856_05060011 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bd1c1b4127b83_44067975 (Smarty_Internal_Template $_smarty_tpl) {
 ?><center>
     <h3>Cadastrar Novo Produto</h3>
 </center>
@@ -34,15 +34,15 @@ function content_5bbf5a4e1af856_05060011 (Smarty_Internal_Template $_smarty_tpl)
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Valor do Produto</font></label>
-        <input type="text" class="form-control" id="prod_valor" name="prod_valor" >
+        <input type="text" class="form-control" id="prod_valor" name="prod_valor">
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Quantidade Mínima</font></label>
-        <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min" >
+        <input type="text" class="form-control" id="prod_qnt_min" name="prod_qnt_min">
     </div>
     <div class="form-group" style="width:200px">
         <label><font size=4>Quantidade Atual</font></label>
-        <input type="text" class="form-control" id="prod_qnt" name="prod_qnt" >
+        <input type="text" class="form-control" id="prod_qnt" name="prod_qnt">
     </div>
     <div class="col-md-4">
         <button type="submit" class="btn btn-primary btn-block" name="botao">Cadastrar</button>

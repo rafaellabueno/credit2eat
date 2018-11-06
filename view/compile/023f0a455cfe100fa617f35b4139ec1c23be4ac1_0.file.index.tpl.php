@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-13 20:17:42
+/* Smarty version 3.1.33, created on 2018-11-06 12:56:34
   from 'C:\xampp\htdocs\credit2eat\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc236c6e7b118_42095137',
+  'unifunc' => 'content_5be18172b70d98_78884693',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '023f0a455cfe100fa617f35b4139ec1c23be4ac1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\credit2eat\\view\\index.tpl',
-      1 => 1539454662,
+      1 => 1541505393,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5bc236c6e7b118_42095137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5be18172b70d98_78884693 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 
 <html lang="pt-br">
@@ -112,6 +112,12 @@ function content_5bc236c6e7b118_42095137 (Smarty_Internal_Template $_smarty_tpl)
                                         <p>Ver Clientes</p>
                                     </a>
                                 </li> 
+                                <li>
+                                    <a href="clientes_pend">
+                                        <i class="pe-7s-note2"></i>
+                                        <p>Ver Clientes Pendentes</p>
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="cliente_divida">
                                         <i class="pe-7s-piggy"></i>
@@ -249,10 +255,10 @@ function content_5bc236c6e7b118_42095137 (Smarty_Internal_Template $_smarty_tpl)
                                         <?php  foreach($teste as $t){ ?>
                                         <li><a href="tela_notificacoes"><?php  echo $t['titulo'] ?></a></li>
                                         <?php  } ?>
-                                        
-                                        
 
-                                    </ul>
+
+
+                                </ul>
                                 </li> 
                                 <li>
                                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
