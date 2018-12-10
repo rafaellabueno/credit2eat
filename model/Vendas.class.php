@@ -27,6 +27,9 @@ class Vendas extends Conexao {
             if ($nome_cli == '')
                 continue;
 
+            $prazo = new Configuracoes();
+            $valorprazo = $prazo->getValorPrazo();
+
             $prod = new Produtos();
             $nome_prod = $prod->GetProdutosID($lista['produto_id'])['prod_nome'];
             $valor_prod = $prod->GetProdutosID($lista['produto_id'])['prod_valor'];
